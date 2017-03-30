@@ -1,0 +1,3 @@
+function GlobalFlags(){
+LICENSESTATE = "MI";
+}
