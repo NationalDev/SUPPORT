@@ -395,14 +395,14 @@ function mainProcess() {
         }
     }
 
-    //Create a set of sets of all Contractor of Record sets
+    //Create a set of sets of all Applicant sets
     if (setBillingContactPrefix != "") {
         //setId = setBillingContactPrefix.substr(0, 5) + yy + mm + dd + hh + mi;
         setId = setBillingContactPrefix + yy; // + mm + dd + hh + mi;
-        setName = setBillingContactPrefix + " Contractor of Record Set of Sets";
+        setName = setBillingContactPrefix + " Applicant Set of Sets";
         setDescription = setBillingContactPrefix + " : " + startDate.toLocaleString();
 
-        // Create Contractor of Record Set of Sets
+        // Create Applicant Set of Sets
         vBillingContactSet = new capSet(setId, setName, null, setDescription);
         vBillingContactSet.name = setName;
         vBillingContactSet.comment = setDescription;
@@ -611,7 +611,7 @@ function mainProcess() {
                 if (vExOptIn != "CHECKED") {
                     vAllOptIn = false;
                 }
-                if (conTypeArray[z] == "Contractor of Record") {
+                if (conTypeArray[z] == "Applicant") {
                     var vAddress = vConObj.people.getCompactAddress();
                     addrStreet = vAddress.getAddressLine1() + "";
                     addrLine2 = vAddress.getAddressLine2() + "";
@@ -623,7 +623,7 @@ function mainProcess() {
                     addrZip = vAddress.getZip() + "";
                 }
 
-                vAddressee = getOrgOrContactName("Contractor of Record", capId);
+                vAddressee = getOrgOrContactName("Applicant", capId);
                 logDebug("vAddressee " + vAddressee + "; addrStreet " + addrStreet);
             } //if vConObj
 
@@ -631,14 +631,14 @@ function mainProcess() {
                 logDebug("          Adding " + conEmail + " to email array");
                 conEmailArray.push(conEmail);
 
-                //Create a set for the Contractor of Record
+                //Create a set for the Applicant
                 if (setBillingContactPrefix != "") {
                     setId = vConObj.refSeqNumber + "";
                     setId = setId.substr(0, 5) + yy + mm + dd + hh + mi;
                     setName = vConObj.people.getFullName();
                     setDescription = vConObj.people.getFullName() + " : " + startDate.toLocaleString();
 
-                    //Get or Create unique Contractor of Record Set
+                    //Get or Create unique Applicant Set
                     vContactSet = new capSet3_0(setId, setName, null, setDescription);
                     vContactSet.recSetType = "Billing";
                     vContactSet.status = "Pending";
@@ -647,7 +647,7 @@ function mainProcess() {
                     //Add record to unique billing contact set
                     vContactSet.add(capId);
 
-                    //Add unique contact set to Contractor of Record set of sets (only if it doesn't already exist)
+                    //Add unique contact set to Applicant set of sets (only if it doesn't already exist)
                     vBillingContactSet.refresh();
                     vSetArray = new Array();
                     x = 0;
@@ -655,7 +655,7 @@ function mainProcess() {
                     for (x in vBillingContactSet.members) {
                         vSetArray.push(vBillingContactSet.members[x].getSetID());
                     }
-                    //Add set to Contractor of Record set if it doesn't already exists
+                    //Add set to Applicant set if it doesn't already exists
                     if (!exists(setId, vSetArray)) {
                         vBillingContactSet.add(setId);
                     }
