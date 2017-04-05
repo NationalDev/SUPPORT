@@ -28,7 +28,7 @@ aa.env.setValue("setNonEmailPrefix", "2Expire_NE_");
 aa.env.setValue("setBillingContactPrefix", "2Expire_BC_");
 aa.env.setValue("emailAddress", "");
 aa.env.setValue("showDebug", "true");
-aa.env.setValue("sendEmailToContactTypes", "Billing Contact,Applicant");
+aa.env.setValue("sendEmailToContactTypes", "Contractor of Record,Applicant");
 aa.env.setValue("emailTemplate", "LICENSE ABOUT TO EXPIRE 90 DAYS");
 aa.env.setValue("BatchJobName", "2ExpireBatch");
 aa.env.setValue("createRenewalRecord", "Y");
@@ -395,14 +395,14 @@ function mainProcess() {
         }
     }
 
-    //Create a set of sets of all Billing Contact sets
+    //Create a set of sets of all Contractor of Record sets
     if (setBillingContactPrefix != "") {
         //setId = setBillingContactPrefix.substr(0, 5) + yy + mm + dd + hh + mi;
         setId = setBillingContactPrefix + yy; // + mm + dd + hh + mi;
-        setName = setBillingContactPrefix + " Billing Contact Set of Sets";
+        setName = setBillingContactPrefix + " Contractor of Record Set of Sets";
         setDescription = setBillingContactPrefix + " : " + startDate.toLocaleString();
 
-        // Create Billing Contact Set of Sets
+        // Create Contractor of Record Set of Sets
         vBillingContactSet = new capSet(setId, setName, null, setDescription);
         vBillingContactSet.name = setName;
         vBillingContactSet.comment = setDescription;
@@ -586,7 +586,7 @@ function mainProcess() {
 
         //get Contact Emails
         if (sendEmailToContactTypes == "All") {
-            sendEmailToContactTypes = "Applicant,Architect or Engineer,Billing Contact,Business Owner,Business Partner,Complainant,Director,District,Emergency Contact,Event Coordinator,General Contractor,Life Safety Officer,Operator,Person In Charge,Plan Review Contact,Pool Builder,Primary Contact,Property Manager,Responsible Party";
+            sendEmailToContactTypes = "Applicant,Architect or Engineer,Contractor of Record,Business Owner,Business Partner,Complainant,Director,District,Emergency Contact,Event Coordinator,General Contractor,Life Safety Officer,Operator,Person In Charge,Plan Review Contact,Pool Builder,Primary Contact,Property Manager,Responsible Party";
         }
 
         vAllOptIn = true;
@@ -611,7 +611,7 @@ function mainProcess() {
                 if (vExOptIn != "CHECKED") {
                     vAllOptIn = false;
                 }
-                if (conTypeArray[z] == "Billing Contact") {
+                if (conTypeArray[z] == "Contractor of Record") {
                     var vAddress = vConObj.people.getCompactAddress();
                     addrStreet = vAddress.getAddressLine1() + "";
                     addrLine2 = vAddress.getAddressLine2() + "";
@@ -623,7 +623,7 @@ function mainProcess() {
                     addrZip = vAddress.getZip() + "";
                 }
 
-                vAddressee = getOrgOrContactName("Billing Contact", capId);
+                vAddressee = getOrgOrContactName("Contractor of Record", capId);
                 logDebug("vAddressee " + vAddressee + "; addrStreet " + addrStreet);
             } //if vConObj
 
@@ -631,14 +631,14 @@ function mainProcess() {
                 logDebug("          Adding " + conEmail + " to email array");
                 conEmailArray.push(conEmail);
 
-                //Create a set for the Billing Contact
+                //Create a set for the Contractor of Record
                 if (setBillingContactPrefix != "") {
                     setId = vConObj.refSeqNumber + "";
                     setId = setId.substr(0, 5) + yy + mm + dd + hh + mi;
                     setName = vConObj.people.getFullName();
                     setDescription = vConObj.people.getFullName() + " : " + startDate.toLocaleString();
 
-                    //Get or Create unique Billing Contact Set
+                    //Get or Create unique Contractor of Record Set
                     vContactSet = new capSet3_0(setId, setName, null, setDescription);
                     vContactSet.recSetType = "Billing";
                     vContactSet.status = "Pending";
@@ -647,7 +647,7 @@ function mainProcess() {
                     //Add record to unique billing contact set
                     vContactSet.add(capId);
 
-                    //Add unique contact set to Billing Contact set of sets (only if it doesn't already exist)
+                    //Add unique contact set to Contractor of Record set of sets (only if it doesn't already exist)
                     vBillingContactSet.refresh();
                     vSetArray = new Array();
                     x = 0;
@@ -655,7 +655,7 @@ function mainProcess() {
                     for (x in vBillingContactSet.members) {
                         vSetArray.push(vBillingContactSet.members[x].getSetID());
                     }
-                    //Add set to Billing Contact set if it doesn't already exists
+                    //Add set to Contractor of Record set if it doesn't already exists
                     if (!exists(setId, vSetArray)) {
                         vBillingContactSet.add(setId);
                     }
