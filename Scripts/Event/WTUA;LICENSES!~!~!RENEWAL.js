@@ -83,7 +83,14 @@ if ((wfTask=="License Issuance" || wfTask=="Licensing Review") && (wfStatus == "
 {
     logDebug("2. Get parent license CAPID");
     var parentLicenseCAPID = getParentCapID4Renewal();
+    var childLicenseCAPID =  childGetByCapType("*/*/*/*", getParent(), capId);
+    
     aa.print("parent capid :" + parentLicenseCAPID);
+    aa.print("child capid :" + childLicenseCAPID);
+    
+    
+    
+    
     //var proj = aa.cap.getProjectByMasterID(parentLicenseCAPID, "Renewal", "Review");
     //for (x in proj) if (typeof(proj[x]) == "function") aa.print("  " + x);
     //for (x in proj) if (typeof(proj[x]) != "function") aa.print("  " + x + " = " + proj[x]);
