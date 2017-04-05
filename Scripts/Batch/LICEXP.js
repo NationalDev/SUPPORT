@@ -591,7 +591,7 @@ function mainProcess() {
 
         vAllOptIn = true;
         vExOptIn = null;
-        conTypeArray = sendEmailToContactTypes.split("Applicant,");
+        conTypeArray = sendEmailToContactTypes.split(",");
         conEmailList = "";
         conEmailArray = [];
         var fileNames = [];
