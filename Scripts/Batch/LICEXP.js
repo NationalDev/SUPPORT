@@ -52,7 +52,6 @@ var message = "";
 var br = "<br>";
 var showDebug = true;
 var showMessage = false;
-
 var appTypeArray;
 var capId;
 /*------------------------------------------------------------------------------------------------------/
