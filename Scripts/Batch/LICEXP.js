@@ -584,12 +584,12 @@ function mainProcess() {
 
         //get Contact Emails
         if (sendEmailToContactTypes == "All") {
-            sendEmailToContactTypes = "Applicant,Architect or Engineer,Billing Contact,Business Owner,Business Partner,Complainant,Director,District,Emergency Contact,Event Coordinator,General Contractor,Life Safety Officer,Operator,Person In Charge,Plan Review Contact,Pool Builder,Primary Contact,Property Manager,Responsible Party";
+            sendEmailToContactTypes = "Applicant,Architect or Engineer,Billing Contact,Contractor of Record,Business Owner,Business Partner,Complainant,Director,District,Emergency Contact,Event Coordinator,General Contractor,Life Safety Officer,Operator,Person In Charge,Plan Review Contact,Pool Builder,Primary Contact,Property Manager,Responsible Party";
         }
 
         vAllOptIn = true;
         vExOptIn = null;
-        conTypeArray = sendEmailToContactTypes.split(",");
+        conTypeArray = sendEmailToContactTypes.split("Applicant", "Contractor of Record");
         conEmailList = "";
         conEmailArray = [];
         var fileNames = [];
