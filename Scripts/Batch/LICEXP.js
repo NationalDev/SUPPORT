@@ -6,6 +6,8 @@
 | Version 1.1 - Updated for Multco 09/10/14 ETW
 |               Modified 20151216 by NSS: added Enforcement as skip status; added Env print out
 |
+| Version 2.0 - Customized for City of Detroit Business Rules - 
+|				by Iman Sallam 04/05/2017
 /------------------------------------------------------------------------------------------------------*/
 
 // Testing values.  Replace with batch parameters when testing is complete
@@ -438,9 +440,15 @@ function mainProcess() {
             b1ExpDate = expDate.getMonth() + "/" + expDate.getDayOfMonth() + "/" + expDate.getYear();
         }
         
-        LogDebug("b1ExpDate =", b1ExpDate);
+        logDebug("b1ExpDate =", b1ExpDate);
         
         b1Status = b1Exp.getExpStatus();
+        
+        if (b1ExpDate >= startDate) {
+        	
+        	
+        }
+        
         //get capId from expiration status model
         capId = aa.cap.getCapID(b1Exp.getCapID().getID1(), b1Exp.getCapID().getID2(), b1Exp.getCapID().getID3()).getOutput();
         logDebug("getcapId " + capId + "; b1Status " + b1Status);
@@ -454,7 +462,7 @@ function mainProcess() {
         logDebug("     " + altId + ": Renewal Status : " + b1Status + ", Expires on " + b1ExpDate); //LIC alt id
         capResult = aa.cap.getCap(capId);
 
-        LogDebug("b1ExpDate =", b1ExpDate);
+        logDebug("b1ExpDate =", b1ExpDate);
         
         
         if (!capResult.getSuccess()) {
@@ -528,14 +536,24 @@ function mainProcess() {
         }
 
         // update expiration status
-        if (newExpStatus.length > 0) {
+        if (newExpStatus.length > 0 && b1ExpDate >= startDate) {
+        	
+        	newExpStatus = "Expired";
+        			
+         	
             b1Exp.setExpStatus(newExpStatus);
+            
+            
             aa.expiration.editB1Expiration(b1Exp.getB1Expiration());
             logDebug("          " + altId + ": Update expiration status: " + newExpStatus);
         }
 
         // update CAP status
-        if (newAppStatus.length > 0) {
+        if (newAppStatus.length > 0 && b1ExpDate >= startDate) {
+        	
+        	
+        	newAppStatus = "Expired"
+                	        	
             updateAppStatus(newAppStatus, "");
             logDebug("          " + altId + ": Updated Application Status to " + newAppStatus);
         }
