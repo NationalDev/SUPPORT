@@ -58,7 +58,7 @@ var capId;
 /*------------------------------------------------------------------------------------------------------/
 | BEGIN Includes
 /------------------------------------------------------------------------------------------------------*/
-var SCRIPT_VERSION = 2.0;
+var SCRIPT_VERSION = 3.2.2;
 
 function getMasterScriptText(vScriptName) {
     vScriptName = vScriptName.toUpperCase();
