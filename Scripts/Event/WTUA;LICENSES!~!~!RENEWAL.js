@@ -2,19 +2,27 @@
 //Iman Sallam, City of Detroit
 //Deploy with the script code and script title below (all caps)
 //WTUA:LICENSES/*/*/RENEWAL
+
+
+
 if (wfTask == "License Issuance" && wfStatus == "Renewed") {
     newLic = null;
     newLicId = null;
     newLicIdString = null;
     newLicenseType = appTypeArray[2];
-    monthsToInitialExpire = 12;
+//     monthsToInitialExpire = 12;
     newLicId = getParentCapID4Renewal();
     // create the permit record;
     if (newLicId) {
         //newLicIdString = newLicId.getCustomID();
         updateAppStatus("Issued","Originally Issued",newLicId);
-        copyAppSpecific(newLicId,"");
+        
+        copyAppSpecific(capId);
+        copyAddresses(capId,newLicId);
         copyASITables(capId,newLicId);
+        copyLicensedProf(capId,newLicId);
+        copyASIFields(capId,newLicId);
+        
         }
     
 //------------------ Update receords with new expiration --------------------------------
@@ -61,7 +69,7 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
 //           if (thisMonth > 7) {
 //           thisYear += 4;     //thisYear = thisYear + 1;
 //
-//        }
+
             thisYear +=3;
             newExpDate = "04/30/"+thisYear.toString();
 
@@ -128,7 +136,10 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
 	              thisLic.setStatus("Active");
 	              }
     }    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
-    		thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
+    		
+    	tmpNewDate = new Date();
+    	
+    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
     	//      thisMonth = tmpNewDate.getMonth();
     	//      if (thisMonth > 7) {
     	//          thisYear += 1;     //thisYear = thisYear + 1;
