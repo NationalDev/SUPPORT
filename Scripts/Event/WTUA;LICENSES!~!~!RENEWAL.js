@@ -17,7 +17,10 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
         copyASITables(capId,newLicId);
         }
     
-// Update receords with new expiration 
+//------------------ Update receords with new expiration --------------------------------
+    
+    
+    tmpNewDate = new Date();
     
     if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Contractor Registration") {
 
@@ -177,27 +180,6 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
 		 }   
 	 } 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    
+  
     
 }
