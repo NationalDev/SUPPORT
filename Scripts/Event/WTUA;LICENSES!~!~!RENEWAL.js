@@ -17,6 +17,10 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
         //newLicIdString = newLicId.getCustomID();
         updateAppStatus("Active","Originally Issued",newLicId);
         
+        
+        logDebug("newLicId =" + newLicId);
+        logDebug("capId =" + capId);
+        
         copyContacts(capId,newLicId);
         copyAppSpecific(capId);
         copyAddresses(capId,newLicId);
