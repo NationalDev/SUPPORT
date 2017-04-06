@@ -21,7 +21,7 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
         logDebug("newLicId =" + newLicId);
         logDebug("capId =" + capId);
         
-        copyContacts(capId,newLicId);
+        copyContacts(newLicId,capId);
         copyAppSpecific(capId);
         copyAddresses(capId,newLicId);
         copyASITables(capId,newLicId);
