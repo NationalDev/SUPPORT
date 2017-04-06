@@ -25,7 +25,7 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
         copyAppSpecific(capId);
         copyAddresses(capId,newLicId);
         copyASITables(capId,newLicId);
-        copyLicensedProf(capId,newLicId);
+        copyLicensedProf(newLicId,capId);
         copyASIFields(capId,newLicId);
         
         }
