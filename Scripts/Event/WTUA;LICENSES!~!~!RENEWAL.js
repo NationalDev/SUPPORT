@@ -15,7 +15,7 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
     // create the permit record;
     if (newLicId) {
         //newLicIdString = newLicId.getCustomID();
-        updateAppStatus("Issued","Originally Issued",newLicId);
+        updateAppStatus("Active","Originally Issued",newLicId);
         
         copyAppSpecific(capId);
         copyAddresses(capId,newLicId);
