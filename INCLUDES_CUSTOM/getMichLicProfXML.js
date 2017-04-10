@@ -1,3 +1,9 @@
+/**
+ * This function gets the Michigan's License Professional 
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 function getMichLicProfXML(licNum) {
     // Test Parameter
     //var licNumTest = licNum;
@@ -6,11 +12,8 @@ function getMichLicProfXML(licNum) {
         showMessage = true;
     }
     try {
-        aa.util.parseInt(licNum);
-        
-    }
-    catch (err) {
-        
+        aa.util.parseInt(licNum);    
+    } catch (err) {  
         aa.print(err.message);
         return null;
     }
@@ -30,9 +33,7 @@ function getMichLicProfXML(licNum) {
         
         comment(r);
         return r;
-        
-    }
-    else {
+    } else {
         logDebug(licNum + " must be 7 digits in length.");
         return null;
     }

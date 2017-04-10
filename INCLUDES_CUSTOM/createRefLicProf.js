@@ -1,5 +1,16 @@
-function createRefLicProf(rlpId,rlpType,pContactType)
-{
+/**
+ * This function creates a new reference Licensed Professional from the Contract on the current
+ * CAP whose contact type is contactType. If a reference Licensed Professional with state license
+ * #stateLicNum already exists, it will be updated with data from the Contract.
+ * @param rlpId
+ * @param rlpType
+ * @param pContactType
+ * @returns
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
+function createRefLicProf(rlpId,rlpType,pContactType) {
     //Creates/updates a reference licensed prof from a Contact
     //06SSP-00074, modified for 06SSP-00238
     var updating = false;

@@ -1,9 +1,10 @@
-/*
-*  editEstimatedJobValue - original script in INCLUDES_ACCELA_FUNCTIONS overriddem
+/**
+*  editEstimatedJobValue - original script in INCLUDES_ACCELA_FUNCTIONS overridden
 *  line 30 typo fixed by G. Soter - Futurenet Group 06/24/2016 **case 16ACC-125635**
+*  
+*  Formatted By:- Chaitanya Tanna, City of Detroit
 */
-function editEstimatedJobValue(jobValue) // option CapId
-{
+function editEstimatedJobValue(jobValue) { // option CapId
 	var itemCap = capId;
 	if (arguments.length > 1) {
 		itemCap = arguments[1]; // use cap ID specified in args

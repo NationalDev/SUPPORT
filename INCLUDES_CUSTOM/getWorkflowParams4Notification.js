@@ -1,7 +1,14 @@
+/**
+ * This function gets the Workflow for the notification.
+ * @param params
+ * @returns
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 function getWorkflowParams4Notification(params) {
 	
 	//Pass in a hashtable and it will add the additional parameters to the table
-	
 	//Testing Purpose Begins
 	var wfTask = aa.env.getValue("WorkflowTask");				// Workflow Task Triggered event
 	var wfStatus = aa.env.getValue("WorkflowStatus");			// Status of workflow that triggered event
@@ -12,11 +19,9 @@ function getWorkflowParams4Notification(params) {
 	var wfProcess ; 							// Initialize
 	// Go get other task details
 	var wfObj = aa.workflow.getTasks(capId).getOutput();
-	for (i in wfObj)
-		{
+	for (i in wfObj) {
 		fTask = wfObj[i];
-		if (fTask.getTaskDescription().equals(wfTask) && (fTask.getProcessID() == wfProcessID))
-			{
+		if (fTask.getTaskDescription().equals(wfTask) && (fTask.getProcessID() == wfProcessID)) {
 			wfStep = fTask.getStepNumber();
 			wfProcess = fTask.getProcessCode();
 			wfComment = fTask.getDispositionComment();
@@ -24,8 +29,8 @@ function getWorkflowParams4Notification(params) {
 			wfDue = fTask.getDueDate();
 			wfHours = fTask.getHoursSpent();
 			wfTaskObj = fTask
-			}
 		}
+	}
 	logDebug("wfTask = " + wfTask);
 	logDebug("wfTaskObj = " + wfTask.getClass());
 	logDebug("wfStatus = " + wfStatus);
