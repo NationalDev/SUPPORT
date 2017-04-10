@@ -1,3 +1,9 @@
+/**
+ * This function is used as a part of Email Notification Template.
+ * @param acaUrl
+ * @returns acaRecordUrl
+ */
+
 function getACARecordURL(acaUrl) {
 	
 	var acaRecordUrl = "";

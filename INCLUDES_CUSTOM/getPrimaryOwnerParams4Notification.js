@@ -1,7 +1,12 @@
+/**
+ * This function is used as a part of Email Notification Template.
+ * @param params
+ * @returns params
+ */
+
 function getPrimaryOwnerParams4Notification(params) {
 	
 	//Pass in a hashtable and it will add the additional parameters to the table
-	
 	capOwnerResult = aa.owner.getOwnerByCapId(capId);
 	
 	if (capOwnerResult.getSuccess()) {

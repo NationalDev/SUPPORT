@@ -1,3 +1,14 @@
+/**
+ * This function is used as a part of Email Notification Template
+ * @param emailFrom
+ * @param emailTo
+ * @param emailCC
+ * @param templateName
+ * @param params
+ * @param reportFile
+ * @returns
+ */
+
 function sendNotification(emailFrom, emailTo, emailCC, templateName, params, reportFile) {
 	
 	//send notification
@@ -11,7 +22,7 @@ function sendNotification(emailFrom, emailTo, emailCC, templateName, params, rep
 	result = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, emailCC, templateName, params, capIDScriptModel, reportFile);
 	
 	if (result.getSuccess()) {
-		logDebug("Sent email Successfully!");
+		logDebug("Email Sent Successfully!");
 		return true;
 	} else {
 		logDebug("Failed to send mail. - " + result.getErrorType());

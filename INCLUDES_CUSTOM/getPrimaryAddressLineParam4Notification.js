@@ -1,7 +1,12 @@
+/**
+ * This function is used as a part of Email Notification Template.
+ * @param params
+ * @returns params
+ */
+
 function getPrimaryAddressLineParam4Notification(params) {
 	
 	//Pass in a hashtable and it will add the additional parameters to the table.
-	
 	var addressLine = "";
 	
 	adResult = aa.address.getPrimaryAddressByCapID(capId, "Y");
