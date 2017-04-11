@@ -20,6 +20,8 @@
  * @param pDuplicate
  * @param pFeeSeq
  * @returns
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
  */
 
 function updateFeeAmount(fcode, fsched, fperiod, famt, finvoice, pDuplicate, pFeeSeq) {
