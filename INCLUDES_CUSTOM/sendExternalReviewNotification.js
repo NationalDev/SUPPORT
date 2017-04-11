@@ -1,10 +1,18 @@
+/**
+ * This function is used to send the Review Notification to the agency which is a part of Email 
+ * Notification Tempate
+ * @returns
+ * 
+ * Formatted By:- Chaitanay Tanna, City of Detroit
+ */
+
 function sendExternalReviewNotification() {
 	
 	//Provide the ACA URL - This should be set in INCLUDES_CUSTOM_GLOBAL
 	var acaURL = "acasupp3.accela.com/detroit";
 	
 	//Provide the Agency Reply Email - This should be set in INCLUDE_CUSTOM_GLOBALS
-//	var agencyReplyEmail = "accelasupport@futurenetgroup.com";
+	//	var agencyReplyEmail = "accelasupport@futurenetgroup.com";
 	
 	//Provide the To Email and CC Email - This should be set in INCLUDE_CUSTOM_GLOBALS
 	var toEmail = "chaitanyat@futurenetgroup.com";

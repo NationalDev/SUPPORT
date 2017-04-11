@@ -1,21 +1,13 @@
-function runASAForCapID(vCapId) {
-    /*---------------------------------------------------------------------------------------------------------/
-	| Function Intent: 
-	|	This function is designed to run the ApplicationSubmitAfter (ASA) standard choices
-	|	for the CapId provided.
-	| Call Example:
-	|	runASAForCapID(ParentAltId)	
-	|
-	| 11/13/2013 - Ewylam
-	|	Version 1 Created
-	|
-	| Required parameters in order:
-	|	vCapId = CapId object
-	|
-	| Optional paramaters:
-	|	None
-	/----------------------------------------------------------------------------------------------------------*/
+/**
+ * This function is designed to run ApplicationSubmitAfter (ASA) standard choices for the capId provided.
+ * @param vCapId
+ * @returns
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
+function runASAForCapID(vCapId) {
+    
     //Set Variables
     //Save the existing system variables so that they can be reset after the function
     var pcapId = capId;
@@ -39,18 +31,23 @@ function runASAForCapID(vCapId) {
     var ppartialCap;
     if (typeof (partialCap) !== "undefined") {
         ppartialCap = partialCap;
+    } else { 
+    	ppartialCap = null; 
     }
-    else { ppartialCap = null; }
+    
     var pparentCapId;
     if (typeof (parentCapId) !== "undefined") {
         pparentCapId = parentCapId;
+    } else { 
+    	pparentCapId = null; 
     }
-    else { pparentCapId = null; }
+    
     var pCreatedByACA;
     if (typeof (CreatedByACA) !== "undefined") {
         pCreatedByACA = CreatedByACA;
+    } else { 
+    	CreatedByACA = 'N'; 
     }
-    else { CreatedByACA = 'N'; }
 
     //Run simulate the ASIUA event for the child record
     logDebug("***Begin ASA Sim" + "*** vCapId (passed to capId) " + vCapId);
@@ -138,7 +135,6 @@ function runASAForCapID(vCapId) {
         logDebug("estValue = " + estValue);
         logDebug("calcValue = " + calcValue);
         logDebug("feeFactor = " + feeFactor);
-
         logDebug("houseCount = " + houseCount);
         logDebug("feesInvoicedTotal = " + feesInvoicedTotal);
         logDebug("balanceDue = " + balanceDue);
@@ -169,8 +165,6 @@ function runASAForCapID(vCapId) {
         partialCap = ppartialCap;
         parentCapId = pparentCapId;
         CreatedByACA = pCreatedByACA;
-
         logDebug("***End ASA Sim");
-
     }
 }

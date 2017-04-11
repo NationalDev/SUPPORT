@@ -1,3 +1,12 @@
+/**
+ * This function is used validate the Value which is being fetched from XML.
+ * @param licType
+ * @param licNum
+ * @returns
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 function isValidLARA(licType,licNum) {
     var xml = getMichLicProfXML(licType,licNum);
     var errorCode = aa.util.getValueFromXML("ErrorCode",xml);
@@ -7,12 +16,9 @@ function isValidLARA(licType,licNum) {
         var expirationDateString = aa.util.getValueFromXML("expirationDate",xml);
         var expirationDate = aa.util.parseDate(expirationDateString);
         return (expirationDate.after(aa.util.now()));
-    }
-    else {
+    } else {
         var errorMessage = aa.util.getValueFromXML("ErrorMessage",xml);
         logDebug("Error:" + errorCode + " - " + errorMessage);
         return null;
     }
-    
-    
 }
