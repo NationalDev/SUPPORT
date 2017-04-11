@@ -136,39 +136,38 @@ function createRefContactsFromCapContactsAndLink(pCapId, contactTypeArray, ignor
 					continue; 
 				}
 			}
-				// createPeople is nice and updates the sequence number to the ref seq
+			// createPeople is nice and updates the sequence number to the ref seq
 			
-				var p = cCopy[i].getPeople();
-				var refPeopleId = p.getContactSeqNumber();
+			var p = cCopy[i].getPeople();
+			var refPeopleId = p.getContactSeqNumber();
 				
-				logDebug("Successfully created reference contact #" + refPeopleId);
+			logDebug("Successfully created reference contact #" + refPeopleId);
 				
-				// Need to link to an existing public user.
-				
-				var getUserResult = aa.publicUser.getPublicUserByEmail(con.getEmail())
-				if (getUserResult.getSuccess() && getUserResult.getOutput()) {
-					var userModel = getUserResult.getOutput();
-					logDebug("createRefContactsFromCapContactsAndLink: Found an existing public user: " + userModel.getUserID());
+			// Need to link to an existing public user.
+	
+			var getUserResult = aa.publicUser.getPublicUserByEmail(con.getEmail())
+			if (getUserResult.getSuccess() && getUserResult.getOutput()) {
+				var userModel = getUserResult.getOutput();
+				logDebug("createRefContactsFromCapContactsAndLink: Found an existing public user: " + userModel.getUserID());
 					
-					if (refPeopleId) {
+				if (refPeopleId) {
 						logDebug("createRefContactsFromCapContactsAndLink: Linking this public user with new reference contact : " + refPeopleId);
 						aa.licenseScript.associateContactWithPublicUser(userModel.getUserSeqNum(), refPeopleId);
-					}
 				}
 			}
+		}
 			
-			// now that we have the reference Id, we can link back to reference
+		// now that we have the reference Id, we can link back to reference
 			
-			var ccm = aa.people.getCapContactByPK(pCapId,ccmSeq).getOutput().getCapContactModel();
+		var ccm = aa.people.getCapContactByPK(pCapId,ccmSeq).getOutput().getCapContactModel();
 			
-			ccm.setRefContactNumber(refPeopleId);
-			r = aa.people.editCapContact(ccm);
-			
-			if (!r.getSuccess()) {
+		ccm.setRefContactNumber(refPeopleId);
+		r = aa.people.editCapContact(ccm);
+		
+		if (!r.getSuccess()) {
 				logDebug("WARNING: error updating cap contact model : " + r.getErrorMessage()); 
-			} else {
+		} else {
 				logDebug("Successfully linked ref contact " + refPeopleId + " to cap contact " + ccmSeq);
-			}			
-		}  
+		}			
 	}  
-} 
+}   
