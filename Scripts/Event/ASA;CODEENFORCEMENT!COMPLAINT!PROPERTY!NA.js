@@ -1,3 +1,14 @@
+/**
+ * To calculate and assess fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Submit After
+ * Event Description:- After Event for Application Subbmittal
+ * Master Script:- ApplicationSubmitAfterV3.0.js
+ * Record Type:- ASA;CODEENFORCEMENT!COMPLAINT!PRPERTY!NA.js
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 /*
 ASA;CODEENFORCEMENT!COMPLAINT!PROPERTY!NA
 ASA:CODEENFORCEMENT/COMPLAINT/PROPERTY/NA
