@@ -1,7 +1,15 @@
-//ASA;LICENSES!~!~!~.js
-//Greg Soter, FutureNet Group, Inc.
-//Deploy with the script code and script title below (all caps)
-//ASA:LICENSES/*/*/*
+/**
+ * Deploy with the scriptcode and script title below (all caps)
+ * 
+ * Event Name:- Application Submit After
+ * Event Description:- After Event for Application Submittal
+ * MasterScript:- ApplicationSubmitAfterV3.0.js
+ * Record Type:- ASA;LICENSES!~!~!~.js
+ * 
+ * Greg Soter, FutureNet Group, Inc.
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
 //branch("EMSE:SetContactRelationshipToContactType");
 logDebug("branch(EMSE:SetContactRelationshipToContactType)")
@@ -14,7 +22,7 @@ iCont = null;
 contactArray = new Array();
 contactArray = getContactArray();
 if (contactArray.length > 0) {
-    for (iCont in contactArray){
+    for (iCont in contactArray) {
         //branch("EMSE:SetContactRelationshipToContactTypeLoop");
         logDebug("branch(EMSE:SetContactRelationshipToContactTypeLoop)");
         showDebug=3;

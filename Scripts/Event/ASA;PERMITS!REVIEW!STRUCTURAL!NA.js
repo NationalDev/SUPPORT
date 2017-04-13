@@ -1,6 +1,14 @@
-//Script Name: ASA:Permits/Review/Structural/NA
-//Script Code:   here are some edits
-//showDebug = true; showMessage = true;
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Submit After
+ * Event Description:- After Event for Application Submittal
+ * MasterScript:- ApplicationSubmitAfterV3.0.js
+ * Record Type:- ASA;PERMITS!REVIEW!STRUCTURAL!NA.js
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 var estCost = (getAppSpecific("Estimated Cost") * 1); comment("estCost is: " +estCost);
 var baseFee0 = 0; var baseFee1 = 150; var baseFee2 = 10110; var baseFee3 = 18110; var baseFee4 = 28110;
 var feeTotal = 0; var feeDeposit = 0;
@@ -40,6 +48,7 @@ if 	(estCost > estLimit4) {
 	//updateFeeAmount("PRV_BLD","PMTPRV_F","FINAL",feeDeposit,"N");
 	//call custom function updateFeeAmount instead of includes function updateFee
 }
+
 //Adding Mechanical, Electrical, Plumbing fees to this script
 if ((feeTotal * 0.04) < 35) {
 	updateFee("PRV_MECH","PMTPRV_F","FINAL",35,"N");
@@ -65,6 +74,7 @@ if ((feeTotal * 0.04) >= 3000) {
 if ((feeTotal * 0.04) >= 5000) {
 	updateFee("PRV_ELEC","PMTPRV_F","FINAL",5000,"N");
 }
+
 //Adding Fire fees to this script
 if ((feeTotal * 0.03) < 150) {
 	updateFee("PRV_FIRE","PMTPRV_F","FINAL",150,"N");

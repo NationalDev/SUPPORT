@@ -1,3 +1,16 @@
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Specific Info Update After
+ * Event Description:- The after event for when a user updates application specific information
+ * MasterScript:- ApplicationSpecificInfoUpdateAfterV3.0.js
+ * Record Type:- ASIUA;PERMITS!REVIEW!STRUCTURAL!NA.js
+ * 
+ * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 //showDebug = true; showMessage = true;
 var estCost = (getAppSpecific("Estimated Cost") * 1); comment("estCost is: " +estCost);
 var baseFee1 = 150; var baseFee2 = 10110; var baseFee3 = 18110; var baseFee4 = 28110;

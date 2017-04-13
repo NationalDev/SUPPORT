@@ -1,26 +1,18 @@
-/*
- * To calculate and assess permit fee based on the drop down value.
- * Event Name: ApplicationSubmitAfter
- * Event Description: Citizen Access - The after event for converting a partial record ID to a real record ID.
- * Master Script: ApplicationSubmitAfter
- *
- * Record Type: CodeEnforcement/Inspections/Property/Presale (Property Presale Inspection)
- * 09/09/2016 Abhishek Jain, FutureNet Group, Inc.  
- */ 
+/**
+ * To calculate and assess permit fee based on the drop down values.
+ * 
+ * Event Name:- Application Submit After
+ * Event Description:- After Event for Application Submittal
+ * MasterScript:- ApplicationSubmitAfterV3.0.js
+ * Record Type:- ASA;CODEENFORCEMENT!INSPECTIONS!PROPERTY!PRESALE.js
+ * 
+ * 09/09/2016 Abhishek Jain, FutureNet Group, Inc.
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
-// Custom Field Group - 	 
-// Custom Field Sub Group - PRE_GENERAL	
-// Custom Field Name - Number of Family Units	 
-// Fee Code - ENFPRE_F
-
-
-
-
-if(AInfo["Number of Family Units"] == "1")
-{
+if(AInfo["Number of Family Units"] == "1") {
 	updateFee("PRE0001", "ENFPRE_F", "FINAL", 1, "N");
-}
-else if(AInfo["Number of Family Units"] == "2")
-{
+} else if(AInfo["Number of Family Units"] == "2") {
 	updateFee("PRE0002", "ENFPRE_F", "FINAL", 1, "N");
 }

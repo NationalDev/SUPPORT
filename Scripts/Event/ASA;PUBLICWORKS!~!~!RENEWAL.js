@@ -1,7 +1,13 @@
-// ASA;PUBLICWORKS!~!~!RENEWAL.js
-// ASA:PUBLICWORKS/*/*/RENEWAL
-// run ASA4Renew script when the Renew button is selected in AA 
-// or when the Renewal link is selected in ACA
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Submit After
+ * Event Description:- After Event for Application Submittal
+ * MasterScript:- ApplicationSubmitAfterV3.0.js
+ * Record Type:- ASA;PUBLICWORKS!~!~!RENEWAL.js
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
 aa.runScript("APPLICATIONSUBMITAFTER4RENEW");
 aa.cap.updateAccessByACA(capId,"Y");
@@ -14,7 +20,6 @@ if (appMatch("*/*/*/Permit")) {
     var childArr = getChildren("*/*/*/Application");
     if(childArr != null) searchCap = childArr[0];
 }
-
 capId = tmpId;
 var vRelationType = "R";
 if(appMatch("*/*/*/Renewal")) {
@@ -29,17 +34,14 @@ if(prjArrRes.getSuccess()) {
 if (prjArr != null) {
     for(prj in prjArr) if(appMatch("*/*/*/Permit",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
 }
-
 if (licCapId == null && appMatch("*/*/*/Permit")) {
     licCapId = capId;
     //In the event license has no application;
 }
-
 if (licCapId == null && appMatch("*/*/*/Renewal")) {
     licCapId = capId;
     //In the event license has no application;
 }
-
 if (licCapId != null) {
     licCapId = aa.cap.getCapID(licCapId.getID1(),licCapId.getID2(),licCapId.getID3()).getOutput();
     logDebug("licCapId = " + licCapId);

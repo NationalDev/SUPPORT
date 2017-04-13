@@ -1,7 +1,16 @@
-//ASIUA:PLANNING/HEARINGS/BOARD OF ZONING APPEALS/NA
-//Assess Fees based on Type of Appeal
-//Testing in ASIUA before also triggering in ASA
-showDebug = true;
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Specific Info Update After
+ * Event Description:- The after event for when a user updates application specific information
+ * MasterScript:- ApplicationSpecificInfoUpdateAfterV3.0.js
+ * Record Type:- ASIUA;PLANNING!HEARINGS!BOARDOFZONINGAPPEAL!NA.js
+ * 
+ * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
 var qty = 1;
 if (AInfo["Applicant Appeal of BSEED Decision"] == "CHECKED") {
 	updateFee("APPAPPEAL","PLNBZA_F","FINAL",qty,"N");

@@ -1,26 +1,20 @@
-/*
- * To calculate and assess permit fee based on the drop down value.
- * Event Name: ApplicationSpecificInfoUpdateAfter
- * Event Description: Citizen Access - The after event for converting a partial record ID to a real record ID.
- * Master Script: ApplicationSpecificInfoUpdateAfter
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Application Specific Info Update After
+ * Event Description:- The after event for when a user updates application specific information
+ * MasterScript:- ApplicationSpecificInfoUpdateAfterV3.0.js
+ * Record Type:- ASIUA;CODEENFORCEMENT!INSPECTIONS!PROPERTY!PRESALE.js
  *
- * Record Type: CodeEnforcement/Inspections/Property/Presale (Property Presale Inspection)
- * 09/09/2016 Abhishek Jain, FutureNet Group, Inc.  
- */ 
+ * 09/09/2016 Abhishek Jain, FutureNet Group, Inc.
+ * 
+ * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
-// Custom Field Group - 	 
-// Custom Field Sub Group - PRE_GENERAL	
-// Custom Field Name - Number of Family Units	 
-// Fee Code - ENFPRE_F
-
-
-
-
-if(AInfo["Number of Family Units"] == "1")
-{
+if(AInfo["Number of Family Units"] == "1") {
 	updateFee("PRE0001", "ENFPRE_F", "FINAL", 1, "N");
-}
-else if(AInfo["Number of Family Units"] == "2")
-{
+} else if (AInfo["Number of Family Units"] == "2") {
 	updateFee("PRE0002", "ENFPRE_F", "FINAL", 1, "N");
 }
