@@ -1,7 +1,19 @@
-//CTRCA;LICENSES!~!~!~.js
-//Greg Soter, FutureNet Group, Inc.
-//Deploy with the script code and script title below (all caps)
-//CTRCA:LICENSES/*/*/*
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Calls ConvertToRealCapAfter4Renew master script that updates license record with values from the renewal record.
+ * 
+ * Event Name:- Convert To Real CAP After
+ * Event Description:- The after event for converting a partial record ID to a real record ID.
+ * MasterScript:- ConvertToRealCAPAfterV3.0.js
+ * Record Type:- CTRCA;LICENSES!~!~!~.js
+ * 
+ * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
+ * 
+ * Greg Soter, FutureNet Group, Inc.
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 
 //branch("EMSE:SetContactRelationshipToContactType");
 logDebug("Executing EMSE:SetContactRelationshipToContactType")

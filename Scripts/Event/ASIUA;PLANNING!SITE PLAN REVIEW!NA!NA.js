@@ -4,7 +4,7 @@
  * Event Name:- Application Specific Info Update After
  * Event Description:- The after event for when a user updates application specific information
  * MasterScript:- ApplicationSpecificInfoUpdateAfterV3.0.js
- * Record Type:- ASIUA;PLANNING!SITEPLANREVIEW!NA!NAjs
+ * Record Type:- ASIUA;PLANNING!SITEPLANREVIEW!NA!NA.js
  * 
  * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
  * 
