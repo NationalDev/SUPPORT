@@ -34,8 +34,7 @@ if (wfTask == "Renewal Review" && wfStatus == "Approved") {
     newLicId = getParentCapID4Renewal();
   //Update the LICENSE Record Application Status, Expiration Status, Expiration Date
     if (newLicId) {
-        //newLicIdString = newLicId.getCustomID();
-        updateAppStatus("Issued","Originally Issued",newLicId);
+    	updateAppStatus("Issued","Originally Issued",newLicId);
         copyAppSpecific(newLicId,"");
     }
     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
@@ -47,23 +46,3 @@ if (wfTask == "Renewal Review" && wfStatus == "Approved") {
 	//If necessary, copy additional information to license record from renewal record
 	copyASITables(capId,newLicId);
 }
-/*
-    if (newLicId) {
-        conToChange = null;
-        cons = aa.people.getCapContactByCapID(newLicId).getOutput();
-        for (thisCon in cons) if (cons[thisCon].getCapContactModel().getPeople().getContactType() == "Applicant") conToChange = cons[thisCon].getCapContactModel();
-        } else {
-        conToChange = null;
-        }
-
-    if (conToChange) {
-        p = conToChange.getPeople();
-        p.setContactType("Independant Contractor");
-        conToChange.setPeople(p);
-        aa.people.editCapContact(conToChange);
-        }
-
-    if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
-        branch("EMSE:LicProfLookup");
-        }
-*/
