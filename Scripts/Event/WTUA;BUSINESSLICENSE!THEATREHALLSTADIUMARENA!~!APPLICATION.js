@@ -1,119 +1,84 @@
-/*
+/**
  * To calculate and assess permit fee based on the fixtures or equipment types.
- * Event Name: WorkflowTaskUpdateAfter
- * Event Description:After Event for Workflow Task Status Submital
- * Master Script: WorkflowTaskUpdateAfterV3.0
- *
- * Record Type: WTUA;BUSINESSLICENSE!THEATREHALLSTADIUMARENA!~!APPLICATION.js
- * 09/21/2016 Vishal Upadhyay, FutureNet Group, Inc.  
- *
+ * 
+ * Event Name:- Workflow Task Update After
+ * Event Description:- The after event for when a user updates a workflow task.
+ * MasterScript:- WorkflowTaskUpdateAfterV3.0.js
+ * Record Type:- WTUA;BUSINESSLICENSE!THEATREHALLSTADIUMARENA!~!APPLICATION.js
+ *  
+ * Issues the business license by doing the following:- Create the license record,
+ * expiration date and status.
+ * Ensures that all record contacts are based on reference contacts.
+ * 
+ * Standard Choice:- 1. LIC Issue Business License	2. LIC Establish Links to Reference Contacts
+ *  
+ * 09/21/2016 Vishal Upadhyay, FutureNet Group, Inc. 
+ *  
+ * Formatted By:- Chaitanya Tanna, City of Detroit
  */
 
-//first task in WTUA is 'Application Intake'
-
-//When status 'Application Accepted', assess the fee (applicant applied online)
-
-
-if (wfTask == "Application Intake" && wfStatus == "Application Accepted") {
-	
+if (wfTask == "Application Intake" && wfStatus == "Application Accepted") {	
 	if ((AInfo["License Type"] == "Burlesque")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("BURLESQUE", "BUSLICTSSA_F", "FINAL", 1, "N");
-	} 
-	
-	else if ((AInfo["License Type"] == "Concert Play Opera Comedy")) {
+	} else if ((AInfo["License Type"] == "Concert Play Opera Comedy")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("CONCERTPLAY", "BUSLICTSSA_F", "FINAL", 1, "N");
-	} 
-	
-	else if ((getAppSpecific("License Type") == "Motion Picture")) {
-		
+	} else if ((getAppSpecific("License Type") == "Motion Picture")) {
 		if (AInfo["Number of Seats"] == "Seats 1 - 500") {
 			logDebug("Number assessed on next line.");
 			updateFee("MOTION1-500", "BUSLICTSSA_F", "FINAL", 1, "N");
-		} 
-		else if ((AInfo["Number of Seats"] == "Seats 501 - 1000")) {
+		} else if ((AInfo["Number of Seats"] == "Seats 501 - 1000")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("MOTION501", "BUSLICTSSA_F", "FINAL", 1, "N");
-		}
-		
-		else if ((AInfo["Number of Seats"] == "Seats 1001 - 2000")) {
+		} else if ((AInfo["Number of Seats"] == "Seats 1001 - 2000")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("MOTION1001", "BUSLICTSSA_F", "FINAL", 1, "N");
-		}
-		
-		else if ((AInfo["Number of Seats"] == "Seats 2001 and Up")) {
+		} else if ((AInfo["Number of Seats"] == "Seats 2001 and Up")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("MOTION2000", "BUSLICTSSA_F", "FINAL", 1, "N");
 		}	
-	}
-	
-	else if ((AInfo["License Type"] == "Stage Show")) {
+	} else if ((AInfo["License Type"] == "Stage Show")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("STAGESHOW", "BUSLICTSSA_F", "FINAL", 1, "N");
-	} 
-	
-	else if ((getAppSpecific("License Type") == "Theatre")) {
-		
+	} else if ((getAppSpecific("License Type") == "Theatre")) {
 		if (AInfo["Number of Seats"] == "Theatre 1 - 50") {
 			logDebug("Number assessed on next line.");
 			updateFee("THEATRE1-50", "BUSLICTSSA_F", "FINAL", 1, "N");
-		} 
-		else if ((AInfo["Number of Seats"] == "Theatre 51")) {
+		} else if ((AInfo["Number of Seats"] == "Theatre 51")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("THEATRE51", "BUSLICTSSA_F", "FINAL", 1, "N");
 		}		
-	}
-	
-	else if ((AInfo["License Type"] == "Concert")) {
+	} else if ((AInfo["License Type"] == "Concert")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("HALLCONCERT", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((AInfo["License Type"] == "Public Dance 2AM")) {
+	} else if ((AInfo["License Type"] == "Public Dance 2AM")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("HALL2AM", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((AInfo["License Type"] == "Public Dance 4AM")) {
+	} else if ((AInfo["License Type"] == "Public Dance 4AM")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("HALL4AM", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((AInfo["License Type"] == "Rental Hall")) {
+	} else if ((AInfo["License Type"] == "Rental Hall")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("HALLRENTAL", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((AInfo["License Type"] == "Dance Permit Special")) {
+	} else if ((AInfo["License Type"] == "Dance Permit Special")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("DANCEPERMIT", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((AInfo["License Type"] == "Dance Studio")) {
+	} else if ((AInfo["License Type"] == "Dance Studio")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("DANCDESTUDIO", "BUSLICTSSA_F", "FINAL", 1, "N");
-	}
-	
-	else if ((getAppSpecific("License Type") == "Box Fight Wrestle")) {
-		
+	} else if ((getAppSpecific("License Type") == "Box Fight Wrestle")) {
 		if (AInfo["Number of Seats"] == "Seats 1 - 1000") {
 			logDebug("Number assessed on next line.");
 			updateFee("BXPFW1-1000", "BUSLICTSSA_F", "FINAL", 1, "N");
-		} 
-		
-		else if ((AInfo["Number of Seats"] == "Seats 10001 - 10,000")) {
+		} else if ((AInfo["Number of Seats"] == "Seats 10001 - 10,000")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("BXPFW10000", "BUSLICTSSA_F", "FINAL", 1, "N");
-		}
-		
-		else if ((AInfo["Number of Seats"] == "Seats 10001 and Up")) {
+		} else if ((AInfo["Number of Seats"] == "Seats 10001 and Up")) {
 			logDebug("Fees assessed on next line.");
 			updateFee("BXPFW10001", "BUSLICTSSA_F", "FINAL", 1, "N");
 		}	
-	}
-	
-	else if ((AInfo["License Type"] == "Sports Stadium")) {
+	} else if ((AInfo["License Type"] == "Sports Stadium")) {
 		logDebug("Fees assessed on next line.");
 		updateFee("SPORTSTADIUM", "BUSLICTSSA_F", "FINAL", 1, "N");
 	}

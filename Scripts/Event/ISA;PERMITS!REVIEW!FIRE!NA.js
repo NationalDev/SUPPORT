@@ -1,5 +1,16 @@
-//ISA:Permits/Review/Fire/NA
-showDebug = true; showMessage = true;
+/**  
+ * Event Name:- Inspection Schedule After
+ * Event Description:- The after event for when a user schedules one or more inspections.
+ * MasterScript:- InspectionScheduleAfterV3.0.js
+ * Record Type:- ISA;PERMITS!REVIEW!FIRE!NA.js
+ * 
+ * TODO: NEED TO add appMatch("") strings to specify which food service record types will trigger this script
+ * 
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
+
+showDebug = true; 
+showMessage = true;
 var qty = 1;
 if (inspType == "Fire Alarm Test") {
 	checkInspectionResult("Fire Alarm Test","Scheduled");
@@ -32,5 +43,3 @@ if (inspType == "Hydrostatic Test") {
 if (inspType == "Hydrant Flow Test") {
 	updateFee("PMTINSP_HFT","PMTPRVFIR_F","FINAL",qty,"N");
 }
-
-

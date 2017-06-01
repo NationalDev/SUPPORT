@@ -1,17 +1,20 @@
-/*
+/**
  * To calculate and assess permit fee based on the fixtures or equipment types.
- * Event Name: PaymentReceiveAfter
- * Event Description: After event for payment subitted.
- * Master Script: ApplicationSubmitAfter
- *
- * Record Type: PublicWorks/~/~/Application (Public Works Permit)
- * 09/29/2016 Greg Soter, FutureNet Group, Inc.
- *
+ * 
+ * Event Name:- Payment Receive After
+ * Event Description:- The after event for when Citizen Access records payment allocation.
+ * MasterScript:- PaymentReceiveAfterV3.0.js
+ * Record Type:- PRA;PUBLICWORKS!~!~!APPLICATION.js
+ *  
+ * Updates license record when business license renewal fee is paid. 
+ * 
+ * 09/29/2016 Greg Soter, FutureNet Group, Inc. 
+ *  
+ * Formatted By:- Chaitanya Tanna, City of Detroit
  */
 
-
 if (isTaskStatus("Permit Issuance","Issued") && balanceDue <= 0) {
-    newLic = null;
+	newLic = null;
     newLicId = null;
     newLicIdString = null;
     newLicenseType = appTypeArray[2];
@@ -27,16 +30,13 @@ if (isTaskStatus("Permit Issuance","Issued") && balanceDue <= 0) {
         //copyContacts(capId,newLicId);
         editAppName(capName,newLicId);
         var feeArr = loadFees();
-        var newFeeRes = aa.util.deepClone(feeArr);
-        
+        var newFeeRes = aa.util.deepClone(feeArr);    
         logDebug("Clone Result: " + newFeeRes.getSuccess());
         var newFeeArr = newFeeRes.getOutput();
         for (i in newFeeArr) {
             logDebug(newFeeArr.getFeeCod());
             newFeeArr[i].setCapID(newLicId);
         }
-        
-        
         tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
         if (newLicId) {
             thisLic = new licenseObject(newLicIdString,newLicId);
@@ -47,13 +47,11 @@ if (isTaskStatus("Permit Issuance","Issued") && balanceDue <= 0) {
         }
         //ToDo:Make "altID" parameter not visible in report manager.
         var rParams = aa.util.newHashMap();
-        
         addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
         addParameter(rParams,"Record_Module","PublicWorks");
         logDebug("Parameters: " + rParams);
         runReport4EmailOrPrint(newLicId,"Valet Annual Report",null,rParams,null,null,"PublicWorks");
     }
-    
 }
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
