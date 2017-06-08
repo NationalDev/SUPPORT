@@ -13,4 +13,4 @@
  * Formatted By:- Chaitanya Tanna, City of Detroit
  */
 
-aa.runScriptInNewTransaction("ConvertToRealCapAfter4Renew");
+aa.runScript("ConvertToRealCapAfter4Renew");

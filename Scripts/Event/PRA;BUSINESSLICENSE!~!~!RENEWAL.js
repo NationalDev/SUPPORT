@@ -11,7 +11,7 @@
  * Formatted By:- Chaitanya Tanna, City of Detroit
  */
 
-aa.runScriptInNewTransaction("PaymentReceiveAfter4Renew");
+aa.runScript("PaymentReceiveAfter4Renew");
 //If all BusinessLicense renewals use the same workflow "BUSLICBAMR_W"" then this is OK as is 2/22/2016 cih
 if (balanceDue == 0) {
 	closeTask("Renewal Intake","Accepted","Updated via Script","Updated via Script");
