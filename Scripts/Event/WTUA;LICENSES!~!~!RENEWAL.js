@@ -105,7 +105,20 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
         	thisLic.setExpiration(dateAdd(tmpNewDate,0));
         	thisLic.setStatus("Active");
         }
-    }  
+    }
+    /**
+   	 * Check Condition for Mechanical!RefrigJourneyman
+   	 */ 
+    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "RefrigJourneyman") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+        monthsToInitialExpire = 12;
+        tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+        if (newLicId) {
+        	thisLic = new licenseObject(newLicIdString,newLicId);
+        	thisLic.setExpiration(dateAdd(tmpNewDate,0));
+        	thisLic.setStatus("Active");
+        }
+    }
     /**
      * Check Condition for Building!ContractorRegistration
      */
@@ -150,6 +163,14 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
 	    		thisLic.setExpiration(dateAdd(newExpDate,0));
 	    		thisLic.setStatus("Active");
 	    	}      	
+	 } else if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Elevator") {
+		 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+		 newExpDate = "12/31/" + thisYear.toString();
+		 if (newLicId) {
+			 thisLic = new licenseObject(newLicIdString,newLicId);
+			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setStatus("Active");
+		 }	      	
 	 } else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
 	    	newExpDate = "07/11/"+thisYear.toString();
