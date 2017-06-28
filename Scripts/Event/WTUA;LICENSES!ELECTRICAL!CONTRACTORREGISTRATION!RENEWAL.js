@@ -1,47 +1,39 @@
-//WTUA;LICENSES!ELECTRICAL!CONTRACTORREGISTRATION!RENEWAL.js
-//Greg Soter, FutureNet Group, Inc.
-//Deploy with the script code and script title below (all caps)
-//WTUA:LICENSES/ELECTRICAL/CONTRACTORREGISTRATION/RENEWAL
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Workflow Task Update After
+ * Event Description:- The after event for when a user updates a workflow task.
+ * MasterScript:- WorkflowTaskUpdateAfterV3.0.js
+ * Record Type:- WTUA;LICENSES!ELECTRICAL!CONTRACTORREGISTRATION!RENEWAL.js
+ *  
+ * Issues the license by doing the following:- Create the license record,
+ * expiration date and status.
+ * Ensures that all record contacts are based on reference contacts.
+ * 
+ * Standard Choice:- 1. LIC Issue License	2. LIC Establish Links to Reference Contacts
+ * 
+ * Greg Soter, Futurenet Grpup Inc. 
+ *  
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 if (wfTask == "Registration Renewal" && wfStatus == "Renewed") {
-newLic = null;
-newLicId = null;
-newLicIdString = null;
-newLicenseType = appTypeArray[2];
-monthsToInitialExpire = 12;
-newLicId = getParentCapID4Renewal();
-// create the permit record;
-if (newLicId) {
-//newLicIdString = newLicId.getCustomID();
-updateAppStatus("Issued","Originally Issued",newLicId);
-copyAppSpecific(newLicId,"");
+	newLic = null;
+	newLicId = null;
+	newLicIdString = null;
+	newLicenseType = appTypeArray[2];
+	monthsToInitialExpire = 12;
+	newLicId = getParentCapID4Renewal();
+	// create the permit record;
+	if (newLicId) {
+		//newLicIdString = newLicId.getCustomID();
+		updateAppStatus("Issued","Originally Issued",newLicId);
+		copyAppSpecific(newLicId,"");
+	}
+	tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+	if (newLicId) {
+		thisLic = new licenseObject(newLicIdString,newLicId);
+		thisLic.setExpiration(dateAdd(tmpNewDate,0));
+		thisLic.setStatus("Active");
+	}
+	copyASITables(capId,newLicId);
 }
-
-tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
-if (newLicId) {
-thisLic = new licenseObject(newLicIdString,newLicId);
-thisLic.setExpiration(dateAdd(tmpNewDate,0));
-thisLic.setStatus("Active");
-}
-
-/*    if (newLicId) {
-conToChange = null;
-cons = aa.people.getCapContactByCapID(newLicId).getOutput();
-for (thisCon in cons) if (cons[thisCon].getCapContactModel().getPeople().getContactType() == "Applicant") conToChange = cons[thisCon].getCapContactModel();
-} else {
-conToChange = null;
-}
-
-if (conToChange) {
-p = conToChange.getPeople();
-p.setContactType("Independant Contractor");
-conToChange.setPeople(p);
-aa.people.editCapContact(conToChange);
-}*/
-
-copyASITables(capId,newLicId);
-}
-/*
-if (wfTask == "Registration Issuance" && wfStatus == "Registration Issued") {
-branch("EMSE:LicProfLookup");
-}
-*/
