@@ -1,8 +1,15 @@
-//WTUB;LICENSES!~!~!~.js
-//Greg Soter, FutureNet Group, Inc.
-//Deploy with the script code and script title below (all caps)
-//WTUB:LICENSES/*/*/*
-
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Workflow Task Update Before
+ * Event Description:- The before event for when a user updates a workflow task.
+ * MasterScript:- WorkflowTaskUpdateBeforeV3.0.js
+ * Record Type:- WTUB;LICENSES!*!*!*.js
+ *
+ * Greg Soter, Futurenet Group, Inc.
+ *    
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 if (wfTask == "License Issuance" && wfStatus == "Issued" && balanceDue > 0) {
     showMessage = true;
     cancel = true;

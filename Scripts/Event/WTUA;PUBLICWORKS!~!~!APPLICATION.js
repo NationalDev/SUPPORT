@@ -1,15 +1,18 @@
-//WTUA;PUBLICWORKS!~!~!APPLICATION.js
-//Greg Soter, FutureNet Group, Inc.
-//Deploy with the script code and script title below (all caps)
-//WTUA:PUBLICWORKS/*/*/APPLICATION
-
-//logDebug("Is Valid: " + isValidLARA("Electrical Master","6200020"));
-
+/**
+ * To calculate and assess permit fee based on the fixtures or equipment types.
+ * 
+ * Event Name:- Workflow Task Update After
+ * Event Description:- The after event for when a user updates a workflow task.
+ * MasterScript:- WorkflowTaskUpdateAfterV3.0.js
+ * Record Type:- WTUA;PUBLICWORKS!*!*!APPLICATION.js
+ *
+ * Greg Soter, Futurenet Group, Inc.
+ *    
+ * Formatted By:- Chaitanya Tanna, City of Detroit
+ */
 if (wfStatus == "Request for Corrections") {
-        sendExternalReviewNotification();
-    
+        sendExternalReviewNotification();    
 }
-
 if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
     newLic = null;
     newLicId = null;
@@ -27,9 +30,8 @@ if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
         //copyContacts(capId,newLicId);
         editAppName(capName,newLicId);
         var feeArr = loadFees();
-        
         for (feeItem in feeArr) {
-            myCapId
+        	myCapId
             capId = newLicId;
             var thisFee = aa.F4FeeItem.getF4FeeItem();
             thisFee.setAccCodeL1(feeArr[feeItem].accCodeL1);
@@ -59,11 +61,9 @@ if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
             thisFee.setUdf1(feeArr[feeItem].UDF1);
             thisFee.setUdf2(feeArr[feeItem].UDF2);
             thisFee.setUdf3(feeArr[feeItem].UDF3);
-            thisFee.setUdf4(feeArr[feeItem].UDF4);
-            
+            thisFee.setUdf4(feeArr[feeItem].UDF4);            
         }
     }
-    
     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
     if (newLicId) {
         thisLic = new licenseObject(newLicIdString,newLicId);
@@ -72,11 +72,4 @@ if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
         //logDebug("setExpResult = " + setExpResult);
         thisLic.setStatus("Active");
     }
-    
-    
 }
-/*
- if (wfTask == "Permit Issuance" && wfStatus == "Issued") {
- branch("EMSE:LicProfLookup");
- }
- */
