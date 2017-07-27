@@ -14,12 +14,20 @@
 //branch("EMSE:SetContactRelationshipToContactType");
 //logDebug("branch(EMSE:SetContactRelationshipToContactType)")
 //if (matches(currentUserID,"ADMIN")) {
-    showDebug = true;
-    showMessage= true;
+    
 //}
-if capId <> null {
+    
+
+
+	showDebug = true;
+    showMessage= true;
+    
+
 var parentRecordID = getParent();
 
+
+if capId <> null {
+	
 copyAddresses(capId,parentRecordID);
 
 logDebug("Record ID = " + parentRecordID ); 
