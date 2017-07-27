@@ -15,7 +15,7 @@ if (wfStatus == "Request for Corrections") {
 }
 
 
-if (wfTask == "License Issuance" && wfStatus == "Renewed") {
+if (wfTask == "Renewal Review" && wfStatus == "Renewed") {
     newLic = null;
     newLicId = null;
     newLicIdString = null;
@@ -23,7 +23,7 @@ if (wfTask == "License Issuance" && wfStatus == "Renewed") {
     newLicId = getParentCapID4Renewal();
     // create the permit record;
     if (newLicId) {
-        
+        //newLicIdString = newLicId.getCustomID();
         updateAppStatus("Active","Originally Issued",newLicId);
         logDebug("newLicId =" + newLicId);
         logDebug("capId =" + capId);
