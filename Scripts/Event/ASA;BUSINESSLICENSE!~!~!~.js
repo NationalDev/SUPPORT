@@ -1,9 +1,9 @@
 //*********************************************************************************************************/
-//	ASA;LICENSES!~!~!~.js																	               /
+//	ASA;BUSINESSLICENSE!~!~!~.js																	               /
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
-//					ASA:LICENSES/*/*/*													                   / 							
+//					ASA:BUSINESSLICENSE/*/*/*													                   / 							
 //																	7/27/2017							   /
 //*********************************************************************************************************/
 
