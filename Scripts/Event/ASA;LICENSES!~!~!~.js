@@ -23,6 +23,9 @@ var parentRecordID = getParent();
 copyAddresses(capId,parentRecordID);
 
 logDebug("Record ID = " + parentRecordID ); 
+logDebug("Street No = " + 'Street#' ); 
+logDebug("Street Name = " + 'Street Name' ); 
+logDebug("Street Type = " + 'Street Type' ); 
 logDebug("Address Line 1 = " + 'Address Line 1' ); 
 logDebug("Address Line 2 = " + 'Address Line 2' ); 
 logDebug("City = " + City ); 
