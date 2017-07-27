@@ -17,7 +17,7 @@
     showDebug = true;
     showMessage= true;
 //}
-if capID <> null {
+if capId <> null {
 var parentRecordID = getParent();
 
 copyAddresses(capId,parentRecordID);
