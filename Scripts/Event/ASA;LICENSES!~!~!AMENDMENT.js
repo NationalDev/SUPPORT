@@ -26,7 +26,7 @@
 var parentRecordID = getParent();
 
 
-if capId <> null {
+if (capId <> null) {
 	
 copyAddresses(capId,parentRecordID);
 
