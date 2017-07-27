@@ -1,48 +1,63 @@
-/**
- * To calculate and assess permit fee based on the fixtures or equipment types.
- * 
- * Event Name:- Workflow Task Update After
- * Event Description:- The after event for when a user updates a workflow task.
- * MasterScript:- WorkflowTaskUpdateAfterV3.0.js
- * Record Type:- WTUA;BUSINESSLICENSE!~!~!RENEWAL.js
- *  
- * Issues the business license by doing the following:- Create the license record,
- * expiration date and status.
- * Ensures that all record contacts are based on reference contacts.
- * 
- * Standard Choice:- 1. LIC Issue Business License	2. LIC Establish Links to Reference Contacts
- * 
- * Alternative license renewal script - use if license is not renewed automatically when payment 
- * is made.
- * 
- *  Business License Renewal must go through a review process before the license becomes Active
- *  for another year.
- *  
- * Formatted By:- Chaitanya Tanna, City of Detroit
- */
+//*********************************************************************************************************/
+//	WTUA;BUSINESSLICENSE!~!~!RENEWAL.js															       /	
+//																			Iman Sallam @ City of Detroit  /
+//		Deploy with the script code and script title below (all caps)									   /
+//																								           /
+//					WTUA:BUSINESSLICENSE/*/*/RENEWAL							7/26/2017							 							
+//																										   /
+//*********************************************************************************************************/
+//WTUA:BUSINESSLICENSE/*/*/RENEWAL script
+var showDebug = true;
+var showMessage = true;
 
-/*	showMessage = true; showDebug = true;
-	aa.runScriptInNewTransaction("WorkflowTaskUpdateAfter4Renew");
-	aa.runScript("WORKFLOWTASKUPDATEAFTER4RENEW");
-*/
-if (wfTask == "Renewal Review" && wfStatus == "Approved") {
+if (wfStatus == "Request for Corrections") {
+        sendExternalReviewNotification();   
+}
+
+
+if (wfTask == "License Issuance" && wfStatus == "Renewed") {
     newLic = null;
     newLicId = null;
     newLicIdString = null;
     newLicenseType = appTypeArray[2];
-    monthsToInitialExpire = 12;
     newLicId = getParentCapID4Renewal();
-  //Update the LICENSE Record Application Status, Expiration Status, Expiration Date
+    // create the permit record;
     if (newLicId) {
-    	updateAppStatus("Issued","Originally Issued",newLicId);
-        copyAppSpecific(newLicId,"");
-    }
-    tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+        
+        updateAppStatus("Active","Originally Issued",newLicId);
+        logDebug("newLicId =" + newLicId);
+        logDebug("capId =" + capId);
+        copyContacts(newLicId,capId);
+        copyAppSpecific(capId);
+        copyAddresses(capId,newLicId);
+        copyASITables(capId,newLicId);
+        copyLicensedProf(newLicId,capId);
+        copyASIFields(capId,newLicId);
+        copyASITables(capId,newLicId);
+        
+    var b1ExpResult = aa.expiration.getLicensesByCapID(newLicId); 
+	var b1Exp = b1ExpResult.getOutput(); 
+	var expDate = b1Exp.getExpDateString();
+	var expStat = b1Exp.getExpStatus();
+
+	tmpNewDate = new Date();
+
+    thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
+
+    thisYear += 1;
+
+    Cycle= new getAppSpecific("Billing Cycle").toString();   
+    
+   var newExpDate = (Cycle + "/"+thisYear);                
+                  
+   
     if (newLicId) {
-        thisLic = new licenseObject(newLicIdString,newLicId);
-        thisLic.setExpiration(dateAdd(tmpNewDate,0));
+        thisLic.setExpiration(newExpDate);
         thisLic.setStatus("Active");
+        }
+            
+if (newLicId) {
+    
     }
-	//If necessary, copy additional information to license record from renewal record
-	copyASITables(capId,newLicId);
-}
+logDebug("Business License Renewed" + tmpNewDate);
+}}
