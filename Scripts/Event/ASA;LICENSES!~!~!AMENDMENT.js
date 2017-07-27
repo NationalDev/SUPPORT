@@ -26,7 +26,7 @@
 var parentRecordID = getParent();
 
 
-if (capId <> null) {
+
 	
 copyAddresses(capId,parentRecordID);
 
@@ -39,7 +39,7 @@ logDebug("Address Line 2 = " + 'Address Line 2' );
 logDebug("City = " + City ); 
 logDebug("Zip = " + Zip ); 
 
-}
+
 
 
 
