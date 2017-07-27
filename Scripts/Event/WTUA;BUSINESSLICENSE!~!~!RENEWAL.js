@@ -15,7 +15,7 @@ if (wfStatus == "Request for Corrections") {
 }
 
 
-if (wfTask == "License Issuance" && wfStatus == "Renewed") {
+if (wfTask == "License Issuance" && wfStatus == "Issued") {
     newLic = null;
     newLicId = null;
     newLicIdString = null;
