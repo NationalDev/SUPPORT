@@ -17,7 +17,7 @@
     showDebug = true;
     showMessage= true;
 //}
-
+if capID <> null {
 var parentRecordID = getParent();
 
 copyAddresses(capId,parentRecordID);
@@ -31,7 +31,7 @@ logDebug("Address Line 2 = " + 'Address Line 2' );
 logDebug("City = " + City ); 
 logDebug("Zip = " + Zip ); 
 
-
+}
 
 
 
