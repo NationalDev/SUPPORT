@@ -10,11 +10,11 @@
  * expiration date and status.
  * Ensures that all record contacts are based on reference contacts.
  * 
- * Standard Choice:- 1. LIC Issue Business License	2. LIC Establish Links to Reference Contacts
+ *copies Applicant to LP once issued.
  * 
  * Iman Sallam, City of Detroit 
  *  
- * Formatted By:- Chaitanya Tanna, City of Detroit
+ * 
  */
 if (wfStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
