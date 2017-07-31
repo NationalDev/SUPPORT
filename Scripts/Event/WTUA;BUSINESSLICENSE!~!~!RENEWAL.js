@@ -31,7 +31,7 @@ if (wfTask == "Renewal Review" && wfStatus == "Renewed") {
         copyAppSpecific(capId);
         copyAddresses(capId,newLicId);
         copyASITables(capId,newLicId);
-        copyLicensedProf(newLicId,capId);
+        
         copyASIFields(capId,newLicId);
         copyASITables(capId,newLicId);
         
@@ -46,7 +46,7 @@ if (wfTask == "Renewal Review" && wfStatus == "Renewed") {
 
     thisYear += 1;
 
-    Cycle= new getAppSpecific("Billing Cycle").toString();   
+    Cycle= new getAppSpecific("Cycle Date").toString();   
     
    var newExpDate = (Cycle + "/"+thisYear);                
                   
