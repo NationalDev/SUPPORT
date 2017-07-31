@@ -17,6 +17,10 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	parentName = null;
 	parentCapId = getParent();
     
+	 logDebug("100:parentCapId=" + parentCapId);
+	
+	 logDebug("105:capId=" + capId);
+	
     copyContacts(capId, parentCapId);
   
     
