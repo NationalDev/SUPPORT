@@ -53,10 +53,11 @@ if (wfTask == "Renewal Review" && wfStatus == "Renewed") {
    var newExpDate = (Cycle + "/"+thisYear);                
                   
    
-    if (newLicId) {
-        thisLic.setExpiration(newExpDate);
-        thisLic.setStatus("Active");
-        }
+   if (newLicId) {
+       thisLic = new licenseObject(newLicIdString,newLicId);
+       thisLic.setExpiration(newExpDate);
+       thisLic.setStatus("Active");
+       }
             
 if (newLicId) {
     
