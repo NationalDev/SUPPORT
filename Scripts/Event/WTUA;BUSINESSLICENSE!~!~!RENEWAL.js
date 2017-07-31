@@ -7,8 +7,10 @@
 //																										   /
 //*********************************************************************************************************/
 //WTUA:BUSINESSLICENSE/*/*/RENEWAL script
+
 var showDebug = true;
 var showMessage = true;
+
 
 if (wfStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
@@ -23,7 +25,7 @@ if (wfTask == "Renewal Review" && wfStatus == "Renewed") {
     newLicId = getParentCapID4Renewal();
     // create the permit record;
     if (newLicId) {
-        //newLicIdString = newLicId.getCustomID();
+        newLicIdString = newLicId.getCustomID();
         updateAppStatus("Active","Originally Issued",newLicId);
         logDebug("newLicId =" + newLicId);
         logDebug("capId =" + capId);
