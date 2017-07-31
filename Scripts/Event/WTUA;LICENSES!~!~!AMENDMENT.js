@@ -21,7 +21,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	
 	 logDebug("105:capId=" + capId);
 	
-    copyContacts(capId, parentCapId);
+    copyContactsByType(capId, parentCapId,"Applicant");
   
     
 }
