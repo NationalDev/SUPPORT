@@ -16,11 +16,10 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	
 	parentName = null;
 	parentCapId = getParent();
-    contactType = 'Applicant';
-    iArr = getContactArray(contactType);        
+    
+    copyContacts(capId, parentCapId);
   
-    logDebug("Contact Info" + iArr);
-
+    
 }
 
 
