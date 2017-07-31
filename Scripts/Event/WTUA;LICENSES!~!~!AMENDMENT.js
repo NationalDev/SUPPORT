@@ -225,8 +225,4 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 //              LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
 //              logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
 //          }
-    }
-
-        
-  }
-}
+    
