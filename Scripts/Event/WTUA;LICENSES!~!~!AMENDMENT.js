@@ -23,7 +23,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	
     copyContactsByType(capId, parentCapId,"Applicant");
     copyAddresses(capId, parentCapId);
-  
+    copyLicensedProf(capId,parentCapId);
     
 }
 
