@@ -22,6 +22,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	 logDebug("105:capId=" + capId);
 	
     copyContactsByType(capId, parentCapId,"Applicant");
+    copyContactsByType(capId, parentCapId,"Contactor of Record");
     copyAddresses(capId, parentCapId);
     copyLicensedProf(capId,parentCapId);
     
