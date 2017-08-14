@@ -8,8 +8,16 @@
 //*********************************************************************************************************/
 
 
-//PRA;LICENSES!~!~!RENEWAL.js
-//PRA:LICENSES/*/*/RENEWAL
+
+
+
+   showDebug = true;
+   showMessage= true;
+
+
+
+
+
 if (balanceDue <= 75 ) {
 	balanceDue = "75";
 }
