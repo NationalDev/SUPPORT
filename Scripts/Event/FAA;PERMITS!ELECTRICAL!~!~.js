@@ -18,6 +18,6 @@
 
 
 
-if (balanceDue <= 75 ) {
+if (balanceDue <= "75" ) {
 	balanceDue = "75";
 }
