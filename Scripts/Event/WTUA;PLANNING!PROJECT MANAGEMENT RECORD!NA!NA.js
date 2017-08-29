@@ -16,6 +16,7 @@ if (wfTask.equals("Project Review Intake")) {
 	}
 	if (AInfo['Preliminary Plan Review'] == "CHECKED"){
 		createChild("Planning","Preliminary Project Review","NA","NA",capName);
+		updateFee("PPR","PLNPPR_F","FINAL",1,"Y");
 		editTaskSpecific("Project Review Intake","Preliminary Plan Review","UNCHECKED");
 	}
 	if (AInfo['Zoning Verification'] == "CHECKED"){
