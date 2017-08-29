@@ -1,6 +1,6 @@
 //WTUA:Planning/Project Management Record/NA/NA
 
-if (wfTask.equals("Project Review Intake")) {
+if (wfTask.equals("Project Review Intake") && wfStatus.equal("Submit Review Request")) {
 
 	if (AInfo['Construction Plan Review'] == "CHECKED"){
 		createChild("Planning","Plan Review","NA","NA",capName);
