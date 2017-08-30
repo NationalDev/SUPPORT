@@ -13,8 +13,52 @@ if (wfStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
 }
 
+// script #5 - If any clearance Denied. No License Issuance.
 
-if (wfTask == "License Issuance" && wfStatus == "Issued") {
+try {
+	var found;
+	var okToIssue = true;
+	
+	if (wfTask == "License Issuance" && wfStatus == "Issued"){
+		// loop through tasks
+		var workflowResult = aa.workflow.getTasks(capId);
+		if (workflowResult.getSuccess()){
+			var wfObj = workflowResult.getOutput();
+		}else{ 
+			logDebug("**ERROR: Failed to get workflow object: " + s_capResult.getErrorMessage()); 
+		}
+
+		for (i in wfObj){
+			var fTask = wfObj[i];
+			var tempTaskModel = fTask.getTaskItem();
+	
+			var str = fTask.getTaskDescription();
+			found = str.search("Clearance");
+							
+			if (found != -1){
+				var tStatus = fTask.getDisposition();
+				if(tStatus == "Denied"){
+					okToIssue = false;
+				}
+			}
+		}
+		if (!okToIssue){
+			showMessage = true;
+			cancel = true;
+			comment("License cannot be issued while a Clearance task is Denied.");
+		}else{
+			issueLicense();
+		}
+	}
+	
+	
+}catch (err) {
+	logDebug("A JavaScript Error occured: " + err.message);
+}
+
+
+
+function issueLicense(){
     newLic = null;
     newLicId = null;
     newLicIdString = null;
@@ -67,5 +111,4 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         }
     logDebug("Business License Issued" + tmpNewDate);
 	}
-    }
-    
+}  
