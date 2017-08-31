@@ -18,7 +18,7 @@ if (isTaskStatus == "Request for Corrections") {
 
 logDebug("Balance Due = " + balanceDue); 
 
-if (isTaskActive("Issued") && balanceDue <= 0) {
+if (isTaskActive("License Issuance") && balanceDue <= 0) {
 	newLic = null;
     newLicId = null;
     newLicIdString = null;
