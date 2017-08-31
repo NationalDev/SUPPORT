@@ -10,13 +10,13 @@
 var showDebug = true;
 var showMessage = true;
 
-
+logDebug("Balance Due = " + balanceDue); 
 
 if (isTaskStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
 }
 
-logDebug("Balance Due = " + balanceDue); 
+
 
 if (isTaskActive("License Issuance") && balanceDue <= 0) {
 	newLic = null;
