@@ -37,7 +37,7 @@ if (newLicId) {
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     
         
-        
+        logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
         
         
         var feeArr = loadFees();
