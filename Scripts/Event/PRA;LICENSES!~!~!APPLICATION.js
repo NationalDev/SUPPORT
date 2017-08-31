@@ -16,7 +16,7 @@ if (isTaskStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
 }
 
-logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
+
 
 if (isTaskActive("Issued","License Issuance") && balanceDue <= 0) {
 	newLic = null;
