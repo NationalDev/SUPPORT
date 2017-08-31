@@ -16,7 +16,7 @@ if (isTaskStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
 }
 
-
+ogDebug("Balance Due = " + balanceDue); 
 
 if (isTaskActive("Issued","License Issuance") && balanceDue <= 0) {
 	newLic = null;
