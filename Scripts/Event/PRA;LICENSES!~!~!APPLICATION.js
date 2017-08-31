@@ -44,7 +44,7 @@ if (newLicId) {
     
         
         logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
-        
+}      
         
         var feeArr = loadFees();
         var newFeeRes = aa.util.deepClone(feeArr);    
@@ -420,7 +420,7 @@ if (newLicId) {
               }
         }
         
-      }
+      
 //         
 //          else {
 //              logDebug("LP Not found to update");
