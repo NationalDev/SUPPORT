@@ -3,7 +3,7 @@
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
-//					WTUA:LICENSES/*/*/APPLICATION														   / 							
+//					PRA:LICENSES/*/*/APPLICATION														   / 							
 //																										   /
 //*********************************************************************************************************/
 
@@ -49,7 +49,7 @@ if (newLicId) {
         }
         
         
-        
+}
         
         
         
@@ -457,6 +457,8 @@ if (newLicId) {
         logDebug("Parameters: " + rParams);
         runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
     }
+}
+
 }
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
