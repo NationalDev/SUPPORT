@@ -13,8 +13,6 @@ if (isTaskStatus == "Request for Corrections") {
 
 
 
-
-
 if (isTaskActive("Issued","License Issuance") && balanceDue <= 0) {
 	newLic = null;
     newLicId = null;
@@ -53,12 +51,7 @@ if (newLicId) {
         }
         
         
-}
-        
-        
-        
-        
-        
+
         
       //**************************************************************************************    
         tmpNewDate = new Date();
@@ -421,6 +414,8 @@ if (newLicId) {
                   logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
               }
         }
+        
+      }
 //         
 //          else {
 //              logDebug("LP Not found to update");
