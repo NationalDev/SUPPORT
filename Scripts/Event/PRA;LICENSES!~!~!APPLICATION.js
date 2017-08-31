@@ -8,7 +8,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = false;
+var showMessage = true;
 
 
 
@@ -16,7 +16,7 @@ if (isTaskStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
 }
 
-ogDebug("Balance Due = " + balanceDue); 
+logDebug("Balance Due = " + balanceDue); 
 
 if (isTaskActive("Issued","License Issuance") && balanceDue <= 0) {
 	newLic = null;
