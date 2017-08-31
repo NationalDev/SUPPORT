@@ -47,7 +47,13 @@ try {
 			cancel = true;
 			comment("License cannot be issued while a Clearance task is Denied.");
 		}else{
-			issueLicense();
+			if(balanceDue != 0){
+				showMessage = true;
+				cancel = true;
+				comment("License cannot be issued while there is a balance due.");
+			}else{
+				issueLicense();
+			}
 		}
 	}
 	
