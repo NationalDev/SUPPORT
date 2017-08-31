@@ -7,12 +7,15 @@
 //																										   /
 //*********************************************************************************************************/
 
+if (isTaskStatus == "Request for Corrections") {
+        sendExternalReviewNotification();   
+}
 
 
 
 
 
-if (isTaskActive("License Issuance","Issued") && balanceDue <= 0) {
+if (isTaskActive("Issued","License Issuance") && balanceDue <= 0) {
 	newLic = null;
     newLicId = null;
     newLicIdString = null;
