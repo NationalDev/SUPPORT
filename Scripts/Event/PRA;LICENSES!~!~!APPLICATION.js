@@ -7,9 +7,9 @@
 //																										   /
 //*********************************************************************************************************/
 
-if (wfStatus == "Request for Corrections") {
-        sendExternalReviewNotification();   
-}
+//if (wfStatus == "Request for Corrections") {
+//        sendExternalReviewNotification();   
+//}
 
 if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 	newLic = null;
