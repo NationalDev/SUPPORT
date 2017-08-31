@@ -450,6 +450,7 @@ if (newLicId) {
         
         
         
+        
         //ToDo:Make "altID" parameter not visible in report manager.
         var rParams = aa.util.newHashMap();
         addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
