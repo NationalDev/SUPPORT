@@ -47,7 +47,7 @@ if (isTaskActive("License Issuance") && balanceDue <= 0) {
     
         
                                      
-        logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"); 
+        logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
 
 //        var feeArr = loadFees();
