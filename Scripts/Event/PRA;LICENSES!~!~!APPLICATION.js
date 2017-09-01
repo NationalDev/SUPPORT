@@ -221,7 +221,7 @@ if (newLicId) {
     	    	              thisLic.setStatus("Active");
     	    	              }
     	 else {		 
-    		 }   
+    		    
     	    	      
     	    	      	if (newLicId) { 	      	
     	    	      	var rParams = aa.util.newHashMap();
@@ -231,6 +231,8 @@ if (newLicId) {
     	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
     	    	      	}
+    	    	      	
+    	 }
 //    // From Here ************************ Licensed Professional **************************************
 //
 //
