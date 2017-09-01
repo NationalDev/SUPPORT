@@ -451,8 +451,7 @@ if (newLicId) {
         logDebug("Parameters: " + rParams);
         runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
     
-}
-}
+
 }
 
 //ToDo:Figure Out How to Copy All fee properties to new record
