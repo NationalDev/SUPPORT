@@ -296,6 +296,7 @@ if (newLicId) {
                aa.print("LIC State License Number is " + stateLicense);
                 }
         
+            
             licObj = licenseProfObject(newLicId,LICENSETYPE);
             //Get LicArray;
             logDebug("128:stateLicense=" + licIDString);
@@ -421,7 +422,7 @@ if (newLicId) {
               }
         
           
-        }
+        
 //         
 //          else {
 //              logDebug("LP Not found to update");
@@ -449,7 +450,7 @@ if (newLicId) {
         runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
     }
 }
-
+}
 
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
