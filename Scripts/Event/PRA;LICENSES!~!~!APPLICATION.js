@@ -228,7 +228,7 @@ if (newLicId) {
 //    	    	        logDebug("Parameters: " + rParams);
 //    	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
-    	 }   	      	
+    	
 //    // From Here ************************ Licensed Professional **************************************
 //
 //
