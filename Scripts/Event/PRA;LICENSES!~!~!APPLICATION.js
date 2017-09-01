@@ -58,7 +58,7 @@ if (isTaskActive("License Issuance") && balanceDue <= 0) {
 //            logDebug("fees  Array = " +newFeeArr.getFeeCod());
 //            newFeeArr[i].setCapID(newLicId);
       
-
+    }
 
 
         
