@@ -420,7 +420,7 @@ if (newLicId) {
                   logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
               }
         
-        }  
+          
       
 //         
 //          else {
@@ -450,7 +450,7 @@ if (newLicId) {
     }
 }
 
-
+}
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
 for (feeItem in feeArr) {
