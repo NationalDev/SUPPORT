@@ -8,7 +8,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = false;
+var showMessage = true;
 
 logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"," ", capId)); 
 
