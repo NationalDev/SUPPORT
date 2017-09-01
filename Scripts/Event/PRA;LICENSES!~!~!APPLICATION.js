@@ -55,7 +55,7 @@ if (newLicId) {
             newFeeArr[i].setCapID(newLicId);
         }
         
-        
+}   
 
         
       //**************************************************************************************    
@@ -418,7 +418,7 @@ if (newLicId) {
                   LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
                   logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
               }
-        }
+        
         
       
 //         
@@ -438,22 +438,7 @@ if (newLicId) {
 //              	}
             
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
         //ToDo:Make "altID" parameter not visible in report manager.
         var rParams = aa.util.newHashMap();
