@@ -222,7 +222,7 @@ if (newLicId) {
     	    	      	
     // From Here ************************ Licensed Professional **************************************
 
-if (isTaskActive("License Issuance") && balanceDue <= 0)
+
 
       if (isTaskStatus("License Issuance","Issued")) {
         
