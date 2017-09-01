@@ -25,6 +25,10 @@ if (isTaskActive("License Issuance") && balanceDue <= 0) {
     newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+    
+    
+    
+    
     // create the permit record;
 if (newLicId) {
         
@@ -218,7 +222,11 @@ if (newLicId) {
     	    	              }
     	 else {		 
     		 }   
-    	 
+    	    	      	var rParams = aa.util.newHashMap();
+    	    	        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
+    	    	        addParameter(rParams,"Record_Module","Licenses");
+    	    	        logDebug("Parameters: " + rParams);
+    	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
     	 }   	      	
 //    // From Here ************************ Licensed Professional **************************************
@@ -445,11 +453,7 @@ if (newLicId) {
 //  
         
         //ToDo:Make "altID" parameter not visible in report manager.
-        var rParams = aa.util.newHashMap();
-        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
-        addParameter(rParams,"Record_Module","Licenses");
-        logDebug("Parameters: " + rParams);
-        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
+        
     
     	 }
 }
