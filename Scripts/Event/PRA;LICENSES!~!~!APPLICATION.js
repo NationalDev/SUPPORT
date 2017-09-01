@@ -49,7 +49,7 @@ if (newLicId) {
         logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
                              
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"); 
-
+}
 
 //        var feeArr = loadFees();
 //        var newFeeRes = aa.util.deepClone(feeArr);    
@@ -59,7 +59,7 @@ if (newLicId) {
 //            logDebug("fees  Array = " +newFeeArr.getFeeCod());
 //            newFeeArr[i].setCapID(newLicId);
       
-} 
+
 
 }
         
