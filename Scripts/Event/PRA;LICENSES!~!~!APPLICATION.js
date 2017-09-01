@@ -252,7 +252,7 @@ if (newLicId) {
             var vRelationType = "R";
             if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
             var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
-            if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
+            if(prjArrRes.getSuccess()) { prjArr = prjArrRes.getOutput()}
             if (prjArr != null) {
                 for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
                 }
@@ -421,23 +421,24 @@ if (newLicId) {
                   logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
               }
         
+		}
+	  
+	  }
+         
+          else {
+              logDebug("LP Not found to update");
+              createRefLicProfFromLicProf();
           
-        
-//         
-//          else {
-//              logDebug("LP Not found to update");
-//              //createRefLicProfFromLicProf();
-//          
-//          }
-    //  
-    //   
-//              var checkLicProf = getRefLicenseProf(stateLicense);
-//              	if (newLicProf.valid){
-//          aa.print("newLicProf is a " + newLicProf.getClass());
-//          for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
-//          for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
-    //
-//              	}
+          }
+     
+       
+          var checkLicProf = getRefLicenseProf(stateLicense);
+            	if (newLicProf.valid){
+          aa.print("newLicProf is a " + newLicProf.getClass());
+          for (x in newLicProf) if (typeof(newLicProf[x]) == "function") {aa.print("  " + x);}
+          for (x in newLicProf) if (typeof(newLicProf[x]) != "function") {aa.print("  " + x + " = " + newLicProf[x]);}
+    
+              	
             
         
   
@@ -448,9 +449,10 @@ if (newLicId) {
         addParameter(rParams,"Record_Module","Licenses");
         logDebug("Parameters: " + rParams);
         runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
-    }
+    
 }
 }
+
 
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
