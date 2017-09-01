@@ -17,7 +17,7 @@ var showMessage = false;
 
 
 
-if (isTaskActive("License Issuance") && balanceDue <= 0) {
+if (TaskStatus("License Issuance")=="issued" && balanceDue <= 0) {
 	newLic = null;
     newLicId = null;
     newLicIdString = null;
