@@ -58,7 +58,7 @@ if (newLicId) {
 //        for (i in newFeeArr) {
 //            logDebug("fees  Array = " +newFeeArr.getFeeCod());
 //            newFeeArr[i].setCapID(newLicId);
-       }
+      
         
 
 
@@ -236,6 +236,7 @@ if (newLicId) {
     	  	}
     	    	      	
     	 }
+}
 
 //    // From Here ************************ Licensed Professional **************************************
 //
