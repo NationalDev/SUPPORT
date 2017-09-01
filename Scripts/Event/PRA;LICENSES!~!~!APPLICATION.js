@@ -8,7 +8,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = true;
+var showMessage = false;
 
 
 //if (isTaskStatus == "Request for Corrections") {
@@ -29,7 +29,7 @@ if (isTaskActive("License Issuance") && balanceDue <= 0) {
     
     
     // create the permit record;
-if (newLicId) {
+    if (newLicId) {
         
     	newLicIdString = newLicId.getCustomID();
         
@@ -46,10 +46,9 @@ if (newLicId) {
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     
         
-        logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
-                             
+                                     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"); 
-}
+    				
 
 //        var feeArr = loadFees();
 //        var newFeeRes = aa.util.deepClone(feeArr);    
@@ -61,7 +60,7 @@ if (newLicId) {
       
 
 
-}
+
         
       //**************************************************************************************    
         tmpNewDate = new Date();
