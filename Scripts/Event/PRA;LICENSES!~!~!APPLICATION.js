@@ -10,7 +10,7 @@
 var showDebug = true;
 var showMessage = true;
 
-logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status" + taskStatus("License Issuance","", capId)); 
+logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"," ", capId)); 
 
 if (isTaskStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
@@ -222,8 +222,9 @@ if (newLicId) {
     	    	      	
     // From Here ************************ Licensed Professional **************************************
 
+if (isTaskActive("License Issuance") && balanceDue <= 0)
 
-      if (wfTask == "License Issuance" && wfStatus == "Issued") {
+      if (isTaskStatus("License Issuance","Issued")) {
         
         
         //->branch("EMSE:LicProfLookup");
