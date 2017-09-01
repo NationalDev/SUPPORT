@@ -228,7 +228,9 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 		else {    	
     	    	      	var rParams = aa.util.newHashMap();
     	    	        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
-    	    	        addParameter(rParams,"Record_Module","Licenses");
+    	    	        addParameter(rParams,"Module","Licenses");
+    	    	        addParameter(rParams,"Fee Description","License");
+    	    	        addParameter(rParams,"logo","Xtra4");
     	    	        logDebug("Parameters: " + rParams);
     	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
