@@ -453,7 +453,7 @@ if (newLicId) {
     
 }
 }
-
+}
 
 //ToDo:Figure Out How to Copy All fee properties to new record
 /*
