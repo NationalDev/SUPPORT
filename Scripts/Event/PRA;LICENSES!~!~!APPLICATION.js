@@ -44,8 +44,9 @@ if (newLicId) {
     
         
         logDebug("Balance Due = " + balanceDue + " Record Id " + newLicString); 
-}      
-        
+                             
+
+
         var feeArr = loadFees();
         var newFeeRes = aa.util.deepClone(feeArr);    
         logDebug("Clone Result: " + newFeeRes.getSuccess());
@@ -217,7 +218,7 @@ if (newLicId) {
     	    	              }
     	 else {		 
     		 }   
-    	 } 
+    	 
 	      	
     	    	      	
     // From Here ************************ Licensed Professional **************************************
