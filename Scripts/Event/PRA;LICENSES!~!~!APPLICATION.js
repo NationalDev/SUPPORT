@@ -51,14 +51,14 @@ if (newLicId) {
                              
 
 
-        var feeArr = loadFees();
-        var newFeeRes = aa.util.deepClone(feeArr);    
-        logDebug("Clone Result: " + newFeeRes.getSuccess());
-        var newFeeArr = newFeeRes.getOutput();
-        for (i in newFeeArr) {
-            logDebug(newFeeArr.getFeeCod());
-            newFeeArr[i].setCapID(newLicId);
-        }
+//        var feeArr = loadFees();
+//        var newFeeRes = aa.util.deepClone(feeArr);    
+//        logDebug("Clone Result: " + newFeeRes.getSuccess());
+//        var newFeeArr = newFeeRes.getOutput();
+//        for (i in newFeeArr) {
+//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+//            newFeeArr[i].setCapID(newLicId);
+//        }
         
 
 
@@ -226,17 +226,14 @@ if (newLicId) {
     	    	              thisLic.setStatus("Active");
     	    	              }
 		}
-		else {		 
-    		    
-    	    	      
-    	    	      	      	
+		else {    	
     	    	      	var rParams = aa.util.newHashMap();
     	    	        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
     	    	        addParameter(rParams,"Record_Module","Licenses");
     	    	        logDebug("Parameters: " + rParams);
     	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
-    	    	      	}
+    	  	}
     	    	      	
     	 }
 }
