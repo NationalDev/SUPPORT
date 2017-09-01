@@ -440,7 +440,7 @@ if (newLicId) {
           for (x in newLicProf) if (typeof(newLicProf[x]) != "function") {aa.print("  " + x + " = " + newLicProf[x]);}
     
               	
-            
+            	}         
         
   
         
