@@ -222,13 +222,15 @@ if (newLicId) {
     	    	              }
     	 else {		 
     		 }   
-//    	    	      	var rParams = aa.util.newHashMap();
-//    	    	        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
-//    	    	        addParameter(rParams,"Record_Module","Licenses");
-//    	    	        logDebug("Parameters: " + rParams);
-//    	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
+    	    	      
+    	    	      	if (newLicId) { 	      	
+    	    	      	var rParams = aa.util.newHashMap();
+    	    	        addParameter(rParams,"Record_ID",String(newLicId.getCustomID()));
+    	    	        addParameter(rParams,"Record_Module","Licenses");
+    	    	        logDebug("Parameters: " + rParams);
+    	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
 	      	
-    	
+    	    	      	}
 //    // From Here ************************ Licensed Professional **************************************
 //
 //
