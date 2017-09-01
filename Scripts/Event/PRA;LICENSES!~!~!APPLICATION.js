@@ -10,7 +10,7 @@
 var showDebug = true;
 var showMessage = true;
 
-logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"," ", capId)); 
+logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance"); 
 
 //if (isTaskStatus == "Request for Corrections") {
 //        sendExternalReviewNotification();   
