@@ -218,7 +218,7 @@ if (newLicId) {
     	 else {		 
     		 }   
     	 } 
-}	      	
+	      	
     	    	      	
     // From Here ************************ Licensed Professional **************************************
 
@@ -420,7 +420,7 @@ if (newLicId) {
                   logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
               }
         
-        
+        }  
       
 //         
 //          else {
