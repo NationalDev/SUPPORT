@@ -232,8 +232,8 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
     	    	        logDebug("Parameters: " + rParams);
-    	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
-	      	
+  //  	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
+    	    	        runReportTest("License");
     	  	}
     	    	      	
     	 }
