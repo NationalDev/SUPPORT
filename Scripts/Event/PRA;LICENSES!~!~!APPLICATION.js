@@ -227,7 +227,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 		}
 		else {    	
 			
-						var runReportAndSendAsync();
+						var runReportAndSendAsync("License","");
     	    	      	var rParams = aa.util.newHashMap();
     	    	      	
     	    	        addParameter(rParams,"Record_ID","altID");
