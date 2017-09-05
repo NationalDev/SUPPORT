@@ -234,14 +234,18 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        addParameter(rParams,"Module","Licenses");
     	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
+    	    	        
     	    	        logDebug("Parameters: " + rParams);
   	    	 
+    	    	        logDebug("Parameters: " + rParams);
+    	    	        
+    	    	        
  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
     	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
    	    	        
 //    	    	       function generateReport(itemCap,reportName,module,parameters)
     	    	        
-    	    	        generateReport(capId,"License", "Licenses", "rParams" );
+    	    	        generateReport(capId,"License", "Licenses", rParams);
     	    	        
  //   	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
