@@ -230,8 +230,8 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //						var report = runReportAndSendAsync(License, Licenses, capId, reportParameters, null, null,null, null, null);
     	    	      	var rParams = aa.util.newHashMap();
     	    	      	
-    	    	        addParameter(rParams,"Record_ID","capId");
-    	    	        addParameter(rParams,"Module","Licenses");
+    	   // 	        addParameter(rParams,"Record_ID","capId");
+    	    //	        addParameter(rParams,"Module","Licenses");
     	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
     	    	        
