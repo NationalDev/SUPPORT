@@ -239,9 +239,11 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
     	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
    	    	        
+//    	    	        generateReport(aaReportName, parameters, rModule)
     	    	        
+    	    	        generateReport(License, rPramss, Licenses);
     	    	        
-    	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+ //   	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
 //    	    	        runReportTest("License");
  //   	    	        runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC); 	        
