@@ -230,7 +230,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //						var report = runReportAndSendAsync(License, Licenses, capId, reportParameters, null, null,null, null, null);
     	    	      	var rParams = aa.util.newHashMap();
     	    	      	
-    	    	        addParameter(rParams,"Record_ID","altID");
+    	    	        addParameter(rParams,"Record_ID","capId");
     	    	        addParameter(rParams,"Module","Licenses");
     	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
@@ -241,7 +241,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
    	    	        
 //    	    	       function generateReport(itemCap,reportName,module,parameters)
     	    	        
-    	    	        generateReport(newLicId,"License", "Licenses", "rParams" );
+    	    	        generateReport(capId,"License", "Licenses", "rParams" );
     	    	        
  //   	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
