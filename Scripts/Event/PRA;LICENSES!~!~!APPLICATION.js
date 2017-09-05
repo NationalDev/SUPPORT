@@ -241,7 +241,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
    	    	        
 //    	    	        generateReport(aaReportName, parameters, rModule)
     	    	        
-    	    	        generateReport(License, rParams, Licenses);
+    	    	        generateReport("License", "rParams", "Licenses");
     	    	        
  //   	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
