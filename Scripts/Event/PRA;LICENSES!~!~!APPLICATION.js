@@ -241,7 +241,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
    	    	        
     	    	        
     	    	        
-    	    	        runReport4EmailOrPrint(altID,"License",null,rParams,null,null,"Licenses");
+    	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
 //    	    	        runReportTest("License");
  //   	    	        runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC); 	        
