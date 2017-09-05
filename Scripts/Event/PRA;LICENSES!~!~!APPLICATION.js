@@ -8,7 +8,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = true;
+var showMessage = false;
 
 
 //if (isTaskStatus == "Request for Corrections") {
