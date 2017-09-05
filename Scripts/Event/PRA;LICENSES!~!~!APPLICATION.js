@@ -234,6 +234,10 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        logDebug("Parameters: " + rParams);
   //  	    	        runReport4EmailOrPrint(newLicId,"License",null,rParams,null,null,"Licenses");
     	    	        runReportTest("License");
+ //   	    	        runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC); 	        
+    	    	        
+    	    	        runReportAndSendAsync(License, Licenses, capId, reportParameters, null, null,null, null, null);
+    	    	        
     	  	}
     	    	      	
     	 }
