@@ -241,7 +241,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
    	    	        
 //    	    	       function generateReport(itemCap,reportName,module,parameters)
     	    	        
-    	    	        generateReport(capId,"License", "Licenses", "rParams" );
+    	    	        generateReport(newLicId,"License", "Licenses", "rParams" );
     	    	        
  //   	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
