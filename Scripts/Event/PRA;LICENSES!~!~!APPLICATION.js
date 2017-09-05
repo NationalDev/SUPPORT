@@ -237,7 +237,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        
     	    	        logDebug("Parameters: " + rParams);
   	    	 
-    	    	        logDebug("Parameters: " + rParams);
+    	    	        
     	    	        
     	    	        
  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
