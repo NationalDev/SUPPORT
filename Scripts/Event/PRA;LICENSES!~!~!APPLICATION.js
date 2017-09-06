@@ -17,17 +17,14 @@ var showMessage = false;
 
 
 
-if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
-	newLic = null;
-    newLicId = null;
-    newLicIdString = null;
-    newLicenseType = appTypeArray[2];
-    monthsToInitialExpire = 12;
-    newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
-    
-    
-    
-    
+	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+		newLic = null;
+		newLicId = null;
+		newLicIdString = null;
+		newLicenseType = appTypeArray[2];
+		monthsToInitialExpire = 12;
+		newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+     
     // create the permit record;
     if (newLicId) {
         
@@ -45,8 +42,6 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     
-        
-                                     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
 
@@ -63,160 +58,151 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     }
         
       //**************************************************************************************    
-        tmpNewDate = new Date();
-
-        if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Contractor Registration") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-
-                thisYear +=3;
-                newExpDate = "08/31/"+thisYear.toString();
-
-            if (newLicId) {
-                thisLic = new licenseObject(newLicIdString,newLicId);
-                thisLic.setExpiration(dateAdd(newExpDate,0));
-                thisLic.setStatus("Active");
-                }
-        }
-    //-----------------------------------------
-        if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Apprentice") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-            thisMonth = tmpNewDate.getMonth();
-            if (thisMonth > 7) {
-                thisYear += 1;     //thisYear = thisYear + 1;
+    tmpNewDate = new Date();
+    
+    /**
+     * Check Condition for Mechinical!Contractor Registration
+     */
+    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Contractor Registration") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+            thisYear += 3;
+            newExpDate = "08/31/" + thisYear.toString();
+        if (newLicId) {
+            thisLic = new licenseObject(newLicIdString,newLicId);
+            thisLic.setExpiration(dateAdd(newExpDate,0));
+            thisLic.setStatus("Active");
             }
-            	newExpDate = "08/31/"+thisYear.toString();
-            	if (newLicId) {
-                    thisLic = new licenseObject(newLicIdString,newLicId);
-                    thisLic.setExpiration(dateAdd(newExpDate,0));
-                    thisLic.setStatus("Active");
-                    }
-        }    
-    //-------------------------------------------
-        if (appTypeArray[1] == "Plumbing" && appTypeArray[2] == "Contractor Registration") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-//               thisMonth = tmpNewDate.getMonth();
-//               if (thisMonth > 7) {
-//               thisYear += 4;     //thisYear = thisYear + 1;
-    //
-//            }
-                thisYear +=3;
-                newExpDate = "04/30/"+thisYear.toString();
-
-            if (newLicId) {
-                thisLic = new licenseObject(newLicIdString,newLicId);
-                thisLic.setExpiration(dateAdd(newExpDate,0));
-                thisLic.setStatus("Active");
-                }
-        }  
-    //-----------------------------------------------
-        if (appTypeArray[1] == "Boiler" && appTypeArray[2] == "Contractor Registration") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-//                thisMonth = tmpNewDate.getMonth();
-//                if (thisMonth > 7) {
-//                thisYear += 4;     //thisYear = thisYear + 1;//
-//            }
-                thisYear +=3;
-                newExpDate = "12/31/"+thisYear.toString();
-
-            if (newLicId) {
-                thisLic = new licenseObject(newLicIdString,newLicId);
-                thisLic.setExpiration(dateAdd(newExpDate,0));
-                thisLic.setStatus("Active");
-                }
-        }    
-    //-----------------------------------------------     
-        if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Occupational") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-               
-            monthsToInitialExpire = 12;
-               tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
-               if (newLicId) {
-                   thisLic = new licenseObject(newLicIdString,newLicId);
-                   thisLic.setExpiration(dateAdd(tmpNewDate,0));
-                   thisLic.setStatus("Active");
-                   }
-		}
-    //-------------------------------------------------------------------   
-        if (appTypeArray[1] == "Building" && appTypeArray[2] == "ContractorRegistration") {
-
-            thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-
-            	newExpDate = "12/31/"+thisYear.toString();
-            	if (newLicId) {
-                    thisLic = new licenseObject(newLicIdString,newLicId);
-                    thisLic.setExpiration(dateAdd(newExpDate,0));
-                    thisLic.setStatus("Active");
-                    }
-        }    
-		else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
-    	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-    	
-    	      	newExpDate = "12/31/"+thisYear.toString();
-    	      	if (newLicId) {
-    	              thisLic = new licenseObject(newLicIdString,newLicId);
-    	              thisLic.setExpiration(dateAdd(newExpDate,0));
-    	              thisLic.setStatus("Active");
-    	              }
-        }    
-		else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
-        		thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-        	//      thisMonth = tmpNewDate.getMonth();
-        	//      if (thisMonth > 7) {
-        	//          thisYear += 1;     //thisYear = thisYear + 1;
-        	//      }
-        	      	newExpDate = "12/31/"+thisYear.toString();
-        	      	if (newLicId) {
-        	              thisLic = new licenseObject(newLicIdString,newLicId);
-        	              thisLic.setExpiration(dateAdd(newExpDate,0));
-        	              thisLic.setStatus("Active");
-        	              }
-         }	 
-		else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
-    	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-    	    	//      thisMonth = tmpNewDate.getMonth();
-    	    	//      if (thisMonth > 7) {
-    	    	//          thisYear += 1;     //thisYear = thisYear + 1;
-    	    	//      }
-    	    	      	newExpDate = "12/31/"+thisYear.toString();
-    	    	      	if (newLicId) {
-    	    	              thisLic = new licenseObject(newLicIdString,newLicId);
-    	    	              thisLic.setExpiration(dateAdd(newExpDate,0));
-    	    	              thisLic.setStatus("Active");
-    	    	              }
-    	 }	 
-		else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
-    	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-    	    	//      thisMonth = tmpNewDate.getMonth();
-    	    	//      if (thisMonth > 7) {
-    	    	//          thisYear += 1;     //thisYear = thisYear + 1;
-    	    	//      }
-    	    	      	newExpDate = "12/31/"+thisYear.toString();
-    	    	      	if (newLicId) {
-    	    	              thisLic = new licenseObject(newLicIdString,newLicId);
-    	    	              thisLic.setExpiration(dateAdd(newExpDate,0));
-    	    	              thisLic.setStatus("Active");
-    	    	              }
-    	    	      	
-    	 }	  
-		else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
-    	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
-    	    	//      thisMonth = tmpNewDate.getMonth();
-    	    	//      if (thisMonth > 7) {
-    	    	//          thisYear += 1;     //thisYear = thisYear + 1;
-    	    	//      }
-    	    	      	newExpDate = "07/11/"+thisYear.toString();
-    	    	      	if (newLicId) {
-    	    	              thisLic = new licenseObject(newLicIdString,newLicId);
-    	    	              thisLic.setExpiration(dateAdd(newExpDate,0));
-    	    	              thisLic.setStatus("Active");
-    	    	              }
-		}
-		else {    	
+    }
+    /**
+     * Check Condition for Electrical!Apprentice
+     */
+    if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Apprentice") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+        thisMonth = tmpNewDate.getMonth();
+        if (thisMonth > 7) {
+            thisYear += 1;     //thisYear = thisYear + 1;
+        }
+        newExpDate = "08/31/" + thisYear.toString();
+        if (newLicId) {
+        	thisLic = new licenseObject(newLicIdString,newLicId);
+        	thisLic.setExpiration(dateAdd(newExpDate,0));
+        	thisLic.setStatus("Active");
+        }
+    }
+    /**
+     * Check Condition for Plumbing!Contractor Registration
+     */
+    if (appTypeArray[1] == "Plumbing" && appTypeArray[2] == "Contractor Registration") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+            thisYear += 3;
+            newExpDate = "04/30/" + thisYear.toString();
+        if (newLicId) {
+            thisLic = new licenseObject(newLicIdString,newLicId);
+            thisLic.setExpiration(dateAdd(newExpDate,0));
+            thisLic.setStatus("Active");
+        }
+    }
+    /**
+     * Check condition for Boiler!Contractor Registration
+     */
+    if (appTypeArray[1] == "Boiler" && appTypeArray[2] == "Contractor Registration") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+            thisYear += 3;
+            newExpDate = "12/31/" + thisYear.toString();
+        if (newLicId) {
+            thisLic = new licenseObject(newLicIdString,newLicId);
+            thisLic.setExpiration(dateAdd(newExpDate,0));
+            thisLic.setStatus("Active");
+            }
+    }
+    /**
+     * Check Condition for Mechanical!Occupational
+     */ 
+    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Occupational") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+        monthsToInitialExpire = 12;
+        tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+        if (newLicId) {
+        	thisLic = new licenseObject(newLicIdString,newLicId);
+        	thisLic.setExpiration(dateAdd(tmpNewDate,0));
+        	thisLic.setStatus("Active");
+        }
+    }
+    /**
+   	 * Check Condition for Mechanical!RefrigJourneyman
+   	 */ 
+    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "RefrigJourneyman") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+        monthsToInitialExpire = 12;
+        tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+        if (newLicId) {
+        	thisLic = new licenseObject(newLicIdString,newLicId);
+        	thisLic.setExpiration(dateAdd(tmpNewDate,0));
+        	thisLic.setStatus("Active");
+        }
+    }
+    /**
+     * Check Condition Building!ContractorRegistration
+     */ 
+    if (appTypeArray[1] == "Building" && appTypeArray[2] == "ContractorRegistration") {
+        thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+        newExpDate = "12/31/" + thisYear.toString();
+       	if (newLicId) {
+       		thisLic = new licenseObject(newLicIdString,newLicId);
+       		thisLic.setExpiration(dateAdd(newExpDate,0));
+       		thisLic.setStatus("Active");
+       	}
+    } else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
+	    thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+	    newExpDate = "12/31/" + thisYear.toString();
+	    if (newLicId) {
+	    	thisLic = new licenseObject(newLicIdString,newLicId);
+	    	thisLic.setExpiration(dateAdd(newExpDate,0));
+	    	thisLic.setStatus("Active");
+	    }
+    } else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
+    	thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+    	newExpDate = "12/31/" + thisYear.toString();
+    	if (newLicId) {
+    		thisLic = new licenseObject(newLicIdString,newLicId);
+    		thisLic.setExpiration(dateAdd(newExpDate,0));
+    		thisLic.setStatus("Active");
+    	}
+     } else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
+    	 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+    	 newExpDate = "12/31/" + thisYear.toString();
+    	 if (newLicId) {
+    		 thisLic = new licenseObject(newLicIdString,newLicId);
+    		 thisLic.setExpiration(dateAdd(newExpDate,0));
+    		 thisLic.setStatus("Active");
+    	 }
+	 } else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
+		 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+		 newExpDate = "12/31/" + thisYear.toString();
+		 if (newLicId) {
+			 thisLic = new licenseObject(newLicIdString,newLicId);
+			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setStatus("Active");
+		 }	      	
+	 } else if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Elevator") {
+		 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+		 newExpDate = "12/31/" + thisYear.toString();
+		 if (newLicId) {
+			 thisLic = new licenseObject(newLicIdString,newLicId);
+			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setStatus("Active");
+		 }	      	
+	 } else if  {
+		 	monthsToInitialExpire = 12;
+	        tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+		 if (newLicId) {
+			 thisLic = new licenseObject(newLicIdString,newLicId);
+			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setStatus("Active");
+		 }	else {	
+			 
+			 
+		 }
 			
 //************************************ REPORT **********************************
 			
@@ -232,9 +218,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
     	    	         	    	        
     	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-    	    	        
- 
-  	    	        
+
     	  	}
     	    	      	
     	 }
@@ -247,15 +231,15 @@ if (isTaskStatus("License Issuance","issued")) {
   
   
   //->branch("EMSE:LicProfLookup");
-      logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
+		logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
       //Issue State;
-      LICENSETYPE = "";
+		LICENSETYPE = "";
       //License Type to be populated;
-      licCapId = null;
-      isNewLic = false;
-      licIDString = null;
-      licObj = null;
-      licCap = null;
+		licCapId = null;
+		isNewLic = false;
+		licIDString = null;
+		licObj = null;
+		licCap = null;
   
   
   //->branch("EMSE:LicProfLookup:getLicenses");
@@ -315,23 +299,23 @@ if (isTaskStatus("License Issuance","issued")) {
          aa.print("LIC State License Number is " + stateLicense);
           }
   
-      licObj = licenseProfObject(newLicId,LICENSETYPE);
+      	licObj = licenseProfObject(newLicId,LICENSETYPE);
       //Get LicArray;
-      logDebug("128:stateLicense=" + licIDString);
-      logDebug("129:LICENSETYPE=" + LICENSETYPE);
-      if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+      		logDebug("128:stateLicense=" + licIDString);
+      		logDebug("129:LICENSETYPE=" + LICENSETYPE);
+      		if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
   
   
   //----->branch("EMSE:LicProfLookup:CreateLP");
           logDebug("Executing EMSE:LicProfLookup:CreateLP");
           var vNewLic = aa.licenseScript.createLicenseScriptModel();
-          vNewLic.setAgencyCode(aa.getServiceProviderCode());
-          vNewLic.setAuditDate(sysDate);
-          vNewLic.setAuditID(currentUserID);
-          vNewLic.setAuditStatus("A");
-          vNewLic.setLicenseType(LICENSETYPE);
-          vNewLic.setLicState(LICENSESTATE);
-          vNewLic.setStateLicense(stateLicense);
+          	vNewLic.setAgencyCode(aa.getServiceProviderCode());
+          	vNewLic.setAuditDate(sysDate);
+          	vNewLic.setAuditID(currentUserID);
+          	vNewLic.setAuditStatus("A");
+          	vNewLic.setLicenseType(LICENSETYPE);
+          	vNewLic.setLicState(LICENSESTATE);
+          	vNewLic.setStateLicense(stateLicense);
          
           aa.licenseScript.createRefLicenseProf(vNewLic);
       }   
