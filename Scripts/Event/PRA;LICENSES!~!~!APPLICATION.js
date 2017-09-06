@@ -50,13 +50,13 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
 
-//        var feeArr = loadFees();
-//        var newFeeRes = aa.util.deepClone(feeArr);    
-//        logDebug("Clone Result: " + newFeeRes.getSuccess());
-//        var newFeeArr = newFeeRes.getOutput();
-//        for (i in newFeeArr) {
-//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-//            newFeeArr[i].setCapID(newLicId);
+        var feeArr = loadFees();
+        var newFeeRes = aa.util.deepClone(feeArr);    
+        logDebug("Clone Result: " + newFeeRes.getSuccess());
+        var newFeeArr = newFeeRes.getOutput();
+        for (i in newFeeArr) {
+            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+            newFeeArr[i].setCapID(newLicId);
       
     }
 
@@ -230,43 +230,31 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //						var report = runReportAndSendAsync(License, Licenses, capId, reportParameters, null, null,null, null, null);
     	    	      	var rParams = aa.util.newHashMap();
     	    	      	
-    	   	        addParameter(rParams,"Record_ID","capId");
-    	  	        addParameter(rParams,"Module","Licenses");
+    	   	            addParameter(rParams,"Record_ID","capId");
+    	  	            addParameter(rParams,"Module","Licenses");
     	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
     	    	        
     	    	        logDebug("Parameters: " + rParams);
   	    	 
+  
+
+//    	    	       
     	    	        
-    	    	        
-    	    	        
- //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-    	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
-   	    	        
-//    	    	       function generateReport(itemCap,reportName,module,parameters)
-    	    	        
-  //  	    	        generateReport(capId,"License", "Licenses", rParams);
-    	    	        
+  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
+    	    	         	    	        
     	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
     	    	        
-//    	    	        runReportTest("License");
- //   	    	        runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC); 	        
-    	    	        
-//    	    	        runReportAndSendAsync(License, Licenses, capId, reportParameters, null, null,null, null, null);
-    	    	     
-  	    	        
-  	    	        
-  	    	        
+ 
   	    	        
     	  	}
     	    	      	
     	 }
 
 
-//    // From Here ************************ Licensed Professional **************************************
-//
-//
-//
+    // From Here ************************ Licensed Professional **************************************
+
 //      if (isTaskStatus("License Issuance","Issued")) {
 //        
 //        
