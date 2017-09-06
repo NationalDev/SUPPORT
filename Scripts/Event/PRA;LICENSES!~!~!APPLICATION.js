@@ -192,10 +192,11 @@ var showMessage = false;
 			 thisLic.setExpiration(dateAdd(newExpDate,0));
 			 thisLic.setStatus("Active");
 		 }	      	
-	 } else if  {
-		 	monthsToInitialExpire = 12;
-	        tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
-		 if (newLicId) {
+	 } else if  (newLicId){
+		 	
+		 	 monthsToInitialExpire = 12;
+		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
+			 
 			 thisLic = new licenseObject(newLicIdString,newLicId);
 			 thisLic.setExpiration(dateAdd(newExpDate,0));
 			 thisLic.setStatus("Active");
