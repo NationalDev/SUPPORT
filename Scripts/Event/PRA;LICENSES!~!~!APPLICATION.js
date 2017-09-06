@@ -202,7 +202,8 @@ var showMessage = false;
 			 thisLic.setStatus("Active");
 		 }	else {	
 			 
-			 
+		 }
+   }
 					
 //************************************ REPORT **********************************
 			
@@ -219,9 +220,7 @@ var showMessage = false;
     	    	         	    	        
     	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 
-    	  	}
-    	    	      	
-    	 }
+    	
 
 
 //From Here ************************ Licensed Professional **************************************
