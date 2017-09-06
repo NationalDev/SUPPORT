@@ -203,8 +203,7 @@ var showMessage = false;
 		 }	else {	
 			 
 			 
-		 }
-			
+					
 //************************************ REPORT **********************************
 			
     	    	      	var rParams = aa.util.newHashMap();
