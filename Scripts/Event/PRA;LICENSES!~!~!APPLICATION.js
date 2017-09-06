@@ -60,7 +60,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
       
     }
 
-
+    }
         
       //**************************************************************************************    
         tmpNewDate = new Date();
