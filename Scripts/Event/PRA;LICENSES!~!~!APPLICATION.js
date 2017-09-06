@@ -224,7 +224,6 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	      	
     	   	            addParameter(rParams,"Record_ID","capId");
     	  	            addParameter(rParams,"Module","Licenses");
-    	    	        addParameter(rParams,"Fee Description","License");
     	    	        addParameter(rParams,"logo","Xtra4");
     	    	        
     	    	        logDebug("Parameters: " + rParams);
