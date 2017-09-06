@@ -227,11 +227,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        addParameter(rParams,"logo","Xtra4");
     	    	        
     	    	        logDebug("Parameters: " + rParams);
-  	    	 
-  
-
-//    	    	       
-    	    	        
+     	    	        
   //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
 	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
     	    	         	    	        
@@ -247,7 +243,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //From Here ************************ Licensed Professional **************************************
 
 
-if (wfTask == "License Issuance" && wfStatus == "Issued") {
+if (isTaskStatus("License Issuance","issued")) {
   
   
   //->branch("EMSE:LicProfLookup");
