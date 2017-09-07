@@ -53,7 +53,7 @@ var showMessage = false;
             logDebug("fees  Array = " +newFeeArr.getFeeCod());
             newFeeArr[i].setCapID(newLicId);
       
-    }
+    
 
     }
         
@@ -420,7 +420,8 @@ if (isTaskStatus("License Issuance","issued")) {
             logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
         }
   }
-//   
+
+  
 //    else {
 //        logDebug("LP Not found to update");
 //        //createRefLicProfFromLicProf();
