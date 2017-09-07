@@ -284,7 +284,8 @@ var showMessage = true;
     	    	                //Get License CAP;
     	    	                logDebug("105:licCapId=" + licCapId);
     	    	               
-    	    	          }    	                
+    	    	          }    	  
+	}
     	    	                
 //    	    	                if (licCapId !=null) {
 //    	    	            
