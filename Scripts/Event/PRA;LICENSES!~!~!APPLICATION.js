@@ -228,7 +228,7 @@ var showMessage = false;
     	    	   
     	    	        
     	    	        
-    	    	          if (wfTask == "License Issuance" && wfStatus == "Issued") {
+    	    	          if (isTaskStatus("License Issuance","issued")) {
     	    	            
     	    	            
     	    	            //->branch("EMSE:LicProfLookup");
