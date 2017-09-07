@@ -202,7 +202,7 @@ var showMessage = false;
 			 thisLic.setStatus("Active");
 		 	
    }
-	}		
+	
 //************************************ REPORT **********************************
 			
     	    	      	var rParams = aa.util.newHashMap();
@@ -336,7 +336,7 @@ if (isTaskStatus("License Issuance","issued")) {
     logDebug("161:Successfully created LP? " + licObj.valid);
 
 }    
-    
+	}
     
 //  if (licObj.valid) {
 //  	
