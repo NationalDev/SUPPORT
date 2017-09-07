@@ -220,6 +220,7 @@ var showMessage = false;
 
     	
 	}
+	}
 
 //From Here ************************ Licensed Professional **************************************
 
@@ -419,7 +420,7 @@ if (isTaskStatus("License Issuance","issued")) {
             LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
             logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
         }
-  }
+  
 }
 
   
