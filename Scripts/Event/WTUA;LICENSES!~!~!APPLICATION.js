@@ -127,7 +127,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             }
     }  
 //-----------------------------------------------
-    if (appTypeArray[1] == "Boiler" && appTypeArray[2] == "Contractor Registration") {
+    if (appTypeArray[1] == "Boiler" && appTypeArray[2] == "ContractorRegistration") {
 
         thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 //            thisMonth = tmpNewDate.getMonth();
