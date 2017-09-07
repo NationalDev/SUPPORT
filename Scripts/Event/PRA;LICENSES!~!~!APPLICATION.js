@@ -335,94 +335,97 @@ if (isTaskStatus("License Issuance","issued")) {
     licObj = licenseProfObject(stateLicense,LICENSETYPE );
     logDebug("161:Successfully created LP? " + licObj.valid);
 
-  if (licObj.valid) {
-  	
-  	
-//----->branch("EMSE:LicProfLookup:UpdateLP");
-  
-        logDebug("Executing EMSE:LicProfLookup:UpdateLP");
-
-//----->branch("EMSE:LicProfLookup:UpdateLP:BaseFields");
-        logDebug("Executing EMSE:LicProfLookup:UpdateLP:BaseFields");
-
-        licObj.refLicModel.setState(LICENSESTATE);
-        licObj.refLicModel.setLicenseBoard(LICENSETYPE);
-        licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
-        var expObj = null;
-        var expDt = null;
-        var expObjRes = aa.expiration.getRefLicenseProf(newLicId);
-        if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
-        if (expObj != null) {
-            expDt = aa.date.parseDate(expObj.getExpDateString());
-        }
-
-        if (expDt != null) {
-            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
-        }
-
-//       if (licCapTypeArr[1] == "Business") {
-//           licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
-//       }
-        else {
-            licObj.refLicModel.setLicenseBoard(LICENSETYPE);
-        }
-
-        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
-            logDebug("LP Updated from Primary Contact");
-        }
-        else {
-            logDebug("LP Failed to Update from Primary Contact trying License Holder");
-            if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
-            else logDebug("Couldn't Update Contact Info");
-        }
-
-        if (getAppSpecific("Doing Business As (DBA) Name")) {
-            licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
-        }
-
-        if (getAppSpecific("State License Number")) {
-            licObj.refLicModel.setBusinessLicense(getAppSpecific("State License Number") );
-        }
-        
-        
-        
-        if (getAppSpecific("State Expiration Date")) {
-            var expDate = getAppSpecific("State Expiration Date");
-            licObj.refLicModel.setLicenseExpirationDate(aa.date.parseDate(expDate));
-        }
-
-        licObj.refLicModel.setStateLicense(licCap.getCapModel().getAltID());
-        logDebug("BaseFields setBusinessLicense = " +  licCap.getCapModel().getAltID());
-
-
-//----->branch("EMSE:LicProfLookup:UpdateLP:ApplicationStatus");
-        logDebug("Executing EMSE:LicProfLookup:UpdateLP:ApplicationStatus");
-        licObj.refLicModel.setBusinessName2(licCapStatus);
-        logDebug("Lic Cap Status: " + licCapStatus);
-        if (licObj.updateRecord()) {
-            logDebug("LP Updated Successfully");
-        }
-        else {
-            logDebug("LP Update Failed");
-            logDebug("licObj is valid? " + licObj.valid);
-            var res = aa.licenseScript.editRefLicenseProf(licObj.refLicModel);
-            var succ = res.getSuccess();
-            logDebug("editRefLicenseProf() " + succ);
-
-            createRefLicProf(stateLicense,LICENSETYPE,"License Holder");
-            var newLicProf = getRefLicenseProf(stateLicense);
-            newLicProf.setLicenseIssueDate(licCap.getFileDate());
-            newLicProf.setLicenseBoard(LICENSETYPE);
-            newLicProf.setLicenseExpirationDate(aa.date.parseDate(expDate));
-            newLicProf.setBusinessLicense(licCap.getCapModel().getAltID());
-            newLicProf.setBusinessName2(licCapStatus);
-            
-            LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
-            logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
-        }
-  
-}
-}
+}    
+    
+    
+//  if (licObj.valid) {
+//  	
+//  	
+////----->branch("EMSE:LicProfLookup:UpdateLP");
+//  
+//        logDebug("Executing EMSE:LicProfLookup:UpdateLP");
+//
+////----->branch("EMSE:LicProfLookup:UpdateLP:BaseFields");
+//        logDebug("Executing EMSE:LicProfLookup:UpdateLP:BaseFields");
+//
+//        licObj.refLicModel.setState(LICENSESTATE);
+//        licObj.refLicModel.setLicenseBoard(LICENSETYPE);
+//        licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
+//        var expObj = null;
+//        var expDt = null;
+//        var expObjRes = aa.expiration.getRefLicenseProf(newLicId);
+//        if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+//        if (expObj != null) {
+//            expDt = aa.date.parseDate(expObj.getExpDateString());
+//        }
+//
+//        if (expDt != null) {
+//            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
+//        }
+//
+////       if (licCapTypeArr[1] == "Business") {
+////           licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
+////       }
+//        else {
+//            licObj.refLicModel.setLicenseBoard(LICENSETYPE);
+//        }
+//
+//        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+//            logDebug("LP Updated from Primary Contact");
+//        }
+//        else {
+//            logDebug("LP Failed to Update from Primary Contact trying License Holder");
+//            if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
+//            else logDebug("Couldn't Update Contact Info");
+//        }
+//
+//        if (getAppSpecific("Doing Business As (DBA) Name")) {
+//            licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
+//        }
+//
+//        if (getAppSpecific("State License Number")) {
+//            licObj.refLicModel.setBusinessLicense(getAppSpecific("State License Number") );
+//        }
+//        
+//        
+//        
+//        if (getAppSpecific("State Expiration Date")) {
+//            var expDate = getAppSpecific("State Expiration Date");
+//            licObj.refLicModel.setLicenseExpirationDate(aa.date.parseDate(expDate));
+//        }
+//
+//        licObj.refLicModel.setStateLicense(licCap.getCapModel().getAltID());
+//        logDebug("BaseFields setBusinessLicense = " +  licCap.getCapModel().getAltID());
+//
+//
+////----->branch("EMSE:LicProfLookup:UpdateLP:ApplicationStatus");
+//        logDebug("Executing EMSE:LicProfLookup:UpdateLP:ApplicationStatus");
+//        licObj.refLicModel.setBusinessName2(licCapStatus);
+//        logDebug("Lic Cap Status: " + licCapStatus);
+//        if (licObj.updateRecord()) {
+//            logDebug("LP Updated Successfully");
+//        }
+//        else {
+//            logDebug("LP Update Failed");
+//            logDebug("licObj is valid? " + licObj.valid);
+//            var res = aa.licenseScript.editRefLicenseProf(licObj.refLicModel);
+//            var succ = res.getSuccess();
+//            logDebug("editRefLicenseProf() " + succ);
+//
+//            createRefLicProf(stateLicense,LICENSETYPE,"License Holder");
+//            var newLicProf = getRefLicenseProf(stateLicense);
+//            newLicProf.setLicenseIssueDate(licCap.getFileDate());
+//            newLicProf.setLicenseBoard(LICENSETYPE);
+//            newLicProf.setLicenseExpirationDate(aa.date.parseDate(expDate));
+//            newLicProf.setBusinessLicense(licCap.getCapModel().getAltID());
+//            newLicProf.setBusinessName2(licCapStatus);
+//            
+//            LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
+//            logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
+//        }
+//  
+//}
+//}
   
 //    else {
 //        logDebug("LP Not found to update");
