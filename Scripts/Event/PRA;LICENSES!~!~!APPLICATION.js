@@ -202,7 +202,7 @@ var showMessage = false;
 			 thisLic.setStatus("Active");
 		 	
    }
-					
+	}		
 //************************************ REPORT **********************************
 			
     	    	      	var rParams = aa.util.newHashMap();
@@ -219,8 +219,8 @@ var showMessage = false;
     	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 
     	
-	}
-	}
+	
+	
 
 //From Here ************************ Licensed Professional **************************************
 
