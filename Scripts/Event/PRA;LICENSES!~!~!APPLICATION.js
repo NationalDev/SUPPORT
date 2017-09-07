@@ -202,7 +202,7 @@ var showMessage = false;
 			 thisLic.setStatus("Active");
 		 	
    }
-	
+	}
 //************************************ REPORT **********************************
 			
     	    	      	var rParams = aa.util.newHashMap();
