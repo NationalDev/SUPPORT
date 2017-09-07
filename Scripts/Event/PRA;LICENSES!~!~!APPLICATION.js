@@ -199,7 +199,7 @@ var showMessage = true;
 			 thisLic.setStatus("Active");
 		 }	      	
 	 } 
-    else if (appTypeArray[1] != null && appTypeArray[2] != null) {
+    else  {
 		     newLicId = new Date();
 		 	 monthsToInitialExpire = 12;
 		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
@@ -211,8 +211,7 @@ var showMessage = true;
    
 	}
 	}
-	else {
-	}
+	
 //************************************ REPORT **********************************
 			
     	    	      	var rParams = aa.util.newHashMap();
