@@ -200,7 +200,7 @@ var showMessage = false;
 			 thisLic = new licenseObject(newLicIdString,newLicId);
 			 thisLic.setExpiration(dateAdd(newExpDate,0));
 			 thisLic.setStatus("Active");
-		 }	
+		 	
    }
 					
 //************************************ REPORT **********************************
@@ -436,4 +436,4 @@ if (isTaskStatus("License Issuance","issued")) {
 //
 //        	}
       
-}
+
