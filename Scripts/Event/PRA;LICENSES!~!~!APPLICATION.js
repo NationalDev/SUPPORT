@@ -422,7 +422,7 @@ if (isTaskStatus("License Issuance","issued")) {
         }
   
 }
-
+}
   
 //    else {
 //        logDebug("LP Not found to update");
