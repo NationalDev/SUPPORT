@@ -63,7 +63,7 @@ var showMessage = true;
     /**
      * Check Condition for Mechinical!Contractor Registration
      */
-    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "ContractorRegistration") {
+    if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Contractor Registration") {
         thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
             thisYear += 3;
             newExpDate = "08/31/" + thisYear.toString();
@@ -191,6 +191,16 @@ var showMessage = true;
 		 }	      	
 	 } 
     else if (appTypeArray[1] == "Mechanical" && appTypeArray[2] == "Elevator") {
+		 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
+		 newExpDate = "12/31/" + thisYear.toString();
+		 if (newLicId) {
+			 thisLic = new licenseObject(newLicIdString,newLicId);
+			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setStatus("Active");
+		 }	      	
+	 } 
+    
+    else if (appTypeArray[1] == "Building" && appTypeArray[2] == "WreckingContractor") {
 		 thisYear = parseInt(tmpNewDate.getYear().toString()) + 1900;
 		 newExpDate = "12/31/" + thisYear.toString();
 		 if (newLicId) {
