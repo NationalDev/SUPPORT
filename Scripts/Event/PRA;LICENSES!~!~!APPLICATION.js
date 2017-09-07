@@ -600,13 +600,13 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	            }
     	    	        
     	    	         
-    	    	                var checkLicProf = getRefLicenseProf(stateLicense);
-    	    	                	if (newLicProf.valid){
-    	    	            aa.print("newLicProf is a " + newLicProf.getClass());
-    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
-    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
-    	    	      
-    	    	                	}
+//    	    	                var checkLicProf = getRefLicenseProf(stateLicense);
+//    	    	                	if (newLicProf.valid){
+//    	    	            aa.print("newLicProf is a " + newLicProf.getClass());
+//    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
+//    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
+//    	    	      
+//    	    	                	}
     	    	              
     	    	        }
     	    	        }
