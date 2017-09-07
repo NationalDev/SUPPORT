@@ -199,7 +199,7 @@ var showMessage = true;
 			 thisLic.setStatus("Active");
 		 }	      	
 	 } 
-    else {
+    else if (appTypeArray[1] =!= null) {
 		     newLicId = new Date();
 		 	 monthsToInitialExpire = 12;
 		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
@@ -209,6 +209,9 @@ var showMessage = true;
 			 thisLic.setStatus("Active");
 		 	
    
+	}
+	}
+	else {
 	}
 //************************************ REPORT **********************************
 			
