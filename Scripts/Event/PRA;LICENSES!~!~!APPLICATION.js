@@ -219,7 +219,7 @@ var showMessage = false;
     	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 
     	
-
+	}
 
 //From Here ************************ Licensed Professional **************************************
 
@@ -421,6 +421,7 @@ if (isTaskStatus("License Issuance","issued")) {
         }
   }
 }
+
   
 //    else {
 //        logDebug("LP Not found to update");
