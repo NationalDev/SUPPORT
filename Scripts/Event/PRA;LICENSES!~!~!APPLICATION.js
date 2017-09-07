@@ -211,7 +211,7 @@ var showMessage = true;
    
 	}
 	}
-	
+	}
 	
 	
 	
@@ -608,6 +608,6 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	      
     	    	                	}
     	    	              
-    	    	        }
+    	    	        
     	    	        }
 	}    
