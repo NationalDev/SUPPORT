@@ -420,7 +420,7 @@ if (isTaskStatus("License Issuance","issued")) {
             logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
         }
   }
-
+}
   
 //    else {
 //        logDebug("LP Not found to update");
