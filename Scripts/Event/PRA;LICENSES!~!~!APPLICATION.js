@@ -261,12 +261,12 @@ var showMessage = true;
     	    	          
     	    	              capId = tmpId;
     	    	              var vRelationType = "R";
-    	    	              if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
-    	    	              var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
-    	    	              if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
-    	    	              if (prjArr != null) {
-    	    	                  for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
-    	    	                  }
+//    	    	              if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
+//    	    	              var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
+//    	    	              if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
+//    	    	              if (prjArr != null) {
+//    	    	                  for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
+//    	    	                  }
     	    	          
     	    	              if (licCapId == null && appMatch("*/*/*/License")) {
     	    	                  licCapId = capId;
