@@ -4,7 +4,7 @@
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
-//			September 1st, 2017																							   /
+//			September 7th, 2017																							   /
 //*********************************************************************************************************/
 
 var showDebug = true;
