@@ -208,8 +208,7 @@ var showMessage = true;
 		 }	      	
 	 } 
     else  {
-		     newLicId = new Date();
-		 	 monthsToInitialExpire = 12;
+		     monthsToInitialExpire = 12;
 		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
 			 
 			 thisLic = new licenseObject(newLicIdString,newLicId);
