@@ -222,27 +222,7 @@ var showMessage = true;
 	}
 	}
 	}
-	
-	
-	
-//************************************ REPORT **********************************
-			
-    	    	      	var rParams = aa.util.newHashMap();
-    	    	      	
-    	   	            addParameter(rParams,"Record_ID","capId");
-    	  	            addParameter(rParams,"Module","Licenses");
-    	    	        addParameter(rParams,"logo","Xtra4");
-    	    	        
-    	    	        logDebug("Parameters: " + rParams);
-     	    	        
-  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
-    	    	         	    	        
-    	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-
-    	
-
-    	    	        
+    	        
 
 //From Here ************************ Licensed Professional **************************************
 
@@ -620,4 +600,19 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	              
     	    	        }
     	    	        }
+  
+//************************************ REPORT **********************************
+	
+	var rParams = aa.util.newHashMap();
+	
+     addParameter(rParams,"Record_ID","capId");
+    addParameter(rParams,"Module","Licenses");
+  addParameter(rParams,"logo","Xtra4");
+  
+  logDebug("Parameters: " + rParams);
+   
+//   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+	//If email address available for contact type then email the report, otherwise pop up the report on the screen
+   	    	        
+  runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 	}    
