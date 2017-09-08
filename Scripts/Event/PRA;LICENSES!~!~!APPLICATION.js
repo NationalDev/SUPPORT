@@ -45,17 +45,14 @@ var showMessage = true;
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
 
-        var feeArr = loadFees();
-        var newFeeRes = aa.util.deepClone(feeArr);    
-        logDebug("Clone Result: " + newFeeRes.getSuccess());
-        var newFeeArr = newFeeRes.getOutput();
-        for (i in newFeeArr) {
-            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-            newFeeArr[i].setCapID(newLicId);
-      
-    
-
-    }
+//        var feeArr = loadFees();
+//        var newFeeRes = aa.util.deepClone(feeArr);    
+//        logDebug("Clone Result: " + newFeeRes.getSuccess());
+//        var newFeeArr = newFeeRes.getOutput();
+//        for (i in newFeeArr) {
+//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+//            newFeeArr[i].setCapID(newLicId);
+//             }
         
       //**************************************************************************************    
     tmpNewDate = new Date();
