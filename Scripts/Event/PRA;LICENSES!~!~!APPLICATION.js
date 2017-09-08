@@ -247,7 +247,7 @@ var showMessage = true;
 //From Here ************************ Licensed Professional **************************************
 
 
-if (isTaskStatus("License Issuance","issued")) {
+if (isTaskStatus("License Issuance","issued") && balanceDue <= 0)) {
   
   
   //->branch("EMSE:LicProfLookup");
