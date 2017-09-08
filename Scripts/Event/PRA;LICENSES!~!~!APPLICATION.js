@@ -212,7 +212,7 @@ var showMessage = true;
 		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
 			 
 			 thisLic = new licenseObject(newLicIdString,newLicId);
-			 thisLic.setExpiration(dateAdd(newExpDate,0));
+			 thisLic.setExpiration(dateAdd(tmpNewDate,0));
 			 thisLic.setStatus("Active");
 		 	
    
