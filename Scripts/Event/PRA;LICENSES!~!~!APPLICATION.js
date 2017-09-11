@@ -4,7 +4,8 @@
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
-//			September 7th, 2017																							   /
+//			September 7th, 2017			Revision 2.0
+//			September 11th, 2017		Revision 3.0
 //*********************************************************************************************************/
 
 var showDebug = true;
@@ -598,18 +599,58 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        }
     	    	        }
   
-//************************************ REPORT **********************************
-	
-	var rParams = aa.util.newHashMap();
-	
-     addParameter(rParams,"Record_ID","capId");
-    addParameter(rParams,"Module","Licenses");
-  addParameter(rParams,"logo","Xtra4");
+//************************************ REPORT SELECTION **********************************
+
+//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+//If email address available for contact type then email the report, otherwise pop up the report on the screen  
   
-  logDebug("Parameters: " + rParams);
+//*********************************** STATIONARY ENGINEER  
+  
+  	licenseType = getAppSpecific("License Type");
+  
+  	if ((licenseType = "1st Class Station Eng") || (licenseType = "2nd Class Station Eng") || (licenseType = "3rd Class Station Eng")) {
+  
+  		var rParams = aa.util.newHashMap();
+	
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"Module","Licenses");
+  
+  			logDebug("Parameters: " + rParams);
+
+    	        
+  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+ 
+  			}
+  	
+ 
+//*********************************** BOILER 
+ 
+  	if ((licenseType = "Boiler Op HP") || (licenseType = "Boiler Op LP") || (licenseType = "Boiler Op Miniature")) {
+  		
+  		var rParams = aa.util.newHashMap();
+	
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"logo","Xtra4");
+
+  			logDebug("Parameters: " + rParams);
+
+	    	        
+  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+  	}
+
+
+//*********************************** ALL OTHERS *************************************************************
    
-//   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-	//If email address available for contact type then email the report, otherwise pop up the report on the screen
+  			var rParams = aa.util.newHashMap();
+	
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"logo","Xtra4");
+  
+  			logDebug("Parameters: " + rParams);
+   
    	    	        
-  runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 	}    
