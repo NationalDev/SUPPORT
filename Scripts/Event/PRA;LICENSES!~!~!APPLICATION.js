@@ -629,7 +629,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
  
 //*********************************** BOILER 
  
-  	if ((licenseType = "Boiler Op HP") || (licenseType = "Boiler Op LP") || (licenseType = "1st Class Refrig Op") || (licenseType = "2nd Class Refrig Op") || (licenseType = "3rd Class Refrig Op")) {
+  	if else ((licenseType = "Boiler Op HP") || (licenseType = "Boiler Op LP") || (licenseType = "1st Class Refrig Op") || (licenseType = "2nd Class Refrig Op") || (licenseType = "3rd Class Refrig Op")) {
   		
   		var rParams = aa.util.newHashMap();
 	
@@ -646,7 +646,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 
 
 //*********************************** ALL OTHERS *************************************************************
-   
+  	else {}
   			var rParams = aa.util.newHashMap();
 	
   			addParameter(rParams,"Record_ID","capId");
@@ -657,4 +657,5 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
    
    	    	        
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+
 	}    
