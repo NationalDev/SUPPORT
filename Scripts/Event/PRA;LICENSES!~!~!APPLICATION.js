@@ -512,9 +512,9 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                    licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
     	    	                }
     	    	        
-//    	    	               if (licCapTypeArr[1] == "Business") {
-//    	    	                   licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
-//    	    	               }
+    	    	               if (licCapTypeArr[1] == "Business") {
+    	    	                   licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
+    	    	               }
     	    	                else {
     	    	                    licObj.refLicModel.setLicenseBoard(LICENSETYPE);
     	    	                }
@@ -591,156 +591,156 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	              
     	    	        }
     	    	        }
-	}
+	
   
-////************************************ REPORT SELECTION **********************************
+//************************************ REPORT SELECTION **********************************
+
+//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+//If email address available for contact type then email the report, otherwise pop up the report on the screen  
+  
+//*********************************** STATIONARY ENGINEER  
+  
+  	licenseType = getAppSpecific("License Type", capId);
+  
+  	logDebug("License Type: " + licenseType);
+  	
+if (licenseType = "1st Class Station Eng") {
+  	     
+  		var rParams = aa.util.newHashMap();
+  	     	addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"TASK","Licenses Issuance");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  			
+  			logDebug("Parameters: " + rParams);
+
+    	        
+  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+ 
+  			}
+  	
+else if (licenseType = "2nd Class Station Eng")  {
+	     
+		var rParams = aa.util.newHashMap();
+	     	addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"TASK","Licenses Issuance");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			
+			logDebug("Parameters: " + rParams);
+
+	        
+			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+
+			} 
+
+else if (licenseType = "3rd Class Station Eng") {
+    
+	var rParams = aa.util.newHashMap();
+     	addParameter(rParams,"Module","Licenses");
+		addParameter(rParams,"Record_ID","capId");
+		addParameter(rParams,"TASK","Licenses Issuance");
+		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+		
+		logDebug("Parameters: " + rParams);
+
+        
+		runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+
+		} 
 //
-////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-////If email address available for contact type then email the report, otherwise pop up the report on the screen  
-//  
-////*********************************** STATIONARY ENGINEER  
-//  
-//  	licenseType = getAppSpecific("License Type", capId);
-//  
-//  	logDebug("License Type: " + licenseType);
-//  	
-//if (licenseType = "1st Class Station Eng") {
-//  	     
-//  		var rParams = aa.util.newHashMap();
-//  	     	addParameter(rParams,"Module","Licenses");
-//  			addParameter(rParams,"Record_ID","capId");
-//  			addParameter(rParams,"TASK","Licenses Issuance");
-//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//  			
-//  			logDebug("Parameters: " + rParams);
 //
-//    	        
-//  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+//
+////*********************************** BOILER 
 // 
-//  			}
-//  	
-//else if (licenseType = "2nd Class Station Eng")  {
-//	     
-//		var rParams = aa.util.newHashMap();
-//	     	addParameter(rParams,"Module","Licenses");
-//			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"TASK","Licenses Issuance");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//			
-//			logDebug("Parameters: " + rParams);
+else if (licenseType = "Boiler Op HP") {
+  	
+  		
+  		var rParams = aa.util.newHashMap();
+			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  			addParameter(rParams,"TASK","Licenses Issuance");
+
+  			logDebug("Parameters: " + rParams);
+
+	    	        
+  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+  	}
 //
-//	        
-//			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-//
-//			} 
-//
-//else if (licenseType = "3rd Class Station Eng") {
-//    
-//	var rParams = aa.util.newHashMap();
-//     	addParameter(rParams,"Module","Licenses");
-//		addParameter(rParams,"Record_ID","capId");
-//		addParameter(rParams,"TASK","Licenses Issuance");
-//		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//		
-//		logDebug("Parameters: " + rParams);
-//
-//        
-//		runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-//
-//		} 
-////
-////
-////
-//////*********************************** BOILER 
-//// 
-//else if (licenseType = "Boiler Op HP") {
-//  	
-//  		
-//  		var rParams = aa.util.newHashMap();
-//			addParameter(rParams,"Module","Licenses");
-//  			addParameter(rParams,"Record_ID","capId");
-//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//  			addParameter(rParams,"TASK","Licenses Issuance");
-//
-//  			logDebug("Parameters: " + rParams);
-//
-//	    	        
-//  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//
-//  	}
-////
-//else if (licenseType = "Boiler Op LP") {
-//  	
-//		
-//		var rParams = aa.util.newHashMap();
-//		addParameter(rParams,"Module","Licenses");
-//			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//			addParameter(rParams,"TASK","Licenses Issuance");
-//
-//			logDebug("Parameters: " + rParams);
-//
-//    	        
-//			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//
-//	}
-//else if (licenseType = "1st Class Refrig Op") {
-//  	
-//		
-//		var rParams = aa.util.newHashMap();
-//		addParameter(rParams,"Module","Licenses");
-//			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//			addParameter(rParams,"TASK","Licenses Issuance");
-//
-//			logDebug("Parameters: " + rParams);
-//
-//    	        
-//			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//
-//	}
-//else if (licenseType = "2nd Class Refrig Op") {
-//  	
-//		
-//		var rParams = aa.util.newHashMap();
-//		addParameter(rParams,"Module","Licenses");
-//			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
-//			addParameter(rParams,"TASK","Licenses Issuance");
-//
-//			logDebug("Parameters: " + rParams);
-//
-//    	        
-//			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//
-//	}
-//else if (licenseType = "3rd Class Refrig Op") {
-//  	
-//		
-//		var rParams = aa.util.newHashMap();
-//		addParameter(rParams,"Module","Licenses");
-//			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//			addParameter(rParams,"TASK","Licenses Issuance");
-//
-//			logDebug("Parameters: " + rParams);
-//
-//    	        
-//			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//
-//	}
-////*********************************** ALL OTHERS *************************************************************
-//  	
-//else{		var rParams = aa.util.newHashMap();
-//	
-//  			addParameter(rParams,"Record_ID","capId");
-//  			addParameter(rParams,"Module","Licenses");
-//  			addParameter(rParams,"logo","Xtra4");
-//  
-//  			logDebug("Parameters: " + rParams);
-//   
-//   	    	        
-//  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-//  			
-//}
-//} 
+else if (licenseType = "Boiler Op LP") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "1st Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "2nd Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "3rd Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+//*********************************** ALL OTHERS *************************************************************
+  	
+else{		var rParams = aa.util.newHashMap();
+	
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"logo","Xtra4");
+  
+  			logDebug("Parameters: " + rParams);
+   
+   	    	        
+  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+  			
+}}
+} 
