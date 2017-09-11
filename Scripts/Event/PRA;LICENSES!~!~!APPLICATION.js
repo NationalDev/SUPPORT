@@ -488,7 +488,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //    	    	                }
     	    	            
     	    	            
-    	    	            licObj = licenseProfObject(stateLicense,LICENSETYPE );
+    	    	            licObj = LicProfLookup_CreateLP(stateLicense,LICENSETYPE );
     	    	            logDebug("161:Successfully created LP? " + licObj.valid);
 
     	    	          if (licObj.valid) {
