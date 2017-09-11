@@ -453,7 +453,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	              //Get LicArray;
     	    	              logDebug("128:stateLicense=" + licIDString);
     	    	              logDebug("129:LICENSETYPE=" + LICENSETYPE);
-    	    	              if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+    	    	              if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
     	    	          
     	    	          
     	    	          //----->branch("EMSE:LicProfLookup:CreateLP");
@@ -610,7 +610,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //  	     	addParameter(rParams,"Module","Licenses");
 //  			addParameter(rParams,"Record_ID","capId");
 //  			addParameter(rParams,"TASK","Licenses Issuance");
-//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //  			
 //  			logDebug("Parameters: " + rParams);
 //
@@ -625,7 +625,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //	     	addParameter(rParams,"Module","Licenses");
 //			addParameter(rParams,"Record_ID","capId");
 //			addParameter(rParams,"TASK","Licenses Issuance");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //			
 //			logDebug("Parameters: " + rParams);
 //
@@ -640,7 +640,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //     	addParameter(rParams,"Module","Licenses");
 //		addParameter(rParams,"Record_ID","capId");
 //		addParameter(rParams,"TASK","Licenses Issuance");
-//		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //		
 //		logDebug("Parameters: " + rParams);
 //
@@ -659,7 +659,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //  		var rParams = aa.util.newHashMap();
 //			addParameter(rParams,"Module","Licenses");
 //  			addParameter(rParams,"Record_ID","capId");
-//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //  			addParameter(rParams,"TASK","Licenses Issuance");
 //
 //  			logDebug("Parameters: " + rParams);
@@ -675,7 +675,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //		var rParams = aa.util.newHashMap();
 //		addParameter(rParams,"Module","Licenses");
 //			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //			addParameter(rParams,"TASK","Licenses Issuance");
 //
 //			logDebug("Parameters: " + rParams);
@@ -690,7 +690,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //		var rParams = aa.util.newHashMap();
 //		addParameter(rParams,"Module","Licenses");
 //			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //			addParameter(rParams,"TASK","Licenses Issuance");
 //
 //			logDebug("Parameters: " + rParams);
@@ -720,7 +720,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 //		var rParams = aa.util.newHashMap();
 //		addParameter(rParams,"Module","Licenses");
 //			addParameter(rParams,"Record_ID","capId");
-//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+//			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 //			addParameter(rParams,"TASK","Licenses Issuance");
 //
 //			logDebug("Parameters: " + rParams);
