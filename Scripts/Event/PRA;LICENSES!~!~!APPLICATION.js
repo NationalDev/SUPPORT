@@ -476,14 +476,14 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                      isNewLic = true;
     	    	                }
     	    	              
-    	    	            if (tmpLicObj.valid && licIDString) {
-    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-    	    	                }
-
-    	    	            var mycap = aa.cap.getCap(capId).getOutput();
-    	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    	    	                associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-    	    	                }
+//    	    	            if (tmpLicObj.valid && licIDString) {
+//    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+//    	    	                }
+//
+//    	    	            var mycap = aa.cap.getCap(capId).getOutput();
+//    	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+//    	    	                associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+//    	    	                }
     	    	            licObj = licenseProfObject(stateLicense,LICENSETYPE );
     	    	            logDebug("161:Successfully created LP? " + licObj.valid);
 
@@ -742,4 +742,5 @@ else{		var rParams = aa.util.newHashMap();
    	    	        
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
+}
 }
