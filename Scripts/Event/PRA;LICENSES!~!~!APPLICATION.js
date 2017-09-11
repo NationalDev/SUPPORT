@@ -610,7 +610,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   	logDebug("License Type: " + licenseType);
   	
-  	for (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng"; licenseType = "3rd Class Station Eng") {
+for (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng"; licenseType = "3rd Class Station Eng") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	addParameter(rParams,"Module","Licenses");
@@ -628,7 +628,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
  
 //*********************************** BOILER 
  
-  	for (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op"; licenseType = "2nd Class Refrig Op"; licenseType = "3rd Class Refrig Op") {
+if (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op"; licenseType = "2nd Class Refrig Op"; licenseType = "3rd Class Refrig Op") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -636,8 +636,6 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   			addParameter(rParams,"Record_ID","capId");
   			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
   			addParameter(rParams,"TASK","Licenses Issuance");
-  			
-  			
 
   			logDebug("Parameters: " + rParams);
 
