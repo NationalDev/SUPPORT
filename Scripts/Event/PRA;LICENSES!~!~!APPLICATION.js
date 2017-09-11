@@ -472,23 +472,22 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                  var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
     	    	                 
     	    	                  logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-//    	    	                  if (tmpLicObj.valid) {
-//    	    	                      isNewLic = true;
-//    	    	                }
+    	    	                  if (tmpLicObj.valid) {
+    	    	                      isNewLic = true;
+    	    	                }
     	    	              
    	    	                  
     	    	                  
-//    	    	                  if (tmpLicObj.valid && licIDString) {
+   	    	                  if (tmpLicObj.valid && licIDString) {
     	    	                associatedRefContactWithRefLicProf(licIDString, aa.getServiceProviderCode(),currentUserID);
-//    	    	                }
+   	    	                }
 
-    	    	            var mycap = aa.cap.getCap(capId).getOutput();
-//    	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    	    	                associatedLicensedProfessionalWithPublicUser(licIDString, mycap.getCapModel().getCreatedBy().toString());
-//    	    	                }
+//    	    	            var mycap = aa.cap.getCap(capId).getOutput();
+//   	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+//    	    	                associatedLicensedProfessionalWithPublicUser(licIDString, mycap.getCapModel().getCreatedBy().toString());
+	    	            
     	    	            
-    	    	            
-    	    	            licObj = LicProfLookup_CreateLP(stateLicense,LICENSETYPE );
+    	    	            licObj = createRefLicProf(stateLicense,LICENSETYPE, "Applicant" );
     	    	            logDebug("161:Successfully created LP? " + licObj.valid);
 
     	    	          if (licObj.valid) {
