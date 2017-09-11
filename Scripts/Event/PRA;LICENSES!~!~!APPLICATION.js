@@ -614,10 +614,11 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   		var rParams = aa.util.newHashMap();
 	
-  			addParameter(rParams,"Record_ID","capId");
   			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"Record_ID","capId");
+  			
   			addParameter(rParams,"TASK","Licenses Issuance");
-  			addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONA");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
   			
   			logDebug("Parameters: " + rParams);
 
@@ -633,9 +634,11 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   		
   		var rParams = aa.util.newHashMap();
 	
-  			addParameter(rParams,"Record_ID","capId");
   			addParameter(rParams,"Module","Licenses");
-  			addParameter(rParams,"logo","Xtra4");
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+  			addParameter(rParams,"TASK","Licenses Issuance");
+  			
 
   			logDebug("Parameters: " + rParams);
 
