@@ -594,7 +594,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                	}
     	    	              
     	    	        }
-    	    	        }
+    	    	        
 	
   
 //************************************ REPORT SELECTION **********************************
@@ -746,5 +746,6 @@ else{		var rParams = aa.util.newHashMap();
    	    	        
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
+}
 }
 }
