@@ -649,7 +649,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 
 
 //*********************************** ALL OTHERS *************************************************************
-  	else {}
+  	
   			var rParams = aa.util.newHashMap();
 	
   			addParameter(rParams,"Record_ID","capId");
