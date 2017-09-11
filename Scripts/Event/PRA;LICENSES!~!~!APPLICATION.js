@@ -9,7 +9,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = true;
+var showMessage = false;
 
 
 //if (isTaskStatus == "Request for Corrections") {
@@ -610,7 +610,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   	logDebug("License Type: " + licenseType);
   	
-for (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng"; licenseType = "3rd Class Station Eng") {
+if (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng"; licenseType = "3rd Class Station Eng") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	addParameter(rParams,"Module","Licenses");
@@ -628,7 +628,7 @@ for (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng
  
 //*********************************** BOILER 
  
-if (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op"; licenseType = "2nd Class Refrig Op"; licenseType = "3rd Class Refrig Op") {
+else if (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op"; licenseType = "2nd Class Refrig Op"; licenseType = "3rd Class Refrig Op") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -647,7 +647,7 @@ if (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1
 
 //*********************************** ALL OTHERS *************************************************************
   	
-  			var rParams = aa.util.newHashMap();
+else{		var rParams = aa.util.newHashMap();
 	
   			addParameter(rParams,"Record_ID","capId");
   			addParameter(rParams,"Module","Licenses");
@@ -657,5 +657,5 @@ if (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1
    
    	    	        
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-
+}
 	}    
