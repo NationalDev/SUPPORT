@@ -476,9 +476,9 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                      isNewLic = true;
     	    	                }
     	    	              
-//    	    	            if (tmpLicObj.valid && licIDString) {
-//    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-//    	    	                }
+    	    	            if (tmpLicObj.valid && licIDString) {
+    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+    	    	                }
 
     	    	            var mycap = aa.cap.getCap(capId).getOutput();
     	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
