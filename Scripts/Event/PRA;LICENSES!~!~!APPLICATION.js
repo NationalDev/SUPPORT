@@ -628,7 +628,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
  
 //*********************************** BOILER 
  
-  	for (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op";licenseType = "2nd Class Refrig Op";licenseType = "3rd Class Refrig Op") {
+  	for (licenseType = "Boiler Op HP"; licenseType = "Boiler Op LP"; licenseType = "1st Class Refrig Op"; licenseType = "2nd Class Refrig Op"; licenseType = "3rd Class Refrig Op") {
   	
   		
   		var rParams = aa.util.newHashMap();
