@@ -209,14 +209,7 @@ var showMessage = false;
 		 }	      	
 	 } 
     else  {
-		     monthsToInitialExpire = 12;
-		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
-			 
-			 thisLic = new licenseObject(newLicIdString,newLicId);
-			 thisLic.setExpiration(dateAdd(tmpNewDate,0));
-			 thisLic.setStatus("Active");
-		 	
-   
+		       
 	}
 	}
 	}
