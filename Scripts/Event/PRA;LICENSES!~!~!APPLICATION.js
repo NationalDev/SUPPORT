@@ -576,7 +576,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	           
     	    	            else {
     	    	                logDebug("LP Not found to update");
-    	    	                //createRefLicProfFromLicProf();
+    	    	                createRefLicProfFromLicProf();
     	    	            
     	    	            }
     	    	        
@@ -743,4 +743,3 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-} 
