@@ -4,11 +4,12 @@
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
-//			September 7th, 2017																							   /
+//			September 7th, 2017			Revision 2.0
+//			September 11th, 2017			Revision 3.0
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = true;
+var showMessage = false;
 
 
 //if (isTaskStatus == "Request for Corrections") {
@@ -44,18 +45,16 @@ var showMessage = true;
     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
+        
 
-        var feeArr = loadFees();
-        var newFeeRes = aa.util.deepClone(feeArr);    
-        logDebug("Clone Result: " + newFeeRes.getSuccess());
-        var newFeeArr = newFeeRes.getOutput();
-        for (i in newFeeArr) {
-            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-            newFeeArr[i].setCapID(newLicId);
-      
-    
-
-    }
+//        var feeArr = loadFees();
+//        var newFeeRes = aa.util.deepClone(feeArr);    
+//        logDebug("Clone Result: " + newFeeRes.getSuccess());
+//        var newFeeArr = newFeeRes.getOutput();
+//        for (i in newFeeArr) {
+//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+//            newFeeArr[i].setCapID(newLicId);
+//             }
         
       //**************************************************************************************    
     tmpNewDate = new Date();
@@ -210,44 +209,16 @@ var showMessage = true;
 		 }	      	
 	 } 
     else  {
-		     newLicId = new Date();
-		 	 monthsToInitialExpire = 12;
-		     tmpNewDate = dateAddMonths(null, monthsToInitialExpire);
-			 
-			 thisLic = new licenseObject(newLicIdString,newLicId);
-			 thisLic.setExpiration(dateAdd(newExpDate,0));
-			 thisLic.setStatus("Active");
-		 	
-   
-	}
-	}
+		       
 	}
 	
-	
-	
-//************************************ REPORT **********************************
-			
-    	    	      	var rParams = aa.util.newHashMap();
-    	    	      	
-    	   	            addParameter(rParams,"Record_ID","capId");
-    	  	            addParameter(rParams,"Module","Licenses");
-    	    	        addParameter(rParams,"logo","Xtra4");
-    	    	        
-    	    	        logDebug("Parameters: " + rParams);
-     	    	        
-  //   	    	        function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-	    	        	//If email address available for contact type then email the report, otherwise pop up the report on the screen
-    	    	         	    	        
-    	    	        runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-
-    	
-
-    	    	        
+	}
+    	        
 
 //From Here ************************ Licensed Professional **************************************
 
 
-if (isTaskStatus("License Issuance","issued")) {
+if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   
   //->branch("EMSE:LicProfLookup");
@@ -401,7 +372,7 @@ if (isTaskStatus("License Issuance","issued")) {
         if (getAppSpecific("Doing Business As (DBA) Name")) {
             licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
         }
-
+  }
 
 // From Here ************************ Licensed Professional **************************************
 
@@ -482,7 +453,7 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	              //Get LicArray;
     	    	              logDebug("128:stateLicense=" + licIDString);
     	    	              logDebug("129:LICENSETYPE=" + LICENSETYPE);
-    	    	              if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+    	    	              if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
     	    	          
     	    	          
     	    	          //----->branch("EMSE:LicProfLookup:CreateLP");
@@ -505,9 +476,9 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	                      isNewLic = true;
     	    	                }
     	    	              
-//    	    	            if (tmpLicObj.valid && licIDString) {
-//    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-//    	    	                }
+    	    	            if (tmpLicObj.valid && licIDString) {
+    	    	                associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+    	    	                }
 
     	    	            var mycap = aa.cap.getCap(capId).getOutput();
     	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
@@ -541,9 +512,9 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	                    licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
     	    	                }
     	    	        
-//    	    	               if (licCapTypeArr[1] == "Business") {
-//    	    	                   licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
-//    	    	               }
+    	    	               if (licCapTypeArr[1] == "Business") {
+    	    	                   licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
+    	    	               }
     	    	                else {
     	    	                    licObj.refLicModel.setLicenseBoard(LICENSETYPE);
     	    	                }
@@ -610,14 +581,166 @@ if (isTaskStatus("License Issuance","issued")) {
     	    	            }
     	    	        
     	    	         
-//    	    	                var checkLicProf = getRefLicenseProf(stateLicense);
-//    	    	                	if (newLicProf.valid){
-//    	    	            aa.print("newLicProf is a " + newLicProf.getClass());
-//    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
-//    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
-//    	    	      
-//    	    	                	}
+    	    	                var checkLicProf = getRefLicenseProf(stateLicense);
+    	    	                	if (newLicProf!=null){
+    	    	            aa.print("newLicProf is a " + newLicProf.getClass());
+    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
+    	    	            for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
+    	    	      
+    	    	                	}
     	    	              
     	    	        }
     	    	        }
-	}    
+	
+  
+//************************************ REPORT SELECTION **********************************
+
+//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+//If email address available for contact type then email the report, otherwise pop up the report on the screen  
+  
+//*********************************** STATIONARY ENGINEER  
+  
+  	licenseType = getAppSpecific("License Type", capId);
+  
+  	logDebug("License Type: " + licenseType);
+  	
+if (licenseType = "1st Class Station Eng") {
+  	     
+  		var rParams = aa.util.newHashMap();
+  	     	addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"TASK","Licenses Issuance");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  			
+  			logDebug("Parameters: " + rParams);
+
+    	        
+  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+ 
+  			}
+  	
+else if (licenseType = "2nd Class Station Eng")  {
+	     
+		var rParams = aa.util.newHashMap();
+	     	addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"TASK","Licenses Issuance");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			
+			logDebug("Parameters: " + rParams);
+
+	        
+			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+
+			} 
+
+else if (licenseType = "3rd Class Station Eng") {
+    
+	var rParams = aa.util.newHashMap();
+     	addParameter(rParams,"Module","Licenses");
+		addParameter(rParams,"Record_ID","capId");
+		addParameter(rParams,"TASK","Licenses Issuance");
+		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+		
+		logDebug("Parameters: " + rParams);
+
+        
+		runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+
+		} 
+//
+//
+//
+////*********************************** BOILER 
+// 
+else if (licenseType = "Boiler Op HP") {
+  	
+  		
+  		var rParams = aa.util.newHashMap();
+			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  			addParameter(rParams,"TASK","Licenses Issuance");
+
+  			logDebug("Parameters: " + rParams);
+
+	    	        
+  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+  	}
+//
+else if (licenseType = "Boiler Op LP") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "1st Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "2nd Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONA");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+else if (licenseType = "3rd Class Refrig Op") {
+  	
+		
+		var rParams = aa.util.newHashMap();
+		addParameter(rParams,"Module","Licenses");
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"TASK","Licenses Issuance");
+
+			logDebug("Parameters: " + rParams);
+
+    	        
+			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+
+	}
+//*********************************** ALL OTHERS *************************************************************
+  	
+else{		var rParams = aa.util.newHashMap();
+	
+  			addParameter(rParams,"Record_ID","capId");
+  			addParameter(rParams,"Module","Licenses");
+  			addParameter(rParams,"logo","Xtra4");
+  
+  			logDebug("Parameters: " + rParams);
+   
+   	    	        
+  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+  			
+}
+} 
