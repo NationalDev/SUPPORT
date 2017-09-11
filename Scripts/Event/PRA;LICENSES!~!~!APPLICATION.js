@@ -582,7 +582,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	        
     	    	         
     	    	                var checkLicProf = getRefLicenseProf(stateLicense);
-    	    	                	if (newLicProf.valid){
+    	    	                	if (newLicProf!=null){
     	    	            aa.print("newLicProf is a " + newLicProf.getClass());
     	    	            for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
     	    	            for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
