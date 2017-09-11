@@ -618,7 +618,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   			addParameter(rParams,"Module","Licenses");
   			addParameter(rParams,"TASK","Licenses Issuance");
   			addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONA");
-  			addParameter(rParams,"Logo","Xtra");
+  			
   			logDebug("Parameters: " + rParams);
 
     	        
