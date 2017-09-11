@@ -608,13 +608,17 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   	licenseType = getAppSpecific("License Type");
   
+  	logDebug("License Type: " + licenseType);
+  	
   	if ((licenseType = "1st Class Station Eng") || (licenseType = "2nd Class Station Eng") || (licenseType = "3rd Class Station Eng")) {
   
   		var rParams = aa.util.newHashMap();
 	
   			addParameter(rParams,"Record_ID","capId");
   			addParameter(rParams,"Module","Licenses");
-  
+  			addParameter(rParams,"TASK","Licenses Issuance");
+  			addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONA");
+  			addParameter(rParams,"Logo","Xtra");
   			logDebug("Parameters: " + rParams);
 
     	        
@@ -625,7 +629,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
  
 //*********************************** BOILER 
  
-  	if ((licenseType = "Boiler Op HP") || (licenseType = "Boiler Op LP") || (licenseType = "Boiler Op Miniature")) {
+  	if ((licenseType = "Boiler Op HP") || (licenseType = "Boiler Op LP") || (licenseType = "1st Class Refrig Op") || (licenseType = "2nd Class Refrig Op") || (licenseType = "3rd Class Refrig Op")) {
   		
   		var rParams = aa.util.newHashMap();
 	
