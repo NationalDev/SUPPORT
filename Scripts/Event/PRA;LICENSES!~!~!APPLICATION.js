@@ -472,20 +472,20 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	                  var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
     	    	                 
     	    	                  logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-    	    	                  if (tmpLicObj.valid) {
-    	    	                      isNewLic = true;
-    	    	                }
+//    	    	                  if (tmpLicObj.valid) {
+//    	    	                      isNewLic = true;
+//    	    	                }
     	    	              
    	    	                  
     	    	                  
-    	    	                  if (tmpLicObj.valid && licIDString) {
+//    	    	                  if (tmpLicObj.valid && licIDString) {
     	    	                associatedRefContactWithRefLicProf(licIDString, aa.getServiceProviderCode(),currentUserID);
-    	    	                }
+//    	    	                }
 
     	    	            var mycap = aa.cap.getCap(capId).getOutput();
-    	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+//    	    	            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
     	    	                associatedLicensedProfessionalWithPublicUser(licIDString, mycap.getCapModel().getCreatedBy().toString());
-    	    	                }
+//    	    	                }
     	    	            
     	    	            
     	    	            licObj = licenseProfObject(stateLicense,LICENSETYPE );
