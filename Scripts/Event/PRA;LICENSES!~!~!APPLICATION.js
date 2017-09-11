@@ -211,7 +211,7 @@ var showMessage = false;
     else  {
 		       
 	}
-	}
+	
 	}
     	        
 
@@ -372,7 +372,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
         if (getAppSpecific("Doing Business As (DBA) Name")) {
             licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
         }
-
+  }
 
 // From Here ************************ Licensed Professional **************************************
 
