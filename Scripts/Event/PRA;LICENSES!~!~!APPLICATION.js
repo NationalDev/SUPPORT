@@ -5,7 +5,7 @@
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
 //			September 7th, 2017			Revision 2.0
-//			September 11th, 2017		Revision 3.0
+//			September 11th, 2017			Revision 3.0
 //*********************************************************************************************************/
 
 var showDebug = true;
@@ -611,7 +611,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   	logDebug("License Type: " + licenseType);
   	
   	for (licenseType = "1st Class Station Eng"; licenseType = "2nd Class Station Eng"; licenseType = "3rd Class Station Eng") {
-  	     code block to be executed
+  	     
   		var rParams = aa.util.newHashMap();
   	     	addParameter(rParams,"Module","Licenses");
   			addParameter(rParams,"Record_ID","capId");
