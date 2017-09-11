@@ -606,7 +606,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
 //*********************************** STATIONARY ENGINEER  
   
-  	licenseType = getAppSpecific("License Type");
+  	licenseType = getAppSpecific("License Type", capId);
   
   	logDebug("License Type: " + licenseType);
   	
