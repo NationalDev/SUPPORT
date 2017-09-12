@@ -384,11 +384,11 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
 //*********************************** STATIONARY ENGINEER  
   
-  	licenseType = getAppSpecific("License Type", capId);
-  
-  	logDebug("License Type: " + licenseType);
   	
-if (licenseType = "1st Class Stationary Engineer") {
+  
+  	logDebug("License Type: " + LICENSETYPE);
+  	
+if (LICENSETYPE = "1st Class Stationary Engineer") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	
@@ -403,7 +403,7 @@ if (licenseType = "1st Class Stationary Engineer") {
  
   			}
   	
-else if (licenseType = "2nd Class Stationary Engineer")  {
+else if (LICENSETYPE = "2nd Class Stationary Engineer")  {
 	     
 		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -417,7 +417,7 @@ else if (licenseType = "2nd Class Stationary Engineer")  {
 
 			} 
 
-else if (licenseType = "3rd Class Stationary Engineer") {
+else if (LICENSETYPE = "3rd Class Stationary Engineer") {
     
 	var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -436,7 +436,7 @@ else if (licenseType = "3rd Class Stationary Engineer") {
 //
 ////*********************************** BOILER 
 // 
-else if (licenseType = "High Pressure Boiler Operator") {
+else if (LICENSETYPE = "High Pressure Boiler Operator") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -451,7 +451,7 @@ else if (licenseType = "High Pressure Boiler Operator") {
 
   	}
 //
-else if (licenseType = "Low Pressure Boiler Operator") {
+else if (LICENSETYPE = "Low Pressure Boiler Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -464,7 +464,7 @@ else if (licenseType = "Low Pressure Boiler Operator") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "1st Class Refrigeration Operator") {
+else if (LICENSETYPE = "1st Class Refrigeration Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -477,7 +477,7 @@ else if (licenseType = "1st Class Refrigeration Operator") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "2nd Class Refrigeration Operator") {
+else if (LICENSETYPE = "2nd Class Refrigeration Operator") {
   	
 		
 			addParameter(rParams,"Record_ID","capId");
@@ -490,7 +490,7 @@ else if (licenseType = "2nd Class Refrigeration Operator") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "3rd Class Refrigeration Operator") {
+else if (LICENSETYPE = "3rd Class Refrigeration Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
