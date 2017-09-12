@@ -592,7 +592,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     	    	      
     	    	                	}
     	    	              
-    	    	        }
+    	    	        
     	    	        
 	
   
@@ -747,4 +747,4 @@ else{		var rParams = aa.util.newHashMap();
   			
 }
 }
-}
+}}
