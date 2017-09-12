@@ -388,7 +388,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   	logDebug("License Type: " + licenseType);
   	
-if (licenseType = "1st Class Station Eng") {
+if (licenseType = "1st Class Stationary Engineer") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	
@@ -403,7 +403,7 @@ if (licenseType = "1st Class Station Eng") {
  
   			}
   	
-else if (licenseType = "2nd Class Station Eng")  {
+else if (licenseType = "2nd Class Stationary Engineer")  {
 	     
 		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -417,7 +417,7 @@ else if (licenseType = "2nd Class Station Eng")  {
 
 			} 
 
-else if (licenseType = "3rd Class Station Eng") {
+else if (licenseType = "3rd Class Stationary Engineer") {
     
 	var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -436,7 +436,7 @@ else if (licenseType = "3rd Class Station Eng") {
 //
 ////*********************************** BOILER 
 // 
-else if (licenseType = "Boiler Op HP") {
+else if (licenseType = "High Pressure Boiler Operator") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -451,7 +451,7 @@ else if (licenseType = "Boiler Op HP") {
 
   	}
 //
-else if (licenseType = "Boiler Op LP") {
+else if (licenseType = "Low Pressure Boiler Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -464,7 +464,7 @@ else if (licenseType = "Boiler Op LP") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "1st Class Refrig Op") {
+else if (licenseType = "1st Class Refrigeration Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -477,7 +477,7 @@ else if (licenseType = "1st Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "2nd Class Refrig Op") {
+else if (licenseType = "2nd Class Refrigeration Operator") {
   	
 		
 			addParameter(rParams,"Record_ID","capId");
@@ -490,7 +490,7 @@ else if (licenseType = "2nd Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (licenseType = "3rd Class Refrig Op") {
+else if (licenseType = "3rd Class Refrigeration Operator") {
   	
 		
 		var rParams = aa.util.newHashMap();
