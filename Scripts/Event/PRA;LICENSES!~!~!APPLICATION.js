@@ -320,11 +320,11 @@ var showMessage = true;
 	            vNewLic.setLicState(LICENSESTATE);
 	            vNewLic.setStateLicense(stateLicense);
 	           
-	            aa.licenseScript.createRefLicenseProf(stateLicense);
+//	            aa.licenseScript.createRefLicenseProf(stateLicense);
 	            
-//	            aa.licenseScript.createRefLicProf(stateLicense,LICENSETYPE);
+            createRefLicProf(stateLicense,LICENSETYPE);
 	              
-	            aa.licenseScript.createRefLicProfFromLicProf;
+	        createRefLicProfFromLicProf;
 	            	  
 	            	  
 //	        }   
