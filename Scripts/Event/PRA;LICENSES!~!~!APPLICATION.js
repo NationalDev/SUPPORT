@@ -6,10 +6,11 @@
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
 //			September 7th, 2017			Revision 2.0
 //			September 11th, 2017			Revision 3.0
+//			September 15th, 2017			Revision 3.1
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = false;
+var showMessage = true;
 
 
 //if (isTaskStatus == "Request for Corrections") {
@@ -19,33 +20,40 @@ var showMessage = false;
 
 
 	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+		
+		if (getParent =null) {
+		
 		newLic = null;
 		newLicId = null;
 		newLicIdString = null;
 		newLicenseType = appTypeArray[2];
 		monthsToInitialExpire = 12;
-		newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+		
      
-    // create the permit record;
-    if (newLicId) {
-        
-    	newLicIdString = parentCapId.getCustomID();
+    // create the License record;
+    
+    	newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+    	
+        }
+    	
+    	newLicIdString = newLicId.getCustomID();
         
         copyAppSpecific(capId,parentCapId);
         copyAddresses(capId,parentCapId);
         copyASITables(capId,parentCapId);
         copyLicensedProf(capId,parentCapId);
         copyASIFields(capId,parentCapId);
-                     
-        //copyContacts(capId,newLicId);
-        editAppName(capName,parentCapId);       
+        copyContacts(capId,newLicId);
+        
+        editAppName(capName,parentCapId);     
+        
         updateAppStatus("Active","Originally Issued",parentCapId);
 
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),parentCapId);
     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
-        logDebug("LIC = " +  parentCapId);
+        logDebug("LIC = " +  newLicIdString);
 
 //        var feeArr = loadFees();
 //        var newFeeRes = aa.util.deepClone(feeArr);    
@@ -55,6 +63,7 @@ var showMessage = false;
 //            logDebug("fees  Array = " +newFeeArr.getFeeCod());
 //            newFeeArr[i].setCapID(newLicId);
 //             }
+        
         
       //**************************************************************************************    
     tmpNewDate = new Date();
