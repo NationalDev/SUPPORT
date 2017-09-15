@@ -160,7 +160,9 @@ else if (LICENSETYPE = "3rd Class Refrig Op") {
 	}
 //*********************************** ALL OTHERS *************************************************************
   	
-else{		var rParams = aa.util.newHashMap();
+else {		
+	var rParams = aa.util.newHashMap();
+
 
 	
 		addParameter(rParams,"Record_ID","capId");
