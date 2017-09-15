@@ -45,7 +45,7 @@ var showMessage = false;
     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
-        
+        logDebug("LIC = " +  newLicIdString);
 
 //        var feeArr = loadFees();
 //        var newFeeRes = aa.util.deepClone(feeArr);    
