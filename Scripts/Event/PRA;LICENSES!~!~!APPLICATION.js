@@ -222,7 +222,7 @@ var showMessage = true;
 		       
 	}
 	
-	}
+	
 
     	        
 //	 ************************ Licensed Professional **************************************
@@ -594,4 +594,4 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-		
+	}
