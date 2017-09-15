@@ -13,17 +13,12 @@ var showDebug = true;
 var showMessage = true;
 
 
-//if (isTaskStatus == "Request for Corrections") {
-//        sendExternalReviewNotification();   
-//}
-
-
-
-
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 	        
 		loadFees(capId);
   
+		logDebug("License Fees: " + loadFees(capId));
+		
 //************************************ REPORT SELECTION **********************************
 
 //function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
@@ -166,6 +161,6 @@ else{		var rParams = aa.util.newHashMap();
   			
 }
 
-
+logDebug("Parameters: " + rParams + stop);
 
 	}
