@@ -31,17 +31,17 @@ var showMessage = false;
         
     	newLicIdString = newLicId.getCustomID();
         
-        copyAppSpecific(capId);
-        copyAddresses(capId,newLicId);
-        copyASITables(capId,newLicId);
-        copyLicensedProf(capId,newLicId);
-        copyASIFields(capId,newLicId);
+        copyAppSpecific(capId,parentCapId);
+        copyAddresses(capId,parentCapId);
+        copyASITables(capId,parentCapId);
+        copyLicensedProf(capId,parentCapId);
+        copyASIFields(capId,parentCapId);
                      
         //copyContacts(capId,newLicId);
-        editAppName(capName,newLicId);       
-        updateAppStatus("Active","Originally Issued",newLicId);
+        editAppName(capName,parentCapId);       
+        updateAppStatus("Active","Originally Issued",parentCapId);
 
-        editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
+        editAppName(getAppSpecific("Doing Business As (DBA) Name"),parentCapId);
     
         logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
     				
@@ -294,7 +294,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
       //Get LicArray;
       		logDebug("128:stateLicense=" + licIDString);
       		logDebug("129:LICENSETYPE=" + LICENSETYPE);
-      		if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+      		if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
   
   
   //----->branch("EMSE:LicProfLookup:CreateLP");
@@ -343,7 +343,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
         licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
         var expObj = null;
         var expDt = null;
-        var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
+        var expObjRes = aa.expiration.getLicensesByCapID(parentCapId);
         if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
         if (expObj != null) {
             expDt = aa.date.parseDate(expObj.getExpDateString());
@@ -360,12 +360,12 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
             licObj.refLicModel.setLicenseBoard(LICENSETYPE);
         }
 
-        if (licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
+        if (licObj.updateFromRecordContactByType(parentCapId,"",true,true)) {
             logDebug("LP Updated from Primary Contact");
         }
         else {
             logDebug("LP Failed to Update from Primary Contact trying License Holder");
-            if(licObj.updateFromRecordContactByType(newLicId,"",true,true)) logDebug("Updated from License Holder");
+            if(licObj.updateFromRecordContactByType(parentCapId,"",true,true)) logDebug("Updated from License Holder");
             else logDebug("Couldn't Update Contact Info");
         }
 
