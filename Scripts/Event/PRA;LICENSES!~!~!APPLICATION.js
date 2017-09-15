@@ -34,10 +34,12 @@ var showMessage = true;
     
     	newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     	
-        }
+        
     	
     	newLicIdString = newLicId.getCustomID();
-        
+    
+		}
+    	
         copyAppSpecific(capId,parentCapId);
         copyAddresses(capId,parentCapId);
         copyASITables(capId,parentCapId);
