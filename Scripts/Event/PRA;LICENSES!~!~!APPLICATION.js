@@ -91,7 +91,7 @@ else if (LICENSETYPE = "3rd Class Station Eng") {
 //
 ////*********************************** BOILER 
 // 
-else if (LICENSETYPE = "Boiler Op HP") {
+if (LICENSETYPE = "Boiler Op HP") {
   	
   		
   		var rParams = aa.util.newHashMap();
