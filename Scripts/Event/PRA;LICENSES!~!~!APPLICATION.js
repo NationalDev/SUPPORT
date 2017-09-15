@@ -331,19 +331,20 @@ var showMessage = true;
 	            var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
 	           
 	            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-	            if (tmpLicObj.valid) {
-	                isNewLic = true;
-	          }
+	            
+//	            if (tmpLicObj.valid) {
+//	                isNewLic = true;
+//	          }
 	        
-	      if (tmpLicObj.valid && licIDString) {
+//	      if (tmpLicObj.valid && licIDString) {
 	          associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-	          }
+//	          }
 	
 	      var mycap = aa.cap.getCap(licCapId).getOutput();
 	      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
 	          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
 	          }
-	      licObj = licenseProfObject(stateLicense,LICENSETYPE );
+	      licObj = licenseProfObject(stateLicense,LICENSETYPE);
 	      logDebug("161:Successfully created LP? " + licObj.valid);
 	
 	   
