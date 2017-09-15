@@ -38,7 +38,7 @@ var showMessage = true;
     	
     	newLicIdString = newLicId.getCustomID();
     
-		}
+		
     	
         copyAppSpecific(capId,parentCapId);
         copyAddresses(capId,parentCapId);
@@ -223,6 +223,7 @@ var showMessage = true;
 		       
 	}
 	
+	}
 	}
     	        
 
