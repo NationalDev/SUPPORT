@@ -388,7 +388,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   	logDebug("License Type: " + LICENSETYPE);
   	
-if (LICENSETYPE = "1st Class Stationary Engineer") {
+if (LICENSETYPE = "1st Class Station Eng") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	
@@ -403,7 +403,7 @@ if (LICENSETYPE = "1st Class Stationary Engineer") {
  
   			}
   	
-else if (LICENSETYPE = "2nd Class Stationary Engineer")  {
+else if (LICENSETYPE = "2nd Class Station Eng")  {
 	     
 		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -417,7 +417,7 @@ else if (LICENSETYPE = "2nd Class Stationary Engineer")  {
 
 			} 
 
-else if (LICENSETYPE = "3rd Class Stationary Engineer") {
+else if (LICENSETYPE = "3rd Class Station Eng") {
     
 	var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -436,7 +436,7 @@ else if (LICENSETYPE = "3rd Class Stationary Engineer") {
 //
 ////*********************************** BOILER 
 // 
-else if (LICENSETYPE = "High Pressure Boiler Operator") {
+else if (LICENSETYPE = "Boiler Op HP") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -451,7 +451,7 @@ else if (LICENSETYPE = "High Pressure Boiler Operator") {
 
   	}
 //
-else if (LICENSETYPE = "Low Pressure Boiler Operator") {
+else if (LICENSETYPE = "Boiler Op LP") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -464,7 +464,7 @@ else if (LICENSETYPE = "Low Pressure Boiler Operator") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (LICENSETYPE = "1st Class Refrigeration Operator") {
+else if (LICENSETYPE = "1st Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -490,7 +490,7 @@ else if (LICENSETYPE = "2nd Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (LICENSETYPE = "3rd Class Refrigeration Operator") {
+else if (LICENSETYPE = "3rd Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -517,5 +517,5 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-		logDebug("Parameters: " + rParams + stop);
+//		logDebug("Parameters: " + rParams + stop);
 }}
