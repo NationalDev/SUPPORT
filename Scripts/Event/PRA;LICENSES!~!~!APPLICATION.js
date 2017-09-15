@@ -45,7 +45,7 @@ var showMessage = true;
         copyASITables(capId,parentCapId);
         copyLicensedProf(capId,parentCapId);
         copyASIFields(capId,parentCapId);
-        copyContacts(capId,newLicId);
+        copyContacts(capId,parentCapId);
         
         editAppName(capName,parentCapId);     
         
