@@ -228,7 +228,7 @@ var showMessage = true;
 
 //********************************************** License Professional
 	         
-	  if (isTaskStatus("License Issuance","Issued") {
+	  if (isTaskStatus("License Issuance","Issued")) {
 		  logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
 		  //Issue State;
 		  LICENSETYPE = "";
