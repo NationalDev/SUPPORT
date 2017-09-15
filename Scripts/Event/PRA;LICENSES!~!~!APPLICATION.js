@@ -225,8 +225,8 @@ var showMessage = true;
 	
 		}
     	        
-		/**
-	     * License Professional
+
+//********************************************** License Professional
 	     */ 
 	  if (wfTask == "License Issuance" && wfStatus == "Issued") {
 		  logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
@@ -523,7 +523,4 @@ else{		var rParams = aa.util.newHashMap();
   			
 }
 
-	}
-}
-	  
 	}
