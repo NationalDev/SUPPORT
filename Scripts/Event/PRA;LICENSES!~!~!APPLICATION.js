@@ -223,7 +223,7 @@ var showMessage = true;
 	}
 	
 	
-
+		}
     	        
 //	 ************************ Licensed Professional **************************************
 	
@@ -600,4 +600,4 @@ else{		var rParams = aa.util.newHashMap();
 logDebug("Parameters: " + rParams + stop);
 	}
 }
-	}}
+	}
