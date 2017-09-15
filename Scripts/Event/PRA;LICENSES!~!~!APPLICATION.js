@@ -53,8 +53,7 @@ if (LICENSETYPE = "1st Class Station Eng") {
   			addParameter(rParams,"License Type","VALUE_");
   			logDebug("Parameters: " + rParams);
 
-    	        
-  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
  
   			}
   	
@@ -67,9 +66,8 @@ if (LICENSETYPE = "1st Class Station Eng") {
   			addParameter(rParams,"License Type","VALUE_");
   			
   			logDebug("Parameters: " + rParams);
-
-				        
-			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+			
+  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 
 			} 
 
@@ -82,14 +80,11 @@ if (LICENSETYPE = "1st Class Station Eng") {
 			addParameter(rParams,"License Type","VALUE_");
 			
 			logDebug("Parameters: " + rParams);
-
-
         
-		runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 
 		} 
-//}
-//
+
 //
 ////*********************************** BOILER 
 // 
@@ -108,7 +103,7 @@ if (LICENSETYPE = "Boiler Op HP") {
   			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
   	}
-//
+
  if (LICENSETYPE = "Boiler Op LP") {
   	
 		
@@ -123,6 +118,7 @@ if (LICENSETYPE = "Boiler Op HP") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
+ 
  if (LICENSETYPE = "1st Class Refrig Op") {
   	
 		
@@ -137,6 +133,7 @@ if (LICENSETYPE = "Boiler Op HP") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
+ 
  if (LICENSETYPE = "2nd Class Refrig Op") {
   	
 		
@@ -151,6 +148,7 @@ if (LICENSETYPE = "Boiler Op HP") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
+ 
 if (LICENSETYPE = "3rd Class Refrig Op") {
   	
 		
@@ -176,12 +174,13 @@ else {
 		addParameter(rParams,"TASK","Licenses Issuance");
 		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		addParameter(rParams,"License Type","VALUE_");
-		logDebug("Parameters: " + rParams);
+		
 
+		logDebug("Parameters: " + rParams);
    	    	        
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
 
-	}
+	}logDebug("Parameters: " + rParams + stop);
 	
