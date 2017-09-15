@@ -38,8 +38,7 @@ var showMessage = true;
     	
     	newLicIdString = newLicId.getCustomID();
     
-		
-    	
+	   	
         copyAppSpecific(capId,parentCapId);
         copyAddresses(capId,parentCapId);
         copyASITables(capId,parentCapId);
@@ -364,8 +363,8 @@ var showMessage = true;
 	          licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
 	          var expObj = null;
 	          var expDt = null;
-	          var expObjRes = aa.expiration.getLicensesByCapID(licCapId);
-	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+	          var expObjRes = aa.expiration.getLicensesByCapID(capId);
+//	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 	          if (expObj != null) {
 	              expDt = aa.date.parseDate(expObj.getExpDateString());
 	          }
