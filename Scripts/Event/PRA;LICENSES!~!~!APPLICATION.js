@@ -317,9 +317,9 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
               isNewLic = true;
         }
       
-//    if (tmpLicObj.valid && licIDString) {
-//        associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-//        }
+    if (tmpLicObj.valid && licIDString) {
+        associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+        }
 
     var mycap = aa.cap.getCap(capId).getOutput();
     if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
@@ -328,7 +328,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
     licObj = licenseProfObject(stateLicense,LICENSETYPE );
     logDebug("161:Successfully created LP? " + licObj.valid);
 
-  if (licObj.valid) {
+    	if (licObj.valid) {
   	
   	
 //----->branch("EMSE:LicProfLookup:UpdateLP");
@@ -360,12 +360,12 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
             licObj.refLicModel.setLicenseBoard(LICENSETYPE);
         }
 
-        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+        if (licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
             logDebug("LP Updated from Primary Contact");
         }
         else {
             logDebug("LP Failed to Update from Primary Contact trying License Holder");
-            if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
+            if(licObj.updateFromRecordContactByType(newLicId,"",true,true)) logDebug("Updated from License Holder");
             else logDebug("Couldn't Update Contact Info");
         }
 
@@ -375,7 +375,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   }
 
 
-	
+}
   
 //************************************ REPORT SELECTION **********************************
 
@@ -517,5 +517,5 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-//		logDebug("Parameters: " + rParams + stop);
-}}
+//3		logDebug("Parameters: " + rParams + stop);
+}
