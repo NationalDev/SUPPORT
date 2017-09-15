@@ -477,7 +477,7 @@ else if (LICENSETYPE = "1st Class Refrigeration Operator") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 	}
-else if (LICENSETYPE = "2nd Class Refrigeration Operator") {
+else if (LICENSETYPE = "2nd Class Refrig Op") {
   	
 		
 			addParameter(rParams,"Record_ID","capId");
