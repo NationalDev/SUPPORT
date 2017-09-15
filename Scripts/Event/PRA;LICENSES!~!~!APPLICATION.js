@@ -301,7 +301,7 @@ var showMessage = true;
 	           aa.print("LIC State License Number is " + stateLicense);
 	            }
 	    
-	        licObj = licenseProfObject(newLicId,LICENSETYPE);
+	        licObj = licenseProfObject(stateLicense,LICENSETYPE);
 	        //Get LicArray;
 	        logDebug("128:stateLicense=" + licIDString);
 	        logDebug("129:LICENSETYPE=" + LICENSETYPE);
@@ -319,7 +319,7 @@ var showMessage = true;
 	            vNewLic.setLicState(LICENSESTATE);
 	            vNewLic.setStateLicense(stateLicense);
 	           
-	            aa.licenseScript.createRefLicenseProf(vNewLic);
+	            aa.licenseScript.createRefLicenseProf(stateLicense);
 	        }   
 	            var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
 	           
@@ -354,7 +354,7 @@ var showMessage = true;
 	          licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
 	          var expObj = null;
 	          var expDt = null;
-	          var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
+	          var expObjRes = aa.expiration.getLicensesByCapID(stateLicense);
 	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 	          if (expObj != null) {
 	              expDt = aa.date.parseDate(expObj.getExpDateString());
@@ -371,12 +371,12 @@ var showMessage = true;
 	              licObj.refLicModel.setLicenseBoard(LICENSETYPE);
 	          }
 	  
-	          if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+	          if (licObj.updateFromRecordContactByType(stateLicense,"",true,true)) {
 	              logDebug("LP Updated from Primary Contact");
 	          }
 	          else {
 	              logDebug("LP Failed to Update from Primary Contact trying License Holder");
-	              if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
+	              if(licObj.updateFromRecordContactByType(stateLicense,"",true,true)) logDebug("Updated from License Holder");
 	              else logDebug("Couldn't Update Contact Info");
 	          }
 	  
