@@ -432,10 +432,11 @@ var showMessage = true;
 	              newLicProf.setBusinessName2(licCapStatus);
 	              
 	              LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
+	              
 	              logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
 	          }
 	    
-	     
+	          }
 	      else {
 	          logDebug("LP Not found to update");
 	          createRefLicProfFromLicProf();
@@ -452,7 +453,7 @@ var showMessage = true;
 	          	}
 	        
 	  }
-	        }
+	        
 		
   
 //************************************ REPORT SELECTION **********************************
