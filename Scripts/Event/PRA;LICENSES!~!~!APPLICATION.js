@@ -227,7 +227,7 @@ var showMessage = true;
     	        
 
 //********************************************** License Professional
-	     */ 
+	         
 	  if (wfTask == "License Issuance" && wfStatus == "Issued") {
 		  logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
 		  //Issue State;
