@@ -21,7 +21,7 @@ var showMessage = true;
 
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
-		if (getParent =null) {
+		if (getParent = null) {
 		
 		newLic = null;
 		newLicId = null;
@@ -38,8 +38,7 @@ var showMessage = true;
     	
     	newLicIdString = newLicId.getCustomID();
     
-		
-    	
+	   	
         copyAppSpecific(capId,parentCapId);
         copyAddresses(capId,parentCapId);
         copyASITables(capId,parentCapId);
@@ -224,7 +223,7 @@ var showMessage = true;
 	}
 	
 	}
-	}
+
     	        
 //	 ************************ Licensed Professional **************************************
 	
@@ -305,7 +304,8 @@ var showMessage = true;
 	        //Get LicArray;
 	        logDebug("128:stateLicense=" + licIDString);
 	        logDebug("129:LICENSETYPE=" + LICENSETYPE);
-	        if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+	        
+//	        if (licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
 	    
 	    
 	    //----->branch("EMSE:LicProfLookup:CreateLP");
@@ -319,27 +319,36 @@ var showMessage = true;
 	            vNewLic.setLicState(LICENSESTATE);
 	            vNewLic.setStateLicense(stateLicense);
 	           
-	            aa.licenseScript.createRefLicenseProf(stateLicense);
-	        }   
+//	            aa.licenseScript.createRefLicenseProf(stateLicense);
+	            
+            createRefLicProf(stateLicense,LICENSETYPE);
+	              
+	        createRefLicProfFromLicProf;
+	            	  
+	            	  
+//	        }   
 	            var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
 	           
 	            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-	            if (tmpLicObj.valid) {
-	                isNewLic = true;
-	          }
+	            
+//	            if (tmpLicObj.valid) {
+//	                isNewLic = true;
+//	          }
 	        
-	      if (tmpLicObj.valid && licIDString) {
-	          associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-	          }
-	
-	      var mycap = aa.cap.getCap(capId).getOutput();
-	      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-	          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-	          }
-	      licObj = licenseProfObject(stateLicense,LICENSETYPE );
+////	      if (tmpLicObj.valid && licIDString) {
+//	          associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+////	          }
+//	
+//	      var mycap = aa.cap.getCap(tmpLicObj).getOutput();
+//	      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+//	          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+//	          }
+	      licObj = licenseProfObject(stateLicense,LICENSETYPE);
 	      logDebug("161:Successfully created LP? " + licObj.valid);
 	
-	    if (licObj.valid) {
+	   
+	      
+	      if (licObj.valid) {
 	    	
 	    	
 	 //----->branch("EMSE:LicProfLookup:UpdateLP");
@@ -354,8 +363,8 @@ var showMessage = true;
 	          licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
 	          var expObj = null;
 	          var expDt = null;
-	          var expObjRes = aa.expiration.getLicensesByCapID(stateLicense);
-	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+	          var expObjRes = aa.expiration.getCapID(parentCapId);
+//	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 	          if (expObj != null) {
 	              expDt = aa.date.parseDate(expObj.getExpDateString());
 	          }
@@ -443,7 +452,7 @@ var showMessage = true;
 	        
 	  }
 
-
+	}
   
 //************************************ REPORT SELECTION **********************************
 
@@ -585,4 +594,4 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-		logDebug("Parameters: " + rParams + stop);
+		

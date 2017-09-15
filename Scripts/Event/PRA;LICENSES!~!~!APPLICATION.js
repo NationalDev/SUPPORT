@@ -363,10 +363,10 @@ var showMessage = true;
 	          licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
 	          var expObj = null;
 	          var expDt = null;
-	          var expObjRes = aa.expiration.getCapID(parentCapId);
-	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
-	          if (expObj != null) {
-	              expDt = aa.date.parseDate(expObj.getExpDateString());
+//	          var expObjRes = aa.expiration.getCapID(parentCapId);
+//	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+//	          if (expObj != null) {
+	              expDt = newExpDate;
 	          }
 	  
 	          if (expDt != null) {
