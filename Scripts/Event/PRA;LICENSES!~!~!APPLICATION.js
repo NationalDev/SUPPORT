@@ -461,7 +461,7 @@ var showMessage = true;
   
 //*********************************** STATIONARY ENGINEER  
   
-  	
+	var	LICENSETYPE = getAppSpecific("License Type", capId);
   
   	logDebug("License Type: " + LICENSETYPE);
   	
