@@ -278,6 +278,7 @@ var showMessage = true;
 	        logDebug("105:licCapId=" + licCapId);
 	        if (licCapId !=null) {
 	    
+	        	
 	    
 	    //----->branch("EMSE:LicProfLookup:getLicenseType");
 	            if (licCapId !=null) {
