@@ -517,5 +517,5 @@ else{		var rParams = aa.util.newHashMap();
   			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
   			
 }
-//3		logDebug("Parameters: " + rParams + stop);
+		logDebug("Parameters: " + rParams + stop);
 }
