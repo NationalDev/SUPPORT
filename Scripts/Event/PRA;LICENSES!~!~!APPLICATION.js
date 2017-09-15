@@ -287,13 +287,15 @@ var showMessage = true;
 	                licCapTypeArr = licCapType.split("/");
 	                licCapStatus = licCap.getCapStatus();
 
-	                LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
+	                LICENSETYPE = getAppSpecific("License Type",licCapId);
+	                
 	                aa.print("LIC License Type is " + LICENSETYPE);
 	               
-	                stateLicense = licCapId.getCustomID();
+	                stateLicense = licCap.getCustomID();
 	                stateLicense = getAppSpecific("State License Number",licCapId);
 	                
-	           aa.print("LIC State License Number is " + stateLicense);
+	           aa.print("License Number is " + licIDString);
+	           
 	            }
 	    
 	        licObj = licenseProfObject(stateLicense,LICENSETYPE);
