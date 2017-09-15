@@ -182,5 +182,5 @@ else {
   			
 }
 
-	}logDebug("Parameters: " + rParams + stop);
+	}
 	
