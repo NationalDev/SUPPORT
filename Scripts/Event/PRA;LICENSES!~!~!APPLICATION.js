@@ -285,7 +285,7 @@ var showMessage = true;
 	    	  // stateLicense = getAppSpecific("State License Number",licCapId);
 	    	  aa.print("LIC State License Number is " + stateLicense);
 	      }
-	      licObj = licenseProfObject(newLicId,LICENSETYPE);
+	      licObj = licenseProfObject(licIDString,LICENSETYPE);
 	      //Get LicArray;
 	      logDebug("128:stateLicense=" + licIDString);
 	      logDebug("129:LICENSETYPE=" + LICENSETYPE);
