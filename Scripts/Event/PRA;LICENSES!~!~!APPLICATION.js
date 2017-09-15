@@ -19,7 +19,7 @@ var showMessage = true;
 
 
 
-	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		if (getParent =null) {
 		
@@ -229,7 +229,7 @@ var showMessage = true;
 //	 ************************ Licensed Professional **************************************
 	
 	
-	  if (wfTask == "License Issuance" && wfStatus == "Issued") {
+	  if (isTaskStatus("License Issuance","Issued")) {
 	    
 	    
 	    //->branch("EMSE:LicProfLookup");
