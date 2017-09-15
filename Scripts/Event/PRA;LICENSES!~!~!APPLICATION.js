@@ -20,7 +20,7 @@ var showMessage = true;
 		feeArray = new Array();
 		feeArray = loadFees(capId);
 		if (feeArray.length > 0) {
-		    for (iCont in contactArray) {
+		    for (iCont in feeArray) {
 		            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
 		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
 		            showDebug=3;
