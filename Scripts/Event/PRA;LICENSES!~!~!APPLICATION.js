@@ -21,7 +21,7 @@ var showMessage = true;
 
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
-		if (getParent =null) {
+		if (getParent = null) {
 		
 		newLic = null;
 		newLicId = null;
@@ -364,7 +364,7 @@ var showMessage = true;
 	          licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
 	          var expObj = null;
 	          var expDt = null;
-	          var expObjRes = aa.expiration.getLicensesByCapID(licCapId);
+	          var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
 	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 	          if (expObj != null) {
 	              expDt = aa.date.parseDate(expObj.getExpDateString());
