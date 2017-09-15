@@ -282,21 +282,17 @@ var showMessage = true;
 	    //----->branch("EMSE:LicProfLookup:getLicenseType");
 	            if (licCapId !=null) {
 	                licIDString = licCapId.getCustomID();
-	                }
-	    
-	            if (licCapId !=null) {
 	                licCap = aa.cap.getCap(licCapId).getOutput();
 	                licCapType = licCap.getCapType().toString();
 	                licCapTypeArr = licCapType.split("/");
 	                licCapStatus = licCap.getCapStatus();
-	                }
-	    
-	            if (licCapId !=null) {
+
 	                LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
 	                aa.print("LIC License Type is " + LICENSETYPE);
-	                }
-	            stateLicense = licCapId.getCustomID();
-	           // stateLicense = getAppSpecific("State License Number",licCapId);
+	               
+	                stateLicense = licCapId.getCustomID();
+	                stateLicense = getAppSpecific("State License Number",licCapId);
+	                
 	           aa.print("LIC State License Number is " + stateLicense);
 	            }
 	    
@@ -331,20 +327,21 @@ var showMessage = true;
 	           
 	            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
 	            
-//	            if (tmpLicObj.valid) {
-//	                isNewLic = true;
-//	          }
+	            if (tmpLicObj.valid) {
+	                isNewLic = true;
+	            	}	
 	        
-////	      if (tmpLicObj.valid && licIDString) {
-//	          associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-////	          }
-//	
-//	      var mycap = aa.cap.getCap(tmpLicObj).getOutput();
-//	      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-//	          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-//	          }
-	      licObj = licenseProfObject(stateLicense,LICENSETYPE);
-	      logDebug("161:Successfully created LP? " + licObj.valid);
+	            if (tmpLicObj.valid && licIDString) {
+	            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+	            	}
+	
+	      var mycap = aa.cap.getCap(tmpLicObj).getOutput();
+	      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+	          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+	      			}
+	      
+	      	licObj = licenseProfObject(stateLicense,LICENSETYPE);
+	      	logDebug("161:Successfully created LP? " + licObj.valid);
 	
 	   
 	      
@@ -367,7 +364,7 @@ var showMessage = true;
 //	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 //	          if (expObj != null) {
 	              expDt = newExpDate;
-	          }
+	          
 	  
 	          if (expDt != null) {
 	              licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
@@ -385,8 +382,12 @@ var showMessage = true;
 	          }
 	          else {
 	              logDebug("LP Failed to Update from Primary Contact trying License Holder");
-	              if(licObj.updateFromRecordContactByType(stateLicense,"",true,true)) logDebug("Updated from License Holder");
-	              else logDebug("Couldn't Update Contact Info");
+	            
+	              if(licObj.updateFromRecordContactByType(stateLicense,"",true,true)) {
+	            	  
+	            	  logDebug("Updated from License Holder");}
+	              
+	              else {logDebug("Couldn't Update Contact Info");
 	          }
 	  
 	          if (getAppSpecific("Doing Business As (DBA) Name")) {
@@ -437,7 +438,7 @@ var showMessage = true;
 	     
 	      else {
 	          logDebug("LP Not found to update");
-	          //createRefLicProfFromLicProf();
+	          createRefLicProfFromLicProf();
 	      
 	      }
 	  
@@ -450,9 +451,9 @@ var showMessage = true;
 	
 	          	}
 	        
-
-
-		}	
+	  }
+	        }
+		
   
 //************************************ REPORT SELECTION **********************************
 
