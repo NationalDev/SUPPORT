@@ -291,7 +291,7 @@ var showMessage = true;
 	                
 	                aa.print("LIC License Type is " + LICENSETYPE);
 	               
-	                stateLicense = licCap.getCustomID();
+	                stateLicense = licCapId.getCustomID();
 	                stateLicense = getAppSpecific("State License Number",licCapId);
 	                
 	           aa.print("License Number is " + licIDString);
