@@ -364,7 +364,7 @@ var showMessage = true;
 	          var expObj = null;
 	          var expDt = null;
 	          var expObjRes = aa.expiration.getCapID(parentCapId);
-//	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+	          if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 	          if (expObj != null) {
 	              expDt = aa.date.parseDate(expObj.getExpDateString());
 	          }
