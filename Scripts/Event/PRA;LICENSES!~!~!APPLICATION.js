@@ -295,7 +295,7 @@ var showMessage = true;
 	                stateLicense = getAppSpecific("State License Number",licCapId);
 	                
 	           aa.print("License Number is " + licIDString);
-	           
+   
 	            }
 	    
 	        licObj = licenseProfObject(stateLicense,LICENSETYPE);
