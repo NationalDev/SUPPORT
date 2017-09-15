@@ -434,7 +434,7 @@ var showMessage = true;
 	  
 	   
 	          var checkLicProf = getRefLicenseProf(stateLicense);
-	          	if (checkLicProf.valid){
+	          	if (checkLicProf != null){
 	      aa.print("newLicProf is a " + newLicProf.getClass());
 	      for (x in newLicProf) if (typeof(newLicProf[x]) == "function") aa.print("  " + x);
 	      for (x in newLicProf) if (typeof(newLicProf[x]) != "function") aa.print("  " + x + " = " + newLicProf[x]);
