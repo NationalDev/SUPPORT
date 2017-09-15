@@ -306,7 +306,7 @@ var showMessage = true;
 	        logDebug("128:stateLicense=" + licIDString);
 	        logDebug("129:LICENSETYPE=" + LICENSETYPE);
 	        
-	        if (licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) = null) {
+	        if (licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
 	    
 	    
 	    //----->branch("EMSE:LicProfLookup:CreateLP");
