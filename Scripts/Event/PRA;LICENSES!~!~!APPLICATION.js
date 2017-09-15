@@ -433,7 +433,7 @@ var showMessage = true;
 	              LPUpdateResult = aa.licenseScript.editRefLicenseProf(newLicProf);
 	              logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
 	          }
-	    }
+	    
 	     
 	      else {
 	          logDebug("LP Not found to update");
@@ -596,3 +596,4 @@ else{		var rParams = aa.util.newHashMap();
 }
 logDebug("Parameters: " + rParams + stop);
 	}
+}
