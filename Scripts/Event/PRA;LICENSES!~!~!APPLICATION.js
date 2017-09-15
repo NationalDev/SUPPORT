@@ -234,15 +234,15 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
   
   //->branch("EMSE:LicProfLookup:getLicenses");
-      var searchCap = capId;
-      var tmpId = capId;
+      var searchCap = parentCapId;
+      var tmpId = parentCapId;
       var prjArr = null;
       if (appMatch("*/*/*/License")) {
           var childArr = getChildren("*/*/*/Application");
           if(childArr != null) searchCap = childArr[0];
           }
   
-      capId = tmpId;
+      parentCapId = tmpId;
       var vRelationType = "R";
       if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
       var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
