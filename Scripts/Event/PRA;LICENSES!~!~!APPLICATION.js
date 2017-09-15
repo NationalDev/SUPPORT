@@ -252,12 +252,12 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
           }
   
       if (licCapId == null && appMatch("*/*/*/License")) {
-          licCapId = capId;
+          licCapId = parentCapId;
 //          //In the event license has no application;
           }
   
       if (licCapId == null && appMatch("*/*/*/Renewal")) {
-          licCapId = capId;
+          licCapId = parentCapId;
           //In the event license has no application;
           }
       logDebug("100:licCapId=" + licCapId);
@@ -308,7 +308,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
           	vNewLic.setLicState(LICENSESTATE);
           	vNewLic.setStateLicense(stateLicense);
          
-          aa.licenseScript.createRefLicenseProf(vNewLic);
+          aa.licenseScript.createRefLicenseProf(parentCapId);
       }   
           var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
          
