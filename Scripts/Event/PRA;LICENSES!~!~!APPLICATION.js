@@ -389,7 +389,7 @@ var showMessage = true;
 	              
 	              else {logDebug("Couldn't Update Contact Info");
 	          }
-	  
+	          }
 	          if (getAppSpecific("Doing Business As (DBA) Name")) {
 	              licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 	          }
@@ -436,8 +436,8 @@ var showMessage = true;
 	              logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
 	          }
 	    
-	          }
-	      else {
+	          
+	   
 	          logDebug("LP Not found to update");
 	          createRefLicProfFromLicProf();
 	      
