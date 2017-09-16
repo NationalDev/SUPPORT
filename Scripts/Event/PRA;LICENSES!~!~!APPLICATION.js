@@ -190,6 +190,6 @@ else {
 }
 
 		myReport="Boiler";
-		ogDebug("Parameters: " + rParams + "Report =" + myReport);
+		logDebug("Parameters: " + rParams + "Report =" + myReport);
 	}
 	
