@@ -328,14 +328,14 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
    
  //******************************************************
             
-            
-            if (tmpLicObj.valid) {
-                isNewLic = true;
-          }
-        
-            if (tmpLicObj.valid && licIDString) {
-            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-          }
+//            
+//            if (tmpLicObj.valid) {
+//                isNewLic = true;
+//          }
+//        
+//            if (tmpLicObj.valid && licIDString) {
+//            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+//          }
 
 //            var mycap = aa.cap.getCapId(licCapId).getOutput();
 //            
