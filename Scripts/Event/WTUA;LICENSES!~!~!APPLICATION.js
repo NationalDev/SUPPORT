@@ -364,15 +364,15 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
               licObj.refLicModel.setLicenseBoard(LICENSETYPE);
           }
   
-          if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+          if (licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
               logDebug("LP Updated from Primary Contact");
           }
           else {
-              logDebug("LP Failed to Update from Primary Contact trying License Holder");
+              logDebug("LP Failed to Update from Primary Contact trying Primary Contact");
               
-              if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) {
+              if(licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
             	  
-            	   logDebug("Updated from License Holder");}
+            	   logDebug("Updated from Primary Contact");}
               
               else {
             	  logDebug("Couldn't Update Contact Info");
