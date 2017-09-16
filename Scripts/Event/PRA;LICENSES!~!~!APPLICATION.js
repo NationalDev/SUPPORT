@@ -43,7 +43,7 @@ var showMessage = true;
 		var myReport;
 			logDebug("License Type: " + LICENSETYPE);
   	
-if (LICENSETYPE = "1st Class Station Eng") {
+if (LICENSETYPE == "1st Class Station Eng") {
   	     
   		var rParams = aa.util.newHashMap();
   	     	
@@ -56,10 +56,10 @@ if (LICENSETYPE = "1st Class Station Eng") {
    			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
    			
    			myReport="Stationary";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
   			}
   	
-else if (LICENSETYPE = "2nd Class Station Eng")  {
+else if (LICENSETYPE == "2nd Class Station Eng")  {
 	     
 		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -70,10 +70,10 @@ else if (LICENSETYPE = "2nd Class Station Eng")  {
   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
   			
    			myReport="Stationary";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 			} 
 
-else if (LICENSETYPE = "3rd Class Station Eng") {
+else if (LICENSETYPE == "3rd Class Station Eng") {
     
 	var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -84,14 +84,14 @@ else if (LICENSETYPE = "3rd Class Station Eng") {
 			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 			
    			myReport="Stationary";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
 		} 
 
 //
 ////*********************************** BOILER 
 // 
-else if (LICENSETYPE = "Boiler Op HP") {
+else if (LICENSETYPE == "Boiler Op HP") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -104,11 +104,11 @@ else if (LICENSETYPE = "Boiler Op HP") {
   			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
   			
    			myReport="Boiler";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
   	}
 
-else if (LICENSETYPE = "Boiler Op LP") {
+else if (LICENSETYPE == "Boiler Op LP") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -120,11 +120,11 @@ else if (LICENSETYPE = "Boiler Op LP") {
   			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
   			
   			myReport="Boiler";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
 	}
  
-else if (LICENSETYPE = "1st Class Refrig Op") {
+else if (LICENSETYPE == "1st Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -136,11 +136,11 @@ else if (LICENSETYPE = "1st Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 			
 			myReport="Boiler";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
 	}
  
-else  if (LICENSETYPE = "2nd Class Refrig Op") {
+else  if (LICENSETYPE == "2nd Class Refrig Op") {
   	
 		
 			addParameter(rParams,"Record_ID","capId");
@@ -151,11 +151,11 @@ else  if (LICENSETYPE = "2nd Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 			
 			myReport="Boiler";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
 	}
  
-else if (LICENSETYPE = "3rd Class Refrig Op") {
+else if (LICENSETYPE == "3rd Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -167,7 +167,7 @@ else if (LICENSETYPE = "3rd Class Refrig Op") {
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 			
 			myReport="Boiler";
-   			logDebug("Parameters: " + rParams + "Report =" + myReport);
+   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
 	}
 //*********************************** ALL OTHERS *************************************************************
@@ -185,7 +185,7 @@ else {
 		runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 		
 		myReport="License";
-		logDebug("Parameters: " + rParams + "Report =" + myReport);
+		logDebug("Parameters: " + rParams + "Report = " + myReport);
   			
 }
 
