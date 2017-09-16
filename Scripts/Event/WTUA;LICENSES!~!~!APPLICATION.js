@@ -324,7 +324,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         }   
             var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
            
-            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid + "tmpLicObj =" + tmpLicObj);
+            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid + " tmpLicObj = " + tmpLicObj);
    
  //******************************************************
             
@@ -339,16 +339,18 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 
             var mycap = aa.cap.getCapId(licCapId).getOutput();
             
-            logDebug("150:mycap " + mycap);
-      
-            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-            	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-          }
+            logDebug("150:mycap =" + mycap);
             
+            
+            var mycap = aa.cap.getCap(capId).getOutput();
+            
+            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y')
+            {
+                associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+                }
             licObj = licenseProfObject(stateLicense,LICENSETYPE );
-      
+            
             logDebug("161:Successfully created LP? " + licObj.valid);
-
        
             
             if (licObj.valid) {
