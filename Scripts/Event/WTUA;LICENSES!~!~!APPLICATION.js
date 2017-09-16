@@ -324,7 +324,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         }   
             var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
            
-            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
+            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid + "tmpLicObj =" + tmpLicObj);
    
  //******************************************************
             
