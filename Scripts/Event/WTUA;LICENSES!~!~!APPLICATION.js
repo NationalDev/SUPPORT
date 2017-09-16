@@ -326,6 +326,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
            
             logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
    
+ //******************************************************
+            
             
             if (tmpLicObj.valid) {
                 isNewLic = true;
@@ -335,7 +337,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           }
 
-            var mycap = aa.cap.getCap(capId).getOutput();
+            var mycap = aa.cap.getCapId(capId).getOutput();
       
             if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
             	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
