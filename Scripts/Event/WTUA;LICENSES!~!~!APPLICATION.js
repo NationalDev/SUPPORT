@@ -2,10 +2,11 @@
 //	WTUA;LICENSES!~!~!APPLICATION.js																	   /
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
-//																								       	   /
-//					WTUA:LICENSES/*/*/APPLICATION															/
-//			 																								/
-//			Date: 09/16/2017    Version 3.0																	/
+//																								           /
+//					WTUA:LICENSES/*/*/APPLICATION														   / 							
+//																										   /
+//			Date:09/16/2017  Version 3.0																   /
+//																										   /
 //*********************************************************************************************************/
 
 if (wfStatus == "Request for Corrections") {
@@ -19,22 +20,36 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     capName = null;
     newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
-    
+//    newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+    // create the permit record;
+//    if (newLicId) {
+//        newLicIdString = newLicId.getCustomID();
+//        updateAppStatus("Issued","Originally Issued",newLicId);
+        
+    }
+
+
+if (wfTask == "License Issuance" && wfStatus == "Issued") {
+//->branch("LIC Establish Links to Reference Contacts");
     logDebug("Executing LIC Establish Links to Reference Contacts");
-    
     iArr = new Array();  //attributes to ignore;
-    
     contactTypeArray = new Array("Applicant","Business Owner","Corporate Officer","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
-   
     if (!feeEstimate) {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
     }
+}
 
- // create the license record;
-    
+if (wfTask == "License Issuance" && wfStatus == "Issued") {
+//->branch("LIC Issue Business License");
+    newLic = null;
+    newLicId = null;
+    newLicIdString = null;
+//    newLicenseType = "Electrical";
+//    newLicSubType = "Aprentice";  //added by IS 02/22/2017
+    //newLicenseType = "Business";    no such type in module by IS
+//    monthsToInitialExpire = 12;
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
-    
-    
+    // create the license record;
     if (newLicId) {
         
     	newLicIdString = newLicId.getCustomID();
@@ -45,15 +60,22 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         copyLicensedProf(capId,newLicId);
         copyASIFields(capId,newLicId);
                      
-        copyContacts(capId,newLicId);
+        //copyContacts(capId,newLicId);
         editAppName(capName,newLicId);       
         updateAppStatus("Active","Originally Issued",newLicId);
-        changeCapContactTypes("Applicant","Contractor of Record", newLicId);
+
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     }
 
     
-
+//     appName = getAppName(CapId);
+//     editAppName(appName,newLicId);
+//    //line added by CIH 03012016;
+    //var ignore = lookup("EMSE:ASI Copy Exceptions","License/*/*/*");
+//    var ignore = ASICopyExceptions(newLicId);
+//    var ignoreArr = new Array();
+//    if(ignore != null) ignoreArr = ignore.split("|");
+//    copyAppSpecific(newLicId,ignoreArr);
 //**************************************************************************************    
     tmpNewDate = new Date();
 
@@ -150,9 +172,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 thisLic.setExpiration(dateAdd(newExpDate,0));
                 thisLic.setStatus("Active");
                 }
-    }    
-    
-    else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
+    }    else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	//      thisMonth = tmpNewDate.getMonth();
 	//      if (thisMonth > 7) {
@@ -164,9 +184,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	              thisLic.setExpiration(dateAdd(newExpDate,0));
 	              thisLic.setStatus("Active");
 	              }
-    }    
-    
-    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
+    }    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
     		thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
     	//      thisMonth = tmpNewDate.getMonth();
     	//      if (thisMonth > 7) {
@@ -178,9 +196,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     	              thisLic.setExpiration(dateAdd(newExpDate,0));
     	              thisLic.setStatus("Active");
     	              }
-     }	 
-    
-    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
+     }	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -192,9 +208,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	    	              thisLic.setExpiration(dateAdd(newExpDate,0));
 	    	              thisLic.setStatus("Active");
 	    	              }
-	 }	 
-    
-    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
+	 }	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -207,9 +221,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	    	              thisLic.setStatus("Active");
 	    	              }
 	    	      	
-	 }	  
-    
-    else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
+	 }	  else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -225,11 +237,13 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 		 }   
 	 } 
 	    	      	
-}  	      	
+	    	      	
     
 // From Here ************************ Licensed Professional **************************************
 
 
+  if (wfTask == "License Issuance" && wfStatus == "Issued") {
+    
     
     //->branch("EMSE:LicProfLookup");
         logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
@@ -253,11 +267,9 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             }
     
         capId = tmpId;
-        
         var vRelationType = "R";
         if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
         var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
-      
         if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
         if (prjArr != null) {
             for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
@@ -299,7 +311,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 }
             stateLicense = licCapId.getCustomID();
            // stateLicense = getAppSpecific("State License Number",licCapId);
-           aa.print("LIC License Number is " + stateLicense);
+           aa.print("LIC State License Number is " + stateLicense);
             }
     
         licObj = licenseProfObject(newLicId,LICENSETYPE);
@@ -324,36 +336,23 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         }   
             var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
            
-            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid + " tmpLicObj = " + tmpLicObj);
-   
- //******************************************************
-            
-//            
-//            if (tmpLicObj.valid) {
-//                isNewLic = true;
-//          }
-//        
-//            if (tmpLicObj.valid && licIDString) {
-//            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+            logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
+            if (tmpLicObj.valid) {
+                isNewLic = true;
+          }
+        
+//      if (tmpLicObj.valid && licIDString) {
+//          associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
 //          }
 
-            var mycap = aa.cap.getCapId(licCapId).getOutput();
-            
-            logDebug("150:mycap =" + mycap);
-            
-            
-            var mycap = aa.cap.getCap(capId).getOutput();
-            
-            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y')
-            {
-                associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-                }
-            licObj = licenseProfObject(stateLicense,LICENSETYPE );
-            
-            logDebug("161:Successfully created LP? " + licObj.valid);
-       
-            
-            if (licObj.valid) {
+      var mycap = aa.cap.getCap(capId).getOutput();
+      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+          }
+      licObj = licenseProfObject(stateLicense,LICENSETYPE );
+      logDebug("161:Successfully created LP? " + licObj.valid);
+
+    if (licObj.valid) {
     	
     	
  //----->branch("EMSE:LicProfLookup:UpdateLP");
@@ -378,23 +377,20 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
               licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
           }
   
-         else {
+//         if (licCapTypeArr[1] == "Business") {
+//             licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
+//         }
+          else {
               licObj.refLicModel.setLicenseBoard(LICENSETYPE);
           }
   
-          if (licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
+          if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
               logDebug("LP Updated from Primary Contact");
           }
           else {
-              logDebug("LP Failed to Update from Primary Contact trying Primary Contact");
-              
-              if(licObj.updateFromRecordContactByType(newLicId,"",true,true)) {
-            	  
-            	   logDebug("Updated from Primary Contact");}
-              
-              else {
-            	  logDebug("Couldn't Update Contact Info");
-              }
+              logDebug("LP Failed to Update from Primary Contact trying License Holder");
+              if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
+              else logDebug("Couldn't Update Contact Info");
           }
   
           if (getAppSpecific("Doing Business As (DBA) Name")) {
@@ -430,7 +426,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
               var succ = res.getSuccess();
               logDebug("editRefLicenseProf() " + succ);
   
-              createRefLicProf(stateLicense,LICENSETYPE,"Contractor of Record");
+              createRefLicProf(stateLicense,LICENSETYPE,"License Holder");
               var newLicProf = getRefLicenseProf(stateLicense);
               newLicProf.setLicenseIssueDate(licCap.getFileDate());
               newLicProf.setLicenseBoard(LICENSETYPE);
@@ -442,5 +438,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
               logDebug("LP Update Result = " + LPUpdateResult.getSuccess());
           }
     }
-        
 
+        
+  }
+}
