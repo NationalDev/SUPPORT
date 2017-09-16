@@ -20,37 +20,21 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     capName = null;
     newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
-//    newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
-    // create the permit record;
-//    if (newLicId) {
-//        newLicIdString = newLicId.getCustomID();
-//        updateAppStatus("Issued","Originally Issued",newLicId);
-        
-    }
 
-
-if (wfTask == "License Issuance" && wfStatus == "Issued") {
-//->branch("LIC Establish Links to Reference Contacts");
     logDebug("Executing LIC Establish Links to Reference Contacts");
     iArr = new Array();  //attributes to ignore;
     contactTypeArray = new Array("Applicant","Business Owner","Corporate Officer","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
     if (!feeEstimate) {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
     }
-}
 
-if (wfTask == "License Issuance" && wfStatus == "Issued") {
-//->branch("LIC Issue Business License");
-    newLic = null;
-    newLicId = null;
-    newLicIdString = null;
-//    newLicenseType = "Electrical";
-//    newLicSubType = "Aprentice";  //added by IS 02/22/2017
-    //newLicenseType = "Business";    no such type in module by IS
-//    monthsToInitialExpire = 12;
+    
+ // create the license record;
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
-    // create the license record;
-    if (newLicId) {
+    
+    
+    
+    if (newLicId !=null) {
         
     	newLicIdString = newLicId.getCustomID();
         
@@ -59,23 +43,18 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         copyASITables(capId,newLicId);
         copyLicensedProf(capId,newLicId);
         copyASIFields(capId,newLicId);
-                     
-        //copyContacts(capId,newLicId);
-        editAppName(capName,newLicId);       
+        copyContacts(capId,newLicId);
+        copyFees(capId,newLicId);
+                
+        editAppName(capName,newLicId);     
+        
         updateAppStatus("Active","Originally Issued",newLicId);
 
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     }
 
     
-//     appName = getAppName(CapId);
-//     editAppName(appName,newLicId);
-//    //line added by CIH 03012016;
-    //var ignore = lookup("EMSE:ASI Copy Exceptions","License/*/*/*");
-//    var ignore = ASICopyExceptions(newLicId);
-//    var ignoreArr = new Array();
-//    if(ignore != null) ignoreArr = ignore.split("|");
-//    copyAppSpecific(newLicId,ignoreArr);
+
 //**************************************************************************************    
     tmpNewDate = new Date();
 
