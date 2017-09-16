@@ -38,14 +38,11 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 }
 
 if (wfTask == "License Issuance" && wfStatus == "Issued") {
-//->branch("LIC Issue Business License");
+
     newLic = null;
     newLicId = null;
     newLicIdString = null;
-//    newLicenseType = "Electrical";
-//    newLicSubType = "Aprentice";  //added by IS 02/22/2017
-    //newLicenseType = "Business";    no such type in module by IS
-//    monthsToInitialExpire = 12;
+
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     // create the license record;
     if (newLicId) {
@@ -58,22 +55,15 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         copyLicensedProf(capId,newLicId);
         copyASIFields(capId,newLicId);
                      
-        //copyContacts(capId,newLicId);
+        copyContacts(capId,newLicId);
         editAppName(capName,newLicId);       
         updateAppStatus("Active","Originally Issued",newLicId);
-
+        changeCapContactTypes("Applicant","Contractor of Record", newLicId);
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     }
 
     
-//     appName = getAppName(CapId);
-//     editAppName(appName,newLicId);
-//    //line added by CIH 03012016;
-    //var ignore = lookup("EMSE:ASI Copy Exceptions","License/*/*/*");
-//    var ignore = ASICopyExceptions(newLicId);
-//    var ignoreArr = new Array();
-//    if(ignore != null) ignoreArr = ignore.split("|");
-//    copyAppSpecific(newLicId,ignoreArr);
+
 //**************************************************************************************    
     tmpNewDate = new Date();
 
