@@ -212,13 +212,11 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 		 }   
 	 } 
 	    	      	
-	    	      	
+    	      	
     
 // From Here ************************ Licensed Professional **************************************
 
 
-  if (wfTask == "License Issuance" && wfStatus == "Issued") {
-    
     
     //->branch("EMSE:LicProfLookup");
         logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
@@ -242,9 +240,11 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             }
     
         capId = tmpId;
+        
         var vRelationType = "R";
         if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
         var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
+      
         if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
         if (prjArr != null) {
             for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
@@ -322,14 +322,20 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           }
 
-//      var mycap = aa.cap.getCap(capId).getOutput();
-//      if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-//          associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-//          }
-      licObj = licenseProfObject(stateLicense,LICENSETYPE );
-      logDebug("161:Successfully created LP? " + licObj.valid);
+            var mycap = aa.cap.getCap(capId).getOutput();
+      
+            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+            	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+          }
+            
+            licObj = licenseProfObject(stateLicense,LICENSETYPE );
+      
+      
+            logDebug("161:Successfully created LP? " + licObj.valid);
 
-    if (licObj.valid) {
+            
+            
+            if (licObj.valid) {
     	
     	
  //----->branch("EMSE:LicProfLookup:UpdateLP");
@@ -363,8 +369,14 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
           }
           else {
               logDebug("LP Failed to Update from Primary Contact trying License Holder");
-              if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
-              else logDebug("Couldn't Update Contact Info");
+              
+              if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) {
+            	  
+            	   logDebug("Updated from License Holder");}
+              
+              else {
+            	  logDebug("Couldn't Update Contact Info");
+              }
           }
   
           if (getAppSpecific("Doing Business As (DBA) Name")) {
@@ -414,4 +426,3 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     }
         
   }
-}
