@@ -337,7 +337,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           }
 
-            var mycap = aa.cap.getCapId(capId).getOutput();
+            var mycap = aa.cap.getCapId(licCapId).getOutput();
             
             logDebug("150:mycap " + mycap);
       
