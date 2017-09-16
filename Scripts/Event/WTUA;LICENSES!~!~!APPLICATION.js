@@ -29,13 +29,6 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     if (!feeEstimate) {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
     }
-}
-
-if (wfTask == "License Issuance" && wfStatus == "Issued") {
-
-    newLic = null;
-    newLicId = null;
-    newLicIdString = null;
 
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     // create the license record;
@@ -293,7 +286,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 }
             stateLicense = licCapId.getCustomID();
            // stateLicense = getAppSpecific("State License Number",licCapId);
-           aa.print("LIC State License Number is " + stateLicense);
+           aa.print("LIC License Number is " + stateLicense);
             }
     
         licObj = licenseProfObject(newLicId,LICENSETYPE);
@@ -319,13 +312,15 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
            
             logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
+   
+            
             if (tmpLicObj.valid) {
                 isNewLic = true;
           }
         
-            if (tmpLicObj.valid && licIDString) {
-            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-          }
+//            if (tmpLicObj.valid && licIDString) {
+//            	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+//          }
 
       var mycap = aa.cap.getCap(capId).getOutput();
       if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
@@ -405,7 +400,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
               var succ = res.getSuccess();
               logDebug("editRefLicenseProf() " + succ);
   
-              createRefLicProf(stateLicense,LICENSETYPE,"License Holder");
+              createRefLicProf(stateLicense,LICENSETYPE,"Contractor of Record");
               var newLicProf = getRefLicenseProf(stateLicense);
               newLicProf.setLicenseIssueDate(licCap.getFileDate());
               newLicProf.setLicenseBoard(LICENSETYPE);
