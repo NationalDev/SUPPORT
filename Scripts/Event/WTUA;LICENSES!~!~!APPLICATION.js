@@ -337,11 +337,11 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           }
 
-            var mycap = aa.cap.getCapId(capId).getOutput();
-      
-            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-            	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-          }
+//            var mycap = aa.cap.getCapId(capId).getOutput();
+//      
+//            if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+//            	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+//          }
             
             licObj = licenseProfObject(stateLicense,LICENSETYPE );
       
