@@ -290,7 +290,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 }
             stateLicense = licCapId.getCustomID();
            // stateLicense = getAppSpecific("State License Number",licCapId);
-           aa.print("LIC State License Number is " + stateLicense);
+           aa.print("LIC License Number is " + stateLicense);
             }
     
         licObj = licenseProfObject(newLicId,LICENSETYPE);
