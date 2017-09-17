@@ -5,7 +5,7 @@
 //																								           /
 //					WTUA:LICENSES/*/*/APPLICATION														   / 							
 //																										   /
-//			Date:09/16/2017  Version 3.0																   /
+//			Date:09/16/2017  Version 3.0				Check if Parent exsits							   /
 //																										   /
 //*********************************************************************************************************/
 
@@ -18,6 +18,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     newLicId = null;
     newLicIdString = null;
     capName = null;
+    
     newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
 
@@ -28,9 +29,14 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
     }
 
+    var parentId = getParent();
+    if (parentId = null) {
     
  // create the license record;
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+    }
+    
+    newLicId = parentId;
     
     
     
