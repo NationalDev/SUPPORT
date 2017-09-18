@@ -12,9 +12,7 @@
 var showDebug = true;
 var showMessage = true;
 
-		if (wfStatus == "Request for Corrections") {
-        sendExternalReviewNotification();   
-}
+
 
 		
 		if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
