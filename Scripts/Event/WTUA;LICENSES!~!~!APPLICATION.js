@@ -3,7 +3,7 @@
 ////																			Iman Sallam @ City of Detroit  /
 ////		Deploy with the script code and script title below (all caps)									   /
 ////																								           /
-////					WTUA:LICENSES/*/*/APPLICATION														   / 							
+////					WTUA:LICENSES/*/*/APPLICATION	 													   / 							
 ////																										   /
 ////			Date:09/16/2017  Version 3.0				Check if Parent exsits							   /
 ////																										   /
