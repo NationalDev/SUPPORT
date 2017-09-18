@@ -572,5 +572,5 @@ var showMessage = false;
 		  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 		  			
 		}
-}logDebug("Parameters: " + rParams +stop);
+}
 		}
