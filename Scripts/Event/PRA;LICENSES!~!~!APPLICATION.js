@@ -10,7 +10,7 @@
 //*********************************************************************************************************/
 
 var showDebug = true;
-var showMessage = false;
+var showMessage = true;
 
 
 
@@ -444,7 +444,7 @@ var showMessage = false;
 		  
 		  	logDebug("License Type: " + LICENSETYPE);
 		  	
-		if (LICENSETYPE = "1st Class Station Eng") {
+		if (LICENSETYPE == "1st Class Station Eng") {
 		  	     
 		  		var rParams = aa.util.newHashMap();
 		  	     	
@@ -459,7 +459,7 @@ var showMessage = false;
 		 
 		  			}
 		  	
-		else if (LICENSETYPE = "2nd Class Station Eng")  {
+		else if (LICENSETYPE == "2nd Class Station Eng")  {
 			     
 				var rParams = aa.util.newHashMap();
 					addParameter(rParams,"Record_ID","capId");
@@ -473,7 +473,7 @@ var showMessage = false;
 
 					} 
 
-		else if (LICENSETYPE = "3rd Class Station Eng") {
+		else if (LICENSETYPE == "3rd Class Station Eng") {
 		    
 			var rParams = aa.util.newHashMap();
 					addParameter(rParams,"Record_ID","capId");
@@ -490,7 +490,7 @@ var showMessage = false;
 		
 		////*********************************** BOILER 
 		// 
-		else if (LICENSETYPE = "Boiler Op HP") {
+		else if (LICENSETYPE == "Boiler Op HP") {
 		  	
 		  		
 		  		var rParams = aa.util.newHashMap();
@@ -505,7 +505,7 @@ var showMessage = false;
 
 		  	}
 		//
-		else if (LICENSETYPE = "Boiler Op LP") {
+		else if (LICENSETYPE == "Boiler Op LP") {
 		  	
 				
 				var rParams = aa.util.newHashMap();
@@ -518,7 +518,7 @@ var showMessage = false;
 					runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 			}
-		else if (LICENSETYPE = "1st Class Refrig Op") {
+		else if (LICENSETYPE == "1st Class Refrig Op") {
 		  	
 				
 				var rParams = aa.util.newHashMap();
@@ -531,7 +531,7 @@ var showMessage = false;
 					runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 			}
-		else if (LICENSETYPE = "2nd Class Refrig Op") {
+		else if (LICENSETYPE == "2nd Class Refrig Op") {
 		  	
 				
 					addParameter(rParams,"Record_ID","capId");
@@ -544,7 +544,7 @@ var showMessage = false;
 					runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 
 			}
-		else if (LICENSETYPE = "3rd Class Refrig Op") {
+		else if (LICENSETYPE == "3rd Class Refrig Op") {
 		  	
 				
 				var rParams = aa.util.newHashMap();
