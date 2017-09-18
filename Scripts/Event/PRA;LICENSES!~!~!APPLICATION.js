@@ -1,13 +1,16 @@
 //*********************************************************************************************************/
-//	WTUA;LICENSES!~!~!APPLICATION.js																	   /
+//	WTUA;LICENSES!~!~!APPLICATION.js																	       /
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
-//					WTUA:LICENSES/*/*/APPLICATION														   / 							
-//																										   /
-//			Date:09/16/2017  Version 3.0				Check if Parent exsits							   /
-//																										   /
+//					PRA:LICENSES/*/*/APPLICATION														   / 							
+//			September 7th, 2017			Revision 2.0
+//			September 11th, 2017			Revision 3.0
+//			September 15th, 2017			Revision 3.1
 //*********************************************************************************************************/
+
+var showDebug = true;
+var showMessage = true;
 
 		if (wfStatus == "Request for Corrections") {
         sendExternalReviewNotification();   
