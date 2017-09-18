@@ -301,7 +301,7 @@ var showMessage = true;
                   }
               stateLicense = licCapId.getCustomID();
              // stateLicense = getAppSpecific("State License Number",licCapId);
-             aa.print("LIC State License Number is " + stateLicense);
+             aa.print("Detroit LIC License Number is " + stateLicense);
               }
       
           licObj = licenseProfObject(newLicId,LICENSETYPE);
@@ -432,7 +432,7 @@ var showMessage = true;
 
           
     }
-  }
+  
 		//************************************ REPORT SELECTION **********************************
 
 		//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
@@ -574,3 +574,4 @@ var showMessage = true;
 		  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 		  			
 		}
+}
