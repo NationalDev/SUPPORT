@@ -147,7 +147,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 thisLic.setExpiration(dateAdd(newExpDate,0));
                 thisLic.setStatus("Active");
                 }
-    }    else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
+    }    
+	else if (appTypeArray[1] == "Building" && appTypeArray[2] == "Sign-AwingContractor") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	//      thisMonth = tmpNewDate.getMonth();
 	//      if (thisMonth > 7) {
@@ -159,7 +160,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	              thisLic.setExpiration(dateAdd(newExpDate,0));
 	              thisLic.setStatus("Active");
 	              }
-    }    else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
+    }    
+	else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Contractor") {
     		thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
     	//      thisMonth = tmpNewDate.getMonth();
     	//      if (thisMonth > 7) {
@@ -171,7 +173,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     	              thisLic.setExpiration(dateAdd(newExpDate,0));
     	              thisLic.setStatus("Active");
     	              }
-     }	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
+     }	 
+	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "ContractorRegistration") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -183,7 +186,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	    	              thisLic.setExpiration(dateAdd(newExpDate,0));
 	    	              thisLic.setStatus("Active");
 	    	              }
-	 }	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
+	 }	 
+	 else if (appTypeArray[1] == "Electrical" && appTypeArray[2] == "Masters-Journeyman") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -196,7 +200,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	    	              thisLic.setStatus("Active");
 	    	              }
 	    	      	
-	 }	  else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
+	 }	  
+	 else if (appTypeArray[1] == "Contractor" && appTypeArray[2] == "Mechanical") {
 	    	thisYear = parseInt(tmpNewDate.getYear().toString())+1900;
 	    	//      thisMonth = tmpNewDate.getMonth();
 	    	//      if (thisMonth > 7) {
@@ -210,7 +215,8 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 	    	              }
 	 else {		 
 		 }   
-	 } 
+	 }
+}
 	    	      	
     	      	
     
