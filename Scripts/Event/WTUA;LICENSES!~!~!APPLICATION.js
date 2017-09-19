@@ -328,7 +328,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
             	associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           }
 
-            var mycap = aa.cap.getCap(capId).getOutput();
+            var mycap = aa.cap.getCap(vNewLic).getOutput();
       
             if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
             	associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
