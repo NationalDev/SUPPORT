@@ -40,8 +40,11 @@ var showMessage = true;
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     }
     
+    	
     	newLicId = parentId;
     
+    	logDebug("newLicId = " + newLicId);
+    	
       if (newLicId !=null) {
         
     	newLicIdString = newLicId.getCustomID();
