@@ -37,14 +37,28 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     }
 }
 
+
+
+
+
 if (wfTask == "License Issuance" && wfStatus == "Issued") {
 //->branch("LIC Issue Business License");
     newLic = null;
     newLicId = null;
     newLicIdString = null;
 
+    var parentId = getParent();
+    
+	if (parentId = null) {
+   
+    
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     // create the license record;
+	}
+    
+    newLicId = parentId;
+
+    
     if (newLicId) {
         
     	newLicIdString = newLicId.getCustomID();
@@ -62,7 +76,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
     }
 
-    
+	
 
 //**************************************************************************************    
     tmpNewDate = new Date();
