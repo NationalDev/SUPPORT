@@ -29,7 +29,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
     }
 
-    var parentId = getParent();
+    var parentId = getParent(capId);
     if (parentId = null) {
     
  // create the license record;
@@ -231,7 +231,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
       
       
       //->branch("EMSE:LicProfLookup");
-         
+          logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
           //Issue State;
           LICENSETYPE = "";
           //License Type to be populated;
@@ -296,14 +296,14 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                   }
               stateLicense = licCapId.getCustomID();
              // stateLicense = getAppSpecific("State License Number",licCapId);
-             aa.print("LIC State License Number is " + stateLicense);
+             aa.print("Detroit License Number is " + stateLicense);
               }
       
           licObj = licenseProfObject(newLicId,LICENSETYPE);
           //Get LicArray;
           logDebug("128:stateLicense=" + licIDString);
           logDebug("129:LICENSETYPE=" + LICENSETYPE);
-          if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+          if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
       
       
       //----->branch("EMSE:LicProfLookup:CreateLP");
