@@ -189,7 +189,6 @@ else {
   			
 }
 
-		myReport="Boiler";
-		logDebug("Parameters: " + rParams + "Report =" + myReport);
+		
 	}
 	
