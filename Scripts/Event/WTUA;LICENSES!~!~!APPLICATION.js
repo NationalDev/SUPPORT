@@ -3,7 +3,7 @@
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
-//					WTUA:LICENSES/*/*/APPLICATION	 													   / 							
+//					WTUA:LICENSES/*/*/APPLICATION														   / 							
 //																										   /
 //			Date:09/16/2017  Version 3.0				Check if Parent exsits							   /
 //																										   /
@@ -306,7 +306,7 @@
           //Get LicArray;
           logDebug("128:stateLicense=" + licIDString);
           logDebug("129:LICENSETYPE=" + LICENSETYPE);
-          if (!licObj.valid && lookup("LIC LICENSED PROFESSIONAL",LICENSETYPE) != null) {
+          if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
       
       
       //----->branch("EMSE:LicProfLookup:CreateLP");
