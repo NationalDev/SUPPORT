@@ -24,26 +24,31 @@ var showMessage = true;
 //    newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
 
-    logDebug("Executing LIC Establish Links to Reference Contacts");
-    iArr = new Array();  //attributes to ignore;
-    contactTypeArray = new Array("Applicant","Business Owner","Contractor of Record","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
-    	
-    	if (!feeEstimate) {
-        createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
-    }
+//    logDebug("Executing LIC Establish Links to Reference Contacts");
+//    iArr = new Array();  //attributes to ignore;
+//    contactTypeArray = new Array("Applicant","Business Owner","Contractor of Record","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
+//    	
+//    	if (!feeEstimate) {
+//        createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
+//    }
 
     var parentId = getParent();
     
     	if (parentId = null) {
     
  // create the license record;
+    		
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+    
     }
     	else{
     	
     	newLicId = parentId;
 		}
+    	
+    	
     	logDebug("newLicId = " + newLicId);
+    	
     	
       if (newLicId !=null) {
         
