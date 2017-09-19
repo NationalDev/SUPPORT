@@ -42,10 +42,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     newLic = null;
     newLicId = null;
     newLicIdString = null;
-//    newLicenseType = "Electrical";
-//    newLicSubType = "Aprentice";  //added by IS 02/22/2017
-    //newLicenseType = "Business";    no such type in module by IS
-//    monthsToInitialExpire = 12;
+
     newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
     // create the license record;
     if (newLicId) {
@@ -66,14 +63,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
     }
 
     
-//     appName = getAppName(CapId);
-//     editAppName(appName,newLicId);
-//    //line added by CIH 03012016;
-    //var ignore = lookup("EMSE:ASI Copy Exceptions","License/*/*/*");
-//    var ignore = ASICopyExceptions(newLicId);
-//    var ignoreArr = new Array();
-//    if(ignore != null) ignoreArr = ignore.split("|");
-//    copyAppSpecific(newLicId,ignoreArr);
+/
 //**************************************************************************************    
     tmpNewDate = new Date();
 
@@ -309,7 +299,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
                 }
             stateLicense = licCapId.getCustomID();
            // stateLicense = getAppSpecific("State License Number",licCapId);
-           aa.print("LIC State License Number is " + stateLicense);
+           aa.print("Detroit License Number is " + stateLicense);
             }
     
         licObj = licenseProfObject(newLicId,LICENSETYPE);
