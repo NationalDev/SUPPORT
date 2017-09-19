@@ -225,7 +225,7 @@ if (wfTask == "License Issuance" && wfStatus == "Issued") {
 
     
     //->branch("EMSE:LicProfLookup");
-       var LICENSESTATE = "MI");
+       var LICENSESTATE = "MI";
         //Issue State;
         LICENSETYPE = "";
         //License Type to be populated;
