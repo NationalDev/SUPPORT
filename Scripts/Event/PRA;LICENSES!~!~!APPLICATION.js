@@ -21,12 +21,12 @@ var showMessage = true;
     newLicIdString = null;
     capName = null;
     
-    newLicenseType = appTypeArray[2];
+//    newLicenseType = appTypeArray[2];
     monthsToInitialExpire = 12;
 
     logDebug("Executing LIC Establish Links to Reference Contacts");
     iArr = new Array();  //attributes to ignore;
-    contactTypeArray = new Array("Applicant","Business Owner","Corporate Officer","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
+    contactTypeArray = new Array("Applicant","Business Owner","Contractor of Record","Director","Manager","Officer","Partner","President","Respondent","Shareholder");
     	
     	if (!feeEstimate) {
         createRefContactsFromCapContactsAndLink(capId,contactTypeArray,iArr,false,false,comparePeopleGeneric);
