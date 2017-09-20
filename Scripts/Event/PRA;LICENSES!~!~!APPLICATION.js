@@ -31,7 +31,7 @@ var showMessage = true;
 		    }
 		}	
 		
-		
+	}		
 		
 //************************************ REPORT SELECTION **********************************
 
@@ -192,5 +192,5 @@ else {
 
 logDebug("Parameters: " + rParams + "Report = " + myReport +stop);
 		
-	}
+	
 	
