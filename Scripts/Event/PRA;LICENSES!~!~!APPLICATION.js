@@ -1,3 +1,6 @@
+try {
+		
+
 //*********************************************************************************************************/
 //	WTUA;LICENSES!~!~!APPLICATION.js																	       /
 //																			Iman Sallam @ City of Detroit  /
@@ -41,7 +44,9 @@ var showMessage = true;
   
 		var	LICENSETYPE = getAppSpecific("License Type", capId);
 		var myReport;
+			
 			logDebug("License Type: " + LICENSETYPE);
+			aa.print("License Type: " + LICENSETYPE);
   	
 if (LICENSETYPE == "1st Class Station Eng") {
   	     
@@ -191,3 +196,10 @@ else {
 	}
 	
 
+
+
+}catch (err) {
+	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+	}
+// end user code
+aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
