@@ -25,6 +25,7 @@ var showMessage = true;
 		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
 		            showDebug=1;
 		            tFee = feeArray[iCont];
+		           
 		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 		            
 		    }
