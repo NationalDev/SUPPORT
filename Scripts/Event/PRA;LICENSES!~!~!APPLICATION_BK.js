@@ -30,7 +30,7 @@ var showMessage = true;
 		    }
 		}	
 		
-		
+	}
 		
 //************************************ REPORT SELECTION **********************************
 
@@ -191,5 +191,5 @@ else {
 
 		myReport="Boiler";
 		logDebug("Parameters: " + rParams + "Report =" + myReport);
-	}
+	
 	
