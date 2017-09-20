@@ -23,15 +23,14 @@ var showMessage = true;
 		    for (iCont in feeArray) {
 		            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
 		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-		            showDebug=1;
+		            showDebug=3;
 		            tFee = feeArray[iCont];
-		           
 		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 		            
 		    }
 		}	
 		
-	}		
+		
 		
 //************************************ REPORT SELECTION **********************************
 
@@ -174,14 +173,11 @@ else if (LICENSETYPE == "3rd Class Refrig Op") {
 //*********************************** ALL OTHERS *************************************************************
   	
 else {		
-	var rParams = aa.util.newHashMap();
-
-
-	
-		addParameter(rParams,"Record_ID","capId");
-		addParameter(rParams,"TASK","Licenses Issuance");
-		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		addParameter(rParams,"License Type","VALUE_");
+		var rParams = aa.util.newHashMap();
+			addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"TASK","Licenses Issuance");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"License Type","VALUE_");
   	    	        
 		runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 		
@@ -190,7 +186,8 @@ else {
   			
 }
 
-logDebug("Parameters: " + rParams + "Report = " + myReport +stop);
-		
+		myReport="Boiler";
+		logDebug("Parameters: " + rParams + "Report =" + myReport);
+	}
 	
-	
+
