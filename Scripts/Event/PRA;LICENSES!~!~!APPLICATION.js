@@ -23,7 +23,7 @@ var showMessage = true;
 		    for (iCont in feeArray) {
 		            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
 		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-		            showDebug=3;
+		            showDebug=1;
 		            tFee = feeArray[iCont];
 		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 		            
@@ -189,6 +189,7 @@ else {
   			
 }
 
+logDebug("Parameters: " + rParams + "Report = " + myReport +stop);
 		
 	}
 	
