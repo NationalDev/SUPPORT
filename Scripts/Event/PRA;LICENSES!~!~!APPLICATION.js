@@ -13,22 +13,22 @@ var showDebug = true;
 var showMessage = true;
 
 
-	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
-	        
-		
-		iCont = null;
-		feeArray = new Array();
-		feeArray = loadFees(capId);
-		if (feeArray.length > 0) {
-		    for (iCont in feeArray) {
-		            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
-		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-		            showDebug=3;
-		            tFee = feeArray[iCont];
-		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
-		            
-		    }
-		}	
+//	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
+//	        
+//		
+//		iCont = null;
+//		feeArray = new Array();
+//		feeArray = loadFees(capId);
+//		if (feeArray.length > 0) {
+//		    for (iCont in feeArray) {
+//		            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
+//		            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
+//		            showDebug=3;
+//		            tFee = feeArray[iCont];
+//		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+//		            
+//		    }
+//		}	
 		
 		
 		
@@ -191,9 +191,6 @@ else {
   			
 }
 
-		myReport="Boiler";
-		logDebug("Parameters: " + rParams + "Report =" + myReport);
-	}
 	
 
 
