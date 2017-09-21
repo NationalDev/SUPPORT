@@ -9,7 +9,7 @@
 //			September 15th, 2017			Revision 3.1  								        		   /
 //*********************************************************************************************************/
 
-var showDebug = true;
+var showDebug = "1";
 var showMessage = true;
 
 try {
