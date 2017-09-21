@@ -9,8 +9,6 @@
 //			September 15th, 2017			Revision 3.1
 //*********************************************************************************************************/
 try{
-	
-	
 var showDebug = true;
 var showMessage = true;
 
@@ -136,7 +134,10 @@ else if (LICENSETYPE == "1st Class Refrig Op") {
   			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
   			addParameter(rParams,"TASK","Licenses Issuance");
   			addParameter(rParams,"License Type","VALUE_");
-  			    	        
+  			
+			logDebug("Parameters: " + rParams + "Report = " + myReport);
+			aa.print("Parameters: " + rParams + "Report = " + myReport);   	        
+			
 			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 			
 			myReport="Boiler";
@@ -202,3 +203,5 @@ else {
 	}
 // end user code
 aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
+
+		
