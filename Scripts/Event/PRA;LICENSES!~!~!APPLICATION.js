@@ -1,20 +1,20 @@
 //*********************************************************************************************************/
-//	PRA;LICENSES!~!~!APPLICATION.js																	       /
+//	WTUA;LICENSES!~!~!APPLICATION.js																	       /
 //																			Iman Sallam @ City of Detroit  /
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
-//			September 7th, 2017			Revision 2.0													   /
-//			September 11th, 2017			Revision 3.0												   /
-//			September 15th, 2017			Revision 3.1  								        		   /
+//			September 7th, 2017			Revision 2.0
+//			September 11th, 2017			Revision 3.0
+//			September 15th, 2017			Revision 3.1
 //*********************************************************************************************************/
-
+try{
+	
+	
 var showDebug = true;
-var showMessage = false;
+var showMessage = true;
 
-try {
-	
-	
+
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 	        
 		
@@ -30,9 +30,9 @@ try {
 		            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 		            
 		    }
-			
+		}	
 		
-	
+		
 		
 //************************************ REPORT SELECTION **********************************
 
@@ -92,9 +92,9 @@ else if (LICENSETYPE == "3rd Class Station Eng") {
 
 		} 
 
-
+//
 ////*********************************** BOILER 
-
+// 
 else if (LICENSETYPE == "Boiler Op HP") {
   	
   		
@@ -190,11 +190,15 @@ else {
   			
 }
 
+		myReport="Boiler";
+		logDebug("Parameters: " + rParams + "Report =" + myReport);
 	}
 	
+
+
+
 }catch (err) {
 	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 	}
-}
 // end user code
 aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
