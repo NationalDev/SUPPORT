@@ -4,9 +4,9 @@
 //		Deploy with the script code and script title below (all caps)									   /
 //																								           /
 //					PRA:LICENSES/*/*/APPLICATION														   / 							
-//			September 7th, 2017			Revision 2.0
-//			September 11th, 2017			Revision 3.0
-//			September 15th, 2017			Revision 3.1
+//			September 7th, 2017			Revision 2.0													   /
+//			September 11th, 2017			Revision 3.0												   /
+//			September 15th, 2017			Revision 3.1  								        		   /
 //*********************************************************************************************************/
 
 var showDebug = true;
@@ -32,7 +32,7 @@ try {
 		    }
 		}	
 		
-		
+	}
 		
 //************************************ REPORT SELECTION **********************************
 
@@ -92,9 +92,9 @@ else if (LICENSETYPE == "3rd Class Station Eng") {
 
 		} 
 
-//
+
 ////*********************************** BOILER 
-// 
+
 else if (LICENSETYPE == "Boiler Op HP") {
   	
   		
@@ -192,9 +192,6 @@ else {
 
 	}
 	
-
-
-
 }catch (err) {
 	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 	}
