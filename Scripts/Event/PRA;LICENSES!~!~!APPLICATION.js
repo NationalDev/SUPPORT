@@ -27,7 +27,7 @@ var showMessage = true;
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				
 			}
-   
+  
 				logDebug(" newLicId = " + newLicId);
 	
 
@@ -209,7 +209,6 @@ var showMessage = true;
 				    		 thisLic.setStatus("Active");
 		 }	      	
 	 } 
-				    logDebug("Expiration = " + newExpDate);
 				    
    
 				    
