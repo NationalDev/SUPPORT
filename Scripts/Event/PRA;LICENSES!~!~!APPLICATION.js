@@ -11,6 +11,8 @@
 var showDebug = true;
 var showMessage = true;
 
+
+
 			if (debug.indexOf("**ERROR") > 0)
 			{
 			aa.env.setValue("ScriptReturnCode", "1");
