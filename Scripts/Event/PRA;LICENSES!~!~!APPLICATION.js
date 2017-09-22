@@ -1,35 +1,16 @@
-//*********************************************************************************************************/
-//	WTUA;LICENSES!~!~!APPLICATION.js																	       /
-//																			Iman Sallam @ City of Detroit  /
-//		Deploy with the script code and script title below (all caps)									   /
-//																								           /
-//					PRA:LICENSES/*/*/APPLICATION														   / 							
+//*********************************************************************************************************
+//	WTUA;LICENSES!~!~!APPLICATION.js																	   
+//																			Iman Sallam @ City of Detroit  
+//		Deploy with the script code and script title below (all caps)									   
+//																								           
+//					PRA:LICENSES/*/*/APPLICATION														  / 							
 //			September 7th, 2017			Revision 2.0
 //			September 11th, 2017			Revision 3.0
-//*********************************************************************************************************/
+//			September 22th, 2017			Revision 3.2
+//*********************************************************************************************************
 
 var showDebug = true;
 var showMessage = true;
-
-
-
-			if (debug.indexOf("**ERROR") > 0)
-			{
-			aa.env.setValue("ScriptReturnCode", "1");
-			aa.env.setValue("ScriptReturnMessage", debug);
-			}
-			else
-			{
-			aa.env.setValue("ScriptReturnCode", "0");
-			if (showMessage) aa.env.setValue("ScriptReturnMessage", message);
-			if (showDebug)     aa.env.setValue("ScriptReturnMessage", debug);
-			}
-
-//if (isTaskStatus == "Request for Corrections") {
-//        sendExternalReviewNotification();   
-//}
-
-
 
 	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
 		newLic = null;
