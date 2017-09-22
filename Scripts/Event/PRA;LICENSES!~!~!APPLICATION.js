@@ -16,7 +16,6 @@ var showMessage = true;
 		newLic = null;
 		newLicId = null;
 		newLicIdString = null;
-		newLicenseType = appTypeArray[2];
 		monthsToInitialExpire = 12;
 		parentId = getParent();
 		
@@ -26,6 +25,7 @@ var showMessage = true;
 		if (parentId = null) {
 			
 			// create the license record;
+			
 			newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 			
 			}
@@ -33,7 +33,8 @@ var showMessage = true;
 			newLicId = parentId;
 		}
     
-		logDebug( "Parent ID = " +parentId + "newLicId = " + newLicId);
+		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
+	}
 		
     if (newLicId = null) {
         
@@ -527,7 +528,7 @@ else{		var rParams = aa.util.newHashMap();
   			
 }
 
-}
+
 	
 
 	
