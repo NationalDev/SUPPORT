@@ -269,7 +269,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
           }
       //Get License CAP;
       logDebug("105:licCapId=" + licCapId);
-      if (licCapId !=null) {
+      
   
   
   //----->branch("EMSE:LicProfLookup:getLicenseType");
@@ -291,7 +291,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
           cityLicense = licCapId.getCustomID();
          // stateLicense = getAppSpecific("State License Number",licCapId);
          aa.print("Detroit License Number is " + cityLicense);
-          }
+         
   
       	licObj = licenseProfObject(newLicId,LICENSETYPE);
       //Get LicArray;
