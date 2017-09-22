@@ -26,8 +26,9 @@ var showMessage = true;
 			newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 			
 			}
-		
+		else {			
 			newLicId = parentId;
+		}
     
     if (newLicId) {
         
