@@ -33,10 +33,10 @@ var showMessage = true;
 			}
 				
 			
-//		
-//    
-//		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
-//	
+		
+    
+		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
+	
 //		
 //    if (newLicId = null) {
 //        
