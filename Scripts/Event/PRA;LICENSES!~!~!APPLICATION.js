@@ -313,7 +313,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
          
           aa.licenseScript.createRefLicProf(licCapId);
       }   
-          var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
+          var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
          
           logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
           if (tmpLicObj.valid) {
