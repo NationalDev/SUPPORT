@@ -318,6 +318,8 @@ var showMessage = true;
           logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
           
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
+        
+          logDebug("STOP1");
           
           if (tmpLicObj.valid) {
               isNewLic = true;
@@ -329,7 +331,9 @@ var showMessage = true;
     if (tmpLicObj.valid && licIDString) {
         associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
         }
-    logDebug("STOP1");
+    
+    
+    logDebug("STOP2");
     
     var mycap = aa.cap.getCap(capId).getOutput();
     
@@ -337,7 +341,7 @@ var showMessage = true;
     		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
     		}
     	
-    	logDebug("STOP2");
+    	logDebug("STOP3");
     	
     licObj = licenseProfObject(cityLicense,LICENSETYPE );
  
@@ -350,7 +354,7 @@ var showMessage = true;
 	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
  
  
- logDebug("STOP3");
+ logDebug("STOP4");
  
   if (licObj.valid) {
   	
