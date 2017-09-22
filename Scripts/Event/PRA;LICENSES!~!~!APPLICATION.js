@@ -214,7 +214,7 @@ var showMessage = true;
 	}
 	
 	
-    	        
+    	            logDebug("Expiration = " + newExpDate);
 
 ////From Here ************************ Licensed Professional **************************************
 //
