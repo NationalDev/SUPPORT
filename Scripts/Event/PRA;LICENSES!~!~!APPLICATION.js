@@ -209,8 +209,10 @@ var showMessage = true;
 				    		 thisLic.setStatus("Active");
 		 }	      	
 	 } 
+				    logDebug("Expiration = " + newExpDate);
+				    
     else  {
-    	logDebug("Expiration = " + newExpDate);
+    	
 	}
 	
 	
