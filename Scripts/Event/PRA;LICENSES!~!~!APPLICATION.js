@@ -23,7 +23,7 @@ var showMessage = true;
 		
 			newLicId = parentId;
 		
-		if (parentId = null) {
+		if (newLicId = null) {
 			
 			// create the license record;
 			
