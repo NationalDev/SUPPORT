@@ -16,14 +16,13 @@ var showMessage = true;
 		
 		
 			newLic = null;
-		var newLicId = getParent();
+			newLicId = null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
 		
-			logDebug( "Parent ID " + newLicId);
-		
-			if (newLicId = null){
+				
+			if (newLicId == null){
 				
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				
