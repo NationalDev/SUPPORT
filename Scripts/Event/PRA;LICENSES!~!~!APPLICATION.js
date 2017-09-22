@@ -316,6 +316,9 @@ var showMessage = true;
           var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
          
           logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
+          
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
+          
           if (tmpLicObj.valid) {
               isNewLic = true;
         }
@@ -347,7 +350,7 @@ var showMessage = true;
 	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
  
  
- logDebug("STOP");
+ logDebug("STOP3");
  
   if (licObj.valid) {
   	
