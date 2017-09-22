@@ -20,6 +20,9 @@ var showMessage = true;
 		monthsToInitialExpire = 12;
 		parentId = getParent();
 		
+		logDebug( "Parent ID " +parentId);
+		
+		
 		if (parentId = null) {
 			
 			// create the license record;
@@ -30,7 +33,9 @@ var showMessage = true;
 			newLicId = parentId;
 		}
     
-    if (newLicId) {
+		logDebug( "Parent ID = " +parentId + "newLicId = " + newLicId);
+		
+    if (newLicId = null) {
         
     	newLicIdString = newLicId.getCustomID();
         
