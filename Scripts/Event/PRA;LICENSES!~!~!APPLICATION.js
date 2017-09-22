@@ -319,7 +319,10 @@ var showMessage = true;
           if (tmpLicObj.valid) {
               isNewLic = true;
         }
-      
+ 
+ try {         
+          
+          
     if (tmpLicObj.valid && licIDString) {
         associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
         }
@@ -331,7 +334,16 @@ var showMessage = true;
     licObj = licenseProfObject(cityLicense,LICENSETYPE );
     
     logDebug("161:Successfully created LP? " + licObj.valid);
-
+    
+ }catch (err) {
+		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+		}
+	// end user code
+	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
+ 
+ 
+ 
+ 
   if (licObj.valid) {
   	
   	
