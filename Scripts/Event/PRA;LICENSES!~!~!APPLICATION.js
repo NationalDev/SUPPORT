@@ -326,13 +326,18 @@ var showMessage = true;
     if (tmpLicObj.valid && licIDString) {
         associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
         }
-
-    var mycap = aa.cap.getCap(capId).getOutput();
-    if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    	associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-        }
-    licObj = licenseProfObject(cityLicense,LICENSETYPE );
+    logDebug("STOP");
     
+    var mycap = aa.cap.getCap(capId).getOutput();
+    
+    	if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+    		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+    		}
+    	
+    	logDebug("STOP");
+    	
+    licObj = licenseProfObject(cityLicense,LICENSETYPE );
+ 
     logDebug("161:Successfully created LP? " + licObj.valid);
     
  }catch (err) {
