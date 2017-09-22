@@ -210,11 +210,11 @@ var showMessage = true;
 		 }	      	
 	 } 
     else  {
-		       
+    	logDebug("Expiration = " + newExpDate);
 	}
 	
 	
-    	            logDebug("Expiration = " + newExpDate);
+    	            
 
 ////From Here ************************ Licensed Professional **************************************
 //
