@@ -326,7 +326,7 @@ var showMessage = true;
     if (tmpLicObj.valid && licIDString) {
         associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
         }
-    logDebug("STOP");
+    logDebug("STOP1");
     
     var mycap = aa.cap.getCap(capId).getOutput();
     
@@ -334,7 +334,7 @@ var showMessage = true;
     		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
     		}
     	
-    	logDebug("STOP");
+    	logDebug("STOP2");
     	
     licObj = licenseProfObject(cityLicense,LICENSETYPE );
  
