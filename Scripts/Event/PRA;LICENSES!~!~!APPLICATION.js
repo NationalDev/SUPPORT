@@ -297,7 +297,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
       //Get LicArray;
       		logDebug("128:cityLicense=" + licIDString);
       		logDebug("129:LICENSETYPE=" + LICENSETYPE);
-      		if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
+      		if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
   
   
   //----->branch("EMSE:LicProfLookup:CreateLP");
