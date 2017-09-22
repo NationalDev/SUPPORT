@@ -280,30 +280,30 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
               LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
               aa.print("LIC License Type is " + LICENSETYPE);
               }
-          stateLicense = licCapId.getCustomID();
+          cityLicense = licCapId.getCustomID();
          // stateLicense = getAppSpecific("State License Number",licCapId);
-         aa.print("LIC State License Number is " + stateLicense);
+         aa.print("Detroit License Number is " + cityLicense);
           }
   
       	licObj = licenseProfObject(newLicId,LICENSETYPE);
       //Get LicArray;
-      		logDebug("128:stateLicense=" + licIDString);
+      		logDebug("128:cityLicense=" + licIDString);
       		logDebug("129:LICENSETYPE=" + LICENSETYPE);
       		if (!licObj.valid && lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) != null) {
   
   
   //----->branch("EMSE:LicProfLookup:CreateLP");
           logDebug("Executing EMSE:LicProfLookup:CreateLP");
-          var vNewLic = aa.licenseScript.createLicenseScriptModel();
+        var vNewLic = aa.licenseScript.createLicenseScriptModel();
           	vNewLic.setAgencyCode(aa.getServiceProviderCode());
           	vNewLic.setAuditDate(sysDate);
           	vNewLic.setAuditID(currentUserID);
           	vNewLic.setAuditStatus("A");
           	vNewLic.setLicenseType(LICENSETYPE);
           	vNewLic.setLicState(LICENSESTATE);
-          	vNewLic.setStateLicense(stateLicense);
+          	vNewLic.setStateLicense(cityLicense);
          
-          aa.licenseScript.createRefLicProf(vNewLic);
+          aa.licenseScript.createRefLicProf(citylicense);
       }   
           var tmpLicObj = licenseProfObject(stateLicense,LICENSETYPE);
          
