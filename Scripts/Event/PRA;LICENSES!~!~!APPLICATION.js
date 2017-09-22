@@ -13,6 +13,8 @@ var showDebug = true;
 var showMessage = true;
 
 	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+		
+		
 		newLic = null;
 		newLicId = null;
 		newLicIdString = null;
@@ -25,8 +27,7 @@ var showMessage = true;
 		
 		if (newLicId = null) {
 			
-			// create the license record;
-			
+						
 			newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 			
 			}
@@ -35,7 +36,7 @@ var showMessage = true;
 		
     
 		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
-	}
+	
 		
     if (newLicId = null) {
         
