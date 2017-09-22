@@ -211,9 +211,9 @@ var showMessage = true;
 	 } 
 				    logDebug("Expiration = " + newExpDate);
 				    
-    else  {
-    	
-	}
+   
+				    
+				    
 				    
 	
 	
