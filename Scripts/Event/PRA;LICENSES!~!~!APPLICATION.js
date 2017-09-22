@@ -214,6 +214,7 @@ var showMessage = true;
 
 if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
   
+	var LICENSESTATE="MI";
   
   //->branch("EMSE:LicProfLookup");
 		logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
