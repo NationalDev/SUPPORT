@@ -28,17 +28,8 @@ var showMessage = true;
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				
 			}
-		
-		
-			
-						
-			
-			
-		
-			
-		
-    
-		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
+   
+				logDebug(" newLicId = " + newLicId);
 	
 //		
 //    if (newLicId = null) {
