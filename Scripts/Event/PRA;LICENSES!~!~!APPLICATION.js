@@ -312,7 +312,7 @@ if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
           	vNewLic.setLicState(LICENSESTATE);
           	vNewLic.setStateLicense(cityLicense);
          
-          aa.licenseScript.createRefLicProf(licCapId);
+          aa.licenseScript.createRefLicProf(licIDString);
       }   
           var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
          
