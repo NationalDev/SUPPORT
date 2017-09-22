@@ -18,9 +18,17 @@ var showMessage = true;
 		newLicIdString = null;
 		newLicenseType = appTypeArray[2];
 		monthsToInitialExpire = 12;
-		newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
-     
-    // create the permit record;
+		parentId = getParent();
+		
+		if (parentId = null) {
+			
+			// create the license record;
+			newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
+			
+			}
+		
+			newLicId = parentId;
+    
     if (newLicId) {
         
     	newLicIdString = newLicId.getCustomID();
