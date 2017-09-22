@@ -311,7 +311,7 @@ var showMessage = true;
           	vNewLic.setLicState(LICENSESTATE);
           	vNewLic.setStateLicense(cityLicense);
          
-          aa.licenseScript.createRefLicProf(licIDString);
+          aa.licenseScript.createRefLicProf(cityLicense);
       }   
           var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
          
