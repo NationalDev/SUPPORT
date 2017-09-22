@@ -19,8 +19,9 @@ var showMessage = true;
 		monthsToInitialExpire = 12;
 		parentId = getParent();
 		
-		logDebug( "Parent ID " +parentId);
+			logDebug( "Parent ID " +parentId);
 		
+			newLicId = parentId;
 		
 		if (parentId = null) {
 			
@@ -30,7 +31,7 @@ var showMessage = true;
 			
 			}
 				
-			newLicId = parentId;
+			
 		
     
 		logDebug( "Parent ID = " +parentId + " newLicId = " + newLicId);
