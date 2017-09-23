@@ -400,7 +400,7 @@ var showMessage = true;
   	    		addParameter(rParams,"Record_ID","capId");
   	    		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
   	    		addParameter(rParams,"TASK","Licenses Issuance");
-
+  	    		addParameter(rParams,"License Type","VALUE_");
   	    		logDebug("Parameters: " + rParams);
 	    	        
   	    		runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
@@ -524,7 +524,7 @@ var showMessage = true;
 //   	    	        
 //  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 //  			
-//  			}
+  			}
   	    
   	    	
  }catch (err) {
@@ -533,6 +533,6 @@ var showMessage = true;
 // end user code
 	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
   
-    		}
+    		
     
 	}
