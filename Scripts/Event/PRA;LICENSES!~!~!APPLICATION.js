@@ -399,7 +399,7 @@ var showMessage = true;
   
 			
 			
-			
+	try{		
 			var	LICENSETYPE = getAppSpecific("License Type", capId);
 			var myReport;
 				
