@@ -326,11 +326,11 @@ try {
           		}
  
         
-     logDebug("STOP1");
+     logDebug("STOP1 " + tmpLicObj +"  " + licIDString);
           
           
             if (tmpLicObj.valid && licIDString) {
-        	  associateRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           		}
     
     
