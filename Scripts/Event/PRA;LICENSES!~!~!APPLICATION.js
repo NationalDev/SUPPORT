@@ -317,323 +317,47 @@ var showMessage = true;
          
           logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
           
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^    
-          
-          
- try {
-        	  
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
+   
+try {  
+        	          
+          if (tmpLicObj.valid) {
+              isNewLic = true;
+          		}
+ 
+        
      logDebug("STOP1");
           
-          if (tmpLicObj.valid) {
-              isNewLic = true;
-        }
- 
-         
-     logDebug("STOP2");
           
-          
-    if (tmpLicObj.valid && licIDString) {
-        associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-        }
+            if (tmpLicObj.valid && licIDString) {
+        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+          		}
     
     
+    logDebug("STOP2");
+    
+    		var mycap = aa.cap.getCap(capId).getOutput();
+    
+    		if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
+    		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
+    			}
+    	
     logDebug("STOP3");
-    
-    
-    var mycap = aa.cap.getCap(capId).getOutput();
-    
-    	if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-    		}
     	
-    logDebug("STOP4");
-    	
-    licObj = licenseProfObject(cityLicense,LICENSETYPE );
-    
-    
+    	licObj = licenseProfObject(cityLicense,LICENSETYPE );
  
-    logDebug("161:Successfully created LP? " + licObj.valid);
+    	logDebug("161:Successfully created LP? " + licObj.valid);
     
  }catch (err) {
 		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 		}
 	// end user code
-	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
+		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
  
  
-	logDebug("STOP5");
- 
-  if (licObj.valid) {
-  	
-	var LICENSESTATE="MI";
-  
-  //->branch("EMSE:LicProfLookup");
-		logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
-      //Issue State;
-		LICENSETYPE = "";
-      //License Type to be populated;
-		licCapId = null;
-		isNewLic = false;
-		licIDString = null;
-		licObj = null;
-		licCap = null;
-  
-  
-  //->branch("EMSE:LicProfLookup:getLicenses");
-      var searchCap = capId;
-      var tmpId = capId;
-      var prjArr = null;
-      if (appMatch("*/*/*/License")) {
-          var childArr = getChildren("*/*/*/Application");
-          if(childArr != null) searchCap = childArr[0];
-          }
-  
-      capId = tmpId;
-      var vRelationType = "R";
-      if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
-      var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
-      if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
-      if (prjArr != null) {
-          for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
-          }
-  
-      if (licCapId == null && appMatch("*/*/*/License")) {
-          licCapId = capId;
-//          //In the event license has no application;
-          }
-  
-      if (licCapId == null && appMatch("*/*/*/Renewal")) {
-          licCapId = capId;
-          //In the event license has no application;
-          }
-      logDebug("100:licCapId=" + licCapId);
-      if (licCapId != null) {
-          licCapId = aa.cap.getCapID(licCapId.getID1(),licCapId.getID2(),licCapId.getID3()).getOutput();
-          }
-      //Get License CAP;
-      logDebug("105:licCapId=" + licCapId);
-      
-  
-  
-  //----->branch("EMSE:LicProfLookup:getLicenseType");
-          if (licCapId !=null) {
-              licIDString = licCapId.getCustomID();
-              }
-  
-          if (licCapId !=null) {
-              licCap = aa.cap.getCap(licCapId).getOutput();
-              licCapType = licCap.getCapType().toString();
-              licCapTypeArr = licCapType.split("/");
-              licCapStatus = licCap.getCapStatus();
-              }
-  
-          if (licCapId !=null) {
-              LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
-              aa.print("LIC License Type is " + LICENSETYPE);
-              }
-          cityLicense = licCapId.getCustomID();
-         // stateLicense = getAppSpecific("State License Number",licCapId);
-         aa.print("Detroit License Number is " + cityLicense);
-         
-  
-      	licObj = licenseProfObject(newLicId,LICENSETYPE);
-      //Get LicArray;
-      		logDebug("128:cityLicense=" + licIDString);
-      		logDebug("129:LICENSETYPE=" + LICENSETYPE);
-      		if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
-  
-  
-  //----->branch("EMSE:LicProfLookup:CreateLP");
-          logDebug("Executing EMSE:LicProfLookup:CreateLP");
-        var vNewLic = aa.licenseScript.createLicenseScriptModel();
-          	vNewLic.setAgencyCode(aa.getServiceProviderCode());
-          	vNewLic.setAuditDate(sysDate);
-          	vNewLic.setAuditID(currentUserID);
-          	vNewLic.setAuditStatus("A");
-          	vNewLic.setLicenseType(LICENSETYPE);
-          	vNewLic.setLicState(LICENSESTATE);
-          	vNewLic.setStateLicense(cityLicense);
-         
-          aa.licenseScript.createRefLicenseProf(vNewLic);
-      }   
-          var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
-         
-          logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-          
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
-        
-          logDebug("STOP1");
-          
-          if (tmpLicObj.valid) {
-              isNewLic = true;
-        }
- 
- try {         
-          
-          
-    if (tmpLicObj.valid && licIDString) {
-        associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-        }
-    
-    
-    logDebug("STOP2");
-    
-    var mycap = aa.cap.getCap(capId).getOutput();
-    
-    	if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-    		}
-    	
-    	logDebug("STOP3");
-    	
-    licObj = licenseProfObject(cityLicense,LICENSETYPE );
- 
-    logDebug("161:Successfully created LP? " + licObj.valid);
-    
- }catch (err) {
-		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-		}
-	// end user code
-	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
- 
- 
- logDebug("STOP4");
- 
-  if (licObj.valid) {
-  	
-	var LICENSESTATE="MI";
-  
-  //->branch("EMSE:LicProfLookup");
-		logDebug("Using LICENSESTATE = " + LICENSESTATE + " from EMSE:GlobalFlags");
-      //Issue State;
-		LICENSETYPE = "";
-      //License Type to be populated;
-		licCapId = null;
-		isNewLic = false;
-		licIDString = null;
-		licObj = null;
-		licCap = null;
-  
-  
-  //->branch("EMSE:LicProfLookup:getLicenses");
-      var searchCap = capId;
-      var tmpId = capId;
-      var prjArr = null;
-      if (appMatch("*/*/*/License")) {
-          var childArr = getChildren("*/*/*/Application");
-          if(childArr != null) searchCap = childArr[0];
-          }
-  
-      capId = tmpId;
-      var vRelationType = "R";
-      if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
-      var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
-      if(prjArrRes.getSuccess()) prjArr = prjArrRes.getOutput();
-      if (prjArr != null) {
-          for(prj in prjArr) if(appMatch("*/*/*/License",prjArr[prj].getProjectID())) licCapId = prjArr[prj].getProjectID();
-          }
-  
-      if (licCapId == null && appMatch("*/*/*/License")) {
-          licCapId = capId;
-//          //In the event license has no application;
-          }
-  
-      if (licCapId == null && appMatch("*/*/*/Renewal")) {
-          licCapId = capId;
-          //In the event license has no application;
-          }
-      logDebug("100:licCapId=" + licCapId);
-      if (licCapId != null) {
-          licCapId = aa.cap.getCapID(licCapId.getID1(),licCapId.getID2(),licCapId.getID3()).getOutput();
-          }
-      //Get License CAP;
-      logDebug("105:licCapId=" + licCapId);
-      
-  
-  
-  //----->branch("EMSE:LicProfLookup:getLicenseType");
-          if (licCapId !=null) {
-              licIDString = licCapId.getCustomID();
-              }
-  
-          if (licCapId !=null) {
-              licCap = aa.cap.getCap(licCapId).getOutput();
-              licCapType = licCap.getCapType().toString();
-              licCapTypeArr = licCapType.split("/");
-              licCapStatus = licCap.getCapStatus();
-              }
-  
-          if (licCapId !=null) {
-              LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
-              aa.print("LIC License Type is " + LICENSETYPE);
-              }
-          cityLicense = licCapId.getCustomID();
-         // stateLicense = getAppSpecific("State License Number",licCapId);
-         aa.print("Detroit License Number is " + cityLicense);
-         
-  
-      	licObj = licenseProfObject(newLicId,LICENSETYPE);
-      //Get LicArray;
-      		logDebug("128:cityLicense=" + licIDString);
-      		logDebug("129:LICENSETYPE=" + LICENSETYPE);
-      		if (!licObj.valid && lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE) != null) {
-  
-  
-  //----->branch("EMSE:LicProfLookup:CreateLP");
-          logDebug("Executing EMSE:LicProfLookup:CreateLP");
-        var vNewLic = aa.licenseScript.createLicenseScriptModel();
-          	vNewLic.setAgencyCode(aa.getServiceProviderCode());
-          	vNewLic.setAuditDate(sysDate);
-          	vNewLic.setAuditID(currentUserID);
-          	vNewLic.setAuditStatus("A");
-          	vNewLic.setLicenseType(LICENSETYPE);
-          	vNewLic.setLicState(LICENSESTATE);
-          	vNewLic.setStateLicense(cityLicense);
-         
-          aa.licenseScript.createRefLicenseProf(vNewLic);
-      }   
-          var tmpLicObj = licenseProfObject(cityLicense,LICENSETYPE);
-         
-          logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
-          
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
-        
-          logDebug("STOP1");
-          
-          if (tmpLicObj.valid) {
-              isNewLic = true;
-        }
- 
- try {         
-          
-          
-    if (tmpLicObj.valid && licIDString) {
-        associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-        }
-    
-    
-    logDebug("STOP2");
-    
-    var mycap = aa.cap.getCap(capId).getOutput();
-    
-    	if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
-    		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
-    		}
-    	
-    	logDebug("STOP3");
-    	
-    licObj = licenseProfObject(cityLicense,LICENSETYPE );
- 
-    logDebug("161:Successfully created LP? " + licObj.valid);
-    
- }catch (err) {
-		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-		}
-	// end user code
-	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
- 
- 
- logDebug("STOP4");
+	logDebug("STOP4");
+	
+//**********************************************************************
  
   if (licObj.valid) {
   	
@@ -681,10 +405,6 @@ var showMessage = true;
         }
   }
 
-        if (getAppSpecific("Doing Business As (DBA) Name")) {
-            licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
-        }
-  }
 
 
 //  
@@ -834,4 +554,3 @@ var showMessage = true;
 //
     }
 
-}
