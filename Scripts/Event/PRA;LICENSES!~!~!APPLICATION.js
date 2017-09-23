@@ -476,7 +476,7 @@ var showMessage = true;
 
   			logDebug("Parameters: " + rParams);
 		    	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+			runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 
   			}
   	
@@ -493,7 +493,7 @@ var showMessage = true;
 
   			logDebug("Parameters: " + rParams);
     	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+			runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 
   			}
 
@@ -508,7 +508,7 @@ var showMessage = true;
 			logDebug("Parameters: " + rParams);
 
     	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+			runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 
   			}
   	
@@ -523,7 +523,7 @@ var showMessage = true;
 	  		
   			logDebug("Parameters: " + rParams);
     	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+			runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 
   			}
 //*********************************** ALL OTHERS 
