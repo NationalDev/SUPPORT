@@ -336,17 +336,20 @@ try {
     
     logDebug("STOP2");
     
-    		var mycap = aa.cap.getCap(capId).getOutput();
-    
+    		var mycap = aa.cap.getCap(licCapId).getOutput();
+    		
+    logDebug("STOP3");
+    		 
+    		 
     		if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
     		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
     			}
     	
-    logDebug("STOP3");
+    logDebug("STOP4");
     	
-    	licObj = licenseProfObject(cityLicense,LICENSETYPE );
+    		licObj = licenseProfObject(cityLicense,LICENSETYPE );
  
-    	logDebug("161:Successfully created LP? " + licObj.valid);
+    logDebug("161:Successfully created LP? " + licObj.valid);
     
  }catch (err) {
 		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
@@ -355,7 +358,7 @@ try {
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
  
  
-	logDebug("STOP4");
+	logDebug("STOP5");
 	
 //**********************************************************************
  
