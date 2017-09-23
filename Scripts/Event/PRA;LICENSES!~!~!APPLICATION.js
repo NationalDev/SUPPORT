@@ -464,7 +464,7 @@ var showMessage = true;
 					addParameter(rParams,"TASK","Licenses Issuance");
 					addParameter(rParams,"License Type","VALUE_");
 					  			   	        
-					runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+					runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 					
 					myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -480,7 +480,7 @@ var showMessage = true;
 					addParameter(rParams,"TASK","Licenses Issuance");
 					addParameter(rParams,"License Type","VALUE_");
 					
-					runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+					runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 					
 					myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -496,7 +496,7 @@ var showMessage = true;
 					addParameter(rParams,"TASK","Licenses Issuance");
 					addParameter(rParams,"License Type","VALUE_");
 					    	        
-				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+				runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 				
 				myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -511,7 +511,7 @@ var showMessage = true;
 				addParameter(rParams,"TASK","Licenses Issuance");
 				addParameter(rParams,"License Type","VALUE_");
 				
-				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+				runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 				
 				myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -527,7 +527,7 @@ var showMessage = true;
 					addParameter(rParams,"TASK","Licenses Issuance");
 					addParameter(rParams,"License Type","VALUE_");
 		 	        
-				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+				runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
 				
 				myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
