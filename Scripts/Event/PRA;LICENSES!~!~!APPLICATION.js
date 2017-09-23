@@ -317,89 +317,67 @@ var showMessage = true;
          
           logDebug("148:Successfully created temp LP? " + tmpLicObj.valid);
           
-
         	          
           if (tmpLicObj.valid) {
               isNewLic = true;
           		}
  
-        
-     logDebug("STOP1 " + tmpLicObj +"  " + licIDString + "   " + currentUserID);
-          
-     
-          
-//            if (tmpLicObj.valid && licIDString) {
-//        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-//          		}
-    
-    
-    logDebug("STOP2");
     
     		var mycap = aa.cap.getCap(licCapId).getOutput();
     		
-    logDebug("STOP3  " + mycap);
-    		 
-    		 
     		if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
     		associateLpWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
     			}
     	
-    logDebug("STOP4");
-    	
+  
     		licObj = licenseProfObject(cityLicense,LICENSETYPE );
  
-    logDebug("161:Successfully created LP? " + licObj.valid);
-    
-
- 
- 
-
- 
-  if (licObj.valid) {
+    logDebug("licObj " + licObj)
+    		
+    		if (licObj.valid) {
   	
   	
 //----->branch("EMSE:LicProfLookup:UpdateLP");
   
-        logDebug("Executing EMSE:LicProfLookup:UpdateLP");
+    			logDebug("Executing EMSE:LicProfLookup:UpdateLP");
 
 //----->branch("EMSE:LicProfLookup:UpdateLP:BaseFields");
-        logDebug("Executing EMSE:LicProfLookup:UpdateLP:BaseFields");
+    			logDebug("Executing EMSE:LicProfLookup:UpdateLP:BaseFields");
 
-        licObj.refLicModel.setState(LICENSESTATE);
-        licObj.refLicModel.setLicenseBoard(LICENSETYPE);
-        licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
-        var expObj = null;
-        var expDt = null;
-        var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
-        if(expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
-        if (expObj != null) {
-            expDt = aa.date.parseDate(expObj.getExpDateString());
-        }
+		        licObj.refLicModel.setState(LICENSESTATE);
+		        licObj.refLicModel.setLicenseBoard(LICENSETYPE);
+		        licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
+		        var expObj = null;
+		        var expDt = null;
+		        var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
+		        if (expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
+		        if (expObj != null) {
+		            expDt = aa.date.parseDate(expObj.getExpDateString());
+		        }
+		
+		        if (expDt != null) {
+		            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
+		        }
 
-        if (expDt != null) {
-            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
-        }
 
-//       if (licCapTypeArr[1] == "Business") {
-//           licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
-//       }
-        else {
-            licObj.refLicModel.setLicenseBoard(LICENSETYPE);
-        }
+		        else {
+		        	licObj.refLicModel.setLicenseBoard(LICENSETYPE);
+		        }
 
-        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
-            logDebug("LP Updated from Primary Contact");
-        }
-        else {
-            logDebug("LP Failed to Update from Primary Contact trying License Holder");
-            if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
-            else logDebug("Couldn't Update Contact Info");
-        }
+		        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+            
+		        	logDebug("LP Updated from Primary Contact");
+		        }
+		        else {
+		        	logDebug("LP Failed to Update from Primary Contact trying License Holder");
+		        	if(licObj.updateFromRecordContactByType(newLicId,"License Holder",true,true)) logDebug("Updated from License Holder");
+		        	else logDebug("Couldn't Update Contact Info");
+		        }
 
-        if (getAppSpecific("Doing Business As (DBA) Name")) {
-            licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
-        }
-  }
+		        if (getAppSpecific("Doing Business As (DBA) Name")) {
+		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
+		        }
+  
 
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
@@ -557,4 +535,4 @@ var showMessage = true;
   
 	
     }
-
+	}
