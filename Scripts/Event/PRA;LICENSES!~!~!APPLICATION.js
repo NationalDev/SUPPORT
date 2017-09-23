@@ -402,8 +402,11 @@ var showMessage = true;
   	    		addParameter(rParams,"License Type","VALUE_");
   	    		
   	    		logDebug("Parameters: " + rParams);
-	    	        
-  	    		runReport4EmailOrPrint(capId,"Boiler","ADMIN",rParams,null,null,"Licenses");
+	    	   
+  	    	//	runReportAttach(itemCapId,aaReportName)
+
+
+  	    		runReport4EmailOrPrint(capId,"Boilers","ADMIN",rParams,null,null,"Licenses");
   	    
   	   
   	
