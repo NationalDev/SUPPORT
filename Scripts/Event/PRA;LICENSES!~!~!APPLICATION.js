@@ -380,7 +380,7 @@ var showMessage = true;
 		        }
   
     				
-    		
+    		}}	
 	
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
@@ -542,6 +542,4 @@ var showMessage = true;
 //  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 
     
-	}
-    		
-	}
+	
