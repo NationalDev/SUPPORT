@@ -396,7 +396,16 @@ var showMessage = true;
   
   	    logDebug("License Type: " + LICENSETYPE);
   	    
-  	    runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+  	    	var rParams = aa.util.newHashMap();
+  	    		addParameter(rParams,"Record_ID","capId");
+  	    		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  	    		addParameter(rParams,"TASK","Licenses Issuance");
+
+  	    		logDebug("Parameters: " + rParams);
+	    	        
+  	    		runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+  	    
+  	   
   	
 //  	    if (LICENSETYPE == "1st Class Station Eng") {
 //  	     
