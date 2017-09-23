@@ -397,7 +397,7 @@ var showMessage = true;
   
   	    logDebug("License Type: " + LICENSETYPE);
   	    
-	}  	
+	  	
   	    
 //********************************************************************
   	
@@ -405,9 +405,10 @@ var showMessage = true;
   	     
   		var rParams = aa.util.newHashMap();
   	     	
-  			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+  		addParameter(rParams,"Record_ID","capId");
+			addParameter(rParams,"TASK","Licenses Issuance");
+			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+			addParameter(rParams,"License Type","VALUE_");
   			
   			logDebug("Parameters: " + rParams);
 
@@ -527,8 +528,8 @@ var showMessage = true;
   			}
 //*********************************** ALL OTHERS 
   	
-  	 else{		
-  		
+  	 else {		
+  	 }
   		var rParams = aa.util.newHashMap();
 		addParameter(rParams,"Record_ID","capId");
 		addParameter(rParams,"TASK","Licenses Issuance");
