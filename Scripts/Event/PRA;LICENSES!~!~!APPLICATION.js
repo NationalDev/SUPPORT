@@ -382,8 +382,7 @@ var showMessage = true;
     		  		
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
-  try {  
-
+  
 //  
 ////************************************ REPORT SELECTION **********************************
 //
@@ -401,9 +400,10 @@ var showMessage = true;
   	    		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
   	    		addParameter(rParams,"TASK","Licenses Issuance");
   	    		addParameter(rParams,"License Type","VALUE_");
+  	    		
   	    		logDebug("Parameters: " + rParams);
 	    	        
-  	    		runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+  	    		runReport4EmailOrPrint(capId,"Boiler","ADMIN",rParams,null,null,"Licenses");
   	    
   	   
   	
