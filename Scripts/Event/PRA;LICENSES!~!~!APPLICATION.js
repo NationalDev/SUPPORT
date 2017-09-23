@@ -208,7 +208,7 @@ var showMessage = true;
 				    		 thisLic.setExpiration(dateAdd(newExpDate,0));
 				    		 thisLic.setStatus("Active");
 		 }	      	
-	 } 
+				    } 
 				    
    
 				    
@@ -380,7 +380,7 @@ var showMessage = true;
 		        }
   
     				
-    		}}	
+    		}
 	
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
@@ -556,3 +556,4 @@ var showMessage = true;
 		}
 		//end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
+	}
