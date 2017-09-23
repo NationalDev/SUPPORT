@@ -381,7 +381,7 @@ var showMessage = true;
   
     				
     		}
-	}
+	
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
   
@@ -541,16 +541,16 @@ var showMessage = true;
 		//*********************************** ALL OTHERS *************************************************************
 			
 		else {		
-			var rParams = aa.util.newHashMap();
-				addParameter(rParams,"Record_ID","capId");
-				addParameter(rParams,"TASK","Licenses Issuance");
-				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-				addParameter(rParams,"License Type","VALUE_");
-			    	        
-			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-			
-			myReport="License";
-			logDebug("Parameters: " + rParams + "Report = " + myReport);
+//			var rParams = aa.util.newHashMap();
+//				addParameter(rParams,"Record_ID","capId");
+//				addParameter(rParams,"TASK","Licenses Issuance");
+//				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//				addParameter(rParams,"License Type","VALUE_");
+//			    	        
+//			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+//			
+//			myReport="License";
+//			logDebug("Parameters: " + rParams + "Report = " + myReport);
 					
 		}
 		
@@ -561,4 +561,4 @@ var showMessage = true;
 		}
 		//end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
-	
+		}
