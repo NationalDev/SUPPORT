@@ -330,7 +330,7 @@ try {
           
           
             if (tmpLicObj.valid && licIDString) {
-        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+        	  associateRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
           		}
     
     
