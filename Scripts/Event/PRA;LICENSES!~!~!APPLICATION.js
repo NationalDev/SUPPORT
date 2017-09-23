@@ -403,10 +403,10 @@ var showMessage = true;
   	    		
   	    		logDebug("Parameters: " + rParams);
 	    	   
-  	    		runReportAttach(capId,"Boilers")
+  	    		//runReportAttach(capId,"Boilers")
 
 
-  	    	//	runReport4EmailOrPrint(capId,"Boilers","ADMIN",rParams,null,null,"Licenses");
+  	    		runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
   	    
   	   
   	
