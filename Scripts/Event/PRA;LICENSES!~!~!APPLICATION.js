@@ -385,6 +385,10 @@ var showMessage = true;
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
   
+	
+	
+	
+	
 //  
 ////************************************ REPORT SELECTION **********************************
 //
@@ -393,6 +397,16 @@ var showMessage = true;
 //  
 ////*********************************** STATIONARY ENGINEER  
   
+	
+	
+	
+try {
+		
+		
+		
+		showDebug = true;
+
+
   	
   
   	    logDebug("License Type: " + LICENSETYPE);
@@ -462,7 +476,7 @@ var showMessage = true;
 	  		  logDebug("Parameters: " + rParams);
 		   
   	
-  		  	runReport4EmailOrPrint(capId,"Boilers","ADMIN",rParams,null,null,"Licenses");
+  		  	runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
  
   	    	}
   		
@@ -542,4 +556,10 @@ var showMessage = true;
 //  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
 
     
-	
+	}
+
+}catch (err) {
+	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+	}
+// end user code
+aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
