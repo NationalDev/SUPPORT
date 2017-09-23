@@ -411,7 +411,7 @@ var showMessage = true;
  
   			}
   	
-  	else if (LICENSETYPE == "2nd Class Station Eng")  {
+  	    if (LICENSETYPE == "2nd Class Station Eng")  {
 	     
 		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -425,7 +425,7 @@ var showMessage = true;
 
 			} 
 
-  	else if (LICENSETYPE == "3rd Class Station Eng") {
+  	    if (LICENSETYPE == "3rd Class Station Eng") {
     
   		var rParams = aa.util.newHashMap();
 			addParameter(rParams,"Record_ID","capId");
@@ -442,7 +442,7 @@ var showMessage = true;
  
 ////*********************************** BOILER 
 
-  	else if (LICENSETYPE == "Boiler Op HP") {
+  	    if (LICENSETYPE == "Boiler Op HP") {
   	
   		
   		var rParams = aa.util.newHashMap();
@@ -457,7 +457,7 @@ var showMessage = true;
 
   			}
  
-  	else if (LICENSETYPE == "Boiler Op LP") {
+  	    if (LICENSETYPE == "Boiler Op LP") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -471,7 +471,7 @@ var showMessage = true;
 
   			}
   	
-  	else if (LICENSETYPE == "1st Class Refrig Op") {
+  	    if (LICENSETYPE == "1st Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -485,7 +485,7 @@ var showMessage = true;
 
   			}
 
-  	else if (LICENSETYPE == "2nd Class Refrig Op") {
+  	    if (LICENSETYPE == "2nd Class Refrig Op") {
   	
 		
 			addParameter(rParams,"Record_ID","capId");
@@ -499,7 +499,7 @@ var showMessage = true;
 
   			}
   	
-  	else if (LICENSETYPE == "3rd Class Refrig Op") {
+  	    if (LICENSETYPE == "3rd Class Refrig Op") {
   	
 		
 		var rParams = aa.util.newHashMap();
@@ -514,7 +514,7 @@ var showMessage = true;
   			}
 //*********************************** ALL OTHERS *************************************************************
   	
-  	else{		
+  	 else{		
   		
   		var rParams = aa.util.newHashMap();
 		addParameter(rParams,"Record_ID","capId");
