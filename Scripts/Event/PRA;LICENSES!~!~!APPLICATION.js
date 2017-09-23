@@ -458,6 +458,7 @@ var showMessage = true;
   	
   		runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
  
+  	    	}
   		
   		else if (LICENSETYPE == "Boiler Op LP") {
   	
