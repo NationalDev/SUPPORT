@@ -326,19 +326,20 @@ try {
           		}
  
         
-     logDebug("STOP1 " + tmpLicObj +"  " + licIDString);
+     logDebug("STOP1 " + tmpLicObj +"  " + licIDString + "   " + currentUserID);
           
+     
           
-            if (tmpLicObj.valid && licIDString) {
-        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-          		}
+//            if (tmpLicObj.valid && licIDString) {
+//        	  associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+//          		}
     
     
     logDebug("STOP2");
     
     		var mycap = aa.cap.getCap(licCapId).getOutput();
     		
-    logDebug("STOP3");
+    logDebug("STOP3  " + mycap);
     		 
     		 
     		if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
