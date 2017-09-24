@@ -387,6 +387,26 @@ var showMessage = true;
     		}
 	
 	}
+	
+	
+	
+	
+	iCont = null;
+	feeArray = new Array();
+	feeArray = loadFees(capId);
+			
+	
+			if (feeArray.length > 0) {
+			    for (iCont in feeArray) {
+			            mFee = feeArray[iCont];
+			            
+			            aa.print("code: " + mFee["code"] + " " + mFee["amount"] + " " + mFee["status"]);
+			            
+			    }
+			}	
+			
+	
+	
 //  
 //************************************ REPORT SELECTION **********************************
 //
@@ -395,42 +415,6 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-	
-	
-	
-	////*********************************** STATIONARY ENGINEER  
-  
-			
-    		
-			
-    		
-		 try{
-		        	
-		        	
-		        	
-        			iCont = null;
-        			feeArray = new Array();
-        			feeArray = loadFees(capId);
-		        			
-        			
-		        			if (feeArray.length > 0) {
-		        			    for (iCont in feeArray) {
-		        			            mFee = feeArray[iCont];
-		        			            
-		        			            aa.print("code: " + mFee["code"] + " " + mFee["amount"] + " " + mFee["status"]);
-		        			            
-		        			    }
-		        			}	
-		        			
-		        	
-		        			
-		        	//************************************ REPORT SELECTION **********************************
-
-		        	//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-		        	//If email address available for contact type then email the report, otherwise pop up the report on the screen  
-		        	  
-		        	//*********************************** STATIONARY ENGINEER  
-		        	  
 		        			
 		        			var myReport;
 		        				
@@ -449,7 +433,6 @@ var showMessage = true;
 		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-
 		        	   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -473,10 +456,7 @@ var showMessage = true;
 		        				addParameter(rParams,"TASK","Licenses Issuance");
 		        				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        				addParameter(rParams,"License Type","VALUE_");
-		        				
-		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        				
+
 		        				runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 		        				
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -493,10 +473,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
-		        	  			
-		        	  			logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        	  			  			   	        
+		        	  
 		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 		        	  			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -511,10 +488,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        	  			
-		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+ 		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 		        	  			
 		        	  			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
@@ -528,9 +502,6 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	        
-		        				
 		        				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 		        				
 		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -544,10 +515,7 @@ var showMessage = true;
 		        				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        				addParameter(rParams,"TASK","Licenses Issuance");
 		        				addParameter(rParams,"License Type","VALUE_");
-		        				
-		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        				
+
 		        				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 		        				
 		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -562,10 +530,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
-		        	  			
-		        	  			logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        	     	        
+
 		        				runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 		        				
 		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
@@ -593,10 +558,5 @@ var showMessage = true;
 
 
 
-		        	}catch (err) {
-		        		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-		        		}
-		        	// end user code
-		        	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
-
+		  
     	
