@@ -426,7 +426,7 @@ var showMessage = true;
 		        			    }
 		        			}	
 		        			
-		        			
+		        		}	
 		        			
 		        	//************************************ REPORT SELECTION **********************************
 
@@ -587,7 +587,7 @@ var showMessage = true;
 		        	  			
 		        	}
 
-		        		}
+		        		
 
 
 
