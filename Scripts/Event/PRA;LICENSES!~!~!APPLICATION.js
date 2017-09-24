@@ -575,18 +575,18 @@ var showMessage = true;
 		        	  	
 		        	else {		
 //		        			var rParams = aa.util.newHashMap();
-		        				addParameter(rParams,"Record_ID","capId");
-		        				addParameter(rParams,"TASK","Licenses Issuance");
-		        				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		        				addParameter(rParams,"License Type","VALUE_");
-		        				
-		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
-		        	  	    	        
-		        			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-		        			
-		        			logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        	  			
+//		        				addParameter(rParams,"Record_ID","capId");
+//		        				addParameter(rParams,"TASK","Licenses Issuance");
+//		        				addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//		        				addParameter(rParams,"License Type","VALUE_");
+//		        				
+//		        				logDebug("Parameters: " + rParams + "Report = " + myReport);
+//		        				aa.print("Parameters: " + rParams + "Report = " + myReport);   	  
+//		        	  	    	        
+//		        			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
+//		        			
+//		        			logDebug("Parameters: " + rParams + "Report = " + myReport);
+//		        	  			
 		        	}
 
 		}
