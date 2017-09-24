@@ -404,9 +404,10 @@ var showMessage = true;
     		
 			
     		
-		        try{
-		        	var showDebug = true;
-		        	var showMessage = true;
+		 try{
+		        	
+		        	
+		        	
         			iCont = null;
         			feeArray = new Array();
         			feeArray = loadFees(capId);
@@ -414,9 +415,9 @@ var showMessage = true;
         			
 		        			if (feeArray.length > 0) {
 		        			    for (iCont in feeArray) {
-		        			            Fee = feeArray[iCont];
+		        			            mFee = feeArray[iCont];
 		        			            
-		        			            aa.print("code: " + Fee["code"] + " " + Fee["amount"] + " " + Fee["status"]);
+		        			            aa.print("code: " + mFee["code"] + " " + mFee["amount"] + " " + mFee["status"]);
 		        			            
 		        			    }
 		        			}	
