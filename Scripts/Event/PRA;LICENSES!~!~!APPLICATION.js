@@ -379,9 +379,7 @@ var showMessage = true;
 		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 		        }
   
-    				
-    		}
-	}
+   
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
   
@@ -556,7 +554,9 @@ var showMessage = true;
 //					
 //		}
 		
-		
+			
+	}
+}
 		
 		}catch (err) {
 		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
