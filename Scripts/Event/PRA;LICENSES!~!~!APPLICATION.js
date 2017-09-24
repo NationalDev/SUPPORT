@@ -415,7 +415,8 @@ var showMessage = true;
 		        			if (feeArray.length > 0) {
 		        			    for (iCont in feeArray) {
 		        			            Fee = feeArray[iCont];
-		        			            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+		        			            
+		        			            aa.print("code: " + Fee["code"] + " " + Fee["amount"] + " " + Fee["status"]);
 		        			            
 		        			    }
 		        			}	
