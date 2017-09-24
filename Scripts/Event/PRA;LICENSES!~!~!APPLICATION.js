@@ -459,8 +459,8 @@ var showMessage = true;
 		
 		////*********************************** BOILER 
 		
-		if (LICENSETYPE == "Boiler Op HP") {
-			
+//		if (LICENSETYPE == "Boiler Op HP") {
+//			
 				
 				var rParams = aa.util.newHashMap();
 				
