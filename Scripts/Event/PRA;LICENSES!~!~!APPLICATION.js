@@ -431,11 +431,13 @@ var showMessage = true;
 		        	  
 		        	//*********************************** STATIONARY ENGINEER  
 		        	  
-		        			var	LICENSETYPE = getAppSpecific("License Type", capId);
+		        			
 		        			var myReport;
 		        				
 		        				logDebug("License Type: " + LICENSETYPE);
 		        				aa.print("License Type: " + LICENSETYPE);
+		        				
+		if   (LICENSETYPE  != null) {		
 		        	  	
 		        	if (LICENSETYPE == "1st Class Station Eng") {
 		        	  	     
@@ -583,7 +585,7 @@ var showMessage = true;
 		        	  			
 		        	}
 
-		        		
+		}
 
 
 
