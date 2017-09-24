@@ -404,7 +404,7 @@ var showMessage = true;
     		
 			
     		
-	try{		
+//	try{		
 		
 			var myReport;
 				
