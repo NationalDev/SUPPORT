@@ -474,7 +474,7 @@ var showMessage = true;
 					myReport="Boiler";
 					logDebug("Parameters: " + rParams + "Report = " + myReport);
 		
-			}
+//			}
 		
 //		else if (LICENSETYPE == "Boiler Op LP") {
 //			
