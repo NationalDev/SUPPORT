@@ -409,7 +409,7 @@ var showMessage = true;
 		        	var showMessage = true;
 
 
-		        		if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
+		        		if (isTaskStatus("License Issuance","Issued") && balanceDue = 0) {
 		        		        
 		        			
 		        			iCont = null;
