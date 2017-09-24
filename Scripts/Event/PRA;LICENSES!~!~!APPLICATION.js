@@ -558,9 +558,9 @@ var showMessage = true;
 	}
 }
 		
-		}catch (err) {
-		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-		}
+//		}catch (err) {
+//		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+//		}
 		//end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
 		
