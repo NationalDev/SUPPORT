@@ -388,7 +388,7 @@ var showMessage = true;
 	
 	}
 	
-	
+	}
 	
 	
 	iCont = null;
@@ -415,13 +415,6 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-		        			
-		        			var myReport;
-		        				
-		        				logDebug("License Type: " + LICENSETYPE);
-		        				aa.print("License Type: " + LICENSETYPE);
-		        				
-		        				
 		        				var rParams = aa.util.newHashMap();
 		        				
 		if   (LICENSETYPE  != null) {		
@@ -554,7 +547,7 @@ var showMessage = true;
 //		        	  			
 		        	}
 
-		}
+		
 
 
 
