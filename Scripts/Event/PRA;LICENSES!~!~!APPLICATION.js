@@ -462,18 +462,18 @@ var showMessage = true;
 //		if (LICENSETYPE == "Boiler Op HP") {
 //			
 				
-				var rParams = aa.util.newHashMap();
-				
-					addParameter(rParams,"Record_ID","capId");
-					addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-					addParameter(rParams,"TASK","Licenses Issuance");
-					addParameter(rParams,"License Type","VALUE_");
-					  			   	        
-					runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
-					
-					myReport="Boiler";
-					logDebug("Parameters: " + rParams + "Report = " + myReport);
-		
+//				var rParams = aa.util.newHashMap();
+//				
+//					addParameter(rParams,"Record_ID","capId");
+//					addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//					addParameter(rParams,"TASK","Licenses Issuance");
+//					addParameter(rParams,"License Type","VALUE_");
+//					  			   	        
+//					runReport4EmailOrPrint(capId,"Boilers",null,rParams,null,null,"Licenses");
+//					
+//					myReport="Boiler";
+//					logDebug("Parameters: " + rParams + "Report = " + myReport);
+//		
 //			}
 		
 //		else if (LICENSETYPE == "Boiler Op LP") {
