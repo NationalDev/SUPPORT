@@ -381,7 +381,7 @@ var showMessage = true;
   
     				
     		}
-	
+	}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
   
@@ -390,12 +390,17 @@ var showMessage = true;
 	
 	
 //  
-////************************************ REPORT SELECTION **********************************
+//************************************ REPORT SELECTION **********************************
 //
-////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-////If email address available for contact type then email the report, otherwise pop up the report on the screen  
+//  function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+//  If email address available for contact type then email the report, otherwise pop up the report on the screen  
 //  
-////*********************************** STATIONARY ENGINEER  
+//****************************************************************************************
+	
+	
+	
+	
+	////*********************************** STATIONARY ENGINEER  
   
 			
     		
@@ -562,4 +567,4 @@ var showMessage = true;
 		}
 		//end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
-		}
+		
