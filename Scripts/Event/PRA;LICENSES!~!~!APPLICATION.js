@@ -421,7 +421,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			report = report.getOutput();
+		        	  			var report = report.getOutput();
 //		        	  			generateReport("Stationary", rParams, rModule);
 //		        	  			runReportTest("Stationary");
 //		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
@@ -440,7 +440,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			report = report.getOutput();
+		        	  			var report = report.getOutput();
 //		        	  			generateReport("Boiler", rParams, rModule);
 //		        	  			runReportTest("Boiler");
 //		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
