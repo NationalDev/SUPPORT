@@ -405,8 +405,8 @@ var showMessage = true;
 //			function generateReport(aaReportName, parameters, rModule)
 		        				
 		if   (LICENSETYPE  != null) {		
-		        	  	var rModule = "Licenses";
-		        	  	var myReport= aa.reportManager.getReportInfoModelByName("Stationary"); 
+		        	  	
+		        	//  	var myReport= aa.reportManager.getReportInfoModelByName("Stationary"); 
 		        	  	
 		        	  	showDebug=false;
 			
@@ -431,8 +431,10 @@ var showMessage = true;
 		        	  		   	}
 		        		
 		        	else {
-		        				myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
+		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
+		        				myReport="Stationary";
+		        				
 		        				var rParams = aa.util.newHashMap();
 		        			
 		        				addParameter(rParams,"Record_ID","capId");
