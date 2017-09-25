@@ -472,16 +472,14 @@ var showMessage = true;
 
              logDebug("System failed get report: " + reportResult.getErrorType() + ":" + reportResult.getErrorMessage());
 
-             return false;
-
+            
          }
 
      } else {
 
          logDebug("You have no permissions to view this report.");
 
-         return false;
-
+        
      }
 
  };
