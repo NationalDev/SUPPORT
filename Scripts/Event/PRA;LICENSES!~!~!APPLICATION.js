@@ -421,10 +421,10 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			var report = report.getOutput();
+//		        	  			var report = report.getOutput();
 //		        	  			generateReport("Stationary", rParams, rModule);
 //		        	  			runReportTest("Stationary");
-//		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Stationary", "Licenses", capId, rParams, null, null, null, null, null);
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
@@ -442,10 +442,10 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			var report = report.getOutput();
+//		        	  			var report = report.getOutput();
 //		        	  			generateReport("Boiler", rParams, rModule);
 //		        	  			runReportTest("Boiler");
-//		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
+		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Boiler", "Licenses", capId, rParams, null, null, null, null, null);
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
