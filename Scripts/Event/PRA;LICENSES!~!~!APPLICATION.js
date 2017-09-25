@@ -401,10 +401,9 @@ var showMessage = true;
 //****************************************************************************************
 	
 
-		if   (LICENSETYPE  != null) {		
+	
 		        	  	
-		        	showDebug=false;
-		        	var myReport = "";
+		        	
 			
 ////		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 ////		        	  	     		        	  			        	  	     	
@@ -425,7 +424,7 @@ var showMessage = true;
 //		        	else {
 		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
-		        				myReport="Boiler";
+		        				var myReport="Boiler";
 		        				
 		        				var rParams = aa.util.newHashMap();
 		        			
@@ -437,8 +436,7 @@ var showMessage = true;
 		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-//		        	  			}
-		}
+/
 		
 	
 		  
