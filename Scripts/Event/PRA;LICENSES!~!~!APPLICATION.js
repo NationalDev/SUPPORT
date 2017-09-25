@@ -424,20 +424,84 @@ var showMessage = true;
 //		        	else {
 		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
-		        				var myReport="Boiler";
-		        				
-		        				var rParams = aa.util.newHashMap();
-		        			
-		        				addParameter(rParams,"Record_ID","capId");
-		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		        	  			addParameter(rParams,"TASK","Licenses Issuance");
-		        	  			addParameter(rParams,"License Type","VALUE_");
-		        	  			
-		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
-		        	   			
-		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-
-		
+//	var myReport="Boiler";
+//	
+//	var rParams = aa.util.newHashMap();
+//
+//		addParameter(rParams,"Record_ID","capId");
+//		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//		addParameter(rParams,"TASK","Licenses Issuance");
+//		addParameter(rParams,"License Type","VALUE_");
+//		
+//		runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//		
+//		logDebug("Parameters: " + rParams + "Report = " + myReport);
+//		
+//*********************************************************************
 	
-		  
+	 var report = aa.reportManager.getReportModelByName("Boiler");
+	 var rParams = aa.util.newHashMap();
+	 
+     report = report.getOutput();
+
+     var License = aa.reportManager.hasPermission("Boiler", currentUserID);
+
+     if (permit.getOutput().booleanValue()) {
+
+         var reportResult = aa.reportManager.runReport(rParams, report);
+
+         if (reportResult) {
+
+             var reportOutput = reportResult.getOutput();
+
+             showMessage = true;
+
+             showDebug = false;
+
+             // message is a global Accela variable. Addding the URL to it
+
+             // lets pushes the request over to the web server. The regular
+
+             // way to do this is using the comment method, but that appends a
+
+             // br
+
+             message += reportOutput;
+
+         } else {
+
+             logDebug("System failed get report: " + reportResult.getErrorType() + ":" + reportResult.getErrorMessage());
+
+             return false;
+
+         }
+
+     } else {
+
+         logDebug("You have no permissions to view this report.");
+
+         return false;
+
+     }
+
+
+	
+	
+//	
+//		        				var myReport="Boiler";
+//		        				
+//		        				var rParams = aa.util.newHashMap();
+//		        			
+//		        				addParameter(rParams,"Record_ID","capId");
+//		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//		        	  			addParameter(rParams,"TASK","Licenses Issuance");
+//		        	  			addParameter(rParams,"License Type","VALUE_");
+//		        	  			
+//		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//		        	   			
+//		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
+//
+//		
+//	
+//		  
     	
