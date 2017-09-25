@@ -404,8 +404,8 @@ var showMessage = true;
 //			function generateReport(aaReportName, parameters, rModule)
 		        				
 		if   (LICENSETYPE  != null) {		
-		        	  	
-			var myReport="Stationary";
+		        	  	var rModule = "Licenses";
+		        	  	var myReport="Stationary";
 			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
@@ -418,7 +418,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			generateReport("Stationary", rParams, "Licenses");
+		        	  			generateReport("Stationary", rParams, rModule);
 //		        	  			runReportTest("Stationary");
 //		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Stationary", "Licenses", capId, rParams, null, null, null, null, null);
@@ -436,7 +436,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			generateReport("Boiler", rParams, "Licenses");
+		        	  			generateReport("Boiler", rParams, rModule);
 
 //		        	  			runReportTest("Boiler");
 //		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
