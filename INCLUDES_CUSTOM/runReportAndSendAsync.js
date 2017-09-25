@@ -2,7 +2,7 @@ function runReportAndSendAsync(reportName, module, itemCap, reportParameters, em
 	var scriptName = "RUNREPORTANDSENDASYNC";
 	var errorEmailTo = "";
 	var debugEmailTo = errorEmailTo;
-
+//**********************************************************
 	logDebug("(runReportAndSendAsync) Setting environment variables.");
 	var envParameters = aa.util.newHashMap();
 	envParameters.put("ReportName",reportName);
