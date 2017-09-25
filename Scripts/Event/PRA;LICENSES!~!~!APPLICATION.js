@@ -406,9 +406,8 @@ var showMessage = true;
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
-		        	//  	var myReport= aa.reportManager.getReportInfoModelByName("Stationary"); 
-		        	  	
-		        	  	showDebug=false;
+		        	showDebug=false;
+		        	var my Report = null;
 			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
@@ -421,19 +420,15 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-//		        	  			var report = report.getOutput();
-//		        	  			generateReport("Stationary", rParams, rModule);
-//		        	  			runReportTest("Stationary");
-		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-//		        	  			runReportAndSendAsync("Stationary", "Licenses", capId, rParams, null, null, null, null, null);
-		        	   			
+		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
 		        	  		   	}
 		        		
 		        	else {
 		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
-		        				myReport="Stationary";
+		        				myReport="Boiler";
 		        				
 		        				var rParams = aa.util.newHashMap();
 		        			
@@ -442,11 +437,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-//		        	  			var report = report.getOutput();
-//		        	  			generateReport("Boiler", rParams, rModule);
-//		        	  			runReportTest("Boiler");
-		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-//		        	  			runReportAndSendAsync("Boiler", "Licenses", capId, rParams, null, null, null, null, null);
+		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 		        	  			}
