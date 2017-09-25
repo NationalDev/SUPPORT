@@ -432,7 +432,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			runReportAndSendAsync(myReport,"Licenses",capId,rParams,null,null,null,null,null);
+		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
 		        	  		   	}
@@ -447,7 +447,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			runReportAndSendAsync(myReport,"Licenses",capId,rParams,null,null,null,null,null);
+		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 		        	  			}
