@@ -408,7 +408,7 @@ var showMessage = true;
 		        	  	var rModule = "Licenses";
 		        	  	var myReport= aa.reportManager.getReportInfoModelByName("Stationary"); 
 		        	  	
-		        	  	
+		        	  	showDebug=false;
 			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
