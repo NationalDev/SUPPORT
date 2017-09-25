@@ -406,7 +406,9 @@ var showMessage = true;
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	var rModule = "Licenses";
-		        	  	var myReport="Stationary";
+		        	  	var myReport= aa.reportManager.getReportInfoModelByName("Stationary"); 
+		        	  	
+		        	  	
 			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
@@ -419,6 +421,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
+		        	  			report = report.getOutput();
 //		        	  			generateReport("Stationary", rParams, rModule);
 //		        	  			runReportTest("Stationary");
 //		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
@@ -428,7 +431,7 @@ var showMessage = true;
 		        	  		   	}
 		        		
 		        	else {
-		        				myReport="Boiler";
+		        				myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
 		        				var rParams = aa.util.newHashMap();
 		        			
@@ -437,6 +440,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
+		        	  			report = report.getOutput();
 //		        	  			generateReport("Boiler", rParams, rModule);
 //		        	  			runReportTest("Boiler");
 //		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
