@@ -419,11 +419,26 @@ var showMessage = true;
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
+			var myReport="Stationary";
+			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
-		        	  			var myReport="Stationary";}
+		        	  			 myReport="Stationary";
+		        	  			 
+		        	  			var rParams = aa.util.newHashMap();
+			        			
+		        				addParameter(rParams,"Record_ID","capId");
+		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+		        	  			addParameter(rParams,"TASK","Licenses Issuance");
+		        	  			addParameter(rParams,"License Type","VALUE_");
+		        	  			
+		        	  			runReportAndSendAsync(myReport,"Licenses",capId,rParams,null,null,null,null,null);
+		        	   			
+		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
+		        	  		   	}
 		        		
-		        		myReport="Boiler";
+		        	else {
+		        				myReport="Boiler";
 		        			
 		        				var rParams = aa.util.newHashMap();
 		        			
