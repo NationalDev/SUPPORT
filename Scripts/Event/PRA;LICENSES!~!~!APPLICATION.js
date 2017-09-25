@@ -424,59 +424,22 @@ var showMessage = true;
 //		        	else {
 		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
-//	var myReport="Boiler";
-//	
-//	var rParams = aa.util.newHashMap();
-//
-//		addParameter(rParams,"Record_ID","capId");
-//		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//		addParameter(rParams,"TASK","Licenses Issuance");
-//		addParameter(rParams,"License Type","VALUE_");
-//		
-//		runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
-//		
-//		logDebug("Parameters: " + rParams + "Report = " + myReport);
-//		
+							var myReport="Boiler";
+							
+							var rParams = aa.util.newHashMap();
+						
+								addParameter(rParams,"Record_ID","capId");
+								addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+								addParameter(rParams,"TASK","Licenses Issuance");
+								addParameter(rParams,"License Type","VALUE_");
+								
+								generateReport(myReport,rParams,"Licenses");
+								
+								logDebug("Parameters: " + rParams + "Report = " + myReport);
+								
 //*********************************************************************
 	
-	 var report = aa.reportManager.getReportModelByName("Boiler");
-	 var rParams = aa.util.newHashMap();
-	 
-     report = report.getOutput();
-
-     var License = aa.reportManager.hasPermission("Boiler", currentUserID);
-
-     if (License.getOutput().booleanValue()) {
-
-         var reportResult = aa.reportManager.runReport(rParams, report);
-
-         if (reportResult) {
-
-             var reportOutput = reportResult.getOutput();
-
-             showMessage = true;
-
-             showDebug = false;
-
-             logDebug("reportResult = " + reportResult);
-             logDebug("License = " + License);
-             aa.print("License = " + License);
-
-             message += reportOutput;
-
-         } else {
-
-             logDebug("System failed get report: " + reportResult.getErrorType() + ":" + reportResult.getErrorMessage());
-        
-         }
-
-     } else {
-
-         	logDebug("You have no permissions to view this report.");
-    
-     }
-
- 
+	
 
 
 	
