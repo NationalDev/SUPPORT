@@ -472,10 +472,9 @@ var showMessage = true;
 
              logDebug("System failed get report: " + reportResult.getErrorType() + ":" + reportResult.getErrorMessage());
 
-             return false;
-         }
+                    }
 
-     };
+     }
 
          }
 
@@ -486,6 +485,9 @@ var showMessage = true;
          return false;
 
      }
+
+ };
+
 
 
 	
