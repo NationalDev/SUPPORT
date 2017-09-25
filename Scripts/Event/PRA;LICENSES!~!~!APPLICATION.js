@@ -419,18 +419,24 @@ var showMessage = true;
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
-//		        	if (LICENSETYPE == "1st Class Station Eng") {
-//		        	  	     		        	  			        	  	     	
-//		        	  			addParameter(rParams,"Record_ID","capId");
-//		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-//		        	  			addParameter(rParams,"TASK","Licenses Issuance");
-//		        	  			addParameter(rParams,"License Type","VALUE_");
-//		        	  			
-//		        	   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-//		        	   			
-//		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-//		        	  			}
-//		        	  	
+		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+		        	  	     		        	  			        	  	     	
+		        	  			var myReport="Stationary";}
+		        		
+		        		myReport="Boiler";
+		        			
+		        				var rParams = aa.util.newHashMap();
+		        			
+		        				addParameter(rParams,"Record_ID","capId");
+		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+		        	  			addParameter(rParams,"TASK","Licenses Issuance");
+		        	  			addParameter(rParams,"License Type","VALUE_");
+		        	  			
+		        	   			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+		        	   			
+		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
+		        	  			}
+		        	  	
 //		        	else if (LICENSETYPE == "2nd Class Station Eng")  {
 //		        		    		        			
 //		        				aaddParameter(rParams,"Record_ID","capId");
@@ -454,24 +460,24 @@ var showMessage = true;
 //		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 //
 //		        			} 
-
-		        	//
-		        	////*********************************** BOILER 
-		        	// 
-		        	if (LICENSETYPE == "Boiler Op HP") {
-		        	  			        	  		
-		        				var rParams = aa.util.newHashMap();
-		        		
-				        		addParameter(rParams,"Record_ID","capId");
-		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		        	  			addParameter(rParams,"TASK","Licenses Issuance");
-		        	  			addParameter(rParams,"License Type","VALUE_");
-		        	  
-		        	  			// generateReport(aaReportName, parameters, rModule)
-		        	  			generateReport("Boiler",rParams,"Licenses");
-		        	  			
-		        	   			
-		        	  	}
+//
+//		        	//
+//		        	////*********************************** BOILER 
+//		        	// 
+//		        	if (LICENSETYPE == "Boiler Op HP") {
+//		        	  			        	  		
+//		        				var rParams = aa.util.newHashMap();
+//		        		
+//				        		addParameter(rParams,"Record_ID","capId");
+//		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//		        	  			addParameter(rParams,"TASK","Licenses Issuance");
+//		        	  			addParameter(rParams,"License Type","VALUE_");
+//		        	  
+//		        	  			// generateReport(aaReportName, parameters, rModule)
+//		        	  			generateReport("Boiler",rParams,"Licenses");
+//		        	  			
+//		        	   			
+//		        	  	}
 
 //		        	else if (LICENSETYPE == "Boiler Op LP") {
 //		        	  			        			
