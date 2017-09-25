@@ -22,3 +22,4 @@ function runReportAndSendAsync(reportName, module, itemCap, reportParameters, em
 
 	aa.runAsyncScript(scriptName, envParameters);
 }
+
