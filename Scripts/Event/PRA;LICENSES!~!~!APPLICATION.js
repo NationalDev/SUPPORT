@@ -433,7 +433,9 @@ var showMessage = true;
 								addParameter(rParams,"TASK","Licenses Issuance");
 								addParameter(rParams,"License Type","VALUE_");
 								
-								generateReport(myReport,rParams,"Licenses");
+								
+								var rModule="Licenses";
+								generateReport(myReport,rParams,rModule);
 								
 								logDebug("Parameters: " + rParams + "Report = " + myReport);
 								
