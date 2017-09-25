@@ -436,7 +436,7 @@ var showMessage = true;
 		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-/
+
 		
 	
 		  
