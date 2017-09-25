@@ -415,7 +415,7 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-		        				var rParams = aa.util.newHashMap();
+		        				
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
@@ -460,6 +460,8 @@ var showMessage = true;
 		        	// 
 		        	if (LICENSETYPE == "Boiler Op HP") {
 		        	  			        	  		
+		        				var rParams = aa.util.newHashMap();
+		        		
 				        		addParameter(rParams,"Record_ID","capId");
 		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
@@ -468,8 +470,7 @@ var showMessage = true;
 		        	  			// generateReport(aaReportName, parameters, rModule)
 		        	  			generateReport("Boiler",rParams,"Licenses");
 		        	  			
-		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-
+		        	   			
 		        	  	}
 
 //		        	else if (LICENSETYPE == "Boiler Op LP") {
