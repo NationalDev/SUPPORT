@@ -48,14 +48,14 @@ var showMessage = true;
 			    				
         
 
-//        var feeArr = loadFees();
-//        var newFeeRes = aa.util.deepClone(feeArr);    
-//        logDebug("Clone Result: " + newFeeRes.getSuccess());
-//        var newFeeArr = newFeeRes.getOutput();
-//        for (i in newFeeArr) {
-//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-//            newFeeArr[i].setCapID(newLicId);
-//             }
+        var feeArr = loadFees();
+        var newFeeRes = aa.util.deepClone(feeArr);    
+        logDebug("Clone Result: " + newFeeRes.getSuccess());
+        var newFeeArr = newFeeRes.getOutput();
+        for (i in newFeeArr) {
+            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+            newFeeArr[i].setCapID(newLicId);
+             }
         
 //      //**************************************************************************************    
 			        tmpNewDate = new Date();
@@ -386,25 +386,9 @@ var showMessage = true;
 	
     		}
 	
-	}
+	
 	
 
-	
-	
-	iCont = null;
-	feeArray = new Array();
-	feeArray = loadFees(capId);
-			
-	
-			if (feeArray.length > 0) {
-			    for (iCont in feeArray) {
-			            mFee = feeArray[iCont];
-			            
-			            aa.print("code: " + mFee["code"] + " " + mFee["amount"] + " " + mFee["status"]);
-			            
-			    }
-			}	
-			
 	
 	
 //  
@@ -462,7 +446,7 @@ var showMessage = true;
 		        	  			}
 		}
 		
-		
+	}
 //		        	else if (LICENSETYPE == "2nd Class Station Eng")  {
 //		        		    		        			
 //		        				aaddParameter(rParams,"Record_ID","capId");
