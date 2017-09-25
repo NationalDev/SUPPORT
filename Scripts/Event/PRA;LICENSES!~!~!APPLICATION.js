@@ -445,7 +445,7 @@ var showMessage = true;
 //		        	  			var report = report.getOutput();
 //		        	  			generateReport("Boiler", rParams, rModule);
 //		        	  			runReportTest("Boiler");
-		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
+		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Boiler", "Licenses", capId, rParams, null, null, null, null, null);
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
