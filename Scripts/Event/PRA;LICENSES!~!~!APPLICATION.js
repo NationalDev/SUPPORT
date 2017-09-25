@@ -446,7 +446,7 @@ var showMessage = true;
 
      var License = aa.reportManager.hasPermission("Boiler", currentUserID);
 
-     if (permit.getOutput().booleanValue()) {
+     if (License.getOutput().booleanValue()) {
 
          var reportResult = aa.reportManager.runReport(rParams, report);
 
