@@ -400,10 +400,7 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-//   function runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC)		
-			
-//			function generateReport(aaReportName, parameters, rModule)
-		        				
+
 		if   (LICENSETYPE  != null) {		
 		        	  	
 		        	showDebug=false;
