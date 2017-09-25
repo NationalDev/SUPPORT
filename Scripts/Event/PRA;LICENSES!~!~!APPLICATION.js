@@ -406,23 +406,23 @@ var showMessage = true;
 		        	showDebug=false;
 		        	var myReport = "";
 			
-		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
-		        	  	     		        	  			        	  	     	
-		        	  			 myReport="Stationary";
-		        	  			 
-		        	  			var rParams = aa.util.newHashMap();
-		        	  			
-		        				addParameter(rParams,"Record_ID","capId");
-		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		        	  			addParameter(rParams,"TASK","Licenses Issuance");
-		        	  			addParameter(rParams,"License Type","VALUE_");
-		        	  			
-		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
-
-		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
-		        	  		   	}
-		        		
-		        	else {
+////		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+////		        	  	     		        	  			        	  	     	
+////		        	  			 myReport="Stationary";
+////		        	  			 
+////		        	  			var rParams = aa.util.newHashMap();
+////		        	  			
+////		        				addParameter(rParams,"Record_ID","capId");
+////		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+////		        	  			addParameter(rParams,"TASK","Licenses Issuance");
+////		        	  			addParameter(rParams,"License Type","VALUE_");
+////		        	  			
+////		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+////
+////		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);        	  			 
+////		        	  		   	}
+//		        		
+//		        	else {
 		        			//	myReport= aa.reportManager.getReportInfoModelByName("Boiler"); 
 		        			
 		        				myReport="Boiler";
@@ -437,9 +437,9 @@ var showMessage = true;
 		        	  			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
-		        	  			}
-		}
-		
+//		        	  			}
+//		}
+//		
 	
 //		        	else if (LICENSETYPE == "2nd Class Station Eng")  {
 //		        		    		        			
