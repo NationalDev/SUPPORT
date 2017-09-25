@@ -54,6 +54,7 @@ var showMessage = true;
         var newFeeArr = newFeeRes.getOutput();
         for (i in newFeeArr) {
             logDebug("fees  Array = " +newFeeArr.getFeeCod());
+            aa.print("fees  Array = " +newFeeArr.getFeeCod());
             newFeeArr[i].setCapID(newLicId);
              }
         
@@ -379,7 +380,7 @@ var showMessage = true;
 		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 		        }
   
-   
+    		}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
   
@@ -418,7 +419,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			generateReport("Stationary", rParams, rModule);
+//		        	  			generateReport("Stationary", rParams, rModule);
 //		        	  			runReportTest("Stationary");
 //		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Stationary", "Licenses", capId, rParams, null, null, null, null, null);
@@ -436,8 +437,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			generateReport("Boiler", rParams, rModule);
-
+//		        	  			generateReport("Boiler", rParams, rModule);
 //		        	  			runReportTest("Boiler");
 //		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Boiler", "Licenses", capId, rParams, null, null, null, null, null);
@@ -446,7 +446,7 @@ var showMessage = true;
 		        	  			}
 		}
 		
-	}
+	
 //		        	else if (LICENSETYPE == "2nd Class Station Eng")  {
 //		        		    		        			
 //		        				aaddParameter(rParams,"Record_ID","capId");
