@@ -415,7 +415,9 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-//   function runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC)		        				
+//   function runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC)		
+			
+//			function generateReport(aaReportName, parameters, rModule)
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
@@ -426,13 +428,14 @@ var showMessage = true;
 		        	  			 myReport="Stationary";
 		        	  			 
 		        	  			var rParams = aa.util.newHashMap();
-			        			
+		        	  			
 		        				addParameter(rParams,"Record_ID","capId");
 		        	  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			runReportTest("Stationary");
+		        	  			generateReport("Stationary", rParams, "Licenses");
+//		        	  			runReportTest("Stationary");
 //		        	  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Stationary", "Licenses", capId, rParams, null, null, null, null, null);
 		        	   			
@@ -449,7 +452,9 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	  			runReportTest("Boiler");
+		        	  			generateReport("Boiler", rParams, "Licenses");
+
+//		        	  			runReportTest("Boiler");
 //		        	  			runReport4EmailOrPrint(capId,"Licenses",null,rParams,null,null,"Licenses");
 //		        	  			runReportAndSendAsync("Boiler", "Licenses", capId, rParams, null, null, null, null, null);
 		        	   			
