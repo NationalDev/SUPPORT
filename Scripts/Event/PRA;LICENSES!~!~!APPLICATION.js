@@ -458,6 +458,7 @@ var showMessage = true;
 
              showDebug = false;
 
+             logDebug("reportResult = " + reportResult);
              logDebug("License = " + License);
              aa.print("License = " + License);
 
@@ -471,7 +472,7 @@ var showMessage = true;
 
      } else {
 
-         logDebug("You have no permissions to view this report.");
+         	logDebug("You have no permissions to view this report.");
     
      }
 
