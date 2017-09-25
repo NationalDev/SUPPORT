@@ -465,7 +465,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  
-		        	  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+		        	  			generateReport(capId,"Boiler",rParams,"Licenses");
 		        	  			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
