@@ -404,7 +404,7 @@ var showMessage = true;
 		if   (LICENSETYPE  != null) {		
 		        	  	
 		        	showDebug=false;
-		        	var my Report = null;
+		        	var my Report = "";
 			
 		        	if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 		        	  	     		        	  			        	  	     	
