@@ -451,7 +451,9 @@ var showMessage = true;
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 		        	  			}
-		        	  	
+		}
+		
+		
 //		        	else if (LICENSETYPE == "2nd Class Station Eng")  {
 //		        		    		        			
 //		        				aaddParameter(rParams,"Record_ID","capId");
