@@ -415,7 +415,7 @@ var showMessage = true;
 //  
 //****************************************************************************************
 	
-		        				
+//   function runReportAndSendAsync(reportName, module, itemCap, reportParameters, emailFrom, emailTo,emailTemplate, emailParameters, emailCC)		        				
 		        				
 		if   (LICENSETYPE  != null) {		
 		        	  	
@@ -432,7 +432,7 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  			
-		        	   			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+		        	  			runReportAndSendAsync(myReport,"Licenses",capId,rParams,null,null,null,null,null);
 		        	   			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 		        	  			}
