@@ -458,13 +458,8 @@ var showMessage = true;
 
              showDebug = false;
 
-             // message is a global Accela variable. Addding the URL to it
-
-             // lets pushes the request over to the web server. The regular
-
-             // way to do this is using the comment method, but that appends a
-
-             // br
+             logDebug("License = " + License);
+             aa.print("License = " + License);
 
              message += reportOutput;
 
