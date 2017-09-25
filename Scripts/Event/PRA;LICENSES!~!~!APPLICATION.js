@@ -465,7 +465,8 @@ var showMessage = true;
 		        	  			addParameter(rParams,"TASK","Licenses Issuance");
 		        	  			addParameter(rParams,"License Type","VALUE_");
 		        	  
-		        	  			generateReport(capId,"Boiler",rParams,"Licenses");
+		        	  			// generateReport(aaReportName, parameters, rModule)
+		        	  			generateReport("Boiler",rParams,"Licenses");
 		        	  			
 		        	   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 
