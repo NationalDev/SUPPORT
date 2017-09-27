@@ -464,7 +464,7 @@ var showMessage = true;
 									
 									runReport4EmailOrPrint(capId,myReport,null,rParams,currentUserID,null,"Licenses");
 				
-							
+									logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 		}catch (err) {
 			logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 			}
