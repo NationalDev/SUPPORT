@@ -586,7 +586,7 @@ var showMessage = true;
 							logDebug("Parameters: " + rParams + "Report = " + myReport);
 					  			
 					}
-				
+		}
 		
 						
 					}catch (err) {
@@ -595,4 +595,3 @@ var showMessage = true;
 					// end user code
 					aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
 					
-	}
