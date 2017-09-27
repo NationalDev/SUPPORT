@@ -456,13 +456,7 @@ var showMessage = true;
 							
 								generateReport(capId, myReport, "Licenses", rParams);
 									
-//									runReport4EmailOrPrint(capId,myReport,null,rParams,currentUserID,null,"Licenses");
-				
-	logDebug("Parameters: " + rParams + " Report = " + myReport + " conObj = " + " eParams = " + eParams + " emailTemplate = " + emailTemplate);
-	
-	logDebug("Parameters: " + stop);
-					
-									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
     		
 		
 								
