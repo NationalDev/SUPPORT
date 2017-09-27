@@ -400,22 +400,22 @@ var showMessage = true;
 //************************************ FEES SELECTION **********************************
 	try{
 		
-		if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
-		        
-			
-						iCont = null;
-						feeArray = new Array();
-						feeArray = loadFees(capId);
-						if (feeArray.length > 0) {
-						    for (iCont in feeArray) {
-			            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
-			            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-			            showDebug=3;
-			            tFee = feeArray[iCont];
-			            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
-							            
-							    }
-							}	
+						if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
+						        
+							
+										iCont = null;
+										feeArray = new Array();
+										feeArray = loadFees(capId);
+										if (feeArray.length > 0) {
+										    for (iCont in feeArray) {
+							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
+							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
+							            showDebug=3;
+							            tFee = feeArray[iCont];
+							            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+											            
+											    }
+											}	
 							
 						
 			
@@ -439,35 +439,34 @@ var showMessage = true;
 					  			addParameter(rParams,"TASK","Licenses Issuance");
 					  			addParameter(rParams,"License Type","VALUE_");
 					  			
-f			  	
 												
-					if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
-					  	     
-					  		myReport="Stationary";
-					   		logDebug("Parameters: " + rParams + "Report = " + myReport);
-					  		
-							}
-
-					
-				
-					else  {
-					  	
-							myReport="Boiler";		
-					   		logDebug("Parameters: " + rParams + "Report = " + myReport);
-				
-							}
-				
-					
-							generateReport(capId, myReport, "Licenses", rParams);
+							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+							  	     
+							  		myReport="Stationary";
+							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
+							  		
+									}
 		
-		
+							
 						
-		}
-					
-}catch (err) {
-	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-	}
-// end user code
-aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
-
-	}
+							else  {
+							  	
+									myReport="Boiler";		
+							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
+						
+									}
+						
+							
+									generateReport(capId, myReport, "Licenses", rParams);
+				
+				
+								
+				}
+							
+		}catch (err) {
+			logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+			}
+		// end user code
+		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
+		
+			}
