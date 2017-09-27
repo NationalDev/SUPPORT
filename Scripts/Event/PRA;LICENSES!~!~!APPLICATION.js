@@ -5,7 +5,7 @@
 //																								           
 //					PRA:LICENSES/*/*/APPLICATION	
 // 							
-//			September 7th, 2017			Revision 2.0
+//			September  7th, 2017			Revision 2.0
 //			September 11th, 2017			Revision 3.0
 //			September 27th, 2017			Revision 3.3
 //*********************************************************************************************************
@@ -437,10 +437,10 @@ var showMessage = true;
 //vRParams = aa.util.newHashtable();  addParameter(vRParams,"ID",inspId); generateReport(capId, "TRL Inspection Report - AA", "TRL", vRParams);
 								
 								
-								addParameter(rParams,"Record_ID",capId);
+								addParameter(rParams,"Record_ID","altID");
 					  			addParameter(rParams,"TASK","License Issuance");
 					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
-					  			addParameter(rParams,"License Type",LICENSETYPE);
+					  			addParameter(rParams,"License Type","VALUE_");
 					  			
 												
 							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
