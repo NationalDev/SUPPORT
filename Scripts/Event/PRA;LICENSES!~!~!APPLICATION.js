@@ -426,6 +426,7 @@ var showMessage = true;
 	  
 							
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
+							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
 							var myReport;
 								
 								logDebug("License Type: " + LICENSETYPE);
@@ -436,7 +437,7 @@ var showMessage = true;
 								addParameter(rParams,"Record_ID",capId);
 					  			addParameter(rParams,"TASK","License Issuance");
 					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
-					  			addParameter(rParams,"License Type",LICENSETYPE);
+					  			addParameter(rParams,"License Type",fullLicenseType);
 					  			
 												
 							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
