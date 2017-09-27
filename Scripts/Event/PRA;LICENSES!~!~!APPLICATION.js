@@ -437,7 +437,7 @@ var showMessage = true;
 //vRParams = aa.util.newHashtable();  addParameter(vRParams,"ID",inspId); generateReport(capId, "TRL Inspection Report - AA", "TRL", vRParams);
 								
 								
-								addParameter(rParams,"Record_ID","altID");
+								addParameter(rParams,"Record_ID",capId);
 					  			addParameter(rParams,"TASK","License Issuance");
 					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
 					  			addParameter(rParams,"License Type","VALUE_");
