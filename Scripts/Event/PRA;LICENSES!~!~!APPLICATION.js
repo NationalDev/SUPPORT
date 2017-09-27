@@ -392,7 +392,7 @@ var showMessage = true;
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
     		
-
+	}
     		
 	
 	
@@ -469,7 +469,6 @@ var showMessage = true;
 									logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 					
 									
-									
-	}	
+	
 		
 										
