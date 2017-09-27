@@ -397,14 +397,7 @@ var showMessage = true;
 	
 	
 //  
-//************************************ REPORT SELECTION **********************************
-//
-//  function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-//  If email address available for contact type then email the report, otherwise pop up the report on the screen  
-//  
-//****************************************************************************************
-	
-
+//************************************ FEES SELECTION **********************************
 	
 		
 		if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
@@ -452,7 +445,7 @@ var showMessage = true;
 					   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 					   			
 					   			myReport="Stationary";
-					   			logDebug("Parameters: " + rParams + "Report = " + myReport);
+					   			logDebug("Parameters: " + rParams + "Report = " + myReport +stop);
 					  			}
 					  	
 					else if (LICENSETYPE == "2nd Class Station Eng")  {
