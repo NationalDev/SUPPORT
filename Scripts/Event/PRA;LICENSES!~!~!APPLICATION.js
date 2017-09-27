@@ -451,7 +451,7 @@ var showMessage = true;
 					   			
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 					  			
-					   			logDebug( + stop);
+	//				   			logDebug( + stop);
 							}
 					  	
 					
