@@ -405,11 +405,7 @@ var showMessage = true;
 //****************************************************************************************
 	
 
-	var showDebug = false;
-	var showMessage = true;
-
-	try {
-		
+	
 		
 		if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		        
@@ -589,9 +585,5 @@ var showMessage = true;
 		}
 		
 						
-					}catch (err) {
-						logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-						}
-					// end user code
-					aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
+					
 					
