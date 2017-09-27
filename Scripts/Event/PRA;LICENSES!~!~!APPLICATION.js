@@ -462,7 +462,7 @@ var showMessage = true;
 									
 //									generateReport(capId, myReport, "Licenses", rParams);
 									
-									runReport4EmailOrPrint(capId,myReport,"sallami@detroitmi.gov",rParams,null,null,"Licenses");
+									runReport4EmailOrPrint(capId,myReport,currentUserID,rParams,null,null,"Licenses");
 				
 							
 		}catch (err) {
