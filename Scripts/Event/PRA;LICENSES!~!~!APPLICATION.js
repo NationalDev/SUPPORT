@@ -401,7 +401,7 @@ var showMessage = true;
 //************************************ FEES SELECTION **********************************
 	
 		
-						if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
+						
 						        
 							
 										iCont = null;
@@ -428,6 +428,8 @@ var showMessage = true;
 	//*********************************** STATIONARY ENGINEER  
 	  
 	try{	
+		
+		
 							
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var myReport;
