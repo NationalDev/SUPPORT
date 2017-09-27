@@ -452,8 +452,6 @@ var showMessage = true;
 							  		
 									}
 		
-							
-						
 								else  {
 							  	
 									myReport="Boiler";		
