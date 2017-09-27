@@ -433,8 +433,7 @@ var showMessage = true;
 								aa.print("License Type: " + LICENSETYPE);
 								
 								var rParams = aa.util.newHashMap();
-														
-																							
+																													
 								addParameter(rParams,"Record_ID",capId);
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
