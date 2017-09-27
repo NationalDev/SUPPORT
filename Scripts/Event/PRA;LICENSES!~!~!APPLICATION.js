@@ -433,7 +433,7 @@ var showMessage = true;
 								aa.print("License Type: " + LICENSETYPE);
 function generateReport(){				  	
 												
-					if (LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng") {
+					if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 					  	     
 					  		var rParams = aa.util.newHashMap();
 					  	    
