@@ -425,44 +425,44 @@ var showMessage = true;
 	//*********************************** STATIONARY ENGINEER  
 	  
 		try {
-											var	LICENSETYPE = getAppSpecific("License Type", capId);
-											var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
-											var myReport;
-												
-												logDebug("License Type: " + LICENSETYPE);
-												aa.print("License Type: " + LICENSETYPE);
-												
-												var rParams = aa.util.newHashMap();
-																		
-										//vRParams = aa.util.newHashtable();  addParameter(vRParams,"ID",inspId); generateReport(capId, "TRL Inspection Report - AA", "TRL", vRParams);
-																		
-																		
-										addParameter(rParams,"Record_ID",capId);
-										addParameter(rParams,"TASK","License Issuance");
-										addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONALS");
-										addParameter(rParams,"License Type","VALUE_");
-
+							var	LICENSETYPE = getAppSpecific("License Type", capId);
+							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
+							var myReport;
+								
+								logDebug("License Type: " + LICENSETYPE);
+								aa.print("License Type: " + LICENSETYPE);
+								
+								var rParams = aa.util.newHashMap();
 														
-										if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
-											 
-											myReport="Stationary";
-											logDebug("Parameters: " + rParams + "  Report = " + myReport + ", Full License Type Name = " + fullLicenseType);
+																							
+								addParameter(rParams,"Record_ID",capId);
+								addParameter(rParams,"TASK","License Issuance");
+								addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONALS");
+								addParameter(rParams,"License Type","VALUE_");
+
+										
+						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+							 
+							myReport="Stationary";
+							logDebug("Parameters: " + rParams + "  Report = " + myReport + ", Full License Type Name = " + fullLicenseType);
+							
+							}
+
+						else  {
+
+							myReport="Boiler";		
+							logDebug("Parameters: " + rParams + "Report = " + myReport);
+
+							}
+
+
+						generateReport(capId, myReport, "Licenses", rParams);
 											
-											}
-
-										else  {
-
-											myReport="Boiler";		
-											logDebug("Parameters: " + rParams + "Report = " + myReport);
-
-											}
-
-
-										//generateReport(capId, myReport, "Licenses", rParams);
-											
-												runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+										//		runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 
 											
-										}catch (err) {
-											logDebug("A JavaScript Error occured: " + err.message);
-										}
+		}catch (err) {
+			logDebug("A JavaScript Error occured: " + err.message);
+		}
+		// end user code
+		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
