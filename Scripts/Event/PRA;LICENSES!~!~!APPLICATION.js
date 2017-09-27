@@ -447,10 +447,12 @@ var showMessage = true;
 					   			
 					   			myReport="Stationary";
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
-					  			}
+					  			
+					   			logDebug( + stop);
+					}
 					  	
 					
-					logDebug( + stop);
+					
 					
 					
 					else if (LICENSETYPE == "2nd Class Station Eng")  {
