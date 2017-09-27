@@ -424,9 +424,6 @@ var showMessage = true;
 	  
 	//*********************************** STATIONARY ENGINEER  
 	  
-	
-		
-		
 							
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var myReport;
@@ -437,8 +434,8 @@ var showMessage = true;
 								var rParams = aa.util.newHashMap();
 								
 								addParameter(rParams,"Record_ID","capId");
-					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 					  			addParameter(rParams,"TASK","Licenses Issuance");
+					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 					  			addParameter(rParams,"License Type","VALUE_");
 					  			
 												
