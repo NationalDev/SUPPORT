@@ -445,9 +445,12 @@ var showMessage = true;
 				  			addParameter(rParams,"License Type","VALUE_");
 					  			
 				
-			//		   			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+	//				   		runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 				  			
-				  			runReportTest(myReport);	
+	//			  			report = aa.reportManager.getReportModelByName(reportName);
+	//			  		    report = report.getOutput();
+	//			  		    
+				  			generateReport(myReport, rParams, "Licenses");
 					   			
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 					  			
