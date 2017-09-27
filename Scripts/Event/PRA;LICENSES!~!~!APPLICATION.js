@@ -1,12 +1,13 @@
 //*********************************************************************************************************
-//	WTUA;LICENSES!~!~!APPLICATION.js																	   
+//	PRA;LICENSES!~!~!APPLICATION.js																	   
 //																			Iman Sallam @ City of Detroit  
 //		Deploy with the script code and script title below (all caps)									   
 //																								           
-//					PRA:LICENSES/*/*/APPLICATION														  / 							
+//					PRA:LICENSES/*/*/APPLICATION	
+// 							
 //			September 7th, 2017			Revision 2.0
 //			September 11th, 2017			Revision 3.0
-//			September 22th, 2017			Revision 3.2
+//			September 27th, 2017			Revision 3.3
 //*********************************************************************************************************
 
 var showDebug = true;
@@ -398,7 +399,7 @@ var showMessage = true;
 	
 //  
 //************************************ FEES SELECTION **********************************
-	try{
+	
 		
 						if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 						        
@@ -426,6 +427,8 @@ var showMessage = true;
 	  
 	//*********************************** STATIONARY ENGINEER  
 	  
+	try{	
+						
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var myReport;
 								
