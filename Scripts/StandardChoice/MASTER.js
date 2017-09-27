@@ -1,3 +1,4 @@
+;
 ASA;Building!~!~!~^`;
 if (matches(currentUserID,"ADMIN")) {
 	showDebug = false;
