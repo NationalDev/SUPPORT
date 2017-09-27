@@ -459,7 +459,7 @@ var showMessage = true;
 						
 									}
 						
-	}							
+							
 //									generateReport(capId, myReport, "Licenses", rParams);
 									
 									runReport4EmailOrPrint(capId,myReport,null,rParams,currentUserID,null,"Licenses");
@@ -471,4 +471,4 @@ var showMessage = true;
 		// end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
 		
-							
+						}					
