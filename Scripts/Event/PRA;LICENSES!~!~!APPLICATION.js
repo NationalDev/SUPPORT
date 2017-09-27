@@ -449,7 +449,7 @@ var showMessage = true;
 				  			
 				  			runReportTest(myReport);	
 					   			
-					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
+					   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 					  			
 	//				   			logDebug( + stop);
 							}
