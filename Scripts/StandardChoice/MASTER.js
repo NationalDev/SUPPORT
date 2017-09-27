@@ -1708,8 +1708,8 @@ branch("PUA:" + appTypeArray[0] + "/" + appTypeArray[1] + "/" + appTypeArray[2] 
 branch("PUA:" + appTypeString);
 `^
 PaymentReceiveAfter^`
-showDebug = false;
-showMessage= false;
+showDebug = true;
+showMessage= true;
 branch("EMSE:GlobalFlags");
 branch("PRA:" + appTypeArray[0] + "/*/*/*");
 branch("PRA:" + appTypeArray[0] + "/" + appTypeArray[1] + "/*/*");
