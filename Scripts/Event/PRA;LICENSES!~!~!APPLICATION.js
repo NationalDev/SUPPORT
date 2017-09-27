@@ -392,7 +392,7 @@ var showMessage = true;
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
     		
-	}
+	
     		
 	
 	
@@ -473,4 +473,4 @@ var showMessage = true;
 									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 	
 		
-										
+	}								
