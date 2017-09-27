@@ -387,10 +387,10 @@ var showMessage = true;
 		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 		        }
   
-    		
+    		}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
-    		}
+    		
 
     		
 	
@@ -436,20 +436,22 @@ var showMessage = true;
 					if (LICENSETYPE == "1st Class Station Eng") {
 					  	     
 					  		var rParams = aa.util.newHashMap();
-					  	     	
+					  	    
+					  		myReport="Stationary";
+					  		
 				  			addParameter(rParams,"Record_ID","capId");
 				  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 				  			addParameter(rParams,"TASK","Licenses Issuance");
 				  			addParameter(rParams,"License Type","VALUE_");
 					  			
 				
-					   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+					   			runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 					   			
-					   			myReport="Stationary";
+					   			
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 					  			
 					   			logDebug( + stop);
-					}
+							}
 					  	
 					
 					
