@@ -394,7 +394,7 @@ var showMessage = true;
     		
 
     		
-	}
+	
 	
 	
 //  
@@ -427,7 +427,7 @@ var showMessage = true;
 	  
 	//*********************************** STATIONARY ENGINEER  
 	  
-	try{	
+	
 		
 		
 							
@@ -470,10 +470,6 @@ var showMessage = true;
 					
 									
 									
-		}catch (err) {
-			logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-			}
-		// end user code
-		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug);
+	}	
 		
 										
