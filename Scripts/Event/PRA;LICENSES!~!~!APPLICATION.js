@@ -437,7 +437,7 @@ var showMessage = true;
 																							
 								addParameter(rParams,"Record_ID",capId);
 								addParameter(rParams,"TASK","License Issuance");
-								addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONALS");
+								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								addParameter(rParams,"License Type",LICENSETYPE);
 
 										
