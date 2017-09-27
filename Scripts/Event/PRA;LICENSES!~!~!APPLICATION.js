@@ -392,19 +392,6 @@ var showMessage = true;
   
   
 	
-    		
-	
-	
-	
-
-<<<<<<< HEAD
-	
-	
-	
-	
-=======
->>>>>>> branch 'master' of https://github.com/NationalDev/SUPPORT
-	
 	
 //  
 //************************************ REPORT SELECTION **********************************
@@ -447,9 +434,8 @@ var showMessage = true;
 								addParameter(rParams,"TASK","Licenses Issuance");
 								addParameter(rParams,"License Type","VALUE_");
 								
-								
-								var rModule="Licenses";
-								generateReport(myReport,rParams,rModule);
+								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//								generateReport(myReport,rParams,rModule);
 								
 								logDebug("Parameters: " + rParams + "Report = " + myReport);
 								
