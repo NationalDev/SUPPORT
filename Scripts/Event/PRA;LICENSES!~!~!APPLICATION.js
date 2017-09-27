@@ -462,7 +462,7 @@ var showMessage = true;
 									
 //									generateReport(capId, myReport, "Licenses", rParams);
 									
-									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+									runReport4EmailOrPrint(capId,myReport,"ADMIN",rParams,null,null,"Licenses");
 				
 							
 		}catch (err) {
