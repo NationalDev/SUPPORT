@@ -1,12 +1,13 @@
 //*********************************************************************************************************
-//	WTUA;LICENSES!~!~!APPLICATION.js																	   
+//	PRA;LICENSES!~!~!APPLICATION.js																	   
 //																			Iman Sallam @ City of Detroit  
 //		Deploy with the script code and script title below (all caps)									   
 //																								           
-//					PRA:LICENSES/*/*/APPLICATION														  / 							
+//					PRA:LICENSES/*/*/APPLICATION	
+// 							
 //			September 7th, 2017			Revision 2.0
 //			September 11th, 2017			Revision 3.0
-//			September 22th, 2017			Revision 3.2
+//			September 27th, 2017			Revision 3.3
 //*********************************************************************************************************
 
 var showDebug = true;
@@ -45,18 +46,26 @@ var showMessage = true;
 			        editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
 			    
 			        logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
+			        
+			        
+			        
 			    				
-        
+//********************************* Fees     
 
-//        var feeArr = loadFees();
-//        var newFeeRes = aa.util.deepClone(feeArr);    
-//        logDebug("Clone Result: " + newFeeRes.getSuccess());
-//        var newFeeArr = newFeeRes.getOutput();
-//        for (i in newFeeArr) {
-//            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-//            newFeeArr[i].setCapID(newLicId);
-//             }
+
+//			        var feeArr = loadFees();
+//			        var newFeeRes = aa.util.deepClone(feeArr);    
+//			        logDebug("Clone Result: " + newFeeRes.getSuccess());
+//			        var newFeeArr = newFeeRes.getOutput();
+//			        for (i in newFeeArr) {
+//			            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+//			            newFeeArr[i].setCapID(newLicId);
+//			             }
+			        
+			        
+
         
+			        
 //      //**************************************************************************************    
 			        tmpNewDate = new Date();
     
@@ -208,7 +217,7 @@ var showMessage = true;
 				    		 thisLic.setExpiration(dateAdd(newExpDate,0));
 				    		 thisLic.setStatus("Active");
 		 }	      	
-	 } 
+				    } 
 				    
    
 				    
@@ -285,7 +294,7 @@ var showMessage = true;
               }
   
           if (licCapId !=null) {
-              LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
+              LICENSETYPE = getAppSpecific("License Type",capId) + "";
               aa.print("LIC License Type is " + LICENSETYPE);
               }
           cityLicense = licCapId.getCustomID();
@@ -379,161 +388,79 @@ var showMessage = true;
 		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 		        }
   
-    		
+    		}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
-  try {  
-
+    		
+	
+	}	
+	
+	
+	
 //  
-////************************************ REPORT SELECTION **********************************
-//
-////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-////If email address available for contact type then email the report, otherwise pop up the report on the screen  
-//  
-////*********************************** STATIONARY ENGINEER  
-  
-  	
-  
-  	    logDebug("License Type: " + LICENSETYPE);
-  	
-  	    if (LICENSETYPE == "1st Class Station Eng") {
-  	     
-  		var rParams = aa.util.newHashMap();
-  	     	
-  			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			
-  			logDebug("Parameters: " + rParams);
-
-    	        
-  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
- 
-  			}
-  	
-  	else if (LICENSETYPE == "2nd Class Station Eng")  {
-	     
-		var rParams = aa.util.newHashMap();
-			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			
-  			logDebug("Parameters: " + rParams);
-
-				        
-			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-
-			} 
-
-  	else if (LICENSETYPE == "3rd Class Station Eng") {
-    
-  		var rParams = aa.util.newHashMap();
-			addParameter(rParams,"Record_ID","capId");
-			addParameter(rParams,"TASK","Licenses Issuance");
-			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+//************************************ FEES SELECTION **********************************
+	
+		
+										iCont = null;
+										feeArray = new Array();
+										feeArray = loadFees(capId);
+										if (feeArray.length > 0) {
+										    for (iCont in feeArray) {
+							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
+							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
+							            showDebug=true;
+							            tFee = feeArray[iCont];
+							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+											            
+											    }
+											}	
+							
+					
 			
-			logDebug("Parameters: " + rParams);
+	//************************************ REPORT SELECTION **********************************
 
-
-        
-		runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
-
-			} 
- 
-////*********************************** BOILER 
-
-  	else if (LICENSETYPE == "Boiler Op HP") {
-  	
-  		
-  		var rParams = aa.util.newHashMap();
-			
-  			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-
-  			logDebug("Parameters: " + rParams);
-	    	        
-  			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-
-  			}
- 
-  	else if (LICENSETYPE == "Boiler Op LP") {
-  	
+	//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+	//If email address available for contact type then email the report, otherwise pop up the report on the screen  
+	  
+	//*********************************** STATIONARY ENGINEER  
+	  
+							
+							var	LICENSETYPE = getAppSpecific("License Type", capId);
+							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
+							var myReport;
+								
+								logDebug("License Type: " + LICENSETYPE);
+								aa.print("License Type: " + LICENSETYPE);
+								
+								var rParams = aa.util.newHashMap();
+								
+//vRParams = aa.util.newHashtable();  addParameter(vRParams,"ID",inspId); generateReport(capId, "TRL Inspection Report - AA", "TRL", vRParams);
+								
+								
+								addParameter(rParams,"Record_ID",capId);
+					  			addParameter(rParams,"TASK","License Issuance");
+					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
+					  			addParameter(rParams,"License Type",LICENSETYPE);
+					  			
+												
+							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+							  	     
+							  		myReport="Stationary";
+							   		logDebug("Parameters: " + rParams + "  Report = " + myReport + ", Full License Type Name = " + fullLicenseType);
+							  		
+									}
 		
-		var rParams = aa.util.newHashMap();
-			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-
-  			logDebug("Parameters: " + rParams);
-		    	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-
-  			}
-  	
-  	else if (LICENSETYPE == "1st Class Refrig Op") {
-  	
+								else  {
+							  	
+									myReport="Boiler";		
+							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
+						
+									}
+						
+							
+								generateReport(capId, myReport, "Licenses", rParams);
+									
+//								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+    		
 		
-		var rParams = aa.util.newHashMap();
-			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-
-  			logDebug("Parameters: " + rParams);
-    	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-
-  			}
-
-  	else if (LICENSETYPE == "2nd Class Refrig Op") {
-  	
-		
-			addParameter(rParams,"Record_ID","capId");
-			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-			addParameter(rParams,"TASK","Licenses Issuance");
-
-			logDebug("Parameters: " + rParams);
-
-    	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-
-  			}
-  	
-  	else if (LICENSETYPE == "3rd Class Refrig Op") {
-  	
-		
-		var rParams = aa.util.newHashMap();
-			addParameter(rParams,"Record_ID","capId");
-  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-  			addParameter(rParams,"TASK","Licenses Issuance");
-
-  			logDebug("Parameters: " + rParams);
-    	        
-			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
-
-  			}
-//*********************************** ALL OTHERS *************************************************************
-  	
-  	else{		
-  		
-  		var rParams = aa.util.newHashMap();
-		addParameter(rParams,"Record_ID","capId");
-		addParameter(rParams,"TASK","Licenses Issuance");
-		addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
-		addParameter(rParams,"Logo","Xtra4");
-		logDebug("Parameters: " + rParams);
-
-   	    	        
-  			runReport4EmailOrPrint(capId,"License",null,rParams,null,null,"Licenses");
-  			
-  			}
-  	
- }catch (err) {
-		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-	}
-// end user code
-	aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
-  
-    		}
-    
-	}
+								
