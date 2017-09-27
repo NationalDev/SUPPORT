@@ -460,8 +460,6 @@ var showMessage = true;
 									generateReport(capId, myReport, "Licenses", rParams);
 				
 				
-								
-				}
 							
 		}catch (err) {
 			logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
