@@ -447,10 +447,10 @@ var showMessage = true;
 				
 	//				   		runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 				  			
-	//			  			report = aa.reportManager.getReportModelByName(reportName);
-	//			  		    report = report.getOutput();
+				  			report = aa.reportManager.getReportModelByName(myReport);
+				  		    report = report.getOutput();
 	//			  		    
-				  			generateReport(capId, myReport, "Licenses", rParams);
+	//			  			generateReport(capId, myReport, "Licenses", rParams);
 					   			
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 					  			
