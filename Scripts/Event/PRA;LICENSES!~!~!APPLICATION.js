@@ -405,7 +405,7 @@ var showMessage = true;
 //****************************************************************************************
 	
 
-	var showDebug = true;
+	var showDebug = false;
 	var showMessage = true;
 
 	try {
