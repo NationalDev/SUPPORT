@@ -432,10 +432,7 @@ var showMessage = true;
 								logDebug("License Type: " + LICENSETYPE);
 								aa.print("License Type: " + LICENSETYPE);
 					  	
-								
-								logDebug( + stop);
-								
-								
+												
 					if (LICENSETYPE == "1st Class Station Eng") {
 					  	     
 					  		var rParams = aa.util.newHashMap();
@@ -452,6 +449,10 @@ var showMessage = true;
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 					  			}
 					  	
+					
+					logDebug( + stop);
+					
+					
 					else if (LICENSETYPE == "2nd Class Station Eng")  {
 						     
 							var rParams = aa.util.newHashMap();
