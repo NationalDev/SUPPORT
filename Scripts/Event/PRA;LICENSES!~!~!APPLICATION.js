@@ -450,7 +450,7 @@ var showMessage = true;
 	//			  			report = aa.reportManager.getReportModelByName(reportName);
 	//			  		    report = report.getOutput();
 	//			  		    
-				  			generateReport(myReport, rParams, "Licenses");
+				  			generateReport(capId, myReport, "Licenses", rParams);
 					   			
 					   			logDebug("Parameters: " + rParams + "Report = " + myReport);
 					  			
