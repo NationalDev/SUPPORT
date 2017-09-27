@@ -435,15 +435,15 @@ var showMessage = true;
 								var rParams = aa.util.newHashMap();
 								
 								addParameter(rParams,"Record_ID",capId);
-//					  			addParameter(rParams,"TASK","License Issuance");
-//					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
-//					  			addParameter(rParams,"License Type",fullLicenseType);
+					  			addParameter(rParams,"TASK","License Issuance");
+					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
+					  			addParameter(rParams,"License Type",fullLicenseType);
 					  			
 												
 							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							  	     
 							  		myReport="Stationary";
-							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
+							   		logDebug("Parameters: " + rParams + " Report = " + myReport + " Full License Type Name = " + fullLicenseType);
 							  		
 									}
 		
@@ -455,9 +455,9 @@ var showMessage = true;
 									}
 						
 							
-								generateReport(capId, myReport, "Licenses", rParams);
+//								generateReport(capId, myReport, "Licenses", rParams);
 									
-//								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
     		
 		
 								
