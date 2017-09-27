@@ -439,7 +439,7 @@ var showMessage = true;
 					  			addParameter(rParams,"TASK","Licenses Issuance");
 					  			addParameter(rParams,"License Type","VALUE_");
 					  			
-function generateMyReport(){				  	
+f			  	
 												
 					if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 					  	     
@@ -459,7 +459,7 @@ function generateMyReport(){
 				
 					
 							generateReport(capId, myReport, "Licenses", rParams);
-		}
+		
 		
 						
 		}
