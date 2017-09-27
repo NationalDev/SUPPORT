@@ -428,7 +428,7 @@ var showMessage = true;
 	//*********************************** STATIONARY ENGINEER  
 	  
 	try{	
-							showDebug=false;
+							
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var myReport;
 								
