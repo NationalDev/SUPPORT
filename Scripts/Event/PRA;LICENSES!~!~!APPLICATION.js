@@ -388,7 +388,7 @@ var showMessage = true;
 		        	licObj.refLicModel.setBusinessName(getAppSpecific("Doing Business As (DBA) Name") );
 		        }
   
-    		
+    		}
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
   
     		
@@ -401,9 +401,6 @@ var showMessage = true;
 //************************************ FEES SELECTION **********************************
 	
 		
-						
-						        
-							
 										iCont = null;
 										feeArray = new Array();
 										feeArray = loadFees(capId);
@@ -411,7 +408,7 @@ var showMessage = true;
 										    for (iCont in feeArray) {
 							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
 							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-							            showDebug=1;
+							            showDebug=true;
 							            tFee = feeArray[iCont];
 							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 											            
@@ -469,6 +466,6 @@ var showMessage = true;
 	logDebug("Parameters: " + stop);
 					
 									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
-    		}
+    		
 		
 	}								
