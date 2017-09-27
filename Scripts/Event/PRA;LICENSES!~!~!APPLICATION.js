@@ -432,6 +432,10 @@ var showMessage = true;
 								logDebug("License Type: " + LICENSETYPE);
 								aa.print("License Type: " + LICENSETYPE);
 					  	
+								
+								logDebug( + stop);
+								
+								
 					if (LICENSETYPE == "1st Class Station Eng") {
 					  	     
 					  		var rParams = aa.util.newHashMap();
@@ -445,7 +449,7 @@ var showMessage = true;
 					   			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 					   			
 					   			myReport="Stationary";
-					   			logDebug("Parameters: " + rParams + "Report = " + myReport +stop);
+					   			logDebug("Parameters: " + rParams + "Report = " + myReport + stop);
 					  			}
 					  	
 					else if (LICENSETYPE == "2nd Class Station Eng")  {
