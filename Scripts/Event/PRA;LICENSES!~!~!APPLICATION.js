@@ -293,7 +293,7 @@ var showMessage = true;
               }
   
           if (licCapId !=null) {
-              LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
+              LICENSETYPE = getAppSpecific("License Type",capId) + "";
               aa.print("LIC License Type is " + LICENSETYPE);
               }
           cityLicense = licCapId.getCustomID();
