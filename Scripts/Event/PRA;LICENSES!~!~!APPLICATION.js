@@ -438,7 +438,7 @@ var showMessage = true;
 								addParameter(rParams,"Record_ID",capId);
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"Item Name","LIC LICENSED PROFESSIONALS");
-								addParameter(rParams,"License Type","VALUE_");
+								addParameter(rParams,"License Type",LICENSETYPE);
 
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
