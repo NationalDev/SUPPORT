@@ -449,16 +449,17 @@ var showMessage = true;
 		
 							
 						
-							else  {
+								else  {
 							  	
 									myReport="Boiler";		
 							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
 						
 									}
 						
-							
-									generateReport(capId, myReport, "Licenses", rParams);
-				
+									
+//									generateReport(capId, myReport, "Licenses", rParams);
+									
+									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses);
 				
 							
 		}catch (err) {
