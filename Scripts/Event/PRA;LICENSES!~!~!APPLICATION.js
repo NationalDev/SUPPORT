@@ -53,14 +53,14 @@ var showMessage = true;
 //********************************* Fees     
 
 
-			        var feeArr = loadFees();
-			        var newFeeRes = aa.util.deepClone(feeArr);    
-			        logDebug("Clone Result: " + newFeeRes.getSuccess());
-			        var newFeeArr = newFeeRes.getOutput();
-			        for (i in newFeeArr) {
-			            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-			            newFeeArr[i].setCapID(newLicId);
-			             }
+//			        var feeArr = loadFees();
+//			        var newFeeRes = aa.util.deepClone(feeArr);    
+//			        logDebug("Clone Result: " + newFeeRes.getSuccess());
+//			        var newFeeArr = newFeeRes.getOutput();
+//			        for (i in newFeeArr) {
+//			            logDebug("fees  Array = " +newFeeArr.getFeeCod());
+//			            newFeeArr[i].setCapID(newLicId);
+//			             }
 			        
 			        
 
@@ -411,9 +411,9 @@ var showMessage = true;
 										    for (iCont in feeArray) {
 							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
 							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-							            showDebug=3;
+							            showDebug=1;
 							            tFee = feeArray[iCont];
-							            aa.print("code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 											            
 											    }
 											}	
