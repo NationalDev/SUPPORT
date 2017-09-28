@@ -432,12 +432,12 @@ var showMessage = true;
 								logDebug("License Type: " + LICENSETYPE);
 								aa.print("License Type: " + LICENSETYPE);
 								
-								var rParams = aa.util.newHashMap();
-																													
-								addParameter(rParams,"Record_ID",capId);
-								addParameter(rParams,"TASK","License Issuance");
-								addParameter(rParams,"License Type",LICENSETYPE);
-								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
+//								var rParams = aa.util.newHashMap();
+//																													
+//								addParameter(rParams,"Record_ID",capId);
+//								addParameter(rParams,"TASK","License Issuance");
+//								addParameter(rParams,"License Type",LICENSETYPE);
+//								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								
 
 										
@@ -449,14 +449,14 @@ var showMessage = true;
 
 						else  {
 
-							myReport="Boiler";		
+							myReport="Test";		
 							
 							}
 						
 						
 						logDebug("Parameters: " + rParams + "  Report = " + myReport);
 						
-						generateReport(capId,myReport,"Licenses",rParams);
+						generateReport(null,myReport,"Licenses",null);
 											
 						//runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 
