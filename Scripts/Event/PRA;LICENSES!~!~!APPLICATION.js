@@ -425,6 +425,8 @@ var showMessage = true;
 	//*********************************** STATIONARY ENGINEER  
 	  
 		try {
+					if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+			
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
 							var myReport;
@@ -459,7 +461,7 @@ var showMessage = true;
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
-						
+					}
 						
 						
 		}catch (err) {
