@@ -444,8 +444,7 @@ var showMessage = true;
 								var reportParamters = aa.env.getValue("ReportParamters");	// Report Paramters
 
 								aa.print("reportParamters = " + reportParamters);
-
-																
+																				
 
 								addParameter(rParams,"RECORD_ID",capIdString);
 								addParameter(rParams,"TASK","License Issuance");
@@ -467,8 +466,10 @@ var showMessage = true;
 						
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
+						var reportResult = aa.reportManager.getReportResult(myReport);
+						reportResult = reportResult.getOutput();
 						
-						generateReport(capId, myReport, "Licenses", rParams);
+						//generateReport(capId, myReport, "Licenses", rParams);
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
