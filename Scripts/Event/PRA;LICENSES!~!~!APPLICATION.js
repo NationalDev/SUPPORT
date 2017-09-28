@@ -439,7 +439,15 @@ var showMessage = true;
 								aa.print("License Type: " + LICENSETYPE);
 								
 								var rParams = aa.util.newHashMap();
+								var reportName = aa.env.getValue("Stationary"); 			// Report Name
+								var reportParamters = aa.env.getValue("ReportParamters");	// Report Paramters
+
+								aa.print(String(reportParamters));
+
+								rParams = convertStringToHashTable(String(reportParamters));
+
 								
+
 								addParameter(rParams,"RECORD_ID",capIdString);
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
