@@ -443,7 +443,7 @@ var showMessage = true;
 								var reportName = aa.env.getValue("Stationary"); 			// Report Name
 								var reportParamters = aa.env.getValue("ReportParamters");	// Report Paramters
 
-								aa.print(String(reportParamters));
+								aa.print("reportParamters = " + reportParamters);
 
 																
 
