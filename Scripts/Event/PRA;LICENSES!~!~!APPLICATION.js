@@ -434,7 +434,7 @@ var showMessage = true;
 								
 								var rParams = aa.util.newHashMap();
 																													
-								addParameter(rParams,"Record_ID",capId);
+								addParameter(rParams,"Record_ID","ALTID");
 								addParameter(rParams,"TASK","License Issuance");
 //								addParameter(rParams,"License Type","p3Value");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
@@ -458,7 +458,7 @@ var showMessage = true;
 						
 						//generateReport(capId,myReport,"Licenses",null);
 											
-						runReport4EmailOrPrint(ALTID,myReport,null,rParams,null,null,"Licenses");
+						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
 						
 						
