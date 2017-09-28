@@ -443,20 +443,20 @@ var showMessage = true;
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							 
-							myReport="Test";
+							myReport="Stationary";
 							
 							}
 
 						else  {
 
-							myReport="Test";		
+							myReport="Boiler";		
 							
 							}
 						
 						
 						logDebug("Parameters: " + null + "  Report = " + myReport);
 						
-						//generateReport(capId,myReport,"Licenses",null);
+						generateReport(capId,myReport,"Licenses",null);
 											
 						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
