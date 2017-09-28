@@ -406,8 +406,8 @@ var showMessage = true;
 										feeArray = loadFees(capId);
 										if (feeArray.length > 0) {
 										    for (iCont in feeArray) {
-							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
-							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
+							            
+							            logDebug("Found Assessed Fees = " + iCont);
 							            showDebug=true;
 							            tFee = feeArray[iCont];
 							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
@@ -453,7 +453,7 @@ var showMessage = true;
 							}
 						
 						
-						logDebug("Parameters: " + rParams + "  Report = " + myReport);
+						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport);
 						
 						generateReport(capId,myReport,"Licenses",rParams);
 											
