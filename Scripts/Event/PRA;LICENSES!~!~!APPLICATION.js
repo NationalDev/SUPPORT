@@ -444,7 +444,7 @@ var showMessage = true;
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								
-								aa.print("License Type: " + LICENSETYPE + " Parameters: " + rParams + " Task Status = " + myTaskStatus);
+								aa.print("Parameters: " + rParams );
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							 
@@ -465,7 +465,7 @@ var showMessage = true;
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
-						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport);
+						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
 					}
 						
