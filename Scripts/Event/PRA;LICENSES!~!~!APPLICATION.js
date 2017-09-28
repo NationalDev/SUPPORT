@@ -458,7 +458,7 @@ var showMessage = true;
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
 						
-						generateReport(capIdString, myReport, "Licenses", rParams);
+						generateReport(capId, myReport, "Licenses", rParams);
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
