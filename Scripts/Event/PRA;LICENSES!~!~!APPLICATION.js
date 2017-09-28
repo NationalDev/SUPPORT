@@ -433,7 +433,7 @@ var showMessage = true;
 							var myReport;
 								
 							
-							var myTaskStatus =taskStatus("License Issueance");
+							var myTaskStatus =taskStatus("License Issuance");
 							
 								logDebug("License Type: " + LICENSETYPE);
 								aa.print("License Type: " + LICENSETYPE);
