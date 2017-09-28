@@ -445,9 +445,7 @@ var showMessage = true;
 
 								aa.print(String(reportParamters));
 
-								rParams = convertStringToHashTable(String(reportParamters));
-
-								
+																
 
 								addParameter(rParams,"RECORD_ID",capIdString);
 								addParameter(rParams,"TASK","License Issuance");
