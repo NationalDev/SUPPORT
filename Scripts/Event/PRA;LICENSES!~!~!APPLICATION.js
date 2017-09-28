@@ -453,7 +453,7 @@ var showMessage = true;
 							}
 						
 						
-						logDebug("Parameters: " + null + "  Report = " + myReport + stop);
+						logDebug("Parameters: " + null + "  Report = " + myReport);
 						
 						generateReport(capId,myReport,"Licenses",null);
 											
