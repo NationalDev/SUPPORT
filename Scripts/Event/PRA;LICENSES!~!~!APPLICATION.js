@@ -457,7 +457,7 @@ var showMessage = true;
 						
 						generateReport(capId,myReport,"Licenses",null);
 											
-						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
 						
 						
