@@ -443,7 +443,7 @@ var showMessage = true;
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							 
-							myReport="Staionary";
+							myReport="Stationary";
 							
 							}
 
