@@ -435,12 +435,12 @@ var showMessage = true;
 								aa.print("License Type: " + LICENSETYPE);
 								
 								var rParams = aa.util.newHashMap();
-																													
-								addParameter(rParams,"RECORD_ID",capId);
+								
+								addParameter(rParams,"RECORD_ID","$$altID$$");
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								
-
+								aa.print("License Type: " + LICENSETYPE + " Parameters: " + rParams);
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							 
