@@ -454,7 +454,7 @@ var showMessage = true;
 							}
 						
 						
-						logDebug("Parameters: " + null + "  Report = " + myReport);
+						logDebug("Parameters: " + null + "  Report = " + myReport + stop);
 						
 						generateReport(capId,myReport,"Licenses",null);
 											
@@ -464,7 +464,7 @@ var showMessage = true;
 						
 						
 		}catch (err) {
-			logDebug("A JavaScript Error occured: " + err.message + stop);
+			logDebug("A JavaScript Error occured: " + err.message);
 		}
 		// end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
