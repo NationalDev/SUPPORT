@@ -13,7 +13,7 @@
 var showDebug = true;
 var showMessage = true;
 
-	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		
 			newLic = null;
@@ -425,7 +425,7 @@ var showMessage = true;
 	//*********************************** STATIONARY ENGINEER  
 	  
 		try {
-					if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+					if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 							
 							var capIdString = capId.getCustomID();
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
