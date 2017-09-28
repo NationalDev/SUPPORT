@@ -460,7 +460,7 @@ var showMessage = true;
 											
 						//runReport4EmailOrPrint(capId,myReport,null,null,null,null,"Licenses");
 						
-						generateReport4Workflow(capId,"Test","Licenses",null);	
+						generateReport4Workflow(null,"Test","Licenses",null);	
 						
 						
 		}catch (err) {
