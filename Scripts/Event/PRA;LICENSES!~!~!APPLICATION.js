@@ -432,6 +432,9 @@ var showMessage = true;
 							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
 							var myReport;
 								
+							
+							var myTaskStatus =taskStatus("License Issueance");
+							
 								logDebug("License Type: " + LICENSETYPE);
 								aa.print("License Type: " + LICENSETYPE);
 								
@@ -441,7 +444,7 @@ var showMessage = true;
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								
-								aa.print("License Type: " + LICENSETYPE + " Parameters: " + rParams);
+								aa.print("License Type: " + LICENSETYPE + " Parameters: " + rParams + " Task Status = " + myTaskStatus);
 										
 						if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
 							 
