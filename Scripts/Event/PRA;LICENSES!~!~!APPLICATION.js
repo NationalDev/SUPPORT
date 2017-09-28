@@ -452,14 +452,16 @@ var showMessage = true;
 
 							myReport="Boiler";		
 							
-							}
+							}							
+						
+	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
 						
-						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport);
-						
-						generateReport(capId,myReport,"Licenses",rParams);
+						generateReport(capId, myReport, "Licenses", rParams);
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+						
+						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport);
 						
 					}
 						
