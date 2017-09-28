@@ -434,10 +434,10 @@ var showMessage = true;
 								
 								var rParams = aa.util.newHashMap();
 																													
-								addParameter(rParams,"Record_ID","p1value");
-								addParameter(rParams,"TASK","p2value");
-								addParameter(rParams,"License Type","p4value");
-								addParameter(rParams,"ITEM_NAME","p3value");
+								addParameter(rParams,"Record_ID","p1Value");
+								addParameter(rParams,"TASK","p2Value");
+								addParameter(rParams,"License Type","p3Value");
+								addParameter(rParams,"ITEM_NAME","p4Value");
 								
 
 										
