@@ -464,7 +464,7 @@ var showMessage = true;
 						
 						
 		}catch (err) {
-			logDebug("A JavaScript Error occured: " + err.message);
+			logDebug("A JavaScript Error occured: " + err.message + stop);
 		}
 		// end user code
 		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
