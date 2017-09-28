@@ -443,7 +443,7 @@ var showMessage = true;
 								var reportName = aa.env.getValue("Stationary"); 			// Report Name
 								var reportParamters = aa.env.getValue("ReportParamters");	// Report Paramters
 
-								aa.print("reportParamters = " + reportParamters);
+								aa.print("reportParamters = " + reportParamters + "report name = " + reportName);
 																				
 
 								addParameter(rParams,"RECORD_ID",capIdString);
@@ -466,7 +466,7 @@ var showMessage = true;
 						
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
-						var reportResult = aa.reportManager.runReport(myReport);
+						var reportResult = aa.reportManager.runReport("Stationary");
 						reportResult = reportResult.getOutput();
 						
 						//generateReport(capId, myReport, "Licenses", rParams);
