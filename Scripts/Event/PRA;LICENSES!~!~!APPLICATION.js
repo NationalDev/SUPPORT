@@ -458,9 +458,11 @@ var showMessage = true;
 						
 						//generateReport(capId,myReport,"Licenses",null);
 											
-						runReport4EmailOrPrint(capId,myReport,null,null,null,null,"Licenses");
-
-											
+						//runReport4EmailOrPrint(capId,myReport,null,null,null,null,"Licenses");
+						
+						generateReport4Workflow(capId,"Test","Licenses",null);	
+						
+						
 		}catch (err) {
 			logDebug("A JavaScript Error occured: " + err.message);
 		}
