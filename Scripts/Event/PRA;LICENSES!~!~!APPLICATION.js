@@ -454,7 +454,7 @@ var showMessage = true;
 							}
 						
 						
-						logDebug("Parameters: " + rParams + "  Report = " + myReport);
+						logDebug("Parameters: " + null + "  Report = " + myReport);
 						
 						generateReport(null,myReport,"Licenses",null);
 											
