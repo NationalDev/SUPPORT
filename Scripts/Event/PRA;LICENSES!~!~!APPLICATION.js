@@ -426,7 +426,8 @@ var showMessage = true;
 	  
 		try {
 					if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
-			
+							
+							var capIdString = capId.getCustomID();
 							var	LICENSETYPE = getAppSpecific("License Type", capId);
 							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
 							var myReport;
@@ -436,7 +437,7 @@ var showMessage = true;
 								
 								var rParams = aa.util.newHashMap();
 								
-								addParameter(rParams,"RECORD_ID","p1value");
+								addParameter(rParams,"RECORD_ID",capIdString);
 								addParameter(rParams,"TASK","License Issuance");
 								addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
 								
@@ -457,7 +458,7 @@ var showMessage = true;
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
 						
-						generateReport(capId, myReport, "Licenses", rParams);
+						generateReport(capIdString, myReport, "Licenses", rParams);
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
