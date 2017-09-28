@@ -466,7 +466,7 @@ var showMessage = true;
 						
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
-						var reportResult = aa.reportManager.getReportResult(myReport);
+						var reportResult = aa.reportManager.runReport(myReport);
 						reportResult = reportResult.getOutput();
 						
 						//generateReport(capId, myReport, "Licenses", rParams);
