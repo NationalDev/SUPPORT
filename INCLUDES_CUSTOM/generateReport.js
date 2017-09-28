@@ -1,4 +1,4 @@
-//**
+/**
  * This function is used as a part of Email Notification Template.
  * This function is used to generate report, which is attached to the email notification from events
  * such as WorkflowTaskUpdateAfter(WTUA) or InspectionResultSubmitAfter(IRSA).
@@ -6,7 +6,7 @@
  * @param parameters
  * @param rModule
  * @returns reportFile
- *//
+ */
 
 function generateReport(itemCap, reportName, module, parameters) {
     //returns the report file which can be attached to an email.
