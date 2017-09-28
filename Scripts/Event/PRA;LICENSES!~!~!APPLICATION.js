@@ -453,9 +453,9 @@ var showMessage = true;
 							}
 						
 						
-						logDebug("Parameters: " + null + "  Report = " + myReport);
+						logDebug("Parameters: " + rParams + "  Report = " + myReport);
 						
-						generateReport(capId,myReport,"Licenses",null);
+						generateReport(capId,myReport,"Licenses",rParams);
 											
 //						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
