@@ -449,7 +449,7 @@ var showMessage = true;
 
 						else  {
 
-							myReport="Boiler";		
+							myReport="Test";		
 							
 							}
 						
@@ -458,7 +458,7 @@ var showMessage = true;
 						
 						//generateReport(capId,myReport,"Licenses",null);
 											
-						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+						runReport4EmailOrPrint(ALTID,myReport,null,rParams,null,null,"Licenses");
 						
 						
 						
