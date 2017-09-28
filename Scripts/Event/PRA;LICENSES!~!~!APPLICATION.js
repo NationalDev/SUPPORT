@@ -440,11 +440,7 @@ var showMessage = true;
 								aa.print("License Type: " + LICENSETYPE);
 								
 								var rParams = aa.util.newHashMap();
-								var reportName = aa.env.getValue("Stationary"); 			// Report Name
-								var reportParamters = aa.env.getValue("ReportParamters");	// Report Paramters
-
-								aa.print("reportParamters = " + reportParamters + "report name = " + reportName);
-																				
+																										
 
 								addParameter(rParams,"RECORD_ID",capIdString);
 								addParameter(rParams,"TASK","License Issuance");
