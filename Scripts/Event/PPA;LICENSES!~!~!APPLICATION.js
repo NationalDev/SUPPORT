@@ -81,7 +81,7 @@ var showMessage = true;
 						
 						generateReport(capId, myReport, "Licenses", rParams);
 											
-//						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
 						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
