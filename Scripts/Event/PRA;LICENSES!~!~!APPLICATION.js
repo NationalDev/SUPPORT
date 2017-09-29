@@ -10,8 +10,8 @@
 //			September 27th, 2017			Revision 3.3
 //*********************************************************************************************************
 
-var showDebug = true;
-var showMessage = true;
+var showDebug = false;
+var showMessage = false;
 
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
