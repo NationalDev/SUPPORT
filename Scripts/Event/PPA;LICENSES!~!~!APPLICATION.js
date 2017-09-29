@@ -13,9 +13,9 @@
 var showDebug = true;
 var showMessage = true;
 
-	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
-		
-		
+//	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
+//		
+//		
 //			newLic = null;
 //			newLicId = null;
 //			newLicIdString = null;
