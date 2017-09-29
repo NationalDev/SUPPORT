@@ -5,9 +5,7 @@
 //																								           
 //					PPA:LICENSES/*/*/APPLICATION	
 // 							
-//			September 7th, 2017			Revision 2.0
-//			September 11th, 2017			Revision 3.0
-//			September 27th, 2017			Revision 3.3
+//			September 29th, 2017			Revision 1.0
 //*********************************************************************************************************
 
 
@@ -16,14 +14,6 @@ try {
 var showDebug = true;
 var showMessage = true;
 
-
-
-
-
-if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
-	
-	
-	
 	
 ////************************************ FEES SELECTION **********************************
 	
@@ -89,13 +79,13 @@ if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
 						
-//						generateReport(capId, myReport, "Licenses", rParams);
+						generateReport(capId, myReport, "Licenses", rParams);
 											
-						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
 						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
-					}
+				
 						
 						
 		}catch (err) {
