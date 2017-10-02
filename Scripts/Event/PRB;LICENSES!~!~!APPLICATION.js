@@ -110,6 +110,7 @@ var showMessage = true;
 				            thisLic.setStatus("Active");
 				            
 				            }
+				            
 				    }
 				    /**
 				     * Check Condition for Mechanical!Occupational
