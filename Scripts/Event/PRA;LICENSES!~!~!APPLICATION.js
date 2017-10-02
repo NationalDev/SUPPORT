@@ -20,7 +20,7 @@ var showMessage = true;
 			newLicId = null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
-	try {
+	
 			newLicId = getParent();
 			
 			
@@ -32,13 +32,13 @@ var showMessage = true;
   
 				logDebug(" newLicId = " + newLicId);
 	
+				
+				
 
 				newLicIdString = newLicId.getCustomId();
      
 				
-	} catch (err) {
-		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-		
+
 		
 			        copyAppSpecific(capId);
 			        copyAddresses(capId,newLicId);
