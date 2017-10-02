@@ -32,7 +32,7 @@ var showMessage = true;
   
 				logDebug(" newLicId = " + newLicId);
 	
-	}		
+	
 				
 
 				newLicIdString = newLicId.getCustomID();
@@ -52,7 +52,7 @@ var showMessage = true;
 			        editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
 			    
 			        logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
-			        
+	}		        
 
 			        
 //      //**************************************************************************************    
