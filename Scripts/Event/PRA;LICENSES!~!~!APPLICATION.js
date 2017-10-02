@@ -449,7 +449,7 @@ var showMessage = true;
     									
     									runReportAsync(myReport,"Licenses",capIdString,rParams)
     								
-    		logDebug("License Type: " + LICENSETYPE + "Record: " + capIdString " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
+    		logDebug("License Type: " + LICENSETYPE + "Record: " + capIdString + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
     									
     							
     									
