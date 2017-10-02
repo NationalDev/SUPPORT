@@ -32,7 +32,7 @@ var showMessage = true;
   
 				logDebug(" newLicId = " + newLicId);
 	
-				
+	}		
 				
 
 				newLicIdString = newLicId.getCustomId();
@@ -372,4 +372,3 @@ var showMessage = true;
 		        }
   
     		}
-}
