@@ -35,7 +35,7 @@ var showMessage = true;
 	}		
 				
 
-				newLicIdString = newLicId.getCustomId();
+				newLicIdString = newLicId.getCustomID();
      
 				
 
