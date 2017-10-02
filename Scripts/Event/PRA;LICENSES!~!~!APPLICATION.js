@@ -17,7 +17,7 @@ var showMessage = true;
 		
 		
 		var newLic = getParent();
-			newLicId=null;
+			var newLicId;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
