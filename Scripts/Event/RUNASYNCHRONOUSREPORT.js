@@ -6,8 +6,8 @@
 |
 | Client  : N/A
 | Action# : N/A
-|  
-| Notes   : 
+|
+| Notes   :
 |
 |
 /------------------------------------------------------------------------------------------------------*/
@@ -25,7 +25,7 @@
 var servProvCode = aa.env.getValue("ServProvCode");			// Service Provider Code
 var capIDString = aa.env.getValue("CustomCapId");			// Custom CAP ID
 var capId = aa.env.getValue("CapID");
-var reportName = aa.env.getValue("ReportName"); 			// Report Name
+var reportObj = aa.env.getValue("ReportObjs"); 			// Report Name
 var reportParameters = aa.env.getValue("ReportParameters");	// Report Paramters, it should be HashTable
 var module = aa.env.getValue("Module");						// Module Name
 var reportUser = aa.env.getValue("ReportUser"); 			// AA User
@@ -50,8 +50,9 @@ var systemMailFrom = "noreply@accela.com";
 //eParams = convertStringToHashTable(String(emailParameters));
 
 // ********************************************************************
-printEnv();
+//printEnv();
 // ***********************************************************************
+
 handleEnvParamters();
 
 var success = sendReport();
@@ -64,7 +65,6 @@ if(debugEmailTo != null && debugEmailTo != "") {
 	aa.sendMail(systemMailFrom, debugEmailTo, "", "Debug Information in Sending Report Script", debug);
 }
 
-
 // ======================================================================
 //
 //					Internal Function
@@ -76,7 +76,8 @@ function sendReport() {
 	
 	try {
 		// Step 1.  Get Report Model by ReportName
-		logDebug("Step 1.  Get Report Model by ReportName");
+		for(i in reportObj){
+		var reportName = reportObj[i];
 		var reportInfoResult = aa.reportManager.getReportInfoModelByName(reportName);
 		if(reportInfoResult.getSuccess() == false) {
 			// Notify adimistrator via Email, for example
@@ -85,7 +86,6 @@ function sendReport() {
 		}
 		
 		// Step 2. Initialize report
-		logDebug("Step 2. Initialize report");
 		report = reportInfoResult.getOutput();
 		report.setModule(module);
 		report.setCapId(capIDString);
@@ -93,7 +93,6 @@ function sendReport() {
 		//report.getEDMSEntityIdModel().setAltId(capIDString);
 		
 		// Step 3. Check permission on report
-		logDebug("Step 3. Check permission on report");
 		var permissionResult = aa.reportManager.hasPermission(reportName,reportUser);
 		if(permissionResult.getSuccess() == false || permissionResult.getOutput().booleanValue() == false) {
 			// Notify adimistrator via Email, for example
@@ -102,7 +101,6 @@ function sendReport() {
 		}
 		
 		// Step 4. Run report
-		logDebug("Step 4. Run report");
 		var reportResult = aa.reportManager.getReportResult(report);
 		if(reportResult.getSuccess() == false){
 			// Notify adimistrator via Email, for example
@@ -111,7 +109,6 @@ function sendReport() {
 		}
 		
 		// Step 5, Store Report File to harddisk
-		logDebug("Step 5, Store Report File to harddisk");
 		reportResult = reportResult.getOutput();
 	    var reportFileResult = aa.reportManager.storeReportToDisk(reportResult);
 		if(reportFileResult.getSuccess() == false) {
@@ -121,7 +118,6 @@ function sendReport() {
 		}
 
 		// Step 6. Send Report via Email
-		logDebug("Step 6. Send Report via Email");
 	    var reportFile = reportFileResult.getOutput();
 		var capIDArray = capId.toString().split("-");
 		
@@ -132,6 +128,8 @@ function sendReport() {
 
 		var rFiles = [];
 		rFiles.push(reportFile);
+		}
+		logDebug("RFILES VALUE 1" + rFiles[0] + "RFILES VALUE 2" + rFiles[1]);
 		if (!matches(emailTo,null,"",undefined)) {
 			var result = null;
 			result = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, emailCC, emailTemplate, emailParameters, capIDScriptModel, rFiles);
@@ -150,7 +148,7 @@ function sendReport() {
 			return false;
 		}		
 
-
+		
 		
 	}
 	catch(err){
@@ -160,6 +158,7 @@ function sendReport() {
 }
 
 function handleEnvParamters() {
+	
 	if(servProvCode == null) servProvCode = "";	
 	if(capIDString == null) capIDString = "";
 	if(capId == null) capId = "";
@@ -225,4 +224,3 @@ function matches(eVal,argList) {
    		return true;
 
 }
-
