@@ -13,27 +13,29 @@
 var showDebug = true;
 var showMessage = true;
 
-	if (isTaskStatus("License Issuance","issued") && balanceDue <= 0) {
+	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		
-			newLic = null;
-			newLicId = null;
+			 
+			newLicId =null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
-			newLicId = getParent();
-				
-			if (newLicId == null){
-				
+		
+							
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				
-			}
-  
+			
+						
 				logDebug(" newLicId = " + newLicId);
 	
-
+	
+				
 				newLicIdString = newLicId.getCustomID();
-        
+     
+				
+
+		
 			        copyAppSpecific(capId);
 			        copyAddresses(capId,newLicId);
 			        copyASITables(capId,newLicId);
@@ -46,25 +48,8 @@ var showMessage = true;
 			        editAppName(getAppSpecific("Doing Business As (DBA) Name"),newLicId);
 			    
 			        logDebug("Balance Due = " + balanceDue + "Task Active = "  + isTaskActive("License Issuance") + " Status =" + taskStatus("License Issuance")); 
-			        
-			        
-			        
-			    				
-//********************************* Fees     
+	}		        
 
-
-//			        var feeArr = loadFees();
-//			        var newFeeRes = aa.util.deepClone(feeArr);    
-//			        logDebug("Clone Result: " + newFeeRes.getSuccess());
-//			        var newFeeArr = newFeeRes.getOutput();
-//			        for (i in newFeeArr) {
-//			            logDebug("fees  Array = " +newFeeArr.getFeeCod());
-//			            newFeeArr[i].setCapID(newLicId);
-//			             }
-			        
-			        
-
-        
 			        
 //      //**************************************************************************************    
 			        tmpNewDate = new Date();
@@ -219,13 +204,7 @@ var showMessage = true;
 		 }	      	
 				    } 
 				    
-   
-				    
-				    
-				    
-	
-	
-    	             
+
 
 ////From Here ************************ Licensed Professional **************************************
 
@@ -389,78 +368,115 @@ var showMessage = true;
 		        }
   
     		}
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GOOD ^^^^^^^^^^^^^^^^^^^^^^          
-  
-    		
-	
-	}	
-	
-	
-	
-//  
-//************************************ FEES SELECTION **********************************
-	
-		
-										iCont = null;
-										feeArray = new Array();
-										feeArray = loadFees(capId);
-										if (feeArray.length > 0) {
-										    for (iCont in feeArray) {
-							            //branch("EMSE:SetContactRelationshipToContactTypeLoop");
-							            logDebug("Executing EMSE:SetContactRelationshipToContactTypeLoop");
-							            showDebug=true;
-							            tFee = feeArray[iCont];
-							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
-											            
-											    }
-											}	
-							
-					
-			
-	//************************************ REPORT SELECTION **********************************
 
-	//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-	//If email address available for contact type then email the report, otherwise pop up the report on the screen  
-	  
-	//*********************************** STATIONARY ENGINEER  
-	  
-							
-							var	LICENSETYPE = getAppSpecific("License Type", capId);
-							var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
-							var myReport;
-								
-								logDebug("License Type: " + LICENSETYPE);
-								aa.print("License Type: " + LICENSETYPE);
-								
-								var rParams = aa.util.newHashMap();
-								
-//vRParams = aa.util.newHashtable();  addParameter(vRParams,"ID",inspId); generateReport(capId, "TRL Inspection Report - AA", "TRL", vRParams);
-								
-								
-								addParameter(rParams,"Record_ID",capId);
-					  			addParameter(rParams,"TASK","License Issuance");
-					  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONALS");
-					  			addParameter(rParams,"License Type",LICENSETYPE);
-					  			
-												
-							if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
-							  	     
-							  		myReport="Stationary";
-							   		logDebug("Parameters: " + rParams + "  Report = " + myReport + ", Full License Type Name = " + fullLicenseType);
-							  		
-									}
-		
-								else  {
-							  	
-									myReport="Boiler";		
-							   		logDebug("Parameters: " + rParams + "Report = " + myReport);
-						
-									}
-						
-							
-								generateReport(capId, myReport, "Licenses", rParams);
-									
-//								runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//************************************************************************************
     		
-		
-								
+    		try {
+				
+    			var showDebug = true;
+    			var showMessage = true;
+
+    				
+    			////************************************ FEES SELECTION **********************************
+    				
+    					
+    													iCont = null;
+    													feeArray = new Array();
+    													feeArray = loadFees(capId);
+    													if (feeArray.length > 0) {
+    													    for (iCont in feeArray) {
+    										            
+    										            logDebug("Found Assessed Fees = " + iCont);
+    										            showDebug=true;
+    										            tFee = feeArray[iCont];
+    										            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+    														            
+    														    }
+    														}	
+    										
+    								
+    						
+    				//************************************ REPORT SELECTION **********************************
+
+    				//function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+    				//If email address available for contact type then email the report, otherwise pop up the report on the screen  
+    				  
+    				//*********************************** STATIONARY ENGINEER  
+    				  
+    					
+    										
+    										var capIdString = capId.getCustomID();
+    										var	LICENSETYPE = getAppSpecific("License Type", capId);
+    										var fullLicenseType=lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE);
+    										var myReport;
+    											
+    										
+    										
+    										var myTaskStatus =taskStatus("License Issuance");
+    										
+    											logDebug("License Type: " + LICENSETYPE);
+    											aa.print("License Type: " + LICENSETYPE);
+    											
+    											var rParams = aa.util.newHashMap();
+    																													
+
+    											addParameter(rParams,"Record_ID",capIdString);
+    											addParameter(rParams,"TASK","License Issuance");
+    											addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
+    											
+    											aa.print("Parameters: " + rParams );
+    													
+    									if ((LICENSETYPE == "1st Class Station Eng") || (LICENSETYPE == "2nd Class Station Eng") || (LICENSETYPE == "3rd Class Station Eng")) {
+    										 
+    										myReport="Stationary";
+    										
+    										}
+
+    									else  {
+
+    										myReport="Boiler";		
+    										
+    										}							
+    									
+    				//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
+    									
+    									
+//    									generateReport(capId, myReport, "Licenses", rParams);
+    														
+//    									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+    									
+//    									function runReportAsync(reportName,module,itemCap,reportParameters)
+    									
+    									runReportAsync(myReport,"Licenses",capId,rParams)
+    								
+    									logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
+    									
+    							
+    									
+    									
+    					}catch (err) {
+    						logDebug("A JavaScript Error occured: " + err.message);
+    					}
+    					// end user code
+    					aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
+    					
+    					
+    					
+    					
+    					
+ function runReportAsync(reportName,module,itemCap,reportParameters) {
+    						var scriptName = "RUNREPORTASYNC";
+
+    						var envParameters = aa.util.newHashMap();
+    						envParameters.put("ReportName",reportName);
+    						envParameters.put("ReportParameters",reportParameters);
+    						envParameters.put("Module",module);
+    						envParameters.put("CustomCapId",capIDString);
+    						envParameters.put("ReportUser",currentUserID);
+    						envParameters.put("ServProvCode",servProvCode);
+    						envParameters.put("ErrorEmailTo","saxthelm@accela.com");
+    						envParameters.put("DebugEmailTo","saxthelm@accela.com");
+
+    						aa.runAsyncScript(scriptName, envParameters);
+    					}    					
+    					
