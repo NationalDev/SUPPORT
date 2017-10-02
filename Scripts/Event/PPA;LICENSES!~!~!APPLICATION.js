@@ -85,11 +85,11 @@ var showMessage = true;
 						
 //						function runReportAsync(reportName,module,itemCap,reportParameters)
 						
-					runReportAsync(myReport,"Licenses",capId,rParams)
+						runReportAsync(myReport,"Licenses",capId,rParams)
 					
 						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
-				
+						runReportAsync(myReport,"Licenses",capIdString,rParams)
 						
 						
 		}catch (err) {
