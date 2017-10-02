@@ -20,11 +20,10 @@ var showMessage = true;
 			newLicId = null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
-			try {
+	try {
 			newLicId = getParent();
-			} catch (err) {
-				logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
-			}
+			
+			
 			if (newLicId == null){
 				
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
@@ -35,7 +34,12 @@ var showMessage = true;
 	
 
 				newLicIdString = newLicId.getCustomId();
-        
+     
+				
+	} catch (err) {
+		logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+		
+		
 			        copyAppSpecific(capId);
 			        copyAddresses(capId,newLicId);
 			        copyASITables(capId,newLicId);
