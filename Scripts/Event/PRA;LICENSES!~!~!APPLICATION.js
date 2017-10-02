@@ -420,7 +420,7 @@ var showMessage = true;
     											var rParams = aa.util.newHashMap();
     																													
 
-    											addParameter(rParams,"RECORD_ID",capId);
+    											addParameter(rParams,"RECORD_ID",capIdString);
     											addParameter(rParams,"TASK","License Issuance");
     											addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
     											
@@ -449,7 +449,7 @@ var showMessage = true;
     									
     									runReportAsync(myReport,"Licenses",capIdString,rParams)
     								
-    		logDebug("License Type: " + LICENSETYPE + "Record: " + capIdString + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
+    		logDebug("License Type: " + LICENSETYPE + " Record: " + capIdString + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
     									
     							
     									
