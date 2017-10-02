@@ -16,20 +16,17 @@ var showMessage = true;
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		
-			var newLic = getParent();
-			var newLicId;
+			 
+			newLicId =getParent();
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
-			if (newLic= null){
+			if (newLicId= null){
 							
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				
 				}
-			else { newLicId=newLic;
-				
-			}
-			
+						
 				logDebug(" newLicId = " + newLicId);
 	
 	
