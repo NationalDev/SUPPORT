@@ -22,8 +22,8 @@ var showMessage = true;
 			monthsToInitialExpire = 12;
 			try {
 			newLicId = getParent();
-			} catch(Exception e) {
-				e.printStackTrace();
+			} catch (err) {
+				logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 			}
 			if (newLicId == null){
 				
