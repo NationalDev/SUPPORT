@@ -79,10 +79,14 @@ var showMessage = true;
 	//  function generateReport(itemCap, reportName, module, parameters) //returns the report file which can be attached to an email.					
 						
 						
-						generateReport(capId, myReport, "Licenses", rParams);
+//						generateReport(capId, myReport, "Licenses", rParams);
 											
-						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+//						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
+//						function runReportAsync(reportName,module,itemCap,reportParameters)
+						
+					runReportAsync(myReprot,"Licenses",capId,rParams)
+					
 						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
 				
