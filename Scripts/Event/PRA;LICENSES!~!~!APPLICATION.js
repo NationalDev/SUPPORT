@@ -10,8 +10,8 @@
 //			September 27th, 2017			Revision 3.3
 //*********************************************************************************************************
 
-var showDebug = false;
-var showMessage = false;
+var showDebug = true;
+var showMessage = true;
 
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
@@ -20,9 +20,11 @@ var showMessage = false;
 			newLicId = null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
-		
+			try {
 			newLicId = getParent();
-				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 			if (newLicId == null){
 				
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
