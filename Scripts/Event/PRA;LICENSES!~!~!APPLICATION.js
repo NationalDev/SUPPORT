@@ -420,7 +420,7 @@
     											var rParams = aa.util.newHashMap();
     																													
 
-    											addParameter(rParams,"Record_ID",capIdString);
+    											addParameter(rParams,"RECORD_ID",capIdString);
     											addParameter(rParams,"TASK","License Issuance");
     											addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONALS");
     											
@@ -443,7 +443,7 @@
     									
 //    									generateReport(capId, myReport, "Licenses", rParams);
     														
-//    									runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+  									runReport4EmailOrPrint(capIdString,myReport,null,rParams,null,null,"Licenses");
     									
 //    									function runReportAsync(reportName,module,itemCap,reportParameters)
     									
@@ -464,7 +464,7 @@
     					
     					
     					
- function runReportAsync(reportName,module,itemCap,reportParameters) {
+    					function runReportAsync(reportName,module,itemCap,reportParameters) {
     						var scriptName = "RUNREPORTASYNC";
 
     						var envParameters = aa.util.newHashMap();
