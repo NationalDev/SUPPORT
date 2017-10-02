@@ -34,7 +34,7 @@ var showMessage = true;
 				logDebug(" newLicId = " + newLicId);
 	
 
-				newLicIdString = newLicId.getCustomID();
+				newLicIdString = newLicId.getCustomId();
         
 			        copyAppSpecific(capId);
 			        copyAddresses(capId,newLicId);
