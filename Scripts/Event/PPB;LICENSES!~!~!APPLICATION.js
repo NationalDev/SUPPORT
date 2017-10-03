@@ -13,6 +13,7 @@
 var showDebug = true;
 var showMessage = true;
 
+
 	if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		
