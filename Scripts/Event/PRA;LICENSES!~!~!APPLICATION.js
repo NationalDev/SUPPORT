@@ -394,9 +394,7 @@ var showMessage = true;
 											    }
 											}	
 							
-					
-			
-									  try {  
+	
 										
 										//  
 										////************************************ REPORT SELECTION **********************************
@@ -406,7 +404,9 @@ var showMessage = true;
 										//  
 										////*********************************** STATIONARY ENGINEER  
 										  
-										  	
+										LICENSETYPE = "";
+										
+										LICENSETYPE = getAppSpecific("License Type",capId) + "";
 										  
 										  	    logDebug("License Type: " + LICENSETYPE);
 										  	
