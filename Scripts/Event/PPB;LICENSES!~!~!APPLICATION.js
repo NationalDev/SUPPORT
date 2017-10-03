@@ -15,11 +15,11 @@ var showDebug = true;
 var showMessage = true;
 
 
-	if (isTaskStatus("License Issuance","Issued") ) {
+if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 		
 			newLic = null;
-			newLicId = "";
+			newLicId = null;
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
