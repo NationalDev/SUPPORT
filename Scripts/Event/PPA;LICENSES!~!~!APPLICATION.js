@@ -32,9 +32,8 @@ var showMessage = true;
 											    }
 											}	
 							
-					
-			
-									  try {  
+	
+										
 										
 										//  
 										////************************************ REPORT SELECTION **********************************
@@ -44,51 +43,56 @@ var showMessage = true;
 										//  
 										////*********************************** STATIONARY ENGINEER  
 										  
-										  	
+										altID = "";
+										altID = capId.getCustomID();
+												LICENSETYPE = "";
+												LICENSETYPE = getAppSpecific("License Type",capId) + "";
 										  
-										  	    logDebug("License Type: " + LICENSETYPE);
+										  	    logDebug("License Type: " + LICENSETYPE + "  ID = " + altID);
+										  	    
+										  	  licIDString = null;
 										  	
 										  	    if (LICENSETYPE == "1st Class Station Eng") {
 										  	     
 										  		var rParams = aa.util.newHashMap();
 										  	     	
-										  			addParameter(rParams,"Record_ID","capId");
-										  			addParameter(rParams,"TASK","Licenses Issuance");
-										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+										  			addParameter(rParams,"p1value",altID);
+										  			addParameter(rParams,"TASK","License Issuance");
+										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
 										
-										    	        
-										  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+										  			runReportAsync("Stationary","Licenses",capId,rParams);    
+//										  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										 
 										  			}
 										  	
 										  	else if (LICENSETYPE == "2nd Class Station Eng")  {
 											     
 												var rParams = aa.util.newHashMap();
-													addParameter(rParams,"Record_ID","capId");
-										  			addParameter(rParams,"TASK","Licenses Issuance");
-										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+													addParameter(rParams,"RECORD_ID",licIDString);
+										  			addParameter(rParams,"TASK","License Issuance");
+										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
 										
-														        
-													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+										  			runReportAsync("Stationary","Licenses",capId,rParams);	        
+//													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
 										
 										  	else if (LICENSETYPE == "3rd Class Station Eng") {
 										    
 										  		var rParams = aa.util.newHashMap();
-													addParameter(rParams,"Record_ID","capId");
-													addParameter(rParams,"TASK","Licenses Issuance");
-													addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+													addParameter(rParams,"RECORD_ID",licIDString);
+													addParameter(rParams,"TASK","License Issuance");
+													addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 													
 													logDebug("Parameters: " + rParams);
 										
 										
-										        
-												runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+													runReportAsync("Stationary","Licenses",capId,rParams);
+//													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
 										 
@@ -187,15 +191,11 @@ var showMessage = true;
 											aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
 
 						
+													
 						
 						
 						
-						
-		}catch (err) {
-			logDebug("A JavaScript Error occured: " + err.message);
-		}
-		// end user code
-		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
+	
 		
 		
 		function runReportAsync(reportName,module,itemCap,reportParameters) {
