@@ -1,13 +1,11 @@
 //*********************************************************************************************************
-//	PRA;LICENSES!~!~!APPLICATION.js																	   
+//	PPB;LICENSES!~!~!APPLICATION.js																	   
 //																			Iman Sallam @ City of Detroit  
 //		Deploy with the script code and script title below (all caps)									   
 //																								           
-//					PRA:LICENSES/*/*/APPLICATION	
+//					PPB:LICENSES/*/*/APPLICATION	
 // 							
-//			September 7th, 2017			Revision 2.0
-//			September 11th, 2017			Revision 3.0
-//			September 27th, 2017			Revision 3.3
+//			October 3rd, 2017			Revision 3.3
 //*********************************************************************************************************
 
 var showDebug = true;
