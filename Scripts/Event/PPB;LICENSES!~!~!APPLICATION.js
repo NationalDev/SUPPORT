@@ -25,7 +25,7 @@ if (isTaskStatus("License Issuance","Issued") && balanceDue <= 0) {
 		
 			newLicId = getParent();
 				
-			if (newLicId = null){
+			if (newLicId){
 			
 				
 				newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
