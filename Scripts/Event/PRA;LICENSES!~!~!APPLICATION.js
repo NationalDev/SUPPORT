@@ -415,7 +415,7 @@ var showMessage = true;
 										  	     
 										  		var rParams = aa.util.newHashMap();
 										  	     	
-										  			addParameter(rParams,"Record_ID","capId");
+										  			addParameter(rParams,"RECORD_ID","capId");
 										  			addParameter(rParams,"TASK","Licenses Issuance");
 										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 										  			
@@ -429,7 +429,7 @@ var showMessage = true;
 										  	else if (LICENSETYPE == "2nd Class Station Eng")  {
 											     
 												var rParams = aa.util.newHashMap();
-													addParameter(rParams,"Record_ID","capId");
+													addParameter(rParams,"RECORD_ID","capId");
 										  			addParameter(rParams,"TASK","Licenses Issuance");
 										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 										  			
@@ -443,7 +443,7 @@ var showMessage = true;
 										  	else if (LICENSETYPE == "3rd Class Station Eng") {
 										    
 										  		var rParams = aa.util.newHashMap();
-													addParameter(rParams,"Record_ID","capId");
+													addParameter(rParams,"RECORD_ID","capId");
 													addParameter(rParams,"TASK","Licenses Issuance");
 													addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
 													
