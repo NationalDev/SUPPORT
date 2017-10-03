@@ -8,6 +8,8 @@
 //			October 3rd, 2017			Revision 3.3
 //*********************************************************************************************************
 
+
+try{
 var showDebug = true;
 var showMessage = true;
 
@@ -394,4 +396,6 @@ var showMessage = true;
 	}	
 	
 	
-	
+}catch (err) {
+	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+}
