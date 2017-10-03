@@ -419,7 +419,7 @@ var showMessage = true;
 										  		var rParams = aa.util.newHashMap();
 										  	     	
 										  			addParameter(rParams,"RECORD_ID","licIDString");
-										  			addParameter(rParams,"TASK","Licenses Issuance");
+										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
@@ -433,7 +433,7 @@ var showMessage = true;
 											     
 												var rParams = aa.util.newHashMap();
 													addParameter(rParams,"RECORD_ID","licIDString");
-										  			addParameter(rParams,"TASK","Licenses Issuance");
+										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
@@ -447,7 +447,7 @@ var showMessage = true;
 										    
 										  		var rParams = aa.util.newHashMap();
 													addParameter(rParams,"RECORD_ID","licIDString");
-													addParameter(rParams,"TASK","Licenses Issuance");
+													addParameter(rParams,"TASK","License Issuance");
 													addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 													
 													logDebug("Parameters: " + rParams);
