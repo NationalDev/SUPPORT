@@ -418,7 +418,7 @@ var showMessage = true;
 										  	     
 										  		var rParams = aa.util.newHashMap();
 										  	     	
-										  			addParameter(rParams,"RECORD_ID",licIDString);
+										  			addParameter(rParams,"RECORD_ID",p1value);
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
