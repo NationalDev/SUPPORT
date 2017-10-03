@@ -19,7 +19,7 @@ var showMessage = true;
 		
 		
 			newLic = null;
-			newLicId = null;
+			newLicId = "";
 			newLicIdString = null;
 			monthsToInitialExpire = 12;
 		
