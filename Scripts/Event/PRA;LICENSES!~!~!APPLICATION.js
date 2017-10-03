@@ -410,7 +410,7 @@ var showMessage = true;
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId) + "";
 										  
-										  	    logDebug("License Type: " + LICENSETYPE);
+										  	    logDebug("License Type: " + LICENSETYPE + " ID = " + licIDString);
 										  	    
 										  	  licIDString = null;
 										  	
@@ -420,7 +420,7 @@ var showMessage = true;
 										  	     	
 										  			addParameter(rParams,"RECORD_ID",licIDString);
 										  			addParameter(rParams,"TASK","Licenses Issuance");
-										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
 										
@@ -434,7 +434,7 @@ var showMessage = true;
 												var rParams = aa.util.newHashMap();
 													addParameter(rParams,"RECORD_ID",licIDString);
 										  			addParameter(rParams,"TASK","Licenses Issuance");
-										  			addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters: " + rParams);
 										
@@ -448,7 +448,7 @@ var showMessage = true;
 										  		var rParams = aa.util.newHashMap();
 													addParameter(rParams,"RECORD_ID",licIDString);
 													addParameter(rParams,"TASK","Licenses Issuance");
-													addParameter(rParams,"ITEM NAME","LIC LICENSED PROFESSIONAL");
+													addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 													
 													logDebug("Parameters: " + rParams);
 										
