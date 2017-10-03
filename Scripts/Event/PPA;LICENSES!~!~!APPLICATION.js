@@ -81,11 +81,11 @@ var showMessage = true;
 						
 //						generateReport(capId, myReport, "Licenses", rParams);
 											
-//						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
+						runReport4EmailOrPrint(capId,myReport,null,rParams,null,null,"Licenses");
 						
 //						function runReportAsync(reportName,module,itemCap,reportParameters)
 						
-						runReportAsync(myReport,"Licenses",capId,rParams)
+//						runReportAsync(myReport,"Licenses",capId,rParams)
 					
 						logDebug("License Type: " + LICENSETYPE + " Parameters: " + rParams + "  Report to Print = " + myReport + " Task Status = " + myTaskStatus);
 						
