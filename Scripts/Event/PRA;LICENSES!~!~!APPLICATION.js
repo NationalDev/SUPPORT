@@ -549,15 +549,11 @@ var showMessage = true;
 											aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
 
 						
+													
 						
 						
 						
-						
-		}catch (err) {
-			logDebug("A JavaScript Error occured: " + err.message);
-		}
-		// end user code
-		aa.env.setValue("ScriptReturnCode", "1"); 	aa.env.setValue("ScriptReturnMessage", debug)
+	
 		
 		
 //		function runReportAsync(reportName,module,itemCap,reportParameters) {
