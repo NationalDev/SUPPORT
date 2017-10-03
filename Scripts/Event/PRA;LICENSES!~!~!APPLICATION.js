@@ -405,12 +405,12 @@ var showMessage = true;
 										//  
 										////*********************************** STATIONARY ENGINEER  
 										  
-												licIDString = "";
-												licIDString = capId.getCustomID();
+										altID = "";
+										altID = capId.getCustomID();
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId) + "";
 										  
-										  	    logDebug("License Type: " + LICENSETYPE + " ID = " + licIDString);
+										  	    logDebug("License Type: " + LICENSETYPE + "  ID = " + altID);
 										  	    
 										  	  licIDString = null;
 										  	
@@ -418,7 +418,7 @@ var showMessage = true;
 										  	     
 										  		var rParams = aa.util.newHashMap();
 										  	     	
-										  			addParameter(rParams,"p1value",licIDString);
+										  			addParameter(rParams,"p1value",altID);
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
