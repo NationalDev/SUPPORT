@@ -405,7 +405,7 @@ var showMessage = true;
 										//  
 										////*********************************** STATIONARY ENGINEER  
 										  
-												licIDString = null;
+												licIDString = "";
 												licIDString = capId.getCustomID();
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId) + "";
@@ -418,7 +418,7 @@ var showMessage = true;
 										  	     
 										  		var rParams = aa.util.newHashMap();
 										  	     	
-										  			addParameter(rParams,"RECORD_ID","licIDString");
+										  			addParameter(rParams,"RECORD_ID",licIDString);
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
@@ -432,7 +432,7 @@ var showMessage = true;
 										  	else if (LICENSETYPE == "2nd Class Station Eng")  {
 											     
 												var rParams = aa.util.newHashMap();
-													addParameter(rParams,"RECORD_ID","licIDString");
+													addParameter(rParams,"RECORD_ID",licIDString);
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
@@ -446,7 +446,7 @@ var showMessage = true;
 										  	else if (LICENSETYPE == "3rd Class Station Eng") {
 										    
 										  		var rParams = aa.util.newHashMap();
-													addParameter(rParams,"RECORD_ID","licIDString");
+													addParameter(rParams,"RECORD_ID",licIDString);
 													addParameter(rParams,"TASK","License Issuance");
 													addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 													
