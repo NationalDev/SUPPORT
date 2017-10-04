@@ -302,7 +302,7 @@ try{
 	          cityLicense = licCapId.getCustomID();
 	         // stateLicense = getAppSpecific("State License Number",licCapId);
 	         aa.print("Detroit License Number is " + cityLicense);
-	         
+	         aa.print("Detroit License Number is " + lookup("LIC LICENSED PROFESSIONALS",LICENSETYPE));
 	  
 	      	licObj = licenseProfObject(newLicId,LICENSETYPE);
 	      //Get LicArray;
@@ -359,6 +359,11 @@ try{
 			        licObj.refLicModel.setState(LICENSESTATE);
 			        licObj.refLicModel.setLicenseBoard(LICENSETYPE);
 			        licObj.refLicModel.setLicenseIssueDate(licCap.getFileDate());
+//-----------------------------------------------------------------------------------
+			        licObj.refLicModel.setLicenseIssueDate(sysDate);
+			        
+			        
+//_______________________________________________________________________________________			        
 			        var expObj = null;
 			        var expDt = null;
 			        var expObjRes = aa.expiration.getLicensesByCapID(newLicId);
@@ -394,7 +399,7 @@ try{
 	 
 
 		
-		}	
+		
 		
 		
 	
@@ -571,9 +576,12 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("License","Licenses",capId,rParams);    
 												
 										  			}
+										  	    
+										  	    
+	}
 										  	
 										 }catch (err) {
 												logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
