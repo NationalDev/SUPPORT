@@ -73,6 +73,7 @@ try {
 				sendNotification(replyAddr, emailAddr, "",template, emailParameters, null);
 			}
 		}else{
+			showDebug = false;
 			showMessage = true;
 			cancel = true;  
 			comment("At least one agency must be marked 'Yes' for a referral.");
