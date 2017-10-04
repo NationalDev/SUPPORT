@@ -73,9 +73,9 @@ try {
 				sendNotification(replyAddr, emailAddr, "",template, emailParameters, null);
 			}
 		}else{
-			comment("At least one agency must be marked 'Yes' for a referral.");
-			cancel = true;  
 			showMessage = true;
+			cancel = true;  
+			comment("At least one agency must be marked 'Yes' for a referral.");
 		}
 	} // task/status
 	
