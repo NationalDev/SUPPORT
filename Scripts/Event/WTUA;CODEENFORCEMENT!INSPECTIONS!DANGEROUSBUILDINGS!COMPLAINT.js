@@ -4,7 +4,7 @@
 
 try {
 	var template = "CODEENF_COMPLAINT_REFERRAL";
-	var replyAddr = "autosender@accela.com";
+	var replyAddr = "noreply@accela.com";
 	var testNo = new Array();
 	
 	if (wfTask == "Refer to Agency" && wfStatus == "Referred"){
