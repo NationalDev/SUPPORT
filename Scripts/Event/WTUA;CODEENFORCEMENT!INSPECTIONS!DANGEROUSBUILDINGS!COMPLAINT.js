@@ -84,6 +84,12 @@ try {
 	logDebug("A JavaScript Error occured: " + err.message);
 }
 
+// Script #37 - Dangerous Buildings Complaint - Deferral Re-Inspection
+
+if (wfTask == "Issue Deferral Letter with Corrections" && wfStatus == "180 day Deferrral Period"){
+	scheduleInspection ("Dang Bldg Deferral Inspection", 0);
+}
+
 // functions
 
 function getTSIValue(wfTask,tsiFieldName){
