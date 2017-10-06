@@ -31,7 +31,7 @@ try{
 				}
 				
 				else{
-					newLicId = parent;
+					newLicId = getParent(capId);
 				}
 		
 	  
