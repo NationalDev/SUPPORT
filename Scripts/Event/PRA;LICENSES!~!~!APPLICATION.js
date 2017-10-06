@@ -20,7 +20,6 @@ try{
 			
 			
 				newLic = null;
-				newLicId = null;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
 				var parent = getParent(capId);
@@ -32,12 +31,12 @@ try{
 					newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				}
 				
-				
+					newLicIdString = newLicId.getCustomID();
 	  
 					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
 		
 
-					newLicIdString = newLicId.getCustomID();
+					
 	        
 				        copyAppSpecific(capId);
 				        copyAddresses(capId,newLicId);
