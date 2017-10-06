@@ -471,7 +471,7 @@ try{
 										  
 										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
 										  	    
-										  	    logDebug( "  capId = " + capId + "  altId = " + altID + "  tmpId = " + tmpId);
+										  	    logDebug( "  newLicIdString = " + newLicIdString + "  altId = " + altID + "  tmpId = " + tmpId + " ID  = " +capId.getCustomID());
 										  	    
 										  	  licIDString = null;
 										  	
