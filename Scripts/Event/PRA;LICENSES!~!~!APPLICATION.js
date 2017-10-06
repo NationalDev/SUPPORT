@@ -463,7 +463,7 @@ try{
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
-										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + altID);
+										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + capId);
 										  	    
 										  	  licIDString = null;
 										  	
