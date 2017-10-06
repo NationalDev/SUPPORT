@@ -455,7 +455,7 @@ try{
 		////*********************************** STATIONARY ENGINEER  
 										  
 										
-										var altID = capId.getCustomId();
+										var altID = capId.getCustomID();
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
