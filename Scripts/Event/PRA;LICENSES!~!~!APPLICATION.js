@@ -25,17 +25,17 @@ try{
 				monthsToInitialExpire = 12;
 				parent = getParent(capId);
 			
-				if (parent==null){
+				if (parentCapId==null){
 									
 					newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				}
 				
 				else{
-					newLicId = getParent(capId);
+					newLicId = parentCapId;
 				}
 		
 	  
-					logDebug(" newLicId = " + newLicId +" parent = " + parent);
+					logDebug(" newLicId = " + newLicId +" parent = " + parentCapIdt);
 		
 
 					newLicIdString = newLicId.getCustomID();
