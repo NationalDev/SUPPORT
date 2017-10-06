@@ -22,20 +22,20 @@ try{
 				newLic = null;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
-				newLicId = parentCapId;
+				newLicId = null;
 			
-					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
+					logDebug(" newLicId1 = " + newLicId +" parent = " + parentCapId);
 				
 				if (newLicId==null){
 									
 					newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				}
 								
-					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
+					logDebug(" newLicId2 = " + newLicId +" parent = " + parentCapId);
 					
 					newLicIdString = newLicId.getCustomID();
 	  
-					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
+					logDebug(" newLicId3 = " + newLicId +" parent = " + parentCapId);
 		
         
 				        copyAppSpecific(capId);
