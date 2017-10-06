@@ -362,7 +362,7 @@ try{
 //-----------------------------------------------------------------------------------
 			        licObj.refLicModel.setLicenseIssueDate(sysDate);
 			        
-			        licObj.refLicModel.setExpiration(dateAdd(newExpDate));
+			       
 //_______________________________________________________________________________________			        
 			        var expObj = null;
 			        var expDt = null;
@@ -373,7 +373,10 @@ try{
 			        }
 			
 			        if (expDt != null) {
-			            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
+//			            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
+			            licObj.refLicModel.setBusinessLicExpDate(newExpDate);//Expiration Date
+//			            thisLic.setExpiration(dateAdd(newExpDate,0));
+			            
 			        }
 
 
