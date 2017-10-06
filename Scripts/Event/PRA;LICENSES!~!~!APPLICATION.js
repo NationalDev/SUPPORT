@@ -442,17 +442,12 @@ try{
 
 
 
-
-
-
-										
-		//  
-		////************************************ REPORT SELECTION **********************************
-		//
-		////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-		////If email address available for contact type then email the report, otherwise pop up the report on the screen  
-		//  
-		////******************************************************************************************
+////************************************ REPORT SELECTION **********************************
+//
+////                         function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+////                         If email address available for contact type then email the report, otherwise pop up the report on the screen  
+//  
+////******************************************************************************************
 					        
 					        
 					        //******************************** STATIONARY ENGINEER  
