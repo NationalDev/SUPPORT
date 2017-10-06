@@ -23,17 +23,16 @@ try{
 				newLicId = null;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
-				parent = getParent(capId);
+				var parent = getParent(capId);
 			
+				newLicId = parent;
+				
 				if (parentCapId==null){
 									
 					newLicId = createParent(appTypeArray[0], appTypeArray[1], appTypeArray[2], "License",null);
 				}
 				
-				else{
-					newLicId = parent;
-				}
-		
+				
 	  
 					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
 		
