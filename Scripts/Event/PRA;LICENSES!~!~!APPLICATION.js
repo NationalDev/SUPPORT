@@ -22,9 +22,9 @@ try{
 				newLic = null;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
-				var newLicId = getParent(capId);
+				var newLicId = parentCapId;
 			
-				
+				logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
 				
 				if (newLicId==null){
 									
