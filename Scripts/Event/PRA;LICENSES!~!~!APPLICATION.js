@@ -615,7 +615,7 @@ try{
 										  	    
 										  	    
 	}
-										  	
+	}				  	
 										 }catch (err) {
 												logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
 											}
