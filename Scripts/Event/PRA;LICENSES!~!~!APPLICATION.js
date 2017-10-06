@@ -211,11 +211,28 @@ try{
 					    
 	   
 					    
-					    
-					    
-		
-		
-	    	             
+					////************************************ FEES SELECTION **********************************
+						
+						
+						iCont = null;
+						feeArray = new Array();
+						feeArray = loadFees(capId);
+						if (feeArray.length > 0) {
+						    for (iCont in feeArray) {
+			            
+			            logDebug("Found Assessed Fees = " + iCont);
+			            
+			            showDebug=true;
+			            
+			            tFee = feeArray[iCont];
+			            
+			            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
+							            
+							    }
+							}	
+			
+
+							    	             
 
 	////From Here ************************ Licensed Professional **************************************
 
@@ -427,28 +444,7 @@ try{
 
 
 
-////************************************ FEES SELECTION **********************************
-	
-		
-										iCont = null;
-										feeArray = new Array();
-										feeArray = loadFees(capId);
-										if (feeArray.length > 0) {
-										    for (iCont in feeArray) {
-							            
-							            logDebug("Found Assessed Fees = " + iCont);
-							            
-							            showDebug=true;
-							            
-							            tFee = feeArray[iCont];
-							            
-							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
-											            
-											    }
-											}	
-							
-	
-										
+
 										
 		//  
 		////************************************ REPORT SELECTION **********************************
