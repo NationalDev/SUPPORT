@@ -287,7 +287,7 @@ try{
 					        
 					                if (licCapId !=null) {
 					                    LICENSETYPE = getAppSpecific("License Type",licCapId) + "";
-					                    aa.print("LIC License Type is " + LICENSETYPE);
+					                    aa.print("LIC License Type is " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE));
 					                    }
 					                stateLicense = licCapId.getCustomID();
 					               // stateLicense = getAppSpecific("State License Number",licCapId);
@@ -437,8 +437,11 @@ try{
 										    for (iCont in feeArray) {
 							            
 							            logDebug("Found Assessed Fees = " + iCont);
+							            
 							            showDebug=true;
+							            
 							            tFee = feeArray[iCont];
+							            
 							            aa.print("Fee code: " + tFee["code"] + " " + tFee["amount"] + " " + tFee["status"]);
 											            
 											    }
@@ -455,12 +458,12 @@ try{
 		//  
 		////*********************************** STATIONARY ENGINEER  
 										  
-										altID = "";
-										altID = capId.getCustomID();
+										
+										var altID = capId.getCustomID();
 												LICENSETYPE = "";
-												LICENSETYPE = getAppSpecific("License Type",capId) + "";
+												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
-										  	    logDebug("License Type: " + LICENSETYPE + "  ID = " + altID);
+										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + altID);
 										  	    
 										  	  licIDString = null;
 										  	
