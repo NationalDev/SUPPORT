@@ -459,11 +459,11 @@ try{
 		////*********************************** STATIONARY ENGINEER  
 										  
 										
-										var altID = capId.getChildren();
+										var altID = parentCapId.getChildren();
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
-										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + capId);
+										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + altID);
 										  	    
 										  	  licIDString = null;
 										  	
