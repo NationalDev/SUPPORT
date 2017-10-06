@@ -604,13 +604,13 @@ try{
 										  		
 										  		var rParams = aa.util.newHashMap();
 												
-									  			addParameter(rParams,"p1value",capId);
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters9: " + rParams);
 									
-									  			runReportAsync("License","Licenses",capId,rParams);    
+									  			runReportAsync("License","Licenses",recordId.getCustomID(),rParams);    
 												
 										  			}
 										  	    
