@@ -454,8 +454,16 @@ try{
 		//  
 		////*********************************** STATIONARY ENGINEER  
 										  
-										
-										var altID = capId.getCustomID();
+										        var searchCap = capId;
+									            var tmpId = newLicId;
+									            var prjArr = null;
+									            if (appMatch("*/*/*/License")) {
+									                var childArr = getChildren("*/*/*/Application");
+									                if(childArr != null) searchCap = childArr[0];
+									                }
+					        
+					        
+										var altID = searchCap.getCustomID();
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
