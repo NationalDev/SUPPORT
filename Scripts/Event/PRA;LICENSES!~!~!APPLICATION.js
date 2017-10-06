@@ -462,12 +462,12 @@ try{
 									                if(childArr != null) searchCap = childArr[0];
 									                }
 					        
-					        
-										var altID = searchCap.getCustomID();
+									            var altID = searchCap.getCustomID();
+										
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
-										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  ID = " + altID);
+										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
 										  	    
 										  	  licIDString = null;
 										  	
@@ -479,7 +479,7 @@ try{
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
-										  			logDebug("Parameters: " + rParams);
+										  			logDebug("Parameters1: " + rParams);
 										
 										  			runReportAsync("Stationary","Licenses",altID,rParams);    
 //										  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
@@ -493,7 +493,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters2: " + rParams);
 									
 									  			runReportAsync("Stationary","Licenses",altID,rParams);    
 //													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
@@ -506,7 +506,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters3: " + rParams);
 									
 									 // 			runReportAsync("Stationary","Licenses",capId,rParams);    
 										
@@ -527,7 +527,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters4: " + rParams);
 									
 									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										  //			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
@@ -543,7 +543,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters5: " + rParams);
 									
 									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
@@ -558,7 +558,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters6: " + rParams);
 									
 									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
@@ -573,7 +573,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters7: " + rParams);
 									
 									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
@@ -588,7 +588,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters8: " + rParams);
 									
 									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
@@ -603,7 +603,7 @@ try{
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
-									  			logDebug("Parameters: " + rParams);
+									  			logDebug("Parameters9: " + rParams);
 									
 									  			runReportAsync("License","Licenses",altID,rParams);    
 												
