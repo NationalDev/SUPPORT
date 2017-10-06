@@ -237,7 +237,7 @@ try{
 					        
 					        
 					        //->branch("EMSE:LicProfLookup:getLicenses");
-					            var searchCap = newLicId;
+					            var searchCap = capId;
 					            var tmpId = newLicId;
 					            var prjArr = null;
 					            if (appMatch("*/*/*/License")) {
@@ -245,7 +245,7 @@ try{
 					                if(childArr != null) searchCap = childArr[0];
 					                }
 					        
-					            newLicId = tmpId;
+					            capId = tmpId;
 					            var vRelationType = "R";
 					            if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
 					            var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
