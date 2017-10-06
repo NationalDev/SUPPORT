@@ -5,7 +5,9 @@ showDebug = 3;
 logDebug("CalendarID: " + CalendarID);
 logDebug("MeetingID: " + MeetingID);
 
-var mtgInfo = aa.meeting.getMeetingByMeetingID(CalendarID ,MeetingID );
-var meetingDate = mtgInfo.output.getStartDate();
-logDebug("The Meeting date is:" + meetingDate);
+var mtgInfo = aa.meeting.getMeetingByMeetingID(CalendarID, MeetingID).getOutput()
+var meetingType = mtgInfo.getMeetingType();
+var meetingDate = mtgInfo.getStartDate();
+logDebug("Meeting Type: " + meetingType);
+logDebug("Meeting Date: " + meetingDate);
 
