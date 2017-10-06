@@ -5,7 +5,7 @@
 //																								           
 //					PPA:LICENSES/*/*/APPLICATION	
 // 							
-//			September 29th, 2017			Revision 1.0
+//			October 6th, 2017			Revision 2.0
 //*********************************************************************************************************
 
 
@@ -321,9 +321,9 @@ try{
 					                    isNewLic = true;
 					              }
 					            
-//					          if (tmpLicObj.valid && licIDString) {
-//					              associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-//					              }
+					          if (tmpLicObj.valid && licIDString) {
+					              associatedRefContactWithRefLicProf(licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+					              }
 
 					          var mycap = aa.cap.getCap(capId).getOutput();
 					          if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
@@ -357,9 +357,6 @@ try{
 					                  licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
 					              }
 					      
-//					             if (licCapTypeArr[1] == "Business") {
-//					                 licObj.refLicModel.setLicenseBoard(getAppSpecific("Business Type",licCapId));
-//					             }
 					              else {
 					                  licObj.refLicModel.setLicenseBoard(LICENSETYPE);
 					              }
@@ -420,11 +417,7 @@ try{
 					        }
 
 
-		
-		
-		
-		
-	
+
 
 
 ////************************************ FEES SELECTION **********************************
@@ -447,13 +440,13 @@ try{
 	
 										
 										
-										//  
-										////************************************ REPORT SELECTION **********************************
-										//
-										////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
-										////If email address available for contact type then email the report, otherwise pop up the report on the screen  
-										//  
-										////*********************************** STATIONARY ENGINEER  
+		//  
+		////************************************ REPORT SELECTION **********************************
+		//
+		////function runReport4EmailOrPrint(itemCap,reportName,conObj,rParams,eParams,emailTemplate,module) {
+		////If email address available for contact type then email the report, otherwise pop up the report on the screen  
+		//  
+		////*********************************** STATIONARY ENGINEER  
 										  
 										altID = "";
 										altID = capId.getCustomID();
@@ -474,7 +467,7 @@ try{
 										  			
 										  			logDebug("Parameters: " + rParams);
 										
-										  			runReportAsync("Stationary","Licenses",capId,rParams);    
+										  			runReportAsync("Stationary","Licenses",altID,rParams);    
 //										  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										 
 										  			}
@@ -488,7 +481,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Stationary","Licenses",capId,rParams);    
+									  			runReportAsync("Stationary","Licenses",altID,rParams);    
 //													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
@@ -504,7 +497,7 @@ try{
 									 // 			runReportAsync("Stationary","Licenses",capId,rParams);    
 										
 										
-													runReportAsync("Stationary","Licenses",capId,rParams);
+													runReportAsync("Stationary","Licenses",altID,rParams);
 //													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
@@ -522,7 +515,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										  //			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
@@ -538,7 +531,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
 										  			}
 										  	
@@ -553,7 +546,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
 										  			}
 										
@@ -568,7 +561,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
 										  			}
 										  	
@@ -583,7 +576,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",capId,rParams);    
+									  			runReportAsync("Boiler","Licenses",altID,rParams);    
 										
 										  			}
 										//*********************************** ALL OTHERS *************************************************************
@@ -598,7 +591,7 @@ try{
 									  			
 									  			logDebug("Parameters: " + rParams);
 									
-									  			runReportAsync("License","Licenses",capId,rParams);    
+									  			runReportAsync("License","Licenses",altID,rParams);    
 												
 										  			}
 										  	    
