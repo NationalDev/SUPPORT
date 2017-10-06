@@ -478,46 +478,43 @@ try{
 										  	
 										  	    if (LICENSETYPE == "1st Class Station Eng") {
 										  	     
-										  		var rParams = aa.util.newHashMap();
-										  	     	
-										  			addParameter(rParams,"p1value",altID);
+													var rParams = aa.util.newHashMap();
+										  			addParameter(rParams,"p1value",recordId.getCustomID());
 										  			addParameter(rParams,"TASK","License Issuance");
 										  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 										  			
 										  			logDebug("Parameters1: " + rParams);
 										
-										  			runReportAsync("Stationary","Licenses",altID,rParams);    
-//										  			runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+										  			runReportAsync("Stationary","Licenses",recordId.getCustomID(),rParams);  
+											  		runReport4EmailOrPrint(recordId.getCustomID(),"Stationary",null,rParams,null,null,"Licenses");
 										 
 										  			}
 										  	
 										  	else if (LICENSETYPE == "2nd Class Station Eng")  {
 											     
 												var rParams = aa.util.newHashMap();
-									  			addParameter(rParams,"p1value",altID);
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters2: " + rParams);
 									
-									  			runReportAsync("Stationary","Licenses",altID,rParams);    
-//													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+									  			runReportAsync("Stationary","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
 										
 										  	else if (LICENSETYPE == "3rd Class Station Eng") {
 										    
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters3: " + rParams);
 									
-									 // 			runReportAsync("Stationary","Licenses",capId,rParams);    
-										
-										
-													runReportAsync("Stationary","Licenses",altID,rParams);
-//													runReport4EmailOrPrint(capId,"Stationary",null,rParams,null,null,"Licenses");
+									  			runReportAsync("Stationary","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Stationary",null,rParams,null,null,"Licenses");
 										
 													} 
 										 
@@ -526,90 +523,89 @@ try{
 										  	else if (LICENSETYPE == "Boiler Op HP") {
 										  	
 										  		
-										  		var rParams = aa.util.newHashMap();
-													
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters4: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",altID,rParams);    
-										  //			runReport4EmailOrPrint(capId,"Boiler",null,rParams,null,null,"Licenses");
+									  			runReportAsync("Boiler","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
 										 
 										  	else if (LICENSETYPE == "Boiler Op LP") {
 										  	
 												
-										  		var rParams = aa.util.newHashMap();
-												
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters5: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",altID,rParams);    
+									  			runReportAsync("Boiler","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
 										  	
 										  	else if (LICENSETYPE == "1st Class Refrig Op") {
 										  	
 												
-										  		var rParams = aa.util.newHashMap();
-												
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters6: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",altID,rParams);    
+									  			runReportAsync("Boiler","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
 										
 										  	else if (LICENSETYPE == "2nd Class Refrig Op") {
 										  	
 												
-										  		var rParams = aa.util.newHashMap();
-												
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters7: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",altID,rParams);    
+									  			runReportAsync("Boiler","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
 										  	
 										  	else if (LICENSETYPE == "3rd Class Refrig Op") {
 										  	
 												
-										  		var rParams = aa.util.newHashMap();
-												
-									  			addParameter(rParams,"p1value",altID);
+												var rParams = aa.util.newHashMap();
+									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters8: " + rParams);
 									
-									  			runReportAsync("Boiler","Licenses",altID,rParams);    
+									  			runReportAsync("Boiler","Licenses",recordId.getCustomID(),rParams);  
+										  		runReport4EmailOrPrint(recordId.getCustomID(),"Boiler",null,rParams,null,null,"Licenses");
 										
 										  			}
 										//*********************************** ALL OTHERS *************************************************************
 										  	
 										  	else{		
 										  		
-										  		var rParams = aa.util.newHashMap();
-												
+												var rParams = aa.util.newHashMap();
 									  			addParameter(rParams,"p1value",recordId.getCustomID());
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters9: " + rParams);
-									
+									  			
+									  			  
 									  			runReportAsync("License","Licenses",recordId.getCustomID(),rParams);    
 												
 										  			}
