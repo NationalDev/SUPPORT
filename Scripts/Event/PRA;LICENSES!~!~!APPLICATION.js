@@ -362,7 +362,7 @@ try{
 //-----------------------------------------------------------------------------------
 			        licObj.refLicModel.setLicenseIssueDate(sysDate);
 			        
-			        licObj.refLicModel.setExpiration(dateAdd(newExpDate,0));
+			        licObj.refLicModel.setExpiration(dateAdd(newExpDate));
 //_______________________________________________________________________________________			        
 			        var expObj = null;
 			        var expDt = null;
