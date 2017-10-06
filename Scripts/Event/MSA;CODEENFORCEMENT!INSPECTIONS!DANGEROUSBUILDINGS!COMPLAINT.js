@@ -1,5 +1,7 @@
 // MSA:CodeEnforcement/Inspections/DangerousBuildings/Complaint
 
+showDebug = 3;
+
 logDebug("CalendarID: " + CalendarID);
 logDebug("MeetingID: " + MeetingID);
 
