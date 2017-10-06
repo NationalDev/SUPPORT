@@ -388,7 +388,7 @@ try{
 			        	licObj.refLicModel.setLicenseBoard(LICENSETYPE);
 			        }
 
-			        if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) || (licObj.updateFromRecordContactByType(newLicId,"Contractor of Record",true,true)) {
+	        if ((licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) || (licObj.updateFromRecordContactByType(newLicId,"Contractor of Record",true,true))) {
 	            
 			        	logDebug("LP Updated from Primary Contact");
 			        }
