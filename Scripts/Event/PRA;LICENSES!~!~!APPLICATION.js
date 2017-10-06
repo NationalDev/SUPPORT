@@ -468,6 +468,8 @@ try{
 										  
 										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
 										  	    
+										  	    logDebug( "  capId = " + capId + "  altId = " + altID);
+										  	    
 										  	  licIDString = null;
 										  	
 										  	    if (LICENSETYPE == "1st Class Station Eng") {
@@ -598,13 +600,13 @@ try{
 										  		
 										  		var rParams = aa.util.newHashMap();
 												
-									  			addParameter(rParams,"p1value",altID);
+									  			addParameter(rParams,"p1value",capId);
 									  			addParameter(rParams,"TASK","License Issuance");
 									  			addParameter(rParams,"ITEM_NAME","LIC LICENSED PROFESSIONAL");
 									  			
 									  			logDebug("Parameters9: " + rParams);
 									
-									  			runReportAsync("License","Licenses",altID,rParams);    
+									  			runReportAsync("License","Licenses",capId,rParams);    
 												
 										  			}
 										  	    
