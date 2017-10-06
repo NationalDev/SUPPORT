@@ -268,7 +268,8 @@ try{
 					                licCapId = aa.cap.getCapID(licCapId.getID1(),licCapId.getID2(),licCapId.getID3()).getOutput();
 					                }
 					            //Get License CAP;
-					            logDebug("105:licCapId=" + licCapId);
+					            logDebug("105:licCapId=" + licCapId + "  Record Id = " + licCapId.getCustomID());
+					            
 					            if (licCapId !=null) {
 					        
 					        
@@ -363,7 +364,7 @@ try{
 					                  licObj.refLicModel.setLicenseBoard(LICENSETYPE);
 					              }
 					      
-					              if (licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) {
+					              if ((licObj.updateFromRecordContactByType(newLicId,"Applicant",true,true)) || (licObj.updateFromRecordContactByType(newLicId,"Contractor of Record",true,true))) {
 					                  logDebug("LP Updated from Primary Contact");
 					              }
 					              else {
