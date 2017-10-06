@@ -35,7 +35,7 @@ try{
 				}
 		
 	  
-					logDebug(" newLicId = " + newLicId +" parent = " + parentCapIdt);
+					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
 		
 
 					newLicIdString = newLicId.getCustomID();
