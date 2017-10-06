@@ -465,11 +465,9 @@ try{
 												LICENSETYPE = "";
 												LICENSETYPE = getAppSpecific("License Type",capId);
 										  
-										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
+										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "   RECORD_ID = " + recordId.getCustomID());
 										  	    
-										  	    logDebug( "  recordId = " + recordId.getCustomID());
-										  	    
-										  	  licIDString = null;
+										  	   
 										  	
 										  	    if (LICENSETYPE == "1st Class Station Eng") {
 										  	     
