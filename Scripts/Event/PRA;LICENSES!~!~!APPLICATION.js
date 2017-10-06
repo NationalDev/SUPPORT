@@ -237,15 +237,15 @@ try{
 					        
 					        
 					        //->branch("EMSE:LicProfLookup:getLicenses");
-					            var searchCap = capId;
-					            var tmpId = capId;
+					            var searchCap = newLicId;
+					            var tmpId = newLicId;
 					            var prjArr = null;
 					            if (appMatch("*/*/*/License")) {
 					                var childArr = getChildren("*/*/*/Application");
 					                if(childArr != null) searchCap = childArr[0];
 					                }
 					        
-					            capId = tmpId;
+					            newLicId = tmpId;
 					            var vRelationType = "R";
 					            if(appMatch("*/*/*/Renewal")) vRelationType="Renewal";
 					            var prjArrRes = aa.cap.getProjectByChildCapID(searchCap,vRelationType,null);
@@ -255,12 +255,12 @@ try{
 					                }
 					        
 					            if (licCapId == null && appMatch("*/*/*/License")) {
-					                licCapId = capId;
+					                licCapId = newLicId;
 //					                //In the event license has no application;
 					                }
 					        
 					            if (licCapId == null && appMatch("*/*/*/Renewal")) {
-					                licCapId = capId;
+					                licCapId = newLicId;
 					                //In the event license has no application;
 					                }
 					            logDebug("100:licCapId=" + licCapId);
