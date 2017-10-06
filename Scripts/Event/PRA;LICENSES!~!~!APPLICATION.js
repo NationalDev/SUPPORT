@@ -325,7 +325,7 @@ try{
 					              
 //					        	  function associatedRefContactWithRefLicProf(capIdStr,refLicProfSeq,servProvCode,auditID)
 					        	  
-					        	  associatedRefContactWithRefLicProf(stateLicense, licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+					        	  associatedRefContactWithRefLicProf(capId.getCustomID(), licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
 					              }
 
 					          var mycap = aa.cap.getCap(capId).getOutput();
@@ -335,8 +335,9 @@ try{
 					        	  
 					        	  associatedLicensedProfessionalWithPublicUser(licObj.refLicModel.getLicSeqNbr(), mycap.getCapModel().getCreatedBy().toString());
 					              }
-					          licObj = licenseProfObject(stateLicense,LICENSETYPE );
-					          logDebug("161:Successfully created LP? " + licObj.valid);
+					          
+					          			licObj = licenseProfObject(stateLicense,LICENSETYPE );
+					          			logDebug("161:Successfully created LP? " + licObj.valid);
 
 					        if (licObj.valid) {
 					        	
