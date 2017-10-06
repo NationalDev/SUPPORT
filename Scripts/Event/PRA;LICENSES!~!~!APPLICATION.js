@@ -23,6 +23,7 @@ try{
 				newLicId = null;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
+				parent = getParent(capId);
 			
 
 				
@@ -31,7 +32,7 @@ try{
 					
 		
 	  
-					logDebug(" newLicId = " + newLicId);
+					logDebug(" newLicId = " + newLicId +" parent = " + parent);
 		
 
 					newLicIdString = newLicId.getCustomID();
