@@ -323,10 +323,10 @@ try{
 					            
 					          if (tmpLicObj.valid && licIDString) {
 					              
-//					        	  function associatedRefContactWithRefLicProf(capIdStr,refLicProfSeq,servProvCode,auditID)
-					        	  
-					        	  associatedRefContactWithRefLicProf(capId.getCustomID(), licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
-					              }
+////					        	  function associatedRefContactWithRefLicProf(capIdStr,refLicProfSeq,servProvCode,auditID)
+//					        	  
+//					        	  associatedRefContactWithRefLicProf(capId.getCustomID(), licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+//					              }
 
 					          var mycap = aa.cap.getCap(capId).getOutput();
 					          if (tmpLicObj.valid && mycap.getCapModel().getCreatedByACA() == 'Y') {
