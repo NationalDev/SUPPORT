@@ -325,7 +325,7 @@ try{
 					              
 //					        	  function associatedRefContactWithRefLicProf(capIdStr,refLicProfSeq,servProvCode,auditID)
 					        	  
-					        	  associatedRefContactWithRefLicProf(licIDString, licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
+					        	  associatedRefContactWithRefLicProf(stateLicense, licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
 					              }
 
 					          var mycap = aa.cap.getCap(capId).getOutput();
