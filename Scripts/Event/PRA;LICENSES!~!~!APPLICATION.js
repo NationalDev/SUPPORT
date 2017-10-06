@@ -370,11 +370,15 @@ try{
 			        if (expObjRes.getSuccess()) var expObj = expObjRes.getOutput();
 			        if (expObj != null) {
 			            expDt = aa.date.parseDate(expObj.getExpDateString());
+			            
+			            
+			            logDebug("expDt = " + expDt + " newExpDate = " + newExpDate);
+			            
 			        }
 			
 			        if (expDt != null) {
-//			            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
-			            licObj.refLicModel.setBusinessLicExpDate(newExpDate);//Expiration Date
+			            licObj.refLicModel.setBusinessLicExpDate(expDt);//Expiration Date
+//			            licObj.refLicModel.setBusinessLicExpDate(newExpDate);//Expiration Date
 //			            thisLic.setExpiration(dateAdd(newExpDate,0));
 			            
 			        }
