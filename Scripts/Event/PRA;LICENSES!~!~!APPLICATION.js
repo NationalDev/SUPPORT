@@ -36,9 +36,7 @@ try{
 	  
 					logDebug(" newLicId = " + newLicId +" parent = " + parentCapId);
 		
-
-					
-	        
+        
 				        copyAppSpecific(capId);
 				        copyAddresses(capId,newLicId);
 				        copyASITables(capId,newLicId);
