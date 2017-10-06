@@ -321,8 +321,8 @@ try{
 					                    isNewLic = true;
 					              }
 					            
-					          if (tmpLicObj.valid && licIDString) {
-					              
+//					          if (tmpLicObj.valid && licIDString) {
+//					              
 ////					        	  function associatedRefContactWithRefLicProf(capIdStr,refLicProfSeq,servProvCode,auditID)
 //					        	  
 //					        	  associatedRefContactWithRefLicProf(capId.getCustomID(), licObj.refLicModel.getLicSeqNbr(), aa.getServiceProviderCode(),currentUserID);
