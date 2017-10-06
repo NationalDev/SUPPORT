@@ -468,7 +468,7 @@ try{
 										  
 										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
 										  	    
-										  	    logDebug( "  capId = " + capId + "  altId = " + altID);
+										  	    logDebug( "  capId = " + capId + "  altId = " + altID + "  tmpId = " + tmpId);
 										  	    
 										  	  licIDString = null;
 										  	
