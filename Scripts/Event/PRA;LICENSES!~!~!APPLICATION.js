@@ -21,6 +21,7 @@ try{
 			
 			
 				newLic = null;
+				recordId = capId;
 				newLicIdString = null;
 				monthsToInitialExpire = 12;
 				newLicId = null;
@@ -471,7 +472,7 @@ try{
 										  
 										  	    logDebug("License Type: " + lookup("LICENSED PROFESSIONAL TYPE",LICENSETYPE) + "  searchCap = " + searchCap);
 										  	    
-										  	    logDebug( "  newLicIdString = " + newLicIdString + "  altId = " + altID + "  tmpId = " + tmpId + " ID  = " +capId.getCustomID());
+										  	    logDebug( "  recordId = " + recordId + "  altId = " + altID + "  tmpId = " + tmpId + " ID  = " +capId.getCustomID());
 										  	    
 										  	  licIDString = null;
 										  	
