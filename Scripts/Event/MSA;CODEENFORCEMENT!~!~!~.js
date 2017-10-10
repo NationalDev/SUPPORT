@@ -1,7 +1,7 @@
-// MSA:CodeEnforcement/Inspections/DangerousBuildings/Complaint
+// MSA:CODEENFORCEMENT/*/*/*
 
 showDebug = 3;
-
+logDebug("In event script MSA:CODEENFORCEMENT/*/*/*");
 logDebug("CalendarID: " + CalendarID);
 logDebug("MeetingID: " + MeetingID);
 
