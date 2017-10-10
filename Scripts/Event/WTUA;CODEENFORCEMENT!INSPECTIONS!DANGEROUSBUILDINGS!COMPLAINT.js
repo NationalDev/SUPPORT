@@ -90,6 +90,48 @@ if (wfTask == "Issue Deferral Letter with Corrections" && wfStatus == "180 day D
 	scheduleInspection ("Dang Bldg Deferral Inspection", 0);
 }
 
+// Script #2 - Dangerous Buildings Complaint Admin Funding Fee
+if (taskStatus("Council Hearing") == "Order Demo") {
+	addFee("DNG0001", "ENFDNG_F", "FINAL", 1, "Y");
+}
+
+// Script #3 - Dangerous Buildings Complaint Inspections
+try {
+if(wfTask=="Demolition Permit" && wfStatus=="Open Hole")
+{
+	scheduleInspection("Open Hole Inspection",0);
+}
+if(wfTask=="Open Hole Inspection" && wfStatus=="Winter")
+{
+	scheduleInspection("Winter Grade Inspection",0);
+}
+
+if(wfTask=="Winter Grade Inspection" && wfStatus=="Closed")
+{
+	scheduleInspection("Final Grade Inspection",0);
+}
+
+}catch (err) {
+	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+}
+
+// Script #38 - Dangerous Buildings Complaint – Compliance Letter
+
+if (taskStatus("Final Grade Inspection") == "Compliance") {
+    var noReplyEmail = "noreply@accela.com";
+    var contEmail = null;
+    var contArr = getContactArray(capId);
+    for (x in contArr){
+        if (matches(contArr[x]["contactType"], "Wrecking Contractor", "Interested Party")) {
+            contEmail = contArr[x]["CODEENF_COMPLIANCE_LETTER"];
+            var emailParameters = aa.util.newHashtable();
+            addParameter(emailParameters, "$$altID$$", capId.getCustomID());
+            addParameter(emailParameters, "$$capName$$", capName);
+            sendNotification(noReplyEmail, contEmail, "", "CODEENF_COMPLIANCE_LETTER", emailParameters, null);
+        }
+    }
+}
+
 // functions
 
 function getTSIValue(wfTask,tsiFieldName){
