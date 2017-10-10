@@ -1,6 +1,6 @@
 // MSA:CODEENFORCEMENT/*/*/*
 
-showDebug = 3;
+showDebug = true;
 logDebug("In event script MSA:CODEENFORCEMENT/*/*/*");
 logDebug("CalendarID: " + CalendarID);
 logDebug("MeetingID: " + MeetingID);
