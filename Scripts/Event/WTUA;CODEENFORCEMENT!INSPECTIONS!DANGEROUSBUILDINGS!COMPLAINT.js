@@ -92,7 +92,7 @@ if (wfTask == "Issue Deferral Letter with Corrections" && wfStatus == "180 day D
 
 // Script #2 - Dangerous Buildings Complaint Admin Funding Fee
 if (taskStatus("Council Hearing") == "Order Demo") {
-	if (!feeExists("DNG0001", "INVOICED"){
+	if (!feeExists("DNG0001", "INVOICED")){
 		addFee("DNG0001", "ENFDNG_F", "FINAL", 1, "Y");
 	}
 }
