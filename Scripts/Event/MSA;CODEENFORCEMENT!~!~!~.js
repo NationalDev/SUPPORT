@@ -2,9 +2,6 @@
 
 // showDebug = true;
 
-var prefix = lookup("EMSE_VARIABLE_BRANCH_PREFIX", "MeetingScheduleAfter");
-logDebug(prefix);
-
 logDebug("In event script MSA:CODEENFORCEMENT/*/*/*");
 logDebug("CalendarID: " + CalendarID);
 logDebug("MeetingID: " + MeetingID);
