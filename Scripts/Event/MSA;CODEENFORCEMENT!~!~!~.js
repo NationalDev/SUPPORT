@@ -17,3 +17,9 @@ logDebug("Meeting Date: " + meetingDate);
 logDebug("Meeting Time: " + meetingTime);
 logDebug("Meeting location: " + meetingLocation);
 
+var calendarResult = aa.calendar.getCalendar(CalendarID);
+if (calendarResult.getSuccess()){
+	calendarModel = calendarResult.getOutput();
+	var calName = calendarModel.getCalendarName();
+	logDebug("calName: " + calName);
+}
