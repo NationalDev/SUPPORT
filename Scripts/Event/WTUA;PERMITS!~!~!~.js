@@ -9,20 +9,16 @@
 
 
 
-
-
-
-if (wfStatus == "Request for Corrections") {
+if (wfStatus == "Incomplete") {
         sendExternalReviewNotification();   
 }
-
 
 
 try {
 
 
 	
-	if (wfTask == "License Issuance" && wfStatus == "Issued"){
+	if ((wfTask == "Permit Issuance" && wfStatus == "Issued") || (wfTask == "Inspection" && wfStatus == "Re-Inspection")){
 		
 		newLicIdString = null;
 		
